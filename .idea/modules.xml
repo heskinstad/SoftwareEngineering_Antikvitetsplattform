@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/SoftwareEngineering_Antikvitetsplattform.iml" filepath="$PROJECT_DIR$/SoftwareEngineering_Antikvitetsplattform.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/SoftwareEngineering_Antikvitetsplattform.iml" filepath="$PROJECT_DIR$/src/SoftwareEngineering_Antikvitetsplattform.iml" />
+      <module fileurl="file://$PROJECT_DIR$/src/main/main.iml" filepath="$PROJECT_DIR$/src/main/main.iml" />
     </modules>
   </component>
 </project>
