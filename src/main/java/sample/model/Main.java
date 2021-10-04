@@ -1,4 +1,4 @@
-package sample;
+package sample.model;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -10,7 +10,7 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("butikkView.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("../view/butikkView.fxml"));
         primaryStage.setTitle("Antikvitets platform");
         primaryStage.setScene(new Scene(root, 700, 500));
         primaryStage.show();
