@@ -20,42 +20,28 @@ public class homeController {
     public void initialize() {
     }
 
-
     public void loginAdmin(ActionEvent actionEvent) {
-        Parent root;
-        try {
-            root = FXMLLoader.load(getClass().getResource("../view/admin.fxml"));
-            Stage stage = new Stage();
-            stage.setTitle("Admin Control");
-            stage.setScene(new Scene(root, 400, 600));
-            stage.show();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        openNewInterface("../view/admin.fxml", "Admin Control", 600, 400);
     }
 
     public void loginButikk(ActionEvent actionEvent) {
-        Parent root;
-        try {
-            root = FXMLLoader.load(getClass().getResource("../view/butikkView.fxml"));
-            Stage stage = new Stage();
-            stage.setTitle("Butikk Control");
-            stage.setScene(new Scene(root, 400, 600));
-            stage.show();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        openNewInterface("../view/butikkView.fxml", "Butikk Control", 400, 600);
     }
 
     public void loginBruker(ActionEvent actionEvent) {
+        openNewInterface("../view/sluttbrukerView.fxml", "Bruker Control", 624, 648);
+    }
+
+    /*
+        Opens a new window defined by the parameters given
+     */
+    public void openNewInterface(String path, String windowTitle, int width, int height) {
         Parent root;
         try {
-            root = FXMLLoader.load(getClass().getResource("../view/sluttbrukerView.fxml"));
+            root = FXMLLoader.load(getClass().getResource(path));
             Stage stage = new Stage();
-            stage.setTitle("Bruker Control");
-            stage.setScene(new Scene(root, 624, 648));
+            stage.setTitle(windowTitle);
+            stage.setScene(new Scene(root, width, height));
             stage.show();
         }
         catch (IOException e) {
