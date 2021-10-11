@@ -14,7 +14,7 @@ import java.io.IOException;
 public class homeController {
 
     @FXML
-    private Button btnLoginAdmin;
+    public Button btnLoginAdmin;
 
     @FXML
     public void initialize() {
