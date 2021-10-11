@@ -30,6 +30,7 @@ public class Vare {
         this.bildeURL = bildeURL;
     }
 
+
     //get-set-metoder
 
     public int getId() {return id;}

@@ -1,7 +1,6 @@
 package sample.controller;
 
 import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -30,7 +29,7 @@ public class homeController {
     }
 
     public void loginBruker(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "../view/sluttbrukerView.fxml", "Bruker Control", 624, 648);
+        openNewInterface(actionEvent, "../view/sluttbrukerView.fxml", "Bruker Control", 648, 648);
     }
 
     /*

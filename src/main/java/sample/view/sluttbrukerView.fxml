@@ -59,7 +59,7 @@
                                         <Image url="@../Pictures/Forza%204/background.jpg" />
                                     </image>
                                 </ImageView>
-                                <TextArea prefHeight="239.0" prefWidth="200.0" text="Beskrivelse...&#10;&#10;" />
+                                <TextArea fx:id="descriptionVare1" prefHeight="239.0" prefWidth="200.0" text="Beskrivelse...&#10;&#10;" />
                                 <Button onAction="#kjopVare1" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Buy" />
                             </children>
                         </VBox>
@@ -78,7 +78,7 @@
                                         <Image url="@../Pictures/Forza%204/background.jpg" />
                                     </image>
                                 </ImageView>
-                                <TextArea prefHeight="243.0" prefWidth="200.0" text="Beskrivelse...&#10;&#10;" />
+                                <TextArea fx:id="descriptionVare2" prefHeight="243.0" prefWidth="200.0" text="Beskrivelse...&#10;&#10;" />
                                 <Button onAction="#kjopVare2" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Buy" />
                             </children>
                         </VBox>
@@ -97,7 +97,7 @@
                                         <Image url="@../Pictures/Forza%204/background.jpg" />
                                     </image>
                                 </ImageView>
-                                <TextArea prefHeight="241.0" prefWidth="200.0" text="Beskrivelse...&#10;&#10;" />
+                                <TextArea fx:id="descriptionVare3" prefHeight="241.0" prefWidth="200.0" text="Beskrivelse...&#10;&#10;" />
                                 <Button onAction="#kjopVare3" mnemonicParsing="false" prefHeight="30.0" prefWidth="200.0" text="Buy" />
                             </children>
                         </VBox>
