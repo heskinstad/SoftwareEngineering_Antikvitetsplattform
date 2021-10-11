@@ -12,14 +12,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class butikkController {
+public class butikkController extends homeController {
 
     private boolean isEditDesc = false; // verdi for å sjekke om editMode på beskrivelse er aktivt
 
     @FXML
     public void initialize(ActionEvent actionEvent) {
     }
-
 
     public void editDesc(ActionEvent actionEvent){
         //TODO need model to finnish buttonEvent, need model
@@ -46,19 +45,5 @@ public class butikkController {
 
     public void changeUser(ActionEvent actionEvent) {
         openNewInterface(actionEvent, "../view/sample.fxml", "Antikvitetsplatform", 700, 500);
-    }
-
-    public void openNewInterface(ActionEvent actionEvent, String path, String windowTitle, int width, int height) {
-        Parent root;
-        try {
-            root = FXMLLoader.load(getClass().getResource(path));
-            Stage stage = (Stage)((Node) actionEvent.getSource()).getScene().getWindow();
-            stage.setTitle(windowTitle);
-            stage.setScene(new Scene(root, width, height));
-            stage.show();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 }
