@@ -1,9 +1,9 @@
 {
-  "id": ,
-  "navn": ,
-  "beskrivelse": ,
-  "butikk": ,
-  "pris": ,
-  "tidspunkt": ,
-  "bildeURL":
+  "id": 1,
+  "navn": "test",
+  "beskrivelse": "test",
+  "butikk": "test",
+  "pris": 69.69,
+  "tidspunkt": "test",
+  "bildeURL": "test"
 }
