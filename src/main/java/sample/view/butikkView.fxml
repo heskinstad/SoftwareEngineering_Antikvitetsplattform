@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -13,8 +11,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.butikkController">
    <children>
       <GridPane layoutX="130.0" layoutY="83.0" prefHeight="319.0" prefWidth="470.0">
         <columnConstraints>
@@ -104,25 +101,6 @@
             </GridPane>
          </children>
       </GridPane>
-      <MenuBar layoutX="-5.0" layoutY="3.0" prefHeight="22.0" prefWidth="611.0">
-        <menus>
-          <Menu mnemonicParsing="false" text="hjem">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="min side">
-            <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
       <GridPane layoutX="-1.0" layoutY="25.0" prefHeight="378.0" prefWidth="131.0">
         <columnConstraints>
           <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -134,14 +112,14 @@
             <RowConstraints maxHeight="335.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="133.0" text="edit" GridPane.rowIndex="3" />
+            <Button id="btnEditDesc" mnemonicParsing="false" onAction="#editDesc" prefHeight="30.0" prefWidth="133.0" text="edit" GridPane.rowIndex="3" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="namn på butikk" textAlignment="CENTER" wrappingWidth="133.07421875" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec sed vestibulum nisi. Fusce posuere placerat risus, sit amet ullamcorper neque pellentesque et. Cras gravida pharetra eros, eu lobortis magna blandit eu. Fusce id turpis nec nisl" textAlignment="CENTER" wrappingWidth="133.07421875" GridPane.rowIndex="2" GridPane.vgrow="ALWAYS" />
             <ImageView fitHeight="97.0" fitWidth="132.0" pickOnBounds="true" GridPane.rowIndex="1">
                <image>
                   <Image url="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1200px-No-Image-Placeholder.svg.png" />
                </image>
             </ImageView>
+            <TextArea id="txtDesc" editable="false" prefHeight="200.0" prefWidth="200.0" text="this is text this is more text" wrapText="true" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <GridPane layoutX="131.0" layoutY="25.0" prefHeight="48.0" prefWidth="470.0">
@@ -153,7 +131,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button mnemonicParsing="false" prefHeight="30.0" prefWidth="129.0" text="legg til/fjern vare" GridPane.columnIndex="1" />
+            <Button id="btnEditSale" mnemonicParsing="false" onAction="#editSale" prefHeight="30.0" prefWidth="129.0" text="legg til/fjern vare" GridPane.columnIndex="1" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="varer" textAlignment="CENTER" wrappingWidth="352.654296875">
                <font>
                   <Font size="42.0" />
@@ -161,5 +139,6 @@
             </Text>
          </children>
       </GridPane>
+      <Button id="btnChangeUser" layoutX="2.0" layoutY="2.0" mnemonicParsing="false" onAction="#changeUser" text="change user" />
    </children>
 </AnchorPane>
