@@ -6,9 +6,13 @@ import java.time.LocalDateTime;
 public class Vare {
     int id;
     String navn, beskrivelse, butikk;
-    double pris;
+    int pris;
     LocalDateTime tidspunkt;
-    URI bildeURL;
+    String bildeURL;
+
+    public Vare() {
+
+    }
 
     /**
      * Konstruktør med all data for varen
@@ -20,7 +24,7 @@ public class Vare {
      * @param tidspunkt tidspunktet varen ble lagt ut
      * @param bildeURL pathen der bildet hentes fra
      */
-    public Vare(int id, String navn, String beskrivelse, String butikk, double pris, LocalDateTime tidspunkt, URI bildeURL) {
+    public Vare(int id, String navn, String beskrivelse, String butikk, int pris, LocalDateTime tidspunkt, String bildeURL) {
         this.id = id;
         this.navn = navn;
         this.beskrivelse = beskrivelse;
@@ -45,12 +49,12 @@ public class Vare {
     public String getButikk() {return butikk;}
     public void setButikk(String butikk) {this.butikk = butikk;}
 
-    public double getPris() {return pris;}
-    public void setPris(double pris) {this.pris = pris;}
+    public int getPris() {return pris;}
+    public void setPris(int pris) {this.pris = pris;}
 
     public LocalDateTime getTidspunkt() {return tidspunkt;}
     public void setTidspunkt(LocalDateTime tidspunkt) {this.tidspunkt = tidspunkt;}
 
-    public URI getBildeURL() {return bildeURL;}
-    public void setBildeURL(URI bildeURL) {this.bildeURL = bildeURL;}
+    public String getBildeURL() {return bildeURL;}
+    public void setBildeURL(String bildeURL) {this.bildeURL = bildeURL;}
 }
