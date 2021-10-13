@@ -28,6 +28,7 @@ public class DataHandler_varer {
         try {
             // create object mapper instance
             ObjectMapper mapper = new ObjectMapper();
+            mapper.findAndRegisterModules();
 
             // convert JSON string to Vare object
             //Vare vare = mapper.readValue(new File("/varer.JSON"), Vare.class);
@@ -46,6 +47,7 @@ public class DataHandler_varer {
     public static void skrivTilJSON(Vare vare) {
         try {
             ObjectMapper mapper = new ObjectMapper();
+            mapper.findAndRegisterModules();
             String path = new File("").getAbsolutePath() + "/src/main/java/resources/JSON/varer.JSON";
             mapper.writerWithDefaultPrettyPrinter().writeValue(new File(path), vare);
         }
