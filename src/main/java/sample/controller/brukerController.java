@@ -26,11 +26,11 @@ public class brukerController extends homeController {
 
     @FXML
     public void initialize() {
-        /*Vare vare = DataHandler_varer.lastInnVare();
+        Vare vare = DataHandler_varer.lastInnVare();
         varenavn.setText(vare.getNavn());
-        vareBeskrivelse.setText(vare.getBeskrivelse());*/
+        vareBeskrivelse.setText(vare.getBeskrivelse());
 
-        DataHandler_varer.skrivTilJSON(new Vare(2, "test2", "bla bla bla...", "beste butikken", 1, LocalDateTime.now(), "aaa"));
+        //DataHandler_varer.skrivTilJSON(new Vare(2, "test2", "bla bla bla...", "beste butikken", 1, LocalDateTime.now(), "aaa"));
     }
 
 

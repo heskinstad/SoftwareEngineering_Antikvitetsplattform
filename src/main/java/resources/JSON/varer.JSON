@@ -4,6 +4,6 @@
   "beskrivelse" : "bla bla bla...",
   "butikk" : "beste butikken",
   "pris" : 1,
-  "tidspunkt" : "2021-10-13T15:57:41.859510700",
+  "tidspunkt" : [ 2021, 10, 13, 16, 40, 1, 826064300 ],
   "bildeURL" : "aaa"
 }
