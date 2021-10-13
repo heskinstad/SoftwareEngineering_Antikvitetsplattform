@@ -1,9 +1,9 @@
 {
-  "id": 1,
+  "id": "1",
   "navn": "test",
   "beskrivelse": "test",
   "butikk": "test",
-  "pris": 69.69,
-  "tidspunkt": "test",
-  "bildeURL": "test"
+  "pris": "69",
+  "tidspunkt": "2016-01-25 21:34:55",
+  "bildeURL": "aaa"
 }
