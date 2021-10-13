@@ -6,6 +6,7 @@ import sample.model.Vare;
 import java.io.File;
 import java.io.FileReader;
 import java.nio.file.Paths;
+import java.time.LocalDateTime;
 
 
 public class DataHandler_varer {
@@ -40,6 +41,17 @@ public class DataHandler_varer {
             e.printStackTrace();
         }
         return null;
+    }
+
+    public static void skrivTilJSON(Vare vare) {
+        try {
+            ObjectMapper mapper = new ObjectMapper();
+            String path = new File("").getAbsolutePath() + "/src/main/java/resources/JSON/varer.JSON";
+            mapper.writerWithDefaultPrettyPrinter().writeValue(new File(path), vare);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 }
