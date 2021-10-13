@@ -6,8 +6,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.adminController">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.adminController">
    <children>
       <GridPane layoutX="150.0" layoutY="84.0">
         <columnConstraints>
@@ -25,11 +24,12 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button onAction="#openNewUser" fx:id="btnNewUser" mnemonicParsing="false" text="Godkjenne ny bruker" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-            <Button onAction="#openOverviewSales" fx:id="btnOverviewSales" mnemonicParsing="false" text="Oversikt over siste kjøp" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
-            <Button onAction="#openOverviewShops" fx:id="btnOverviewShops" mnemonicParsing="false" text="Se endringer på butikkenes sider" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
-            <Button onAction="#openComplaints" fx:id="btnComplaints" mnemonicParsing="false" text="Behandle klager" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
+            <Button fx:id="btnNewUser" mnemonicParsing="false" onAction="#openNewUser" text="Godkjenne ny bruker" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Button fx:id="btnOverviewSales" mnemonicParsing="false" onAction="#openOverviewSales" text="Oversikt over siste kjøp" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
+            <Button fx:id="btnOverviewShops" mnemonicParsing="false" onAction="#openOverviewShops" text="Se endringer på butikkenes sider" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER" />
+            <Button fx:id="btnComplaints" mnemonicParsing="false" onAction="#openComplaints" text="Behandle klager" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" GridPane.valignment="CENTER" />
          </children>
       </GridPane>
+      <Button fx:id="btnChangeUser" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#changeUser" text="changeUser" />
    </children>
 </AnchorPane>
