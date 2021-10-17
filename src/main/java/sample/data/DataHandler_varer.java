@@ -32,8 +32,8 @@ public class DataHandler_varer {
 
             // convert JSON string to Vare object
             //Vare vare = mapper.readValue(new File("/varer.JSON"), Vare.class);
-            String json = "{\"id\": \"1\",\"navn\": \"test\",\"beskrivelse\": \"test\",\"butikk\": \"test\",\"pris\": \"69\"}";
             String path = new File("").getAbsolutePath() + "/src/main/java/resources/JSON/varer.JSON";
+            System.out.println("Laster inn fra " + path);
             Vare vare = mapper.readValue(new FileReader(path), Vare.class);
 
             return vare;
@@ -49,6 +49,7 @@ public class DataHandler_varer {
             ObjectMapper mapper = new ObjectMapper();
             mapper.findAndRegisterModules();
             String path = new File("").getAbsolutePath() + "/src/main/java/resources/JSON/varer.JSON";
+            System.out.println("Skriver til " + path);
             mapper.writerWithDefaultPrettyPrinter().writeValue(new File(path), vare);
         }
         catch (Exception e) {
