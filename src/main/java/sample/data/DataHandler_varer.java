@@ -21,7 +21,7 @@ public class DataHandler_varer {
         }
     }*/
 
-    public static Vare lastInnVare() {
+    public static Vare lastInnVare(String localPath) {
         try {
             // create object mapper instance
             ObjectMapper mapper = new ObjectMapper();
@@ -29,7 +29,7 @@ public class DataHandler_varer {
 
             // convert JSON string to Vare object
             //Vare vare = mapper.readValue(new File("/varer.JSON"), Vare.class);
-            String path = new File("").getAbsolutePath() + "/src/main/java/resources/JSON/varer.JSON";
+            String path = new File("").getAbsolutePath() + localPath;
             System.out.println("Laster inn fra " + path);
             Vare vare = mapper.readValue(new FileReader(path), Vare.class);
 
@@ -41,11 +41,12 @@ public class DataHandler_varer {
         return null;
     }
 
-    public static void skrivTilJSON(Vare vare) {
+    public static void leggInnVare(Vare vare, String localPath) {
         try {
             ObjectMapper mapper = new ObjectMapper();
             mapper.findAndRegisterModules();
-            String path = new File("").getAbsolutePath() + "/SoftwareEngineering_Antikvitetsplattform/src/main/java/resources/JSON/varer.JSON";
+            String path = new File("").getAbsolutePath() + localPath;
+            System.out.println("Skriver til " + path);
             PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(path, true)));
             mapper.writerWithDefaultPrettyPrinter().writeValue(out, vare);
         }

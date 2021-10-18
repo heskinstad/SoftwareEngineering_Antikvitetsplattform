@@ -2,21 +2,15 @@ package sample.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import javafx.stage.Stage;
 import sample.model.Vare;
 import sample.data.DataHandler_varer;
 
-import java.io.IOException;
 import java.time.LocalDateTime;
 
 public class brukerController extends homeController {
-
 
     @FXML
     public Button btnLoginAdmin;
@@ -27,13 +21,12 @@ public class brukerController extends homeController {
 
     @FXML
     public void initialize() {
-        //Vare vare = DataHandler_varer.lastInnVare();
+        //Vare vare = DataHandler_varer.lastInnVare("/src/main/java/resources/JSON/varer.JSON");
         //varenavn.setText(vare.getNavn());
         //vareBeskrivelse.setText(vare.getBeskrivelse());
 
-        DataHandler_varer.skrivTilJSON(new Vare(1, "test2", "bla bla bla...", "beste butikken", 1, LocalDateTime.now(), "aaa"));
+        DataHandler_varer.leggInnVare(new Vare(3, "test2", "bla bla bla...", "ikke helt beste butikken...", 1, LocalDateTime.now(), "aaa"), "/src/main/java/resources/JSON/varer.JSON");
     }
-
 
     public void kjopVare1(ActionEvent actionEvent) {
         openNewInterface(actionEvent, "../view/sample.fxml", "Complaints", 600, 400);
@@ -50,6 +43,4 @@ public class brukerController extends homeController {
     public void backToLogin(ActionEvent actionEvent) {
         openNewInterface(actionEvent, "../view/sample.fxml", "Complaints", 600, 400);
     }
-
-
 }
