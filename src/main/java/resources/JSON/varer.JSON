@@ -1,26 +1,9 @@
 {
-  "id" : 1000432,
-  "navn" : "testen2",
+  "id" : 1,
+  "navn" : "test2",
   "beskrivelse" : "bla bla bla...",
   "butikk" : "beste butikken",
   "pris" : 1,
-  "tidspunkt" : [ 2021, 10, 17, 14, 19, 19, 213910500 ],
-  "bildeURL" : "aaa"
-}
-{
-  "id" : 1432,
-  "navn" : "testen2",
-  "beskrivelse" : "bla bla bla...",
-  "butikk" : "beste butikken",
-  "pris" : 1,
-  "tidspunkt" : [ 2021, 10, 17, 14, 30, 48, 937741800 ],
-  "bildeURL" : "aaa"
-}{
-  "id" : 132432,
-  "navn" : "testen2",
-  "beskrivelse" : "bla bla bla...",
-  "butikk" : "beste butikken",
-  "pris" : 1,
-  "tidspunkt" : [ 2021, 10, 17, 14, 31, 25, 343895600 ],
+  "tidspunkt" : [ 2021, 10, 17, 23, 4, 43, 474940400 ],
   "bildeURL" : "aaa"
 }

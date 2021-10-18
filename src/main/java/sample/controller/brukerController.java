@@ -2,12 +2,17 @@ package sample.controller;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import sample.data.DataHandler_varer;
+import javafx.stage.Stage;
 import sample.model.Vare;
+import sample.data.DataHandler_varer;
 
+import java.io.IOException;
 import java.time.LocalDateTime;
 
 public class brukerController extends homeController {
@@ -17,6 +22,7 @@ public class brukerController extends homeController {
     public Button btnLoginAdmin;
     @FXML
     public TextField varenavn;
+    @FXML
     public TextArea vareBeskrivelse;
 
     @FXML
@@ -25,7 +31,7 @@ public class brukerController extends homeController {
         //varenavn.setText(vare.getNavn());
         //vareBeskrivelse.setText(vare.getBeskrivelse());
 
-        DataHandler_varer.skrivTilJSON(new Vare(132432, "testen2", "bla bla bla...", "beste butikken", 1, LocalDateTime.now(), "aaa"));
+        DataHandler_varer.skrivTilJSON(new Vare(1, "test2", "bla bla bla...", "beste butikken", 1, LocalDateTime.now(), "aaa"));
     }
 
 
