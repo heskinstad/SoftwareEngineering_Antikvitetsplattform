@@ -1,6 +1,5 @@
 package sample.model;
 
-import java.net.URI;
 import java.time.LocalDateTime;
 
 public class Vare {
