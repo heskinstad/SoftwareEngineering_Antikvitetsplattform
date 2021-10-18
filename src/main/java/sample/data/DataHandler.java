@@ -1,12 +1,13 @@
 package sample.data;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import sample.model.Klage;
 import sample.model.Vare;
 
 import java.io.*;
 
 
-public class DataHandler_varer {
+public class DataHandler {
 
     /*public static void main(String[] args) throws Exception {
         try {
@@ -53,6 +54,25 @@ public class DataHandler_varer {
         catch (Exception e) {
             e.printStackTrace();
         }
+    }
+
+    public static Klage lastInnKlage(String localPath) {
+        try {
+            // create object mapper instance
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.findAndRegisterModules();
+
+            // convert JSON string to Klage object
+            String path = new File("").getAbsolutePath() + localPath;
+            System.out.println("Laster inn fra " + path);
+            Klage klage = mapper.readValue(new FileReader(path), Klage.class);
+
+            return klage;
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
 }

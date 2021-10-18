@@ -6,7 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import sample.model.Vare;
-import sample.data.DataHandler_varer;
+import sample.data.DataHandler;
 
 import java.time.LocalDateTime;
 
@@ -25,7 +25,7 @@ public class brukerController extends homeController {
         //varenavn.setText(vare.getNavn());
         //vareBeskrivelse.setText(vare.getBeskrivelse());
 
-        DataHandler_varer.leggInnVare(new Vare(3, "test2", "bla bla bla...", "ikke helt beste butikken...", 1, LocalDateTime.now(), "aaa"), "/src/main/java/resources/JSON/varer.JSON");
+        DataHandler.leggInnVare(new Vare(3, "test2", "bla bla bla...", "ikke helt beste butikken...", 1, LocalDateTime.now(), "aaa"), "/src/main/java/resources/JSON/varer.JSON");
     }
 
     public void kjopVare1(ActionEvent actionEvent) {
