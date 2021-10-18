@@ -3,10 +3,7 @@ package sample.data;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import sample.model.Vare;
 
-import java.io.File;
-import java.io.FileReader;
-import java.nio.file.Paths;
-import java.time.LocalDateTime;
+import java.io.*;
 
 
 public class DataHandler_varer {
@@ -48,9 +45,9 @@ public class DataHandler_varer {
         try {
             ObjectMapper mapper = new ObjectMapper();
             mapper.findAndRegisterModules();
-            String path = new File("").getAbsolutePath() + "/src/main/java/resources/JSON/varer.JSON";
-            System.out.println("Skriver til " + path);
-            mapper.writerWithDefaultPrettyPrinter().writeValue(new File(path), vare);
+            String path = new File("").getAbsolutePath() + "/SoftwareEngineering_Antikvitetsplattform/src/main/java/resources/JSON/varer.JSON";
+            PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(path, true)));
+            mapper.writerWithDefaultPrettyPrinter().writeValue(out, vare);
         }
         catch (Exception e) {
             e.printStackTrace();
