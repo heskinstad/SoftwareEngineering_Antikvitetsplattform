@@ -4,7 +4,8 @@ import sample.model.Vare;
 
 import java.time.LocalDateTime;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+
 
 public class Log_in_rights {
 

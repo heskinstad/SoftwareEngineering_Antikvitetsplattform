@@ -4,4 +4,10 @@
   "melding": "Jeg hater dere",
   "butikk": "Krakkel og spetakkel",
   "tidspunkt": [ 2021, 10, 18, 9, 14, 7, 472650900 ]
+}{
+  "id" : 3,
+  "navn" : "Thomas",
+  "melding" : "Dette fungerte ikke",
+  "butikk" : "Heiabutikken",
+  "tidspunkt" : [ 2021, 10, 20, 14, 42, 29, 756967800 ]
 }

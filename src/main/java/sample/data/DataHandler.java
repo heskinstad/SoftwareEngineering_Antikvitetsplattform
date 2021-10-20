@@ -47,7 +47,7 @@ public class DataHandler {
             ObjectMapper mapper = new ObjectMapper();
             mapper.findAndRegisterModules();
             String path = new File("").getAbsolutePath() + localPath;
-            System.out.println("Skriver til " + path);
+            System.out.println("Skriver vare til " + path);
             PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(path, true)));
             mapper.writerWithDefaultPrettyPrinter().writeValue(out, vare);
         }
@@ -56,23 +56,18 @@ public class DataHandler {
         }
     }
 
-    public static Klage lastInnKlage(String localPath) {
+    public static void leggInnKlage(Klage klage, String localPath) {
         try {
-            // create object mapper instance
             ObjectMapper mapper = new ObjectMapper();
             mapper.findAndRegisterModules();
-
-            // convert JSON string to Klage object
             String path = new File("").getAbsolutePath() + localPath;
-            System.out.println("Laster inn fra " + path);
-            Klage klage = mapper.readValue(new FileReader(path), Klage.class);
-
-            return klage;
+            System.out.println("Skriver klage til " + path);
+            PrintWriter out_Klage = new PrintWriter(new BufferedWriter(new FileWriter(path, true)));
+            mapper.writerWithDefaultPrettyPrinter().writeValue(out_Klage, klage);
         }
         catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
     }
 
 }
