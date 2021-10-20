@@ -1,10 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.paint.*?>
 <?import javafx.scene.text.*?>
 
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.listWindowController">
    <children>
       <GridPane layoutX="14.0" layoutY="14.0" prefHeight="373.0" prefWidth="573.0">
@@ -24,11 +27,11 @@
          <children>
             <TableView fx:id="table_SaleHistory" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
               <columns>
-                <TableColumn id="vare" prefWidth="75.0" text="Vare" />
-                <TableColumn id="selger" prefWidth="75.0" text="Selger" />
-                  <TableColumn id="kjoeper" prefWidth="75.0" text="Kjøper" />
-                  <TableColumn id="pris" prefWidth="75.0" text="Pris" />
-                  <TableColumn id="tidspunkt" prefWidth="75.0" text="Tidspunkt" />
+                <TableColumn prefWidth="75.0" text="Vare" />
+                <TableColumn prefWidth="75.0" text="Selger" />
+                  <TableColumn prefWidth="75.0" text="Kjøper" />
+                  <TableColumn prefWidth="75.0" text="Pris" />
+                  <TableColumn prefWidth="75.0" text="Tidspunkt" />
               </columns>
             </TableView>
             <TableView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
@@ -153,20 +156,73 @@
                            </stops>
                         </LinearGradient>
                      </fill>
+                     <effect>
+                        <DropShadow height="38.79" radius="32.1775" spread="0.75" width="91.92">
+                           <color>
+                              <Color green="0.05000000074505806" blue="1.0" />
+                           </color>
+                        </DropShadow>
+                     </effect>
                   </Text>
-                  <Button mnemonicParsing="false" text="Button" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" text="Button" GridPane.rowIndex="2" />
-                  <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Button mnemonicParsing="false" text="Button" GridPane.rowIndex="1">
+                     <effect>
+                        <Glow>
+                           <input>
+                              <Lighting>
+                                 <bumpInput>
+                                    <Shadow />
+                                 </bumpInput>
+                                 <light>
+                                    <Light.Distant />
+                                 </light>
+                              </Lighting>
+                           </input>
+                        </Glow>
+                     </effect></Button>
+                  <Button mnemonicParsing="false" text="Button" GridPane.rowIndex="2">
+                     <effect>
+                        <GaussianBlur radius="4.0" />
+                     </effect></Button>
+                  <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <cursor>
+                        <Cursor fx:constant="DEFAULT" />
+                     </cursor>
+                     <effect>
+                        <MotionBlur angle="124.28" radius="31.5" />
+                     </effect></Button>
+                  <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <effect>
+                        <Reflection bottomOpacity="1.0" fraction="1.0" topOpacity="1.0" />
+                     </effect></Button>
                </children>
             </GridPane>
             <TableView fx:id="table_Complaints" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <columns>
-                  <TableColumn id="id" prefWidth="75.0" text="ID" />
-                  <TableColumn id="innsender" prefWidth="75.0" text="Innsender" />
-                  <TableColumn id="melding" prefWidth="75.0" text="Melding" />
-                  <TableColumn id="butikk" prefWidth="75.0" text="Butikk" />
-                  <TableColumn id="tidspunkt" prefWidth="75.0" text="Tidspunkt" />
+                  <TableColumn id="id" prefWidth="75.0" text="ID" >
+                  <cellValueFactory>
+                     <PropertyValueFactory property="id" />
+                  </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn id="innsender" prefWidth="75.0" text="Innsender" >
+                     <cellValueFactory>
+                        <PropertyValueFactory property="navn" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn id="melding" prefWidth="75.0" text="Melding" >
+                     <cellValueFactory>
+                        <PropertyValueFactory property="melding" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn id="butikk" prefWidth="75.0" text="Butikk" >
+                     <cellValueFactory>
+                        <PropertyValueFactory property="butikk" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn id="tidspunkt" prefWidth="75.0" text="Tidspunkt" >
+                     <cellValueFactory>
+                        <PropertyValueFactory property="tidspunkt" />
+                     </cellValueFactory>
+                  </TableColumn>
                </columns>
             </TableView>
          </children>
