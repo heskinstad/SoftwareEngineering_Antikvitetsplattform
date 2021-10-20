@@ -70,4 +70,23 @@ public class DataHandler {
         }
     }
 
+    public static Klage lastInnKlager(String localPath) {
+        try {
+            // create object mapper instance
+            ObjectMapper mapper = new ObjectMapper();
+            mapper.findAndRegisterModules();
+
+            // convert JSON string to Klage object
+            String path = new File("").getAbsolutePath() + localPath;
+            System.out.println("Laster inn fra " + path);
+            Klage klage = mapper.readValue(new FileReader(path), Klage.class);
+
+            return klage;
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 }

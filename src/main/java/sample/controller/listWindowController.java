@@ -10,15 +10,17 @@ import sample.data.DataHandler;
 public class listWindowController {
 
     @FXML
-    TableView tableList;
+    TableView table_SaleHistory;
+    @FXML
+    TableView table_Complaints;
 
     @FXML
     public void initialize() {
-        //tableList.setItems((ObservableList) DataHandler.lastInnKlage("src/main/resources/JSON/klager.JSON"));
+        table_Complaints.setItems((ObservableList) DataHandler.lastInnKlager("src/main/resources/JSON/klager.JSON"));
     }
 
     public void refresh(ActionEvent actionEvent) {
-
+        table_Complaints.setItems((ObservableList) DataHandler.lastInnKlager("src/main/resources/JSON/klager.JSON"));
     }
 
     public void changeUser(ActionEvent actionEvent) {
