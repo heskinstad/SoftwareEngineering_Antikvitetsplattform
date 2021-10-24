@@ -26,8 +26,8 @@ public class brukerController extends homeController {
         //varenavn.setText(vare.getNavn());
         //vareBeskrivelse.setText(vare.getBeskrivelse());
 
-        DataHandler.leggInnVare(new Vare(3, "test2", "bla bla bla...", "ikke helt beste butikken...", 1, LocalDateTime.now(), "aaa"), "/src/main/resources/JSON/varer.JSON");
-        DataHandler.leggInnKlage(new Klage(3, "Thomas", "Dette fungerte ikke", "Heiabutikken", LocalDateTime.now()), "/src/main/resources/JSON/klager.JSON");
+        //DataHandler.leggInnVare(new Vare(3, "test2", "bla bla bla...", "ikke helt beste butikken...", 1, LocalDateTime.now(), "aaa"), "/src/main/resources/JSON/varer.JSON");
+        //DataHandler.leggInnKlage(new Klage(3, "Thomas", "Dette fungerte ikke", "Heiabutikken", LocalDateTime.now()), "/src/main/resources/JSON/klager.JSON");
     }
 
     public void kjopVare1(ActionEvent actionEvent) {
@@ -44,5 +44,9 @@ public class brukerController extends homeController {
 
     public void backToLogin(ActionEvent actionEvent) {
         openNewInterface(actionEvent, "../view/sample.fxml", "Complaints", 600, 400);
+    }
+
+    public void aapneKlageSkjema(ActionEvent actionEvent) {
+        openNewInterface(actionEvent, "../view/klage.fxml", "Klageskjema", 600, 310);
     }
 }

@@ -1,7 +1,9 @@
 package sample.data;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
 import javafx.collections.ObservableList;
 import sample.model.Klage;
 import sample.model.Vare;
@@ -50,46 +52,37 @@ public class DataHandler {
 
     public static void leggInnKlage(Klage klage, String localPath) {
         try {
-            ObjectMapper mapper = new ObjectMapper();
-            mapper.findAndRegisterModules();
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.findAndRegisterModules();
+            objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
             String path = new File("").getAbsolutePath() + localPath;
-            System.out.println("Skriver klage til " + path);
-            PrintWriter out_Klage = new PrintWriter(new BufferedWriter(new FileWriter(path, true)));
-            mapper.writerWithDefaultPrettyPrinter().writeValue(out_Klage, klage);
+
+            //Henter gamle klager
+            ArrayList<Klage> klager = hentKlager(localPath);
+
+            //Legger ny klage etter de gamle klagene
+            klager.add(klage);
+
+            objectMapper.writeValue(new File(path), klager);
         }
         catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-    // OLD, SOON TO BE DELETED
-    public static ArrayList<Klage> lastInnKlager(String localPath) {
-        try {
-            // create object mapper instance
-            ObjectMapper mapper = new ObjectMapper();
-            mapper.findAndRegisterModules();
-
-            // convert JSON string to a list of Klage objects
-            String path = new File("").getAbsolutePath() + localPath;
-            System.out.println("Laster inn fra " + path);
-            ArrayList<Klage> klager = new ArrayList<>(Arrays.asList(mapper.readValue(new FileReader(path), Klage.class)));
-
-            return klager;
-
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
-    public static ArrayList<Klage> lastInnKlagerV2(String localPath) {
+    public static ArrayList<Klage> hentKlager(String localPath) {
         try {
             final ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.findAndRegisterModules();
             String path = new File("").getAbsolutePath() + localPath;
-            ArrayList<Klage> klager = objectMapper.readValue(new File(path), new TypeReference<List<Klage>>(){});
-            return klager;
+            try {
+                ArrayList<Klage> klager = objectMapper.readValue(new File(path), new TypeReference<List<Klage>>(){});
+                return klager;
+            }
+            catch (JsonMappingException e) {
+                System.out.println("Klarte ikke å lese data fra JSON");
+            }
+            return new ArrayList<Klage>();
         }
         catch (Exception e) {
             e.printStackTrace();

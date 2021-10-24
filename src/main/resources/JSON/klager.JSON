@@ -1,23 +1,19 @@
-[
-  {
-    "id": 1,
-    "navn": "Ola Nordmann",
-    "melding": "Jeg hater dere",
-    "butikk": "Krakkel og spetakkel",
-    "tidspunkt": [ 2021, 10, 18, 9, 14, 7, 472650900 ]
-  },
-  {
-    "id": 2,
-    "navn": "Ola Nordmann II",
-    "melding": "Jeg hater dere også",
-    "butikk": "Krakkel og spetakkel",
-    "tidspunkt": [ 2021, 10, 18, 9, 15, 7, 472650900 ]
-  },
-  {
-    "id": 3,
-    "navn": "Ola Nordmann III",
-    "melding": "Jeg hater dere aller mest!",
-    "butikk": "Krakkel og spetakkel",
-    "tidspunkt": [ 2021, 10, 18, 9, 16, 7, 472650900 ]
-  }
-]
+[ {
+  "id" : 1,
+  "navn" : "Jørgen Bjørgen",
+  "melding" : "Skiene var så lange at de knakk i første sving! Dårlig ass, hadde fått mye bedre ski i nærmeste sportsbutikk!",
+  "butikk" : "Vinterutstyrsantikviteter",
+  "tidspunkt" : [ 2021, 10, 24, 18, 45, 24, 788442200 ]
+}, {
+  "id" : 1,
+  "navn" : "Kim Jong-un",
+  "melding" : "that stupid rocket didn't work. yes very bad i paid very many money for it. now my country's treasury is empty again. i demand a refund so that i can buy another rocket",
+  "butikk" : "Cold War Rockets Shop",
+  "tidspunkt" : [ 2021, 10, 24, 18, 49, 17, 900032600 ]
+}, {
+  "id" : 1,
+  "navn" : "Kim Jong-ill",
+  "melding" : "my son used our whole treasury on your stupid rockets. i never gave him permission to use my credit card i need a refund, daddy wanna build another statue of himself",
+  "butikk" : "Cold War Rockets Shop",
+  "tidspunkt" : [ 2021, 10, 24, 18, 55, 4, 651609400 ]
+} ]

@@ -23,7 +23,7 @@ public class homeController {
     }
 
     public void loginAdmin(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "../view/admin.fxml", "Admin Control", 600, 400);
+        openNewInterface(actionEvent, "../view/listWindow.fxml", "Admincontroller", 600, 400);
     }
 
     public void loginButikk(ActionEvent actionEvent) {
@@ -31,7 +31,7 @@ public class homeController {
     }
 
     public void loginBruker(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "../view/sluttbrukerView.fxml", "Bruker Control", 624, 648);
+        openNewInterface(actionEvent, "../view/brukerView.fxml", "Bruker Control", 624, 648);
     }
 
     /*

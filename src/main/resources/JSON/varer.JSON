@@ -1,0 +1,9 @@
+{
+  "id" : 3,
+  "navn" : "test2",
+  "beskrivelse" : "bla bla bla...",
+  "butikk" : "ikke helt beste butikken...",
+  "pris" : 1,
+  "tidspunkt" : [ 2021, 10, 24, 18, 4, 25, 904650900 ],
+  "bildeURL" : "aaa"
+}

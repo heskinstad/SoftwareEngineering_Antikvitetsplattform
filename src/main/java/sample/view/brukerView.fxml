@@ -18,6 +18,7 @@
                 <VBox prefHeight="94.0" prefWidth="600.0">
                     <children>
                   <Button fx:id="btnBackToLogin" mnemonicParsing="false" onAction="#backToLogin" text="back to login" />
+                  <Button mnemonicParsing="false" onAction="#aapneKlageSkjema" text="Ny klage" />
                         <TextArea focusTraversable="false" prefHeight="136.0" prefWidth="585.0" scaleShape="false" text="Vareutvalg&#10;&#10;">
                             <font>
                                 <Font name="System Italic" size="40.0" />
