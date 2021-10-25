@@ -14,27 +14,7 @@ import java.util.Arrays;
 import java.util.List;
 
 
-public class DataHandler {
-
-    public static Vare lastInnVare(String localPath) {
-        try {
-            // create object mapper instance
-            ObjectMapper mapper = new ObjectMapper();
-            mapper.findAndRegisterModules();
-
-            // convert JSON string to Vare object
-            //Vare vare = mapper.readValue(new File("/varer.JSON"), Vare.class);
-            String path = new File("").getAbsolutePath() + localPath;
-            System.out.println("Laster inn fra " + path);
-            Vare vare = mapper.readValue(new FileReader(path), Vare.class);
-
-            return vare;
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
+public class DataHandlerKlage {
 
     public static void leggInnVare(Vare vare, String localPath) {
         try {
