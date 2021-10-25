@@ -22,4 +22,12 @@
   "pris" : 1,
   "tidspunkt" : [ 2021, 10, 25, 9, 32, 46, 741856700 ],
   "bildeURL" : "aaa"
+}, {
+  "id" : 1,
+  "navn" : "bananbåt",
+  "beskrivelse" : "deilig banan fraktet med båt",
+  "butikk" : "arne & co",
+  "pris" : 23,
+  "tidspunkt" : [ 2021, 10, 25, 13, 23, 52, 470581200 ],
+  "bildeURL" : "aaaaaaaaaaa"
 } ]

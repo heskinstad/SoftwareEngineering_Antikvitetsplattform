@@ -1,49 +1,69 @@
 package sample.controller;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
-import javafx.stage.Stage;
+import sample.data.*;
+import sample.model.Vare;
 
-import java.io.IOException;
+import java.util.ArrayList;
+
 
 public class butikkController extends homeController {
 
     private boolean isEditDesc = false; // verdi for å sjekke om editMode på beskrivelse er aktivt
-
-    @FXML Text vare_tittel_0;
-    @FXML Text vare_tittel_1;
-    @FXML Text vare_tittel_2;
-    @FXML Text vare_tittel_3;
-    @FXML Text vare_beskrivelse_0;
-    @FXML Text vare_beskrivelse_1;
-    @FXML Text vare_beskrivelse_2;
-    @FXML Text vare_beskrivelse_3;
-    @FXML ImageView vare_url_0;
-    @FXML ImageView vare_url_1;
-    @FXML ImageView vare_url_2;
-    @FXML ImageView vare_url_3;
-
+    @FXML AnchorPane anchorPane;
 
     @FXML
-    public void initialize(ActionEvent actionEvent) {
-        refreshVarer();
+    public void initialize() {
+        Platform.runLater(new Runnable() {
+            public void run() {
+                Scene scene = anchorPane.getScene();
+                refreshVarer(scene);
+            }
+        });
     }
 
-    private void refreshVarer() {
+    private void refreshVarer(Scene scene) {
+        ArrayList<Vare> varer = new ArrayList<>(DataHandlerVare.hentVarer("/src/main/resources/JSON/varer.JSON"));
+        for (int i = 0; i < 4; i++) {
+            Text vareTittel = (Text) scene.lookup("#vare_tittel_" + i);
+            Text vareBeskrivelse = (Text) scene.lookup("#vare_beskrivelse_" + i);
+            ImageView vareURL = (ImageView) scene.lookup("#vare_url_" + i);
+
+            //sjekker om det er flere varer i varelista
+            if (i >= varer.size()) {
+                vareTittel.setText(null);
+                vareBeskrivelse.setText(null);
+                vareURL.setImage(null);
+                continue;
+            }
+
+            vareTittel.setText(varer.get(i).getNavn());
+            vareBeskrivelse.setText(varer.get(i).getBeskrivelse());
+            //TODO resolve image insert
+            //vareURL.setImage(varer.get(i).getBildeURL());
+        }
+    }
+
+    public void forrigeSide(ActionEvent actionEvent){
+        //TODO implement function
+    }
+    public void nesteSide(ActionEvent actionEvent){
+        //TODO implement function
     }
 
     public void editDesc(ActionEvent actionEvent){
 
-
+        //TODO save changes
         Scene scene = ((Node) actionEvent.getSource()).getScene();
         Button btnEditDesc = (Button) scene.lookup("#btnEditDesc");
         TextArea txtDesc = (TextArea) scene.lookup("#txtDesc");
@@ -64,7 +84,9 @@ public class butikkController extends homeController {
     }
 
     public void editSale(ActionEvent actionEvent) {
-        //TODO need model
+        //todo har bare legg til vare inntil videre
+
+        openNewInterface(actionEvent, "../view/addVareView.fxml", "legg til vare", 700, 500);
     }
 
     public void changeUser(ActionEvent actionEvent) {
