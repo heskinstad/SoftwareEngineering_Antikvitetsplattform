@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import javafx.collections.ObservableList;
+import sample.model.Butikk;
 import sample.model.Klage;
 import sample.model.Vare;
 
@@ -13,48 +14,44 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
+public class DataHandlerButikk {
 
-public class DataHandlerKlage {
-
-
-
-    public static void leggInnKlage(Klage klage, String localPath) {
+    public static void registrerButikk(Butikk butikk, String localPath){
         try {
+
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.findAndRegisterModules();
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
             String path = new File("").getAbsolutePath() + localPath;
 
-            //Henter gamle klager
-            ArrayList<Klage> klager = hentKlager(localPath);
+            ArrayList<Butikk> butikker = hentButikker(localPath);
 
-            //Legger ny klage etter de gamle klagene
-            klager.add(klage);
+            butikker.add(butikk);
 
-            objectMapper.writeValue(new File(path), klager);
-        }
-        catch (Exception e) {
+            objectMapper.writeValue(new File(path), butikker);
+
+        }catch (Exception e){
             e.printStackTrace();
         }
     }
-
-    public static ArrayList<Klage> hentKlager(String localPath) {
+    public static ArrayList<Butikk> hentButikker(String localPath){
         try {
+
             final ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.findAndRegisterModules();
             String path = new File("").getAbsolutePath() + localPath;
-            try {
-                ArrayList<Klage> klager = objectMapper.readValue(new File(path), new TypeReference<List<Klage>>(){});
-                return klager;
-            }
-            catch (JsonMappingException e) {
+            try{
+                ArrayList<Butikk> butikker = objectMapper.readValue(new File(path), new TypeReference<List<Butikk>>(){});
+                return butikker;
+
+            }catch (JsonMappingException e){
                 System.out.println("Klarte ikke å lese data fra JSON");
             }
-            return new ArrayList<Klage>();
-        }
-        catch (Exception e) {
+            return new ArrayList<Butikk>();
+        } catch (Exception e){
             e.printStackTrace();
         }
         return null;
     }
+
 }

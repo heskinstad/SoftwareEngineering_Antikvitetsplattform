@@ -19,10 +19,6 @@ public class Main extends Application {
         primaryStage.show();
     }
 
-    public void loginAdmin(ActionEvent actionEvent) {
-
-    }
-
     public static void main(String[] args) {
         launch(args);
     }
