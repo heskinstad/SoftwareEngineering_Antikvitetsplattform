@@ -1,8 +1,10 @@
 import org.junit.Test;
 import sample.data.DataHandlerKlage;
 import sample.data.DataHandlerVare;
+import sample.data.DataHandlerID_Counter;
 import sample.model.Klage;
 import sample.model.Vare;
+import sample.model.ID_Counter;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -44,5 +46,24 @@ public class Read_Write_JSON {
         assertEquals(klage.getMelding(), klage2.getMelding());
         assertEquals(klage.getButikk(), klage2.getButikk());
         assertEquals(klage.getTidspunkt(), klage2.getTidspunkt());
+    }
+
+    @Test
+    public void test_ID_Read_Write() throws FileNotFoundException {
+        PrintWriter writer = new PrintWriter(new File("").getAbsolutePath() + "/test/resources/testID.JSON");
+        writer.close();
+
+        ID_Counter IDer = DataHandlerID_Counter.hentIDer("/test/resources/testID.JSON");
+        IDer.oekBruker();
+        IDer.oekBruker();
+        IDer.oekAdmin();
+        DataHandlerID_Counter.skrivIDer(IDer, "/test/resources/testID.JSON");
+
+        ID_Counter IDer2 = DataHandlerID_Counter.hentIDer("/test/resources/testID.JSON");
+        assertEquals(IDer.getBruker(), IDer2.getBruker());
+        assertEquals(IDer.getButikk(), IDer2.getButikk());
+        assertEquals(IDer.getAdmin(), IDer2.getAdmin());
+        assertEquals(IDer.getVare(), IDer2.getVare());
+        assertEquals(IDer.getKlage(), IDer2.getKlage());
     }
 }
