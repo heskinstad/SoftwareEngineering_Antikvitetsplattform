@@ -1,6 +1,5 @@
 package sample.model;
 
-import java.net.URI;
 import java.time.LocalDateTime;
 
 public class Vare {
@@ -33,6 +32,7 @@ public class Vare {
         this.tidspunkt = tidspunkt;
         this.bildeURL = bildeURL;
     }
+
 
     //get-set-metoder
 

@@ -29,4 +29,8 @@ public class adminController extends homeController {
     public void openComplaints(ActionEvent actionEvent) {
         openNewInterface(actionEvent, "../view/listWindow.fxml", "Complaints", 600, 400);
     }
+
+    public void changeUser(ActionEvent actionEvent) {
+        openNewInterface(actionEvent, "../view/sample.fxml", "Antikvitetsplatform", 700, 500);
+    }
 }
