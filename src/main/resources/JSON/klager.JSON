@@ -22,4 +22,10 @@
   "melding" : "Jeg sa at jeg skulle laste ned appen hvis han lagde den ferdig uten bugs, men han har aldri gjort. Venter ennå på heismusikke HANS!!!",
   "butikk" : "Hans Eivind heis musikk",
   "tidspunkt" : [ 2021, 10, 25, 9, 23, 23, 533673900 ]
+}, {
+  "id" : 1,
+  "navn" : "Timmy",
+  "melding" : "not enough kek",
+  "butikk" : "kek AS",
+  "tidspunkt" : [ 2021, 10, 25, 9, 34, 24, 305372300 ]
 } ]

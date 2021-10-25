@@ -5,11 +5,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import sample.model.Klage;
-import sample.model.Vare;
-import sample.data.DataHandler;
-
-import java.time.LocalDateTime;
 
 public class brukerController extends homeController {
 
