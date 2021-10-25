@@ -42,13 +42,13 @@
                     <children>
                         <VBox prefHeight="242.0" prefWidth="195.0">
                             <children>
-                                <TextField fx:id="varenavn" prefHeight="90.0" prefWidth="184.0" text="Vare 1" />
+                                <TextField fx:id="varenavn1" prefHeight="90.0" prefWidth="184.0" text="Vare 1" />
                                 <ImageView fitHeight="110.0" fitWidth="195.0" pickOnBounds="true">
                                     <image>
                                         <Image fx:id="imageTest" url="@../Pictures/Forza%204/background.jpg" />
                                     </image>
                                 </ImageView>
-                                <TextArea fx:id="vareBeskrivelse" prefHeight="239.0" prefWidth="200.0" text="Beskrivelse...&#10;&#10;" />
+                                <TextArea fx:id="vareBeskrivelse1" prefHeight="239.0" prefWidth="200.0" text="Beskrivelse...&#10;&#10;" />
                                 <Button mnemonicParsing="false" onAction="#kjopVare1" prefHeight="30.0" prefWidth="200.0" text="Buy" />
                             </children>
                         </VBox>
@@ -61,13 +61,13 @@
                     <children>
                         <VBox prefHeight="242.0" prefWidth="205.0">
                             <children>
-                                <TextField prefHeight="90.0" prefWidth="184.0" text="Vare 2" />
+                                <TextField fx:id="varenavn2" prefHeight="90.0" prefWidth="184.0" text="Vare 2" />
                                 <ImageView fitHeight="110.0" fitWidth="195.0" pickOnBounds="true">
                                     <image>
                                         <Image url="@../Pictures/Forza%204/background.jpg" />
                                     </image>
                                 </ImageView>
-                                <TextArea prefHeight="243.0" prefWidth="200.0" text="Beskrivelse...&#10;&#10;" />
+                                <TextArea fx:id="vareBeskrivelse2" prefHeight="243.0" prefWidth="200.0" text="Beskrivelse...&#10;&#10;" />
                                 <Button mnemonicParsing="false" onAction="#kjopVare2" prefHeight="30.0" prefWidth="200.0" text="Buy" />
                             </children>
                         </VBox>
@@ -80,13 +80,13 @@
                     <children>
                         <VBox prefHeight="277.0" prefWidth="184.0">
                             <children>
-                                <TextField prefHeight="90.0" prefWidth="184.0" text="Vare 3" />
+                                <TextField fx:id="varenavn3" prefHeight="90.0" prefWidth="184.0" text="Vare 3" />
                                 <ImageView fitHeight="110.0" fitWidth="200.0" pickOnBounds="true">
                                     <image>
                                         <Image url="@../Pictures/Forza%204/background.jpg" />
                                     </image>
                                 </ImageView>
-                                <TextArea prefHeight="241.0" prefWidth="200.0" text="Beskrivelse...&#10;&#10;" />
+                                <TextArea fx:id="vareBeskrivelse3" prefHeight="241.0" prefWidth="200.0" text="Beskrivelse...&#10;&#10;" />
                                 <Button mnemonicParsing="false" onAction="#kjopVare3" prefHeight="30.0" prefWidth="200.0" text="Buy" />
                             </children>
                         </VBox>
