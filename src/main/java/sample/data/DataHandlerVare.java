@@ -16,39 +16,43 @@ import java.util.List;
 
 public class DataHandlerVare {
 
-    public static Vare lastInnVare(String localPath) {
+    public static void leggInnVare(Vare vare, String localPath) {
         try {
-            // create object mapper instance
-            ObjectMapper mapper = new ObjectMapper();
-            mapper.findAndRegisterModules();
-
-            // convert JSON string to Vare object
-            //Vare vare = mapper.readValue(new File("/varer.JSON"), Vare.class);
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.findAndRegisterModules();
+            objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
             String path = new File("").getAbsolutePath() + localPath;
-            System.out.println("Laster inn fra " + path);
-            Vare vare = mapper.readValue(new FileReader(path), Vare.class);
 
-            return vare;
+            //Henter gamle klager
+            ArrayList<Vare> varer = hentVarer(localPath);
+
+            //Legger ny klage etter de gamle klagene
+            varer.add(vare);
+
+            objectMapper.writeValue(new File(path), varer);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static ArrayList<Vare> hentVarer(String localPath) {
+        try {
+            final ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.findAndRegisterModules();
+            String path = new File("").getAbsolutePath() + localPath;
+            try {
+                ArrayList<Vare> varer = objectMapper.readValue(new File(path), new TypeReference<List<Vare>>(){});
+                return varer;
+            }
+            catch (JsonMappingException e) {
+                System.out.println("Klarte ikke å lese data fra JSON");
+            }
+            return new ArrayList<Vare>();
         }
         catch (Exception e) {
             e.printStackTrace();
         }
         return null;
     }
-
-    public static void leggInnVare(Vare vare, String localPath) {
-        try {
-            ObjectMapper mapper = new ObjectMapper();
-            mapper.findAndRegisterModules();
-            String path = new File("").getAbsolutePath() + localPath;
-            System.out.println("Skriver vare til " + path);
-            PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(path, true)));
-            mapper.writerWithDefaultPrettyPrinter().writeValue(out, vare);
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
-
 }
