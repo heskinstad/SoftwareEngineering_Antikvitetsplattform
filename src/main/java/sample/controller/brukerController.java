@@ -7,7 +7,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import sample.model.Klage;
 import sample.model.Vare;
-import sample.data.DataHandler;
+import sample.data.DataHandlerVare;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;

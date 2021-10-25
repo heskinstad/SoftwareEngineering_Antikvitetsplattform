@@ -16,9 +16,6 @@ import java.util.List;
 
 public class DataHandlerKlage {
 
-
-
-
     public static void leggInnKlage(Klage klage, String localPath) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
