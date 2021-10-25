@@ -1,9 +1,9 @@
-{
+[ {
   "id" : 0,
   "navn" : "testVare",
   "beskrivelse" : "testBeskrivelse",
   "butikk" : "testButikk",
   "pris" : 1001,
-  "tidspunkt" : [ 2012, 12, 21, 12, 12, 12, 0 ],
+  "tidspunkt" : [ 2012, 12, 21, 12, 12, 12 ],
   "bildeURL" : ""
-}
+} ]
