@@ -1,9 +1,25 @@
-{
-  "id" : 3,
-  "navn" : "test2",
+[ {
+  "id" : 1,
+  "navn" : "Eple",
   "beskrivelse" : "bla bla bla...",
   "butikk" : "ikke helt beste butikken...",
   "pris" : 1,
-  "tidspunkt" : [ 2021, 10, 24, 18, 4, 25, 904650900 ],
+  "tidspunkt" : [ 2021, 10, 25, 9, 32, 11, 423709000 ],
   "bildeURL" : "aaa"
-}
+}, {
+  "id" : 2,
+  "navn" : "Banan",
+  "beskrivelse" : "bla bla bla...",
+  "butikk" : "ikke helt beste butikken...",
+  "pris" : 1,
+  "tidspunkt" : [ 2021, 10, 25, 9, 32, 24, 964261800 ],
+  "bildeURL" : "aaa"
+}, {
+  "id" : 3,
+  "navn" : "Mango",
+  "beskrivelse" : "bla bla bla...",
+  "butikk" : "ikke helt beste butikken...",
+  "pris" : 1,
+  "tidspunkt" : [ 2021, 10, 25, 9, 32, 46, 741856700 ],
+  "bildeURL" : "aaa"
+} ]

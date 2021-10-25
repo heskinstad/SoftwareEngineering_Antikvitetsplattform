@@ -5,7 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import sample.data.DataHandler;
+import sample.data.DataHandlerKlage;
 import sample.model.Klage;
 
 import java.time.LocalDateTime;
@@ -31,7 +31,7 @@ public class klageController extends homeController {
         }
         else {
             Klage klage = new Klage(1, input_Navn.getText(), input_Melding.getText(), input_Butikk.getText(), LocalDateTime.now());
-            DataHandler.leggInnKlage(klage, "/src/main/resources/JSON/klager.JSON");
+            DataHandlerKlage.leggInnKlage(klage, "/src/main/resources/JSON/klager.JSON");
             Alert alert = new Alert(Alert.AlertType.WARNING, "Klage sendt");
             alert.showAndWait();
             avbryt(actionEvent);

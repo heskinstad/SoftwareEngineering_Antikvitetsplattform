@@ -6,7 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import sample.data.DataHandler;
+import sample.data.*;
 import sample.model.Klage;
 
 import java.time.LocalDateTime;
@@ -37,7 +37,7 @@ public class listWindowController extends homeController {
 
     private void refreshKlageListe() {
         ArrayList<Klage> klager = new ArrayList<Klage>();
-        klager.addAll(DataHandler.hentKlager("/src/main/resources/JSON/klager.JSON"));
+        klager.addAll(DataHandlerKlage.hentKlager("/src/main/resources/JSON/klager.JSON"));
         ObservableList<Klage> klagerObservable = FXCollections.observableArrayList(klager);
         table_Complaints.setItems(klagerObservable);
     }
