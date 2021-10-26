@@ -39,4 +39,26 @@ public class ID_Counter {
 
     public int getKlage() {return klage;}
     public void setKlage(int klage) {this.klage = klage;}
+
+    //Øke ID-metoder
+
+    public void oekBruker() {
+        bruker++;
+    }
+
+    public void oekButikk() {
+        butikk++;
+    }
+
+    public void oekAdmin() {
+        admin++;
+    }
+
+    public void oekVare() {
+        vare++;
+    }
+
+    public void oekKlage() {
+        klage++;
+    }
 }
