@@ -8,8 +8,6 @@ import javafx.scene.control.TextField;
 import sample.data.DataHandlerKlage;
 import sample.model.Klage;
 
-import java.time.LocalDateTime;
-
 public class klageController extends homeController {
 
     @FXML
@@ -30,8 +28,8 @@ public class klageController extends homeController {
             alert.show();
         }
         else {
-            Klage klage = new Klage(1, input_Navn.getText(), input_Melding.getText(), input_Butikk.getText(), LocalDateTime.now());
-            DataHandlerKlage.leggInnKlage(klage, "/src/main/resources/JSON/klager.JSON");
+            Klage klage = new Klage(input_Navn.getText(), input_Melding.getText(), input_Butikk.getText());
+            DataHandlerKlage.leggInnKlage(klage);
             Alert alert = new Alert(Alert.AlertType.WARNING, "Klage sendt");
             alert.showAndWait();
             avbryt(actionEvent);

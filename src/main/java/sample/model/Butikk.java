@@ -1,18 +1,23 @@
 package sample.model;
 
+import sample.data.DataHandlerID_Counter;
+
 import java.time.LocalDateTime;
 
 public class Butikk {
     int id;
     String navn, spesialitet, dagligLeder;
-    LocalDateTime tidRegistret;
+    LocalDateTime tidspunkt;
 
-    public Butikk(int id, String navn, String spesialitet, String dagligLeder, LocalDateTime tidRegistret) {
-        this.id = id;
+    public Butikk(String navn, String spesialitet, String dagligLeder) {
+
+        DataHandlerID_Counter.oekButikkID();
+
+        this.id = DataHandlerID_Counter.hentIDer().getButikk();
         this.navn = navn;
         this.spesialitet = spesialitet;
         this.dagligLeder = dagligLeder;
-        this.tidRegistret = tidRegistret;
+        this.tidspunkt = LocalDateTime.now();
     }
 
     public Butikk(){
@@ -22,7 +27,6 @@ public class Butikk {
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
@@ -30,7 +34,6 @@ public class Butikk {
     public String getNavn() {
         return navn;
     }
-
     public void setNavn(String navn) {
         this.navn = navn;
     }
@@ -38,7 +41,6 @@ public class Butikk {
     public String getSpesialitet() {
         return spesialitet;
     }
-
     public void setSpesialitet(String spesialitet) {
         this.spesialitet = spesialitet;
     }
@@ -46,16 +48,14 @@ public class Butikk {
     public String getDagligLeder() {
         return dagligLeder;
     }
-
     public void setDagligLeder(String dagligLeder) {
         this.dagligLeder = dagligLeder;
     }
 
-    public LocalDateTime getTidRegistret() {
-        return tidRegistret;
+    public LocalDateTime getTidspunkt() {
+        return tidspunkt;
     }
-
-    public void setTidRegistret(LocalDateTime tidRegistret) {
-        this.tidRegistret = tidRegistret;
+    public void setTidspunkt(LocalDateTime tidspunkt) {
+        this.tidspunkt = tidspunkt;
     }
 }

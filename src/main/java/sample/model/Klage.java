@@ -2,6 +2,8 @@ package sample.model;
 
 import java.time.LocalDateTime;
 
+import sample.data.DataHandlerID_Counter;
+
 public class Klage {
     int id;
     String navn, melding, butikk;
@@ -13,18 +15,19 @@ public class Klage {
 
     /**
      * Konstruktør med all data for en klage
-     * @param id unik id for hver klage
      * @param navn navn på bruker som har sendt inn klagen
      * @param melding klagemelding fra brukeren
      * @param butikk navn på butikken som brukeren har klaget på
-     * @param tidspunkt tidspunktet klagen ble sendt inn
      */
-    public Klage(int id, String navn, String melding, String butikk, LocalDateTime tidspunkt) {
-        this.id = id;
+    public Klage(String navn, String melding, String butikk) {
+
+        DataHandlerID_Counter.oekKlageID();
+
+        this.id = DataHandlerID_Counter.hentIDer().getKlage();
         this.navn = navn;
         this.melding = melding;
         this.butikk = butikk;
-        this.tidspunkt = tidspunkt;
+        this.tidspunkt = LocalDateTime.now();
     }
 
     //get-set-metoder

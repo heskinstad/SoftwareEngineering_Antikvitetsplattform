@@ -1,5 +1,7 @@
 package sample.model;
 
+import sample.data.DataHandlerID_Counter;
+
 import java.time.LocalDateTime;
 
 public class Vare {
@@ -15,21 +17,22 @@ public class Vare {
 
     /**
      * Konstruktør med all data for varen
-     * @param id unik id for hver vare
      * @param navn navnet på varen
      * @param beskrivelse beskrivelse av varen
      * @param butikk navnet på butikken som har lagt varen ut for salg
      * @param pris prisen på varen i NOK
-     * @param tidspunkt tidspunktet varen ble lagt ut
      * @param bildeURL pathen der bildet hentes fra
      */
-    public Vare(int id, String navn, String beskrivelse, String butikk, int pris, LocalDateTime tidspunkt, String bildeURL) {
-        this.id = id;
+    public Vare(String navn, String beskrivelse, String butikk, int pris, String bildeURL) {
+
+        DataHandlerID_Counter.oekVareID();
+
+        this.id = DataHandlerID_Counter.hentIDer().getVare();
         this.navn = navn;
         this.beskrivelse = beskrivelse;
         this.butikk = butikk;
         this.pris = pris;
-        this.tidspunkt = tidspunkt;
+        this.tidspunkt = LocalDateTime.now();
         this.bildeURL = bildeURL;
     }
 

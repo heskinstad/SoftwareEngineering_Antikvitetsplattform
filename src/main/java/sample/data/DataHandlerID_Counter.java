@@ -20,7 +20,7 @@ public class DataHandlerID_Counter {
                 return IDer;
             }
             catch (JsonMappingException e) {
-                System.out.println("Klarte ikke å lese data fra JSON");
+                System.out.println("Klarte ikke å lese data fra id-JSON");
             }
             return new ID_Counter(1, 1, 1, 1, 1);
         }
@@ -28,6 +28,9 @@ public class DataHandlerID_Counter {
             e.printStackTrace();
         }
         return null;
+    }
+    public static ID_Counter hentIDer() {
+        return hentIDer("/src/main/resources/JSON/id.JSON");
     }
 
     // MÅ ALDRI KJØRES UTEN AT ID'ER HAR BLITT LASTET INN FRA JSON TIDLIGERE!!
@@ -44,11 +47,17 @@ public class DataHandlerID_Counter {
             e.printStackTrace();
         }
     }
+    public static void skrivIDer(ID_Counter IDer) {
+        skrivIDer(IDer, "/src/main/resources/JSON/id.JSON");
+    }
 
     public static void oekBrukerID(String localPath) {
         ID_Counter IDer = hentIDer(localPath);
         IDer.oekBruker();
         skrivIDer(IDer ,localPath);
+    }
+    public static void oekBrukerID() {
+        oekBrukerID("/src/main/resources/JSON/id.JSON");
     }
 
     public static void oekButikkID(String localPath) {
@@ -56,11 +65,17 @@ public class DataHandlerID_Counter {
         IDer.oekButikk();
         skrivIDer(IDer ,localPath);
     }
+    public static void oekButikkID() {
+        oekButikkID("/src/main/resources/JSON/id.JSON");
+    }
 
     public static void oekAdminID(String localPath) {
         ID_Counter IDer = hentIDer(localPath);
         IDer.oekAdmin();
         skrivIDer(IDer ,localPath);
+    }
+    public static void oekAdminID() {
+        oekAdminID("/src/main/resources/JSON/id.JSON");
     }
 
     public static void oekVareID(String localPath) {
@@ -68,11 +83,17 @@ public class DataHandlerID_Counter {
         IDer.oekVare();
         skrivIDer(IDer ,localPath);
     }
+    public static void oekVareID() {
+        oekVareID("/src/main/resources/JSON/id.JSON");
+    }
 
     public static void oekKlageID(String localPath) {
         ID_Counter IDer = hentIDer(localPath);
         IDer.oekKlage();
         skrivIDer(IDer ,localPath);
+    }
+    public static void oekKlageID() {
+        oekKlageID("/src/main/resources/JSON/id.JSON");
     }
 
 }
