@@ -3,7 +3,6 @@ import sample.data.DataHandlerKlage;
 import sample.data.DataHandlerVare;
 import sample.model.Klage;
 import sample.model.Vare;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
