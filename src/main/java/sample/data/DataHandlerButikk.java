@@ -39,15 +39,16 @@ public class DataHandlerButikk {
             final ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.findAndRegisterModules();
             String path = new File("").getAbsolutePath() + localPath;
-            try{
+            try {
                 ArrayList<Butikk> butikker = objectMapper.readValue(new File(path), new TypeReference<List<Butikk>>(){});
                 return butikker;
-
-            }catch (JsonMappingException e){
-                System.out.println("Klarte ikke å lese data fra butikk JSON");
+            }
+            catch (JsonMappingException e) {
+                System.out.println("Klarte ikke å lese data fra JSON");
             }
             return new ArrayList<Butikk>();
-        } catch (Exception e){
+        }
+        catch (Exception e) {
             e.printStackTrace();
         }
         return null;

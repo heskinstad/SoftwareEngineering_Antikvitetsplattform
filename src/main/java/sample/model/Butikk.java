@@ -15,6 +15,10 @@ public class Butikk {
         this.tidRegistret = tidRegistret;
     }
 
+    public Butikk(){
+
+    }
+
     public int getId() {
         return id;
     }
