@@ -1,6 +1,8 @@
 import org.junit.Test;
+import sample.data.DataHandlerButikk;
 import sample.data.DataHandlerKlage;
 import sample.data.DataHandlerVare;
+import sample.model.Butikk;
 import sample.model.Klage;
 import sample.model.Vare;
 
@@ -45,4 +47,24 @@ public class Read_Write_JSON {
         assertEquals(klage.getButikk(), klage2.getButikk());
         assertEquals(klage.getTidspunkt(), klage2.getTidspunkt());
     }
+
+    @Test
+    public void sjekk_At_Butikk_Er_Registrert() throws FileNotFoundException{
+        PrintWriter writer = new PrintWriter(new File("").getAbsolutePath() + "/test/resources/testButikker.JSON");
+        writer.close();
+
+        Butikk butikk = new Butikk(0, "test butikk", "testing" , "Testeren selv", LocalDateTime.now());
+        DataHandlerButikk.registrerButikk(butikk,"/test/resources/testButikker.JSON");
+        Butikk butikk2 = DataHandlerButikk.hentButikker("/test/resources/testButikker.JSON").get(0);
+
+        assertEquals(butikk.getId(), butikk2.getId());
+        assertEquals(butikk.getNavn(), butikk2.getNavn());
+        assertEquals(butikk.getSpesialitet(), butikk2.getSpesialitet());
+        assertEquals(butikk.getDagligLeder(), butikk2.getDagligLeder());
+        assertEquals(butikk.getTidRegistret(), butikk2.getTidRegistret());
+
+
+    }
 }
+
+

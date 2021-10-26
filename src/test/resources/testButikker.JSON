@@ -1,0 +1,7 @@
+[ {
+  "id" : 0,
+  "navn" : "test butikk",
+  "spesialitet" : "testing",
+  "dagligLeder" : "Testeren selv",
+  "tidRegistret" : [ 2021, 10, 26, 18, 18, 38, 106760600 ]
+} ]
