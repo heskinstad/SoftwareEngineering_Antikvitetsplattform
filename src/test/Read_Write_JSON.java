@@ -49,7 +49,7 @@ public class Read_Write_JSON {
     }
 
     @Test
-    public void test_sjekk_At_Butikk_Er_Registrert() throws FileNotFoundException{
+    public void sjekk_At_Butikk_Er_Registrert() throws FileNotFoundException{
         PrintWriter writer = new PrintWriter(new File("").getAbsolutePath() + "/test/resources/testButikker.JSON");
         writer.close();
 
