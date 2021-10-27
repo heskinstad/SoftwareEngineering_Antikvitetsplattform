@@ -29,29 +29,36 @@ public class DataHandlerButikk {
             butikker.add(butikk);
 
             objectMapper.writeValue(new File(path), butikker);
-
-        }catch (Exception e){
+        }
+        catch (Exception e){
             e.printStackTrace();
         }
     }
+    public static void registrerButikk(Butikk butikk) {
+        registrerButikk(butikk, "/src/main/resources/JSON/butikker.JSON");
+    }
+
     public static ArrayList<Butikk> hentButikker(String localPath){
         try {
-
             final ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.findAndRegisterModules();
             String path = new File("").getAbsolutePath() + localPath;
-            try{
+            try {
                 ArrayList<Butikk> butikker = objectMapper.readValue(new File(path), new TypeReference<List<Butikk>>(){});
                 return butikker;
-
-            }catch (JsonMappingException e){
-                System.out.println("Klarte ikke å lese data fra JSON");
+            }
+            catch (JsonMappingException e){
+                System.out.println("Klarte ikke å lese data fra butikk-JSON");
             }
             return new ArrayList<Butikk>();
-        } catch (Exception e){
+        }
+        catch (Exception e){
             e.printStackTrace();
         }
         return null;
+    }
+    public static ArrayList<Butikk> hentButikker() {
+        return hentButikker("/src/main/resources/JSON/butikker.JSON");
     }
 
 }

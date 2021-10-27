@@ -34,7 +34,7 @@ public class butikkController extends homeController {
 
     private void refreshVarer(Scene scene, int side) {
 
-        ArrayList<Vare> varer = new ArrayList<>(DataHandlerVare.hentVarer("/src/main/resources/JSON/varer.JSON"));
+        ArrayList<Vare> varer = new ArrayList<>(DataHandlerVare.hentVarer());
         for (int i = 0; i < 4; i++) {
             int vareArrayStartIndex = getTrueVareArrayStartIndex(side);
 

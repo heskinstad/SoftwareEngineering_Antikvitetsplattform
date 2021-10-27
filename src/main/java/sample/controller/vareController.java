@@ -30,9 +30,9 @@ public class vareController extends homeController {
             alert.show();
         }
         else {
-            Vare vare = new Vare(1, input_navn.getText(), input_beskrivelse.getText(), input_butikk.getText(),
-                    Integer.parseInt(input_pris.getText()), LocalDateTime.now(), input_url.getText());
-            DataHandlerVare.leggInnVare(vare, "/src/main/resources/JSON/varer.JSON");
+            Vare vare = new Vare(input_navn.getText(), input_beskrivelse.getText(), input_butikk.getText(),
+                    Integer.parseInt(input_pris.getText()), input_url.getText());
+            DataHandlerVare.leggInnVare(vare);
             Alert alert = new Alert(Alert.AlertType.WARNING, "vare lagt til");
             alert.showAndWait();
             avbryt(actionEvent);

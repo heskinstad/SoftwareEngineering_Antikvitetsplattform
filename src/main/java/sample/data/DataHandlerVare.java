@@ -55,6 +55,9 @@ public class DataHandlerVare {
             e.printStackTrace();
         }
     }
+    public static void leggInnVare(Vare vare) {
+        leggInnVare(vare, "/src/main/resources/JSON/varer.JSON");
+    }
 
     public static ArrayList<Vare> hentVarer(String localPath) {
         try {
@@ -66,7 +69,7 @@ public class DataHandlerVare {
                 return varer;
             }
             catch (JsonMappingException e) {
-                System.out.println("Klarte ikke å lese data fra JSON");
+                System.out.println("Klarte ikke å lese data fra vare-JSON");
             }
             return new ArrayList<Vare>();
         }
@@ -74,6 +77,9 @@ public class DataHandlerVare {
             e.printStackTrace();
         }
         return null;
+    }
+    public static ArrayList<Vare> hentVarer() {
+        return hentVarer("/src/main/resources/JSON/varer.JSON");
     }
 
 

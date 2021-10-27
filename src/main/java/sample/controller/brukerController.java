@@ -10,8 +10,6 @@ import sample.data.DataHandlerVare;
 import sample.model.Klage;
 import sample.model.Vare;
 
-
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class brukerController extends homeController {
@@ -27,7 +25,7 @@ public class brukerController extends homeController {
 
     @FXML
     public void initialize() {
-        ArrayList<Vare> varer = DataHandlerVare.hentVarer("/src/main/resources/JSON/varer.JSON");
+        ArrayList<Vare> varer = DataHandlerVare.hentVarer();
 
         for (int i=0; i<3; i++) {
             varer.get(i).getId();

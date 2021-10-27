@@ -37,7 +37,7 @@ public class listWindowController extends homeController {
 
     private void refreshKlageListe() {
         ArrayList<Klage> klager = new ArrayList<Klage>();
-        klager.addAll(DataHandlerKlage.hentKlager("/src/main/resources/JSON/klager.JSON"));
+        klager.addAll(DataHandlerKlage.hentKlager());
         ObservableList<Klage> klagerObservable = FXCollections.observableArrayList(klager);
         table_Complaints.setItems(klagerObservable);
     }

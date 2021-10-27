@@ -35,6 +35,9 @@ public class DataHandlerKlage {
             e.printStackTrace();
         }
     }
+    public static void leggInnKlage(Klage klage) {
+        leggInnKlage(klage, "/src/main/resources/JSON/klager.JSON");
+    }
 
     public static ArrayList<Klage> hentKlager(String localPath) {
         try {
@@ -46,7 +49,7 @@ public class DataHandlerKlage {
                 return klager;
             }
             catch (JsonMappingException e) {
-                System.out.println("Klarte ikke å lese data fra JSON");
+                System.out.println("Klarte ikke å lese data fra klage-JSON");
             }
             return new ArrayList<Klage>();
         }
@@ -54,5 +57,8 @@ public class DataHandlerKlage {
             e.printStackTrace();
         }
         return null;
+    }
+    public static ArrayList<Klage> hentKlager() {
+        return hentKlager("/src/main/resources/JSON/klager.JSON");
     }
 }
