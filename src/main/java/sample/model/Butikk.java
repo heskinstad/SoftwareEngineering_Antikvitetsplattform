@@ -58,4 +58,9 @@ public class Butikk {
     public void setTidspunkt(LocalDateTime tidspunkt) {
         this.tidspunkt = tidspunkt;
     }
+
+    @Override
+    public String toString() {
+        return navn;
+    }
 }
