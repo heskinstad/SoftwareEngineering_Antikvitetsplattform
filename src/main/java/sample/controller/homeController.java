@@ -25,7 +25,7 @@ public class homeController {
     }
 
     public void loginButikk(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "../view/butikkView.fxml", "Butikk Control", 600, 400);
+        openNewInterface(actionEvent, "../view/butikkRegistrering.fxml", "Butikk Control", 600, 400);
     }
 
     public void loginBruker(ActionEvent actionEvent) {
