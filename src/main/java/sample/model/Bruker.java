@@ -9,6 +9,11 @@ public class Bruker {
     String fornavn, etternavn;
     LocalDateTime brukerOpprettet, sisteInnlogging;
 
+    /**
+     * Konstruktør for bruker. id er unik for alle brukere, og kombinasjonen navn + etternavn må også være unik (brukes til innlogging)
+     * @param fornavn fornavn på bruker
+     * @param etternavn etternavn på bruker
+     */
     public Bruker(String fornavn, String etternavn) {
 
         DataHandlerID_Counter.oekBrukerID();
@@ -17,7 +22,10 @@ public class Bruker {
         this.fornavn = fornavn;
         this.etternavn = etternavn;
         this.brukerOpprettet = LocalDateTime.now();
+        this.sisteInnlogging = LocalDateTime.now();
     }
+
+    //get-set-metoder
 
     public int getId() {return id;}
     public void setId(int id) {this.id = id;}
