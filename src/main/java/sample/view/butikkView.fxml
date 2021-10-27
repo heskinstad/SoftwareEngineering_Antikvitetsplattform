@@ -113,7 +113,7 @@
         </rowConstraints>
          <children>
             <Button id="btnEditDesc" mnemonicParsing="false" onAction="#editDesc" prefHeight="30.0" prefWidth="133.0" text="edit" GridPane.rowIndex="3" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="namn på butikk" textAlignment="CENTER" wrappingWidth="133.07421875" />
+            <Text fx:id="butikkNavn" strokeType="OUTSIDE" strokeWidth="0.0" text="namn på butikk" textAlignment="CENTER" wrappingWidth="133.07421875" />
             <ImageView fitHeight="97.0" fitWidth="132.0" pickOnBounds="true" GridPane.rowIndex="1">
                <image>
                   <Image url="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1200px-No-Image-Placeholder.svg.png" />

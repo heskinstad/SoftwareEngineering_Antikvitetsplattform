@@ -12,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
 import sample.data.*;
+import sample.model.Butikk;
 import sample.model.Vare;
 
 import java.util.ArrayList;
@@ -21,6 +22,8 @@ public class butikkController extends homeController {
 
     private boolean isEditDesc = false; // verdi for å sjekke om editMode på beskrivelse er aktivt
     @FXML AnchorPane anchorPane;
+    @FXML
+    public Text butikkNavn;
 
     @FXML
     public void initialize() {
@@ -30,6 +33,9 @@ public class butikkController extends homeController {
                 refreshVarer(scene, 1);
             }
         });
+        Butikk valgtButikk = DataHandlerButikk.getValgtButikk();
+
+        butikkNavn.setText(valgtButikk.toString());
     }
 
     private void refreshVarer(Scene scene, int side) {

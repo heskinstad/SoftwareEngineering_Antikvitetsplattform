@@ -16,6 +16,8 @@ import java.util.List;
 
 public class DataHandlerButikk {
 
+    static Butikk valgtButikk;
+
     public static void registrerButikk(Butikk butikk, String localPath){
         try {
 
@@ -59,6 +61,15 @@ public class DataHandlerButikk {
     }
     public static ArrayList<Butikk> hentButikker() {
         return hentButikker("/src/main/resources/JSON/butikker.JSON");
+    }
+
+    public static void setValgtButikk(Butikk butikkFraRegistrering){
+        valgtButikk = butikkFraRegistrering;
+
+    }
+
+    public static Butikk getValgtButikk(){
+        return valgtButikk;
     }
 
 }

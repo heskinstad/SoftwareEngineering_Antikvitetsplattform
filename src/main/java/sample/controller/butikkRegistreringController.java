@@ -45,6 +45,7 @@ public class butikkRegistreringController extends homeController {
             DataHandlerButikk.registrerButikk(butikk);
             Alert alert = new Alert(Alert.AlertType.WARNING, "Butikk er registrert");
             alert.showAndWait();
+            DataHandlerButikk.setValgtButikk(butikk);
             avbryt(actionEvent);
         }
     }
@@ -55,6 +56,7 @@ public class butikkRegistreringController extends homeController {
 
     public void trykkForLoggInn(ActionEvent actionEvent){
         Butikk valgtButikk = velgButikkSlide.getValue();
+        DataHandlerButikk.setValgtButikk(valgtButikk);
         avbryt(actionEvent);
     }
 
