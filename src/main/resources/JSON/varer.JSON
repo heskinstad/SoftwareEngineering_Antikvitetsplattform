@@ -1,25 +1,9 @@
 [ {
-  "id" : 1,
-  "navn" : "Eple",
-  "beskrivelse" : "bla bla bla...",
-  "butikk" : "ikke helt beste butikken...",
-  "pris" : 1,
-  "tidspunkt" : [ 2021, 10, 25, 9, 32, 11, 423709000 ],
+  "id" : "13ffee46-1daf-4800-a99e-f30536cf8d19",
+  "navn" : "eple",
+  "beskrivelse" : "varen er lang",
+  "butikk" : "vindu as",
+  "pris" : 69,
+  "tidspunkt" : [ 2021, 10, 27, 16, 47, 57, 794882300 ],
   "bildeURL" : "aaa"
-}, {
-  "id" : 2,
-  "navn" : "Banan",
-  "beskrivelse" : "bla bla bla...",
-  "butikk" : "ikke helt beste butikken...",
-  "pris" : 1,
-  "tidspunkt" : [ 2021, 10, 25, 9, 32, 24, 964261800 ],
-  "bildeURL" : "aaa"
-}, {
-  "id" : 3,
-  "navn" : "Mango",
-  "beskrivelse" : "bla bla bla...",
-  "butikk" : "ikke helt beste butikken...",
-  "pris" : 1,
-  "tidspunkt" : [ 2021, 10, 25, 9, 32, 46, 741856700 ],
-  "bildeURL" : "aaa"
-}]
+} ]
