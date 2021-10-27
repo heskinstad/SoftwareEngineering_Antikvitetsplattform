@@ -1,14 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.effect.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.paint.*?>
-<?import javafx.scene.text.*?>
-
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.listWindowController">
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.GaussianBlur?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.MotionBlur?>
+<?import javafx.scene.effect.Reflection?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.listWindowController">
    <children>
       <GridPane layoutX="14.0" layoutY="14.0" prefHeight="373.0" prefWidth="573.0">
         <columnConstraints>
@@ -34,10 +49,28 @@
                   <TableColumn prefWidth="75.0" text="Tidspunkt" />
               </columns>
             </TableView>
-            <TableView prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+            <TableView fx:id="table_shops" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
               <columns>
-                <TableColumn prefWidth="75.0" text="C1" />
-                <TableColumn prefWidth="75.0" text="C2" />
+                <TableColumn id="col_Butikk_Navn" prefWidth="75.0" text="Navn" >
+                   <cellValueFactory>
+                      <PropertyValueFactory property="navn" />
+                   </cellValueFactory>
+                </TableColumn>
+                <TableColumn id="col_Butikk_Spesialitet" prefWidth="75.0" text="Spesialitet" >
+                   <cellValueFactory>
+                      <PropertyValueFactory property="spesialitet" />
+                   </cellValueFactory>
+                </TableColumn>
+                <TableColumn id="col_Butikk_DagligLeder" prefWidth="75.0" text="Daglig leder" >
+                   <cellValueFactory>
+                      <PropertyValueFactory property="dagligLeder" />
+                   </cellValueFactory>
+                </TableColumn>
+                <TableColumn id="col_Butikk_Tidspunkt" prefWidth="75.0" text="Tid registrert" >
+                   <cellValueFactory>
+                      <PropertyValueFactory property="tidspunkt" />
+                   </cellValueFactory>
+                </TableColumn>
               </columns>
             </TableView>
             <Button id="btnChangeUser" mnemonicParsing="false" onAction="#changeUser" text="change user" GridPane.rowIndex="3" />
@@ -62,7 +95,7 @@
                   <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                </children>
             </GridPane>
-            <Button mnemonicParsing="false" onAction="#refresh" text="refresh" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#refresh" text="refresh all" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <GridPane GridPane.rowIndex="5">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -163,6 +196,9 @@
                            </color>
                         </DropShadow>
                      </effect>
+                     <cursor>
+                        <Cursor fx:constant="CLOSED_HAND" />
+                     </cursor>
                   </Text>
                   <Button mnemonicParsing="false" text="Button" GridPane.rowIndex="1">
                      <effect>
@@ -178,14 +214,20 @@
                               </Lighting>
                            </input>
                         </Glow>
-                     </effect></Button>
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="MOVE" />
+                     </cursor></Button>
                   <Button mnemonicParsing="false" text="Button" GridPane.rowIndex="2">
                      <effect>
                         <GaussianBlur radius="4.0" />
-                     </effect></Button>
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor></Button>
                   <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <cursor>
-                        <Cursor fx:constant="DEFAULT" />
+                        <Cursor fx:constant="WAIT" />
                      </cursor>
                      <effect>
                         <MotionBlur angle="124.28" radius="31.5" />
@@ -193,32 +235,35 @@
                   <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <effect>
                         <Reflection bottomOpacity="1.0" fraction="1.0" topOpacity="1.0" />
-                     </effect></Button>
+                     </effect>
+                     <cursor>
+                        <Cursor fx:constant="DISAPPEAR" />
+                     </cursor></Button>
                </children>
             </GridPane>
             <TableView fx:id="table_Complaints" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <columns>
-                  <TableColumn id="id" prefWidth="75.0" text="ID" >
+                  <TableColumn id="col_Klage_ID" prefWidth="75.0" text="ID">
                   <cellValueFactory>
                      <PropertyValueFactory property="id" />
                   </cellValueFactory>
                   </TableColumn>
-                  <TableColumn id="innsender" prefWidth="75.0" text="Innsender" >
+                  <TableColumn id="col_Klage_Innsender" prefWidth="75.0" text="Innsender">
                      <cellValueFactory>
                         <PropertyValueFactory property="navn" />
                      </cellValueFactory>
                   </TableColumn>
-                  <TableColumn id="melding" prefWidth="75.0" text="Melding" >
+                  <TableColumn id="col_Klage_Melding" prefWidth="75.0" text="Melding">
                      <cellValueFactory>
                         <PropertyValueFactory property="melding" />
                      </cellValueFactory>
                   </TableColumn>
-                  <TableColumn id="butikk" prefWidth="75.0" text="Butikk" >
+                  <TableColumn id="col_Klage_Butikk" prefWidth="75.0" text="Butikk">
                      <cellValueFactory>
                         <PropertyValueFactory property="butikk" />
                      </cellValueFactory>
                   </TableColumn>
-                  <TableColumn id="tidspunkt" prefWidth="75.0" text="Tidspunkt" >
+                  <TableColumn id="col_Klage_Tidspunkt" prefWidth="75.0" text="Tidspunkt">
                      <cellValueFactory>
                         <PropertyValueFactory property="tidspunkt" />
                      </cellValueFactory>

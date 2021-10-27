@@ -1,11 +1,8 @@
 package sample.model;
 
-import sample.data.DataHandlerID_Counter;
-
 import java.time.LocalDateTime;
 
 public class Butikk {
-    int id;
     String navn, spesialitet, dagligLeder;
     LocalDateTime tidspunkt;
 
@@ -17,9 +14,6 @@ public class Butikk {
      */
     public Butikk(String navn, String spesialitet, String dagligLeder) {
 
-        DataHandlerID_Counter.oekButikkID();
-
-        this.id = DataHandlerID_Counter.hentIDer().getButikk();
         this.navn = navn;
         this.spesialitet = spesialitet;
         this.dagligLeder = dagligLeder;
@@ -28,13 +22,6 @@ public class Butikk {
 
     public Butikk(){
 
-    }
-
-    public int getId() {
-        return id;
-    }
-    public void setId(int id) {
-        this.id = id;
     }
 
     public String getNavn() {

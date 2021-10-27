@@ -1,0 +1,6 @@
+[ {
+  "navn" : "test",
+  "spesialitet" : "testing",
+  "dagligLeder" : "test kompani",
+  "tidspunkt" : [ 2021, 10, 27, 15, 42, 46, 113225400 ]
+} ]

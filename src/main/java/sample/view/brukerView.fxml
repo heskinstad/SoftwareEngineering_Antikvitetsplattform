@@ -1,98 +1,68 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="648.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.brukerController">
+<BorderPane fx:id="borderPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="624.0" prefWidth="648.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.brukerController">
     <top>
         <VBox prefHeight="118.0" prefWidth="600.0" BorderPane.alignment="CENTER">
             <children>
                 <VBox prefHeight="94.0" prefWidth="600.0">
                     <children>
-                  <Button fx:id="btnBackToLogin" mnemonicParsing="false" onAction="#backToLogin" text="back to login" />
-                  <Button mnemonicParsing="false" onAction="#aapneKlageSkjema" text="Ny klage" />
-                        <TextArea focusTraversable="false" prefHeight="136.0" prefWidth="585.0" scaleShape="false" text="Vareutvalg&#10;&#10;">
-                            <font>
-                                <Font name="System Italic" size="40.0" />
-                            </font>
-                            <padding>
-                                <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-                            </padding>
-                        </TextArea>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Vareutvalg" textAlignment="CENTER" wrappingWidth="647.13671875">
+                     <font>
+                        <Font size="40.0" />
+                     </font>
+                  </Text>
                     </children>
                 </VBox>
             </children>
         </VBox>
     </top>
-    <center>
-        <HBox prefHeight="314.0" prefWidth="600.0" BorderPane.alignment="CENTER">
-            <children>
-                <HBox prefHeight="100.0" prefWidth="200.0">
-                    <HBox.margin>
-                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-                    </HBox.margin>
-                    <children>
-                        <VBox prefHeight="242.0" prefWidth="195.0">
-                            <children>
-                                <TextField fx:id="varenavn1" prefHeight="90.0" prefWidth="184.0" text="Vare 1" />
-                                <ImageView fitHeight="110.0" fitWidth="195.0" pickOnBounds="true">
-                                    <image>
-                                        <Image fx:id="imageTest" url="@../Pictures/Forza%204/background.jpg" />
-                                    </image>
-                                </ImageView>
-                                <TextArea fx:id="vareBeskrivelse1" prefHeight="239.0" prefWidth="200.0" text="Beskrivelse...&#10;&#10;" />
-                                <Button mnemonicParsing="false" onAction="#kjopVare1" prefHeight="30.0" prefWidth="200.0" text="Buy" />
-                            </children>
-                        </VBox>
-                    </children>
-                </HBox>
-                <HBox layoutX="10.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
-                    <HBox.margin>
-                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-                    </HBox.margin>
-                    <children>
-                        <VBox prefHeight="242.0" prefWidth="205.0">
-                            <children>
-                                <TextField fx:id="varenavn2" prefHeight="90.0" prefWidth="184.0" text="Vare 2" />
-                                <ImageView fitHeight="110.0" fitWidth="195.0" pickOnBounds="true">
-                                    <image>
-                                        <Image url="@../Pictures/Forza%204/background.jpg" />
-                                    </image>
-                                </ImageView>
-                                <TextArea fx:id="vareBeskrivelse2" prefHeight="243.0" prefWidth="200.0" text="Beskrivelse...&#10;&#10;" />
-                                <Button mnemonicParsing="false" onAction="#kjopVare2" prefHeight="30.0" prefWidth="200.0" text="Buy" />
-                            </children>
-                        </VBox>
-                    </children>
-                </HBox>
-                <HBox layoutX="210.0" layoutY="10.0" prefHeight="100.0" prefWidth="200.0">
-                    <HBox.margin>
-                        <Insets bottom="8.0" left="8.0" right="8.0" top="8.0" />
-                    </HBox.margin>
-                    <children>
-                        <VBox prefHeight="277.0" prefWidth="184.0">
-                            <children>
-                                <TextField fx:id="varenavn3" prefHeight="90.0" prefWidth="184.0" text="Vare 3" />
-                                <ImageView fitHeight="110.0" fitWidth="200.0" pickOnBounds="true">
-                                    <image>
-                                        <Image url="@../Pictures/Forza%204/background.jpg" />
-                                    </image>
-                                </ImageView>
-                                <TextArea fx:id="vareBeskrivelse3" prefHeight="241.0" prefWidth="200.0" text="Beskrivelse...&#10;&#10;" />
-                                <Button mnemonicParsing="false" onAction="#kjopVare3" prefHeight="30.0" prefWidth="200.0" text="Buy" />
-                            </children>
-                        </VBox>
-                    </children>
-                </HBox>
-            </children>
-        </HBox>
-    </center>
+   <center>
+      <AnchorPane prefHeight="461.0" prefWidth="648.0" BorderPane.alignment="CENTER">
+         <children>
+            <GridPane layoutY="99.0" prefHeight="282.0" prefWidth="648.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints maxHeight="140.0" minHeight="0.0" prefHeight="37.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="201.0" minHeight="0.0" prefHeight="87.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="198.0" minHeight="10.0" prefHeight="139.0" vgrow="SOMETIMES" />
+                  <RowConstraints maxHeight="184.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Text fx:id="vare_navn_0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vare1" wrappingWidth="74.474609375" />
+                  <Text fx:id="vare_navn_1" strokeType="OUTSIDE" strokeWidth="0.0" text="Vare 2" wrappingWidth="104.76171875" GridPane.columnIndex="1" />
+                  <Text fx:id="vare_navn_2" strokeType="OUTSIDE" strokeWidth="0.0" text="Vare 3" wrappingWidth="80.76171875" GridPane.columnIndex="2" />
+                  <Text fx:id="vare_Beskrivelse_0" strokeType="OUTSIDE" strokeWidth="0.0" text="Beskrivelse 1" wrappingWidth="161.341796875" GridPane.rowIndex="2" />
+                  <Text fx:id="vare_Beskrivelse_1" strokeType="OUTSIDE" strokeWidth="0.0" text="Beskrivelse 2" wrappingWidth="145.341796875" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="271.0" text="Button" GridPane.rowIndex="3" />
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="271.0" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="245.0" text="Button" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Text fx:id="vare_Beskrivelse_2" strokeType="OUTSIDE" strokeWidth="0.0" text="Beskrivelse 3" wrappingWidth="217.13671875" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <ImageView fitHeight="86.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
+                  <ImageView fitHeight="86.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ImageView fitHeight="86.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+               </children>
+            </GridPane>
+                  <Button layoutX="147.0" layoutY="444.0" mnemonicParsing="false" onAction="#forrigeSide" text="forrige side" />
+                  <Button layoutX="274.0" layoutY="444.0" mnemonicParsing="false" onAction="#nesteSide" text="neste side" />
+            <Button layoutX="7.0" layoutY="444.0" mnemonicParsing="false" onAction="#aapneKlageSkjema" text="Ny klage" />
+            <Button fx:id="btnBackToLogin" layoutX="413.0" layoutY="444.0" mnemonicParsing="false" onAction="#backToLogin" text="back to login" />
+                  <Text fx:id="sideTal" layoutX="238.0" layoutY="461.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
+         </children>
+      </AnchorPane>
+   </center>
 </BorderPane>
