@@ -22,4 +22,20 @@
   "pris" : 1,
   "tidspunkt" : [ 2021, 10, 25, 9, 32, 46, 741856700 ],
   "bildeURL" : "aaa"
+}, {
+  "id" : 1,
+  "navn" : "eplepudding",
+  "beskrivelse" : "pudding med eple",
+  "butikk" : "papas puddy",
+  "pris" : 3,
+  "tidspunkt" : [ 2021, 10, 27, 12, 50, 22, 594511100 ],
+  "bildeURL" : "aaaa"
+}, {
+  "id" : 1,
+  "navn" : "gras",
+  "beskrivelse" : "true gras",
+  "butikk" : "lawmowers co",
+  "pris" : 70,
+  "tidspunkt" : [ 2021, 10, 27, 12, 51, 3, 55536200 ],
+  "bildeURL" : "sdfsdf"
 } ]

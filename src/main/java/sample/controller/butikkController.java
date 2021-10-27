@@ -27,44 +27,74 @@ public class butikkController extends homeController {
         Platform.runLater(new Runnable() {
             public void run() {
                 Scene scene = anchorPane.getScene();
-                refreshVarer(scene);
+                refreshVarer(scene, 1);
             }
         });
     }
 
-    private void refreshVarer(Scene scene) {
+    private void refreshVarer(Scene scene, int side) {
+
         ArrayList<Vare> varer = new ArrayList<>(DataHandlerVare.hentVarer("/src/main/resources/JSON/varer.JSON"));
         for (int i = 0; i < 4; i++) {
+            int vareArrayStartIndex = getTrueVareArrayStartIndex(side);
+
             Text vareTittel = (Text) scene.lookup("#vare_tittel_" + i);
             Text vareBeskrivelse = (Text) scene.lookup("#vare_beskrivelse_" + i);
             ImageView vareURL = (ImageView) scene.lookup("#vare_url_" + i);
 
             //sjekker om det er flere varer i varelista
-            if (i >= varer.size()) {
+            if (vareArrayStartIndex + i >= varer.size()) {
+                if (i == 0) {
+                    Text sideTal = (Text) scene.lookup("#sideTal");
+                    sideTal.setText(Integer.toString(side - 1));
+                    refreshVarer(scene, side - 1);
+                    break;
+                }
                 vareTittel.setText(null);
                 vareBeskrivelse.setText(null);
                 vareURL.setImage(null);
                 continue;
             }
 
-            vareTittel.setText(varer.get(i).getNavn());
-            vareBeskrivelse.setText(varer.get(i).getBeskrivelse());
-            //TODO resolve image insert
-            //vareURL.setImage(varer.get(i).getBildeURL());
+            //inserts the data to the window
+            vareTittel.setText(varer.get(vareArrayStartIndex + i).getNavn());
+            vareBeskrivelse.setText(varer.get(vareArrayStartIndex + i).getBeskrivelse());
+            //TODO resolve image insert, first get real urls in the JSON
+            vareURL.setImage(null);
         }
     }
 
+    private int getTrueVareArrayStartIndex(int side){
+        return (side - 1) * 4;
+    }
+
     public void forrigeSide(ActionEvent actionEvent){
-        //TODO implement function
+        //knap for å vise dei 4 neste varene
+        Scene scene = anchorPane.getScene();
+        Text txtSide = (Text) scene.lookup("#sideTal");
+        int side = Integer.parseInt(txtSide.getText());
+
+        if(side > 1){
+            txtSide.setText(Integer.toString(side - 1));
+            refreshVarer(scene, side - 1);
+
+        }
     }
     public void nesteSide(ActionEvent actionEvent){
-        //TODO implement function
+        //knapp for å vise dei 4 forrige varene
+        Scene scene = anchorPane.getScene();
+        Text txtSide = (Text) scene.lookup("#sideTal");
+        int side = Integer.parseInt(txtSide.getText());
+
+        txtSide.setText(Integer.toString(side + 1));
+        refreshVarer(scene, side + 1);
+
     }
 
     public void editDesc(ActionEvent actionEvent){
 
         //TODO save changes
-        Scene scene = ((Node) actionEvent.getSource()).getScene();
+        Scene scene = anchorPane.getScene();
         Button btnEditDesc = (Button) scene.lookup("#btnEditDesc");
         TextArea txtDesc = (TextArea) scene.lookup("#txtDesc");
 
