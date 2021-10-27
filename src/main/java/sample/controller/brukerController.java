@@ -55,7 +55,7 @@ public class brukerController extends homeController {
 
             //sjekker om det er flere varer i varelista
             if (vareArrayStartIndex + i >= varer.size()) {
-                if (i == 0) {
+                if (i == 0 && side != 1) {
                     Text sideTal = (Text) scene.lookup("#sideTal");
                     sideTal.setText(Integer.toString(side - 1));
                     refreshVarer(scene, side - 1);

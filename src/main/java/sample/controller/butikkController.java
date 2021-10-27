@@ -42,8 +42,10 @@ public class butikkController extends homeController {
             Text vareBeskrivelse = (Text) scene.lookup("#vare_beskrivelse_" + i);
             ImageView vareURL = (ImageView) scene.lookup("#vare_url_" + i);
 
-            //sjekker om det er flere varer i varelista
+            //sjekker om det ikkje er flere varer i varelista
             if (vareArrayStartIndex + i >= varer.size()) {
+                // viss (i == 0) og vi IKKJE er på side 1 så går den tilbake til forrige side
+                // dette blir kunn gjort
                 if (i == 0 && side != 1) {
                     Text sideTal = (Text) scene.lookup("#sideTal");
                     sideTal.setText(Integer.toString(side - 1));
