@@ -30,6 +30,8 @@ public class vareController extends homeController {
             alert.show();
         }
         else {
+
+            //todo input_butik skal ikkje bli skreve inn av buttikk
             Vare vare = new Vare(input_navn.getText(), input_beskrivelse.getText(), input_butikk.getText(),
                     Integer.parseInt(input_pris.getText()), input_url.getText());
             DataHandlerVare.leggInnVare(vare);
