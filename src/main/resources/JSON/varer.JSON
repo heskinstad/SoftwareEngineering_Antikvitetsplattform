@@ -22,28 +22,4 @@
   "pris" : 1,
   "tidspunkt" : [ 2021, 10, 25, 9, 32, 46, 741856700 ],
   "bildeURL" : "aaa"
-}, {
-  "id" : 2,
-  "navn" : "123",
-  "beskrivelse" : "123",
-  "butikk" : "123",
-  "pris" : 123,
-  "tidspunkt" : [ 2021, 10, 26, 23, 36, 26, 715262500 ],
-  "bildeURL" : "123"
-}, {
-  "id" : 3,
-  "navn" : "1233",
-  "beskrivelse" : "1233",
-  "butikk" : "1233",
-  "pris" : 1233,
-  "tidspunkt" : [ 2021, 10, 26, 23, 36, 57, 875741500 ],
-  "bildeURL" : "1233"
-}, {
-  "id" : 4,
-  "navn" : "1234",
-  "beskrivelse" : "1234",
-  "butikk" : "1234",
-  "pris" : 1234,
-  "tidspunkt" : [ 2021, 10, 26, 23, 45, 25, 489635600 ],
-  "bildeURL" : "1234"
-} ]
+}]
