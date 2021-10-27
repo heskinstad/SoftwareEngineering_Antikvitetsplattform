@@ -1,11 +1,10 @@
 package sample.model;
 
-import sample.data.DataHandlerID_Counter;
-
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 public class Vare {
-    int id;
+    UUID id;
     String navn, beskrivelse, butikk;
     int pris;
     LocalDateTime tidspunkt;
@@ -25,9 +24,7 @@ public class Vare {
      */
     public Vare(String navn, String beskrivelse, String butikk, int pris, String bildeURL) {
 
-        DataHandlerID_Counter.oekVareID();
-
-        this.id = DataHandlerID_Counter.hentIDer().getVare();
+        this.id = UUID.randomUUID();
         this.navn = navn;
         this.beskrivelse = beskrivelse;
         this.butikk = butikk;
@@ -39,8 +36,8 @@ public class Vare {
 
     //get-set-metoder
 
-    public int getId() {return id;}
-    public void setId(int id) {this.id = id;}
+    public UUID getId() {return id;}
+    public void setId(UUID id) {this.id = id;}
 
     public String getNavn() {return navn;}
     public void setNavn(String navn) {this.navn = navn;}

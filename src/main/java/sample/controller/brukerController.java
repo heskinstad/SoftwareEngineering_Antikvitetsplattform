@@ -28,7 +28,7 @@ public class brukerController extends homeController {
         ArrayList<Vare> varer = DataHandlerVare.hentVarer();
 
         for (int i=0; i<3; i++) {
-            varer.get(i).getId();
+            varer.get(i).getId().toString();
             varenavn1.setText(varer.get(i).getNavn());
             varenavn2.setText(varer.get(i).getNavn());
             varenavn3.setText(varer.get(i).getNavn());
@@ -44,8 +44,8 @@ public class brukerController extends homeController {
 
 
 
-        //DataHandler.leggInnVare(new Vare(3, "Mango", "bla bla bla...", "ikke helt beste butikken...", 1, LocalDateTime.now(), "aaa"), "/src/main/resources/JSON/varer.JSON");
-        //DataHandler.leggInnKlage(new Klage(3, "Per", "Dette fungerte ikke", "Heiabutikken", LocalDateTime.now()), "/src/main/resources/JSON/klager.JSON");
+        //DataHandlerVare.leggInnVare(new Vare("Mango", "bla bla bla...", "ikke helt beste butikken...", 1, "aaa"));
+        //DataHandler.leggInnKlage(new Klage(3, "Per", "Dette fungerte ikke", "Heiabutikken", LocalDateTime.now()));
     }
 
     public void kjopVare1(ActionEvent actionEvent) {

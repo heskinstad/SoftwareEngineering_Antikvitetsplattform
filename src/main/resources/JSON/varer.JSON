@@ -1,49 +1,33 @@
 [ {
-  "id" : 1,
-  "navn" : "Eple",
-  "beskrivelse" : "bla bla bla...",
-  "butikk" : "ikke helt beste butikken...",
-  "pris" : 1,
-  "tidspunkt" : [ 2021, 10, 25, 9, 32, 11, 423709000 ],
-  "bildeURL" : "aaa"
-}, {
-  "id" : 2,
-  "navn" : "Banan",
-  "beskrivelse" : "bla bla bla...",
-  "butikk" : "ikke helt beste butikken...",
-  "pris" : 1,
-  "tidspunkt" : [ 2021, 10, 25, 9, 32, 24, 964261800 ],
-  "bildeURL" : "aaa"
-}, {
-  "id" : 3,
+  "id" : "cd2ec459-9f8f-4e62-bcf2-d0b677df83e7",
   "navn" : "Mango",
   "beskrivelse" : "bla bla bla...",
   "butikk" : "ikke helt beste butikken...",
   "pris" : 1,
-  "tidspunkt" : [ 2021, 10, 25, 9, 32, 46, 741856700 ],
+  "tidspunkt" : [ 2021, 10, 27, 15, 37, 4, 975354400 ],
   "bildeURL" : "aaa"
 }, {
-  "id" : 2,
-  "navn" : "123",
-  "beskrivelse" : "123",
-  "butikk" : "123",
-  "pris" : 123,
-  "tidspunkt" : [ 2021, 10, 26, 23, 36, 26, 715262500 ],
-  "bildeURL" : "123"
+  "id" : "f2466884-c84c-4ff0-9b68-921ad4a6d230",
+  "navn" : "Mango",
+  "beskrivelse" : "bla bla bla...",
+  "butikk" : "ikke helt beste butikken...",
+  "pris" : 1,
+  "tidspunkt" : [ 2021, 10, 27, 15, 37, 5, 107473900 ],
+  "bildeURL" : "aaa"
 }, {
-  "id" : 3,
-  "navn" : "1233",
-  "beskrivelse" : "1233",
-  "butikk" : "1233",
-  "pris" : 1233,
-  "tidspunkt" : [ 2021, 10, 26, 23, 36, 57, 875741500 ],
-  "bildeURL" : "1233"
+  "id" : "aebca48f-f24a-4c8a-99bf-2c9921f10cc6",
+  "navn" : "Mango",
+  "beskrivelse" : "bla bla bla...",
+  "butikk" : "ikke helt beste butikken...",
+  "pris" : 1,
+  "tidspunkt" : [ 2021, 10, 27, 15, 37, 5, 111478300 ],
+  "bildeURL" : "aaa"
 }, {
-  "id" : 4,
-  "navn" : "1234",
-  "beskrivelse" : "1234",
-  "butikk" : "1234",
-  "pris" : 1234,
-  "tidspunkt" : [ 2021, 10, 26, 23, 45, 25, 489635600 ],
-  "bildeURL" : "1234"
+  "id" : "8ad77317-7c56-47dc-9577-567ab9dbc7f2",
+  "navn" : "Mango",
+  "beskrivelse" : "bla bla bla...",
+  "butikk" : "ikke helt beste butikken...",
+  "pris" : 1,
+  "tidspunkt" : [ 2021, 10, 27, 15, 37, 5, 116482500 ],
+  "bildeURL" : "aaa"
 } ]
