@@ -9,6 +9,12 @@ public class Butikk {
     String navn, spesialitet, dagligLeder;
     LocalDateTime tidspunkt;
 
+    /**
+     * Konstruktør for butikk. Ingen butikker skal hete det samme
+     * @param navn
+     * @param spesialitet
+     * @param dagligLeder
+     */
     public Butikk(String navn, String spesialitet, String dagligLeder) {
 
         DataHandlerID_Counter.oekButikkID();
@@ -57,5 +63,10 @@ public class Butikk {
     }
     public void setTidspunkt(LocalDateTime tidspunkt) {
         this.tidspunkt = tidspunkt;
+    }
+
+    @Override
+    public String toString() {
+        return navn;
     }
 }

@@ -1,9 +1,13 @@
-[
-  {
-    "id" : 0,
-    "Navn" : "Hans Eivind Musikk",
-    "Spesialitet" : "Heis musikk",
-    "Daglig leder" : "Hans Eivind Skinstad",
-    "Tid registrert" : [ 2021, 10, 25, 9, 23, 23, 533673900 ]
-  }
-]
+[ {
+  "id" : 0,
+  "navn" : "Hans Eivind Musikk",
+  "spesialitet" : "Heis musikk",
+  "dagligLeder" : "Hans Eivind Skinstad",
+  "tidspunkt" : [ 2021, 10, 25, 9, 23, 23, 533673900 ]
+}, {
+  "id" : 2,
+  "navn" : "Gamer house",
+  "spesialitet" : "Gaming",
+  "dagligLeder" : "The big gamer",
+  "tidspunkt" : [ 2021, 10, 27, 15, 25, 39, 977857500 ]
+} ]
