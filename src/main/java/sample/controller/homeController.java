@@ -25,11 +25,11 @@ public class homeController {
     }
 
     public void loginButikk(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "../view/butikkRegistrering.fxml", "Butikk Control", 600, 400);
+        openNewInterface(actionEvent, "../view/butikkRegistrering.fxml", "Butikkregistrering", 600, 400);
     }
 
     public void loginBruker(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "../view/brukerView.fxml", "Bruker Control", 624, 648);
+        openNewInterface(actionEvent, "../view/brukerRegistrering.fxml", "Brukerregistrering", 624, 648);
     }
 
     /*

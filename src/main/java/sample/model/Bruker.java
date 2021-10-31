@@ -12,11 +12,14 @@ public class Bruker {
      * @param etternavn etternavn på bruker
      */
     public Bruker(String fornavn, String etternavn) {
-
         this.fornavn = fornavn;
         this.etternavn = etternavn;
         this.brukerOpprettet = LocalDateTime.now();
         this.sisteInnlogging = LocalDateTime.now();
+    }
+
+    public Bruker() {
+
     }
 
     //get-set-metoder

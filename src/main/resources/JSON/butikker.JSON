@@ -8,4 +8,9 @@
   "spesialitet" : "1234",
   "dagligLeder" : "1324",
   "tidspunkt" : [ 2021, 10, 27, 15, 43, 6, 738833200 ]
+}, {
+  "navn" : "123",
+  "spesialitet" : "123",
+  "dagligLeder" : "123",
+  "tidspunkt" : [ 2021, 10, 27, 16, 23, 47, 896669600 ]
 } ]
