@@ -2,6 +2,7 @@ import org.junit.Test;
 import sample.data.DataHandlerButikk;
 import sample.data.DataHandlerKlage;
 import sample.data.DataHandlerVare;
+import sample.data.DataHandlerVaretoButikk;
 import sample.model.Butikk;
 import sample.model.Klage;
 import sample.model.Vare;
@@ -9,6 +10,7 @@ import sample.model.Vare;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
 
@@ -58,6 +60,27 @@ public class Read_Write_JSON {
         assertEquals(butikk.getSpesialitet(), butikk2.getSpesialitet());
         assertEquals(butikk.getDagligLeder(), butikk2.getDagligLeder());
         assertEquals(butikk.getTidspunkt(), butikk2.getTidspunkt());
+
+    }
+
+    @Test
+    public void test_Butikk_Holder_Vare() throws FileNotFoundException{
+        PrintWriter writer = new PrintWriter(new File("").getAbsolutePath() + "/test/resources/testButikker.JSON");
+        PrintWriter writer2 = new PrintWriter(new File("").getAbsolutePath() + "/test/resources/testVarer.JSON");
+        writer.close();
+        writer2.close();
+
+        Butikk butikk = new Butikk("test", "testing","test kompani", "Denne butikken er kun en test");
+        DataHandlerButikk.registrerButikk(butikk, "/test/resources/testButikker.JSON");
+
+        Vare vare = new Vare("testVare", "testBeskrivelse", "test", 1001, "");
+        DataHandlerVare.leggInnVare(vare, "/test/resources/testVarer.JSON");
+
+        DataHandlerVaretoButikk.setVarerIButikk(butikk, "/test/resources/testVarer.JSON");
+        ArrayList<Vare> vareListe = DataHandlerVaretoButikk.getVarerIButikk();
+        Vare testVare = vareListe.get(0);
+        assertEquals(testVare.getButikk(), butikk.getNavn());
+        assertEquals(testVare.getNavn(), vare.getNavn());
 
     }
 }
