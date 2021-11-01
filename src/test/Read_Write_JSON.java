@@ -13,6 +13,7 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
 
 public class Read_Write_JSON {
 
@@ -46,6 +47,9 @@ public class Read_Write_JSON {
         assertEquals(klage.getMelding(), klage2.getMelding());
         assertEquals(klage.getButikk(), klage2.getButikk());
         assertEquals(klage.getTidspunkt(), klage2.getTidspunkt());
+
+        DataHandlerKlage.slettKlage(klage, "/test/resources/testKlager.JSON");
+        assertTrue(DataHandlerKlage.hentKlager("/test/resources/testKlager.JSON").isEmpty());
     }
 
     @Test
@@ -60,6 +64,8 @@ public class Read_Write_JSON {
         assertEquals(butikk.getSpesialitet(), butikk2.getSpesialitet());
         assertEquals(butikk.getDagligLeder(), butikk2.getDagligLeder());
         assertEquals(butikk.getTidspunkt(), butikk2.getTidspunkt());
+
+
 
     }
 
@@ -83,4 +89,6 @@ public class Read_Write_JSON {
         assertEquals(testVare.getNavn(), vare.getNavn());
 
     }
+
+
 }
