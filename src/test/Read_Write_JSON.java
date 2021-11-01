@@ -2,7 +2,6 @@ import org.junit.Test;
 import sample.data.DataHandlerButikk;
 import sample.data.DataHandlerKlage;
 import sample.data.DataHandlerVare;
-import sample.data.DataHandlerVaretoButikk;
 import sample.model.Butikk;
 import sample.model.Klage;
 import sample.model.Vare;
@@ -76,8 +75,8 @@ public class Read_Write_JSON {
         Vare vare = new Vare("testVare", "testBeskrivelse", "test", 1001, "");
         DataHandlerVare.leggInnVare(vare, "/test/resources/testVarer.JSON");
 
-        DataHandlerVaretoButikk.setVarerIButikk(butikk, "/test/resources/testVarer.JSON");
-        ArrayList<Vare> vareListe = DataHandlerVaretoButikk.getVarerIButikk();
+        butikk.setVarerIButikk("/test/resources/testVarer.JSON");
+        ArrayList<Vare> vareListe = butikk.getVareListe();
         Vare testVare = vareListe.get(0);
         assertEquals(testVare.getButikk(), butikk.getNavn());
         assertEquals(testVare.getNavn(), vare.getNavn());

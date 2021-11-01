@@ -46,9 +46,7 @@ public class butikkController extends homeController {
         butikkNavn.setText(valgtButikk.toString());
         beskrivelseText.setText(valgtButikk.getBeskrivelse());
 
-        DataHandlerVaretoButikk.setVarerIButikk(valgtButikk);
-
-        ArrayList<Vare> varerIButikk = DataHandlerVaretoButikk.getVarerIButikk();
+        ArrayList<Vare> varerIButikk = valgtButikk.getVareListe();
 
         vare_tittel_0.setText(varerIButikk.get(0).getNavn());
         vare_beskrivelse_0.setText(varerIButikk.get(0).getBeskrivelse());
