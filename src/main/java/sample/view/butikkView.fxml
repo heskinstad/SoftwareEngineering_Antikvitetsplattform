@@ -119,7 +119,7 @@
                   <Image url="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/No-Image-Placeholder.svg/1200px-No-Image-Placeholder.svg.png" />
                </image>
             </ImageView>
-            <TextArea id="txtDesc" editable="false" prefHeight="200.0" prefWidth="200.0" text="this is text this is more text" wrapText="true" GridPane.rowIndex="2" />
+            <TextArea id="txtDesc" fx:id="beskrivelseText" editable="false" prefHeight="200.0" prefWidth="200.0" text="this is text this is more text" wrapText="true" GridPane.rowIndex="2" />
          </children>
       </GridPane>
       <GridPane layoutX="131.0" layoutY="25.0" prefHeight="48.0" prefWidth="470.0">

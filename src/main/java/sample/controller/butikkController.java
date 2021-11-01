@@ -24,6 +24,14 @@ public class butikkController extends homeController {
     @FXML AnchorPane anchorPane;
     @FXML
     public Text butikkNavn;
+    @FXML
+    public TextArea beskrivelseText;
+    @FXML
+    public Text vare_tittel_0;
+    @FXML
+    public Text vare_beskrivelse_0;
+
+    public Butikk valgtButikk;
 
     @FXML
     public void initialize() {
@@ -33,9 +41,17 @@ public class butikkController extends homeController {
                 refreshVarer(scene, 1);
             }
         });
-        Butikk valgtButikk = DataHandlerButikk.getValgtButikk();
+        valgtButikk = DataHandlerButikk.getValgtButikk();
 
         butikkNavn.setText(valgtButikk.toString());
+        beskrivelseText.setText(valgtButikk.getBeskrivelse());
+
+        DataHandlerVaretoButikk.setVarerIButikk(valgtButikk);
+
+        ArrayList<Vare> varerIButikk = DataHandlerVaretoButikk.getVarerIButikk();
+
+        vare_tittel_0.setText(varerIButikk.get(0).getNavn());
+        vare_beskrivelse_0.setText(varerIButikk.get(0).getBeskrivelse());
     }
 
     private void refreshVarer(Scene scene, int side) {
@@ -123,6 +139,7 @@ public class butikkController extends homeController {
 
     public void editSale(ActionEvent actionEvent) {
         //todo har bare legg til vare inntil videre
+
 
         openNewInterface(actionEvent, "../view/addVareView.fxml", "legg til vare", 700, 500);
     }

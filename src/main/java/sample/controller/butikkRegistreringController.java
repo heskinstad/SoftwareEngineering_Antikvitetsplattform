@@ -4,10 +4,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import sample.data.DataHandlerButikk;
 import sample.model.Butikk;
 
@@ -21,6 +18,8 @@ public class butikkRegistreringController extends homeController {
     public TextField butikkSpesialtiet;
     @FXML
     public TextField butikkLeder;
+    @FXML
+    public TextArea beskrivelseText;
     @FXML
     public Button registrerButikk;
     @FXML
@@ -41,7 +40,7 @@ public class butikkRegistreringController extends homeController {
             alert.show();
         }
         else{
-            Butikk butikk = new Butikk(butikkNavn.getText(), butikkSpesialtiet.getText(), butikkLeder.getText());
+            Butikk butikk = new Butikk(butikkNavn.getText(), butikkSpesialtiet.getText(), butikkLeder.getText(), beskrivelseText.getText());
             DataHandlerButikk.registrerButikk(butikk);
             Alert alert = new Alert(Alert.AlertType.WARNING, "Butikk er registrert");
             alert.showAndWait();

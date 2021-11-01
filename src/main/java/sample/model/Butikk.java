@@ -3,7 +3,7 @@ package sample.model;
 import java.time.LocalDateTime;
 
 public class Butikk {
-    String navn, spesialitet, dagligLeder;
+    String navn, spesialitet, dagligLeder, beskrivelse;
     LocalDateTime tidspunkt;
 
     /**
@@ -11,13 +11,15 @@ public class Butikk {
      * @param navn
      * @param spesialitet
      * @param dagligLeder
+     * @param beskrivelse
      */
-    public Butikk(String navn, String spesialitet, String dagligLeder) {
+    public Butikk(String navn, String spesialitet, String dagligLederm, String beskrivelse) {
 
         this.navn = navn;
         this.spesialitet = spesialitet;
         this.dagligLeder = dagligLeder;
         this.tidspunkt = LocalDateTime.now();
+        this.beskrivelse = beskrivelse;
     }
 
     public Butikk(){
@@ -55,5 +57,13 @@ public class Butikk {
     @Override
     public String toString() {
         return navn;
+    }
+
+    public String getBeskrivelse() {
+        return beskrivelse;
+    }
+
+    public void setBeskrivelse(String beskrivelse) {
+        this.beskrivelse = beskrivelse;
     }
 }

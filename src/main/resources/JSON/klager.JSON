@@ -5,4 +5,22 @@
   "butikk" : "123",
   "slettValgteKlage" : null,
   "tidspunkt" : [ 2021, 10, 27, 15, 42, 55, 756857900 ]
+}, {
+  "id" : "ca45bc1f-4f9b-4bc1-b33d-5feccb65bd27",
+  "navn" : "123 123",
+  "melding" : "AAAAAAAAAAAAAAA",
+  "butikk" : "1234",
+  "tidspunkt" : [ 2021, 11, 1, 10, 32, 30, 237138700 ]
+}, {
+  "id" : "28ec6edd-1190-486f-9f97-4fb6ab09ca59",
+  "navn" : "123 123",
+  "melding" : "another AAAAAAAAAAA",
+  "butikk" : "1234",
+  "tidspunkt" : [ 2021, 11, 1, 10, 33, 58, 414192200 ]
+}, {
+  "id" : "21964b3a-7d30-4d62-8cc8-17ccb8e54c7e",
+  "navn" : "Barack Obama",
+  "melding" : "Yes we can (complain)!",
+  "butikk" : "123",
+  "tidspunkt" : [ 2021, 11, 1, 10, 37, 8, 381116800 ]
 } ]

@@ -1,18 +1,13 @@
 package sample.controller;
 
 import javafx.application.Platform;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
-import sample.data.DataHandlerKlage;
 import sample.data.DataHandlerVare;
-import sample.model.Klage;
 import sample.model.Vare;
 
 import java.time.LocalDateTime;
@@ -28,7 +23,6 @@ public class brukerController extends homeController {
     @FXML public TextArea vareBeskrivelse2;
     @FXML public TextArea vareBeskrivelse3;
     @FXML BorderPane borderPane;
-
 
     @FXML
     public void initialize() {

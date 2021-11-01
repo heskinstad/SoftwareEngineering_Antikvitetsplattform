@@ -1,6 +1,7 @@
 [ {
   "navn" : "test",
   "spesialitet" : "testing",
-  "dagligLeder" : "test kompani",
-  "tidspunkt" : [ 2021, 10, 27, 16, 23, 20, 479734900 ]
+  "dagligLeder" : null,
+  "beskrivelse" : "Denne butikken er kun en test",
+  "tidspunkt" : [ 2021, 11, 1, 10, 49, 7, 702914200 ]
 } ]
