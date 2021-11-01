@@ -1,7 +1,8 @@
 [ {
   "navn" : "test",
   "spesialitet" : "testing",
-  "dagligLeder" : null,
+  "dagligLeder" : "test kompani",
   "beskrivelse" : "Denne butikken er kun en test",
-  "tidspunkt" : [ 2021, 11, 1, 10, 49, 7, 702914200 ]
+  "tidspunkt" : [ 2021, 11, 1, 11, 19, 39, 866128900 ],
+  "vareListe" : [ ]
 } ]

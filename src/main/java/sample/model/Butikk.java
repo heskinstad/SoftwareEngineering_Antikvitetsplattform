@@ -1,10 +1,14 @@
 package sample.model;
 
+import sample.data.DataHandlerVare;
+
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 public class Butikk {
     String navn, spesialitet, dagligLeder, beskrivelse;
     LocalDateTime tidspunkt;
+    ArrayList<Vare> vareListe;
 
     /**
      * Konstruktør for butikk. Ingen butikker skal hete det samme
@@ -12,14 +16,16 @@ public class Butikk {
      * @param spesialitet
      * @param dagligLeder
      * @param beskrivelse
+     * @param vareListe
      */
-    public Butikk(String navn, String spesialitet, String dagligLederm, String beskrivelse) {
+    public Butikk(String navn, String spesialitet, String dagligLeder, String beskrivelse) {
 
         this.navn = navn;
         this.spesialitet = spesialitet;
         this.dagligLeder = dagligLeder;
         this.tidspunkt = LocalDateTime.now();
         this.beskrivelse = beskrivelse;
+        this.vareListe = new ArrayList<Vare>();
     }
 
     public Butikk(){
@@ -65,5 +71,21 @@ public class Butikk {
 
     public void setBeskrivelse(String beskrivelse) {
         this.beskrivelse = beskrivelse;
+    }
+
+    public ArrayList<Vare> getVareListe() {
+        return vareListe;
+    }
+
+    public void setVarerIButikk(){
+        setVarerIButikk("/src/main/resources/JSON/varer.JSON");
+    }
+
+    public void setVarerIButikk(String path){
+        for(Vare vare : DataHandlerVare.hentVarer(path)){
+            if(vare.getButikk().equals(this.getNavn())){
+                vareListe.add(vare);
+            }
+        }
     }
 }
