@@ -5,13 +5,16 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import javafx.collections.ObservableList;
+import sample.model.Bruker;
 import sample.model.Klage;
 import sample.model.Vare;
 
 import java.io.*;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 
 public class DataHandlerKlage {
@@ -58,7 +61,39 @@ public class DataHandlerKlage {
         }
         return null;
     }
+
     public static ArrayList<Klage> hentKlager() {
         return hentKlager("/src/main/resources/JSON/klager.JSON");
+    }
+
+
+    public static void slettKlage(Klage klager, String localPath) {
+        String klagerId = klager.getId().toString();
+
+        ArrayList<Klage> aKlager = hentKlager();
+        int i;
+        for (i = 0; i < aKlager.size() ; i++) {
+            if (aKlager.get(i).getId().toString().equals(klagerId)) {
+                break;
+            }
+        }
+        if (i < aKlager.size()) {
+            aKlager.remove(i);
+        }
+
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.findAndRegisterModules();
+            objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
+            String path = new File("").getAbsolutePath() + localPath;
+
+            objectMapper.writeValue(new File(path), aKlager);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public static void slettKlage(Klage klage) {
+        slettKlage(klage, "/src/main/resources/JSON/klager.JSON");
     }
 }

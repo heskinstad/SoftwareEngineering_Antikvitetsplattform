@@ -25,6 +25,8 @@ public class brukerRegistreringController extends homeController {
 
     //TODO: fikse at brukeren man logger inn/registrerer blir satt som nåværende bruker i neste interface
 
+
+
     public void registrerNyBruker(ActionEvent actionEvent) {
         String fornavn = registrerFornavn.getText();
         String etternavn = registrerEtternavn.getText();

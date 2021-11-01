@@ -12,6 +12,7 @@ import sample.model.Bruker;
 import sample.model.Butikk;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class homeController {
 

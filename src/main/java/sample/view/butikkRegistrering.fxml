@@ -29,6 +29,7 @@
          </font>
       </Text>
       <Button fx:id="butikkLoggInn" layoutX="14.0" layoutY="336.0" mnemonicParsing="false" onAction="#trykkForLoggInn" text="Logg inn" />
+      <Button fx:id="tilbakeTilLoggInn" layoutX="75.0" layoutY="336.0" mnemonicParsing="false" onAction="#trykkForLoggUt" text="Forside" />
       <TextArea fx:id="beskrivelseText" layoutX="409.0" layoutY="185.0" prefHeight="129.0" prefWidth="149.0" />
    </children>
 </AnchorPane>

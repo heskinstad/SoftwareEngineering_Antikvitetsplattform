@@ -10,6 +10,7 @@ import javafx.scene.text.Text;
 import sample.data.DataHandlerVare;
 import sample.model.Vare;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class brukerController extends homeController {
@@ -32,7 +33,7 @@ public class brukerController extends homeController {
             }
         });
 
-        //DataHandler.leggInnVare(new Vare(3, "Mango", "bla bla bla...", "ikke helt beste butikken...", 1, LocalDateTime.now(), "aaa"), "/src/main/resources/JSON/varer.JSON");
+        //DataHandlerVare.leggInnVare(new Vare("Saft", "Ille god", "Hei btuikken", 300, "aaa"), "/src/main/resources/JSON/varer.JSON");
         //DataHandler.leggInnKlage(new Klage(3, "Per", "Dette fungerte ikke", "Heiabutikken", LocalDateTime.now()), "/src/main/resources/JSON/klager.JSON");
     }
 

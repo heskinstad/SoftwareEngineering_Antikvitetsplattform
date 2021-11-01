@@ -9,7 +9,7 @@ import javafx.scene.control.TableView;
 import sample.data.*;
 import sample.model.Butikk;
 import sample.model.Klage;
-
+import sample.data.DataHandlerKlage;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.UUID;
@@ -56,6 +56,12 @@ public class listWindowController extends homeController {
         butikker.addAll(DataHandlerButikk.hentButikker());
         ObservableList<Butikk> butikkerObservable = FXCollections.observableArrayList(butikker);
         table_shops.setItems(butikkerObservable);
+    }
+
+    public void deleteSelectedRow(ActionEvent actionEvent) {
+        DataHandlerKlage.slettKlage(table_Complaints.getSelectionModel().getSelectedItem());
+        table_Complaints.getItems().removeAll(table_Complaints.getSelectionModel().getSelectedItem());
+
     }
 
 }

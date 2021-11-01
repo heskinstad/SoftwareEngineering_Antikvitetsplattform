@@ -59,4 +59,8 @@ public class butikkRegistreringController extends homeController {
         avbryt(actionEvent);
     }
 
+    public void trykkForLoggUt(ActionEvent actionEvent){
+        openNewInterface(actionEvent, "../view/sample.fxml", "Complaints", 600, 400);
+    }
+
 }
