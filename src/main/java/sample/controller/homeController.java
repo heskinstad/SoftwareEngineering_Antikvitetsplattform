@@ -8,16 +8,23 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import sample.model.Bruker;
+import sample.model.Butikk;
 
 import java.io.IOException;
 
 public class homeController {
+
+    static Bruker bruker;
+    static Butikk butikk;
 
     @FXML
     public Button btnLoginAdmin;
 
     @FXML
     public void initialize() {
+        bruker = null;
+        butikk = null;
     }
 
     public void loginAdmin(ActionEvent actionEvent) {

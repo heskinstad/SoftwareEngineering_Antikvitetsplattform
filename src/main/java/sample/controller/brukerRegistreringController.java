@@ -28,7 +28,12 @@ public class brukerRegistreringController extends homeController {
     public void registrerNyBruker(ActionEvent actionEvent) {
         String fornavn = registrerFornavn.getText();
         String etternavn = registrerEtternavn.getText();
-        Bruker bruker = new Bruker(fornavn, etternavn);
+        if (Objects.equals(fornavn, "") || Objects.equals(etternavn, "")) {
+            Alert alert = new Alert(Alert.AlertType.WARNING, "Et eller flere felter er tomme!");
+            alert.showAndWait();
+            return;
+        }
+        bruker = new Bruker(fornavn, etternavn);
         ArrayList<Bruker> brukere = DataHandlerBruker.hentBrukere();
         if (!brukere.isEmpty()) {
             for (int i = 0; i < brukere.size(); i++) {
@@ -46,8 +51,14 @@ public class brukerRegistreringController extends homeController {
     public void loggInnBruker(ActionEvent actionEvent) {
         String fornavn = loggInnFornavn.getText();
         String etternavn = loggInnEtternavn.getText();
-        Bruker bruker = new Bruker(fornavn, etternavn);
+        if (Objects.equals(fornavn, "") || Objects.equals(etternavn, "")) {
+            Alert alert = new Alert(Alert.AlertType.WARNING, "Et eller flere felter er tomme!");
+            alert.showAndWait();
+            return;
+        }
+        bruker = new Bruker(fornavn, etternavn);
         ArrayList<Bruker> brukere = DataHandlerBruker.hentBrukere();
+
         for (int i = 0; i < brukere.size(); i++) {
             if (Objects.equals(brukere.get(i).getFornavn(), fornavn) && Objects.equals(brukere.get(i).getEtternavn(), etternavn)) {
                 oppdaterSisteInnlogging(bruker);
