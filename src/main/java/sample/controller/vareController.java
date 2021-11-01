@@ -17,24 +17,28 @@ public class vareController extends homeController {
     @FXML
     public TextField input_navn;
     @FXML
-    public TextField input_butikk;
-    @FXML
     public TextField input_pris;
     @FXML
     public TextField input_url;
 
+    @FXML
+    public void initialize(){
+
+    }
+
     public void addVare(ActionEvent actionEvent) {
         if (input_beskrivelse.getText().equals("") || input_navn.getText().equals("")
-            || input_butikk.getText().equals("") || input_pris.getText().equals("") || input_url.getText().equals("")) {
+            || input_pris.getText().equals("") || input_url.getText().equals("")) {
             Alert alert = new Alert(Alert.AlertType.WARNING, "Ett eller flere felter er tomme");
             alert.show();
         }
         else {
 
             //todo input_butik skal ikkje bli skreve inn av buttikk
-            Vare vare = new Vare(input_navn.getText(), input_beskrivelse.getText(), input_butikk.getText(),
+            Vare vare = new Vare(input_navn.getText(), input_beskrivelse.getText(), butikk.getNavn(),
                     Integer.parseInt(input_pris.getText()), input_url.getText());
             DataHandlerVare.leggInnVare(vare);
+            butikk.getVareListe().add(vare);
             Alert alert = new Alert(Alert.AlertType.WARNING, "vare lagt til");
             alert.showAndWait();
             avbryt(actionEvent);

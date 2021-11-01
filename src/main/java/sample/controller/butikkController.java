@@ -26,10 +26,6 @@ public class butikkController extends homeController {
     public Text butikkNavn;
     @FXML
     public TextArea beskrivelseText;
-    @FXML
-    public Text vare_tittel_0;
-    @FXML
-    public Text vare_beskrivelse_0;
 
     public Butikk valgtButikk;
 
@@ -47,10 +43,6 @@ public class butikkController extends homeController {
         beskrivelseText.setText(valgtButikk.getBeskrivelse());
 
         valgtButikk.setVarerIButikk();
-        ArrayList<Vare> varerIButikk = valgtButikk.getVareListe();
-
-        vare_tittel_0.setText(varerIButikk.get(0).getNavn());
-        vare_beskrivelse_0.setText(varerIButikk.get(0).getBeskrivelse());
     }
 
     private void refreshVarer(Scene scene, int side) {
@@ -80,10 +72,12 @@ public class butikkController extends homeController {
             }
 
             //inserts the data to the window
-            vareTittel.setText(varer.get(vareArrayStartIndex + i).getNavn());
-            vareBeskrivelse.setText(varer.get(vareArrayStartIndex + i).getBeskrivelse());
-            //TODO resolve image insert, first get real urls in the JSON
-            vareURL.setImage(null);
+            if(varer.get(vareArrayStartIndex + i).getButikk().equals(butikk.getNavn())) {
+                vareTittel.setText(varer.get(vareArrayStartIndex + i).getNavn());
+                vareBeskrivelse.setText(varer.get(vareArrayStartIndex + i).getBeskrivelse());
+                //TODO resolve image insert, first get real urls in the JSON
+                vareURL.setImage(null);
+            }
         }
     }
 
@@ -138,8 +132,6 @@ public class butikkController extends homeController {
 
     public void editSale(ActionEvent actionEvent) {
         //todo har bare legg til vare inntil videre
-
-
         openNewInterface(actionEvent, "../view/addVareView.fxml", "legg til vare", 700, 500);
     }
 

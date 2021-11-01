@@ -36,14 +36,12 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                     </rowConstraints>
                     <children>
-                        <TextField fx:id="input_butikk" GridPane.columnIndex="1" GridPane.rowIndex="1" GridPane.valignment="TOP" />
                         <TextField fx:id="input_navn" GridPane.columnIndex="1" GridPane.valignment="TOP" />
-                        <Label text="butikk" GridPane.rowIndex="1" GridPane.valignment="TOP" />
                         <Label text="navn på varen" GridPane.valignment="TOP" />
-                  <Label text="pris" GridPane.rowIndex="2" />
-                  <Label text="bilde(url)" GridPane.rowIndex="3" />
-                  <TextField fx:id="input_pris" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <TextField fx:id="input_url" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <Label text="pris" GridPane.rowIndex="1" />
+                  <Label text="bilde(url)" GridPane.rowIndex="2" />
+                  <TextField fx:id="input_pris" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <TextField fx:id="input_url" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                     </children>
                 </GridPane>
                 <Label prefHeight="17.0" prefWidth="199.0" text="beskrivelse" textAlignment="CENTER" GridPane.columnIndex="1" />
