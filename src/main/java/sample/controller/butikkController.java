@@ -24,6 +24,8 @@ public class butikkController extends homeController {
     @FXML AnchorPane anchorPane;
     @FXML
     public Text butikkNavn;
+    @FXML
+    public TextArea beskrivelseText;
 
     @FXML
     public void initialize() {
@@ -36,6 +38,7 @@ public class butikkController extends homeController {
         Butikk valgtButikk = DataHandlerButikk.getValgtButikk();
 
         butikkNavn.setText(valgtButikk.toString());
+        beskrivelseText.setText(valgtButikk.getBeskrivelse());
     }
 
     private void refreshVarer(Scene scene, int side) {

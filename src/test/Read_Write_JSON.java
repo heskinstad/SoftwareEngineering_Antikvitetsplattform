@@ -51,7 +51,7 @@ public class Read_Write_JSON {
         PrintWriter writer = new PrintWriter(new File("").getAbsolutePath() + "/test/resources/testButikker.JSON");
         writer.close();
 
-        Butikk butikk = new Butikk("test", "testing","test kompani");
+        Butikk butikk = new Butikk("test", "testing","test kompani", "Denne butikken er kun en test");
         DataHandlerButikk.registrerButikk(butikk, "/test/resources/testButikker.JSON");
         Butikk butikk2 = DataHandlerButikk.hentButikker("/test/resources/testButikker.JSON").get(0);
         assertEquals(butikk.getNavn(), butikk2.getNavn());

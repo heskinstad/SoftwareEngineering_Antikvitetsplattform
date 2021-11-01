@@ -2,7 +2,8 @@
   "navn" : "123",
   "spesialitet" : "123",
   "dagligLeder" : "132",
-  "tidspunkt" : [ 2021, 10, 27, 15, 43, 6, 738833200 ]
+  "tidspunkt" : [ 2021, 10, 27, 15, 43, 6, 738833200 ],
+  "beskrivelse" : "En To Tre"
 }, {
   "navn" : "1234",
   "spesialitet" : "1234",
