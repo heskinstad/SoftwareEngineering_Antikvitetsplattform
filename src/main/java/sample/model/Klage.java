@@ -5,7 +5,7 @@ import java.util.UUID;
 
 public class Klage {
     UUID id;
-    String navn, melding, butikk, slettValgteKlage;
+    String navn, melding, butikk;
     LocalDateTime tidspunkt;
 
     public Klage() {
@@ -25,7 +25,7 @@ public class Klage {
         this.melding = melding;
         this.butikk = butikk;
         this.tidspunkt = LocalDateTime.now();
-        this.slettValgteKlage = slettValgteKlage;
+
     }
 
     //get-set-metoder
@@ -45,10 +45,4 @@ public class Klage {
     public LocalDateTime getTidspunkt() {return tidspunkt;}
     public void setTidspunkt(LocalDateTime tidspunkt) {this.tidspunkt = tidspunkt;}
 
-    public String getSlettValgteKlage() {
-        return slettValgteKlage;
-    }
-    public void setSlettValgteKlage(String slettValgteKlage) {
-        this.slettValgteKlage = slettValgteKlage;
-    }
 }

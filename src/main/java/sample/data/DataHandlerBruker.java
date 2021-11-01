@@ -63,7 +63,7 @@ public class DataHandlerBruker {
     public static void oppdaterSisteInnlogging(Bruker bruker, String localPath) {
         String fornavn = bruker.getFornavn();
         String etternavn = bruker.getEtternavn();
-        ArrayList<Bruker> brukere = DataHandlerBruker.hentBrukere();
+        ArrayList<Bruker> brukere = DataHandlerBruker.hentBrukere(localPath);
         int i;
         for (i = 0; i < brukere.size() ; i++) {
             if (Objects.equals(brukere.get(i).getFornavn(), fornavn) && Objects.equals(brukere.get(i).getEtternavn(), etternavn)) {

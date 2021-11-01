@@ -70,7 +70,7 @@ public class DataHandlerKlage {
     public static void slettKlage(Klage klager, String localPath) {
         String klagerId = klager.getId().toString();
 
-        ArrayList<Klage> aKlager = hentKlager();
+        ArrayList<Klage> aKlager = hentKlager(localPath);
         int i;
         for (i = 0; i < aKlager.size() ; i++) {
             if (aKlager.get(i).getId().toString().equals(klagerId)) {

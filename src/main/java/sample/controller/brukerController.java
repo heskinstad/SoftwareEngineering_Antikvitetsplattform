@@ -7,7 +7,9 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
+import sample.data.DataHandlerKlage;
 import sample.data.DataHandlerVare;
+import sample.model.Klage;
 import sample.model.Vare;
 
 import java.time.LocalDateTime;
@@ -34,7 +36,7 @@ public class brukerController extends homeController {
         });
 
         //DataHandlerVare.leggInnVare(new Vare("Saft", "Ille god", "Hei btuikken", 300, "aaa"), "/src/main/resources/JSON/varer.JSON");
-        //DataHandler.leggInnKlage(new Klage(3, "Per", "Dette fungerte ikke", "Heiabutikken", LocalDateTime.now()), "/src/main/resources/JSON/klager.JSON");
+        //DataHandlerKlage.leggInnKlage(new Klage(3, "Per", "Dette fungerte ikke", "Heiabutikken", LocalDateTime.now()), "/src/main/resources/JSON/klager.JSON");
     }
 
 
