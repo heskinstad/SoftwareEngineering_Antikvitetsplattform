@@ -8,8 +8,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
+import sample.data.DataHandlerBruker;
+import sample.model.Bruker;
 
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class homeController {
 
@@ -48,4 +51,6 @@ public class homeController {
             e.printStackTrace();
         }
     }
+    public void hentBrukere() {}
+        ArrayList<Bruker> brukere = DataHandlerBruker.hentBrukere();
 }

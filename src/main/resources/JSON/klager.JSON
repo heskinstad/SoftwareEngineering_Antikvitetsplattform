@@ -1,13 +1,8 @@
 [ {
-  "id" : "4a9a1df1-3895-44ae-9864-f2cae032eb75",
-  "navn" : "13",
-  "melding" : "13",
-  "butikk" : "13",
-  "tidspunkt" : [ 2021, 10, 27, 15, 37, 57, 211014300 ]
-}, {
   "id" : "ebce7e8f-c65b-480c-a2be-0c57b392bc2b",
   "navn" : "123",
   "melding" : "123",
   "butikk" : "123",
+  "slettValgteKlage" : null,
   "tidspunkt" : [ 2021, 10, 27, 15, 42, 55, 756857900 ]
 } ]

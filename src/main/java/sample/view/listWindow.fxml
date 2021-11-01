@@ -112,7 +112,7 @@
                         <Font size="20.0" />
                      </font>
                   </Text>
-                  <Button mnemonicParsing="false" text="Button" GridPane.rowIndex="1" />
+                  <Button fx:id="sletteKlage" onAction="#deleteSelectedRow" mnemonicParsing="false" text="Slette klage" GridPane.rowIndex="1" />
                   <Button mnemonicParsing="false" text="Button" GridPane.rowIndex="2" />
                   <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="2" />
@@ -208,9 +208,6 @@
                                  <bumpInput>
                                     <Shadow />
                                  </bumpInput>
-                                 <light>
-                                    <Light.Distant />
-                                 </light>
                               </Lighting>
                            </input>
                         </Glow>
