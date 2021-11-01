@@ -1,9 +1,9 @@
 [ {
-  "id" : "95b59cdb-0301-4936-98d0-018b210575a3",
+  "id" : "96701b88-3ba6-4560-88c6-082b79f795ed",
   "navn" : "testVare",
   "beskrivelse" : "testBeskrivelse",
   "butikk" : "test",
   "pris" : 1001,
-  "tidspunkt" : [ 2021, 11, 1, 11, 19, 40, 47655900 ],
+  "tidspunkt" : [ 2021, 11, 1, 12, 8, 47, 646713900 ],
   "bildeURL" : ""
 } ]

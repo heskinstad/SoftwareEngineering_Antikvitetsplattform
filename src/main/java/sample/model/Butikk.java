@@ -29,7 +29,7 @@ public class Butikk {
     }
 
     public Butikk(){
-
+        this.vareListe = new ArrayList<>();
     }
 
     public String getNavn() {

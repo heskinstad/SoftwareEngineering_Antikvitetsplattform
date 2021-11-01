@@ -63,13 +63,4 @@ public class DataHandlerButikk {
         return hentButikker("/src/main/resources/JSON/butikker.JSON");
     }
 
-    public static void setValgtButikk(Butikk butikkFraRegistrering){
-        valgtButikk = butikkFraRegistrering;
-
-    }
-
-    public static Butikk getValgtButikk(){
-        return valgtButikk;
-    }
-
 }

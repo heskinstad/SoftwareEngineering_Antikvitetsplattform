@@ -41,11 +41,12 @@ public class butikkController extends homeController {
                 refreshVarer(scene, 1);
             }
         });
-        valgtButikk = DataHandlerButikk.getValgtButikk();
+        valgtButikk = butikk;
 
         butikkNavn.setText(valgtButikk.toString());
         beskrivelseText.setText(valgtButikk.getBeskrivelse());
 
+        valgtButikk.setVarerIButikk();
         ArrayList<Vare> varerIButikk = valgtButikk.getVareListe();
 
         vare_tittel_0.setText(varerIButikk.get(0).getNavn());

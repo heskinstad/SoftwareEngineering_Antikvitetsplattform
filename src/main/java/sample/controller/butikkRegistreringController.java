@@ -40,11 +40,11 @@ public class butikkRegistreringController extends homeController {
             alert.show();
         }
         else{
-            Butikk butikk = new Butikk(butikkNavn.getText(), butikkSpesialtiet.getText(), butikkLeder.getText(), beskrivelseText.getText());
-            DataHandlerButikk.registrerButikk(butikk);
+            Butikk newButikk = new Butikk(butikkNavn.getText(), butikkSpesialtiet.getText(), butikkLeder.getText(), beskrivelseText.getText());
+            DataHandlerButikk.registrerButikk(newButikk);
             Alert alert = new Alert(Alert.AlertType.WARNING, "Butikk er registrert");
             alert.showAndWait();
-            DataHandlerButikk.setValgtButikk(butikk);
+            butikk = newButikk;
             avbryt(actionEvent);
         }
     }
@@ -55,7 +55,7 @@ public class butikkRegistreringController extends homeController {
 
     public void trykkForLoggInn(ActionEvent actionEvent){
         Butikk valgtButikk = velgButikkSlide.getValue();
-        DataHandlerButikk.setValgtButikk(valgtButikk);
+        butikk = valgtButikk;
         avbryt(actionEvent);
     }
 
