@@ -5,15 +5,9 @@
   "butikk" : "1234",
   "tidspunkt" : [ 2021, 11, 1, 10, 33, 58, 414192200 ]
 }, {
-    "id" : "OOOOOOOOO",
-    "navn" : "sadadada",
-    "melding" : "another AAAAAAAAAAA",
-    "butikk" : "1234",
-    "tidspunkt" : [ 2021, 11, 1, 10, 33, 58, 414192200 ]
-}, {
-    "id" : "ppppppppppppppppppp",
-    "navn" : "231 321",
-    "melding" : "another AAAAAAAAAAA",
-    "butikk" : "1234",
-    "tidspunkt" : [ 2021, 11, 1, 10, 33, 58, 414192200 ]
-  }]
+  "id" : "21964b3a-7d30-4d62-8cc8-17ccb8e54c7e",
+  "navn" : "Barack Obama",
+  "melding" : "Yes we can (complain)!",
+  "butikk" : "123",
+  "tidspunkt" : [ 2021, 11, 1, 10, 37, 8, 381116800 ]
+} ]
