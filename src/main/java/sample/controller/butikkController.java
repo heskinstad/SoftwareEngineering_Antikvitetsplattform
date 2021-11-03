@@ -77,6 +77,10 @@ public class butikkController extends homeController {
                 vareBeskrivelse.setText(varer.get(vareArrayStartIndex + i).getBeskrivelse());
                 //TODO resolve image insert, first get real urls in the JSON
                 vareURL.setImage(null);
+            } else{
+                vareTittel.setText(null);
+                vareBeskrivelse.setText(null);
+                vareURL.setImage(null);
             }
         }
     }

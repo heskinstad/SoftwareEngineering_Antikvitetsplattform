@@ -1,14 +1,18 @@
 package sample.controller;
 
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
+import sample.data.DataHandlerButikk;
 import sample.data.DataHandlerKlage;
 import sample.data.DataHandlerVare;
+import sample.model.Butikk;
 import sample.model.Klage;
 import sample.model.Vare;
 
@@ -25,6 +29,10 @@ public class brukerController extends homeController {
     @FXML public TextArea vareBeskrivelse2;
     @FXML public TextArea vareBeskrivelse3;
     @FXML BorderPane borderPane;
+    @FXML
+    public ChoiceBox<Butikk> ButikkValgBox;
+
+    public Butikk valgtButikk;
 
     @FXML
     public void initialize() {
@@ -34,6 +42,10 @@ public class brukerController extends homeController {
                 refreshVarer(scene, 1);
             }
         });
+
+        ArrayList<Butikk> butikkListe = DataHandlerButikk.hentButikker();
+        ObservableList<Butikk> observableButikkListe = FXCollections.observableArrayList(butikkListe);
+        ButikkValgBox.setItems(observableButikkListe);
 
         //DataHandlerVare.leggInnVare(new Vare("Saft", "Ille god", "Hei btuikken", 300, "aaa"), "/src/main/resources/JSON/varer.JSON");
         //DataHandlerKlage.leggInnKlage(new Klage(3, "Per", "Dette fungerte ikke", "Heiabutikken", LocalDateTime.now()), "/src/main/resources/JSON/klager.JSON");
@@ -64,9 +76,14 @@ public class brukerController extends homeController {
             }
 
             //inserts the data to the window
-            vareTittel.setText(varer.get(vareArrayStartIndex + i).getNavn());
-            vareBeskrivelse.setText(varer.get(vareArrayStartIndex + i).getBeskrivelse());
-            //TODO resolve image insert, first get real urls in the JSON
+            if(varer.get(i).getButikk().equals(valgtButikk.getNavn())) {
+                vareTittel.setText(varer.get(vareArrayStartIndex + i).getNavn());
+                vareBeskrivelse.setText(varer.get(vareArrayStartIndex + i).getBeskrivelse());
+                //TODO resolve image insert, first get real urls in the JSON
+            }else{
+                vareTittel.setText(null);
+                vareBeskrivelse.setText(null);
+            }
 
         }
     }
@@ -96,6 +113,16 @@ public class brukerController extends homeController {
         txtSide.setText(Integer.toString(side + 1));
         refreshVarer(scene, side + 1);
 
+    }
+
+    public void butikkValgt(){
+        valgtButikk = ButikkValgBox.getValue();
+        Platform.runLater(new Runnable() {
+            public void run() {
+                Scene scene = borderPane.getScene();
+                refreshVarer(scene, 1);
+            }
+        });
     }
 
     public void kjopVare1(ActionEvent actionEvent) {
