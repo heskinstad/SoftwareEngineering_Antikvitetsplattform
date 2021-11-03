@@ -73,16 +73,10 @@ public class butikkController extends homeController {
             }
 
             //inserts the data to the window
-            if(varer.get(vareArrayStartIndex + i).getButikk().equals(butikk.getNavn())) {
-                vareTittel.setText(varer.get(vareArrayStartIndex + i).getNavn());
-                vareBeskrivelse.setText(varer.get(vareArrayStartIndex + i).getBeskrivelse());
-                //TODO resolve image insert, first get real urls in the JSON
-                vareURL.setImage(null);
-            } else{
-                vareTittel.setText(null);
-                vareBeskrivelse.setText(null);
-                vareURL.setImage(null);
-            }
+            vareTittel.setText(varer.get(vareArrayStartIndex + i).getNavn());
+            vareBeskrivelse.setText(varer.get(vareArrayStartIndex + i).getBeskrivelse());
+            //TODO resolve image insert, first get real urls in the JSON
+            vareURL.setImage(null);
         }
     }
 
