@@ -43,7 +43,7 @@ public class DataHandlerBruker {
             objectMapper.findAndRegisterModules();
             String path = new File("").getAbsolutePath() + localPath;
             try {
-                ArrayList<Bruker> brukere = objectMapper.readValue(new File(path), new TypeReference<List<Bruker>>(){});
+                ArrayList<Bruker> brukere = (ArrayList<Bruker>) objectMapper.readValue(new File(path), new TypeReference<List<Bruker>>(){});
                 return brukere;
             }
             catch (JsonMappingException e) {

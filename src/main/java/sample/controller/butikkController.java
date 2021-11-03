@@ -137,10 +137,10 @@ public class butikkController extends homeController {
 
     public void editSale(ActionEvent actionEvent) {
         //todo har bare legg til vare inntil videre
-        openNewInterface(actionEvent, "../view/addVareView.fxml", "legg til vare", 700, 500);
+        openNewInterface(actionEvent, "/view/addVareView.fxml", "legg til vare", 700, 500);
     }
 
     public void changeUser(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "../view/sample.fxml", "Antikvitetsplatform", 700, 500);
+        openNewInterface(actionEvent, "/view/sample.fxml", "Antikvitetsplatform", 700, 500);
     }
 }

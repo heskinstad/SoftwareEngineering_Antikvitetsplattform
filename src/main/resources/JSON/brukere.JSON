@@ -1,11 +1,6 @@
 [ {
   "fornavn" : "123",
-  "etternavn" : "213",
-  "brukerOpprettet" : [ 2021, 10, 31, 12, 12, 10, 482867800 ],
-  "sisteInnlogging" : [ 2021, 11, 3, 14, 53, 35, 190050000 ]
-}, {
-  "fornavn" : "123",
   "etternavn" : "123",
-  "brukerOpprettet" : [ 2021, 10, 31, 12, 13, 28, 12079900 ],
-  "sisteInnlogging" : [ 2021, 11, 1, 9, 56, 28, 322075400 ]
+  "brukerOpprettet" : [ 2021, 11, 3, 16, 21, 28, 675903200 ],
+  "sisteInnlogging" : [ 2021, 11, 3, 16, 22, 9, 47279600 ]
 } ]

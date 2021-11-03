@@ -126,23 +126,23 @@ public class brukerController extends homeController {
     }
 
     public void kjopVare1(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "../view/sample.fxml", "Complaints", 600, 400);
+        openNewInterface(actionEvent, "/view/sample.fxml", "Complaints", 600, 400);
     }
 
     public void kjopVare2(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "../view/sample.fxml", "Complaints", 600, 400);
+        openNewInterface(actionEvent, "/view/sample.fxml", "Complaints", 600, 400);
     }
 
     public void kjopVare3(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "../view/sample.fxml", "Complaints", 600, 400);
+        openNewInterface(actionEvent, "/view/sample.fxml", "Complaints", 600, 400);
     }
 
     public void backToLogin(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "../view/sample.fxml", "Complaints", 600, 400);
+        openNewInterface(actionEvent, "/view/sample.fxml", "Complaints", 600, 400);
     }
 
     public void aapneKlageSkjema(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "../view/klage.fxml", "Klageskjema", 600, 310);
+        openNewInterface(actionEvent, "/view/klage.fxml", "Klageskjema", 600, 310);
     }
 
 
