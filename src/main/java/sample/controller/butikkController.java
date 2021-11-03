@@ -37,9 +37,10 @@ public class butikkController extends homeController {
                 refreshVarer(scene, 1);
             }
         });
+
         valgtButikk = butikk;
 
-        butikkNavn.setText(valgtButikk.toString());
+        butikkNavn.setText(valgtButikk.getNavn());
         beskrivelseText.setText(valgtButikk.getBeskrivelse());
 
         valgtButikk.setVarerIButikk();
@@ -47,7 +48,7 @@ public class butikkController extends homeController {
 
     private void refreshVarer(Scene scene, int side) {
 
-        ArrayList<Vare> varer = new ArrayList<>(DataHandlerVare.hentVarer());
+        ArrayList<Vare> varer = new ArrayList<>(valgtButikk.getVareListe());
         for (int i = 0; i < 4; i++) {
             int vareArrayStartIndex = getTrueVareArrayStartIndex(side);
 
@@ -77,11 +78,15 @@ public class butikkController extends homeController {
                 vareBeskrivelse.setText(varer.get(vareArrayStartIndex + i).getBeskrivelse());
                 //TODO resolve image insert, first get real urls in the JSON
                 vareURL.setImage(null);
+            } else{
+                vareTittel.setText(null);
+                vareBeskrivelse.setText(null);
+                vareURL.setImage(null);
             }
         }
     }
 
-    private int getTrueVareArrayStartIndex(int side){
+    private int getTrueVareArrayStartIndex(int side) {
         return (side - 1) * 4;
     }
 
