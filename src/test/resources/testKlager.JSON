@@ -1,1 +1,8 @@
-[ ]
+[ {
+  "id" : "4faac3e5-c5e6-4a62-b00c-609c92f3982e",
+  "navn" : "Ola Nordmann",
+  "melding" : "Butikken deres er tull og humbug",
+  "butikk" : "Krakkel og spetakkel og andre antivkiteter",
+  "slettValgteKlage" : null,
+  "tidspunkt" : [ 2021, 11, 1, 14, 44, 11, 570762300 ]
+} ]
