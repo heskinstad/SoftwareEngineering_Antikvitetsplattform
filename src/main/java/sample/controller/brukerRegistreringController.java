@@ -72,4 +72,8 @@ public class brukerRegistreringController extends homeController {
         alert.showAndWait();
     }
 
+    public void trykkForLoggUt(ActionEvent actionEvent){
+        openNewInterface(actionEvent, "../view/sample.fxml", "Complaints", 600, 400);
+    }
+
 }
