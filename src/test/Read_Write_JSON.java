@@ -1,14 +1,11 @@
 import org.junit.Test;
-import sample.data.DataHandlerButikk;
-import sample.data.DataHandlerKlage;
-import sample.data.DataHandlerVare;
-import sample.model.Butikk;
-import sample.model.Klage;
-import sample.model.Vare;
+import sample.data.*;
+import sample.model.*;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 import static org.junit.Assert.assertEquals;
@@ -86,6 +83,43 @@ public class Read_Write_JSON {
         Vare testVare = vareListe.get(0);
         assertEquals(testVare.getButikk(), butikk.getNavn());
         assertEquals(testVare.getNavn(), vare.getNavn());
+
+    }
+
+    @Test
+    public void test_Registrer_Salg_Fjern_Vare() throws FileNotFoundException{
+        PrintWriter writer = new PrintWriter(new File("").getAbsolutePath() + "/test/resources/testButikker.JSON");
+        PrintWriter writer2 = new PrintWriter(new File("").getAbsolutePath() + "/test/resources/testVarer.JSON");
+        PrintWriter writer3 = new PrintWriter(new File("").getAbsolutePath() + "/test/resources/testSalg.JSON");
+        PrintWriter writer4 = new PrintWriter(new File("").getAbsolutePath() + "/test/resources/testBruker.JSON");
+        writer.close();
+        writer.close();
+        writer2.close();
+        writer3.close();
+        writer4.close();
+
+        Butikk butikk = new Butikk("test", "testing","test kompani", "Denne butikken er kun en test");
+        DataHandlerButikk.registrerButikk(butikk, "/test/resources/testButikker.JSON");
+
+        Bruker bruker = new Bruker("Test", "Testeren");
+        DataHandlerBruker.leggInnBruker(bruker, "/test/resources/testBruker.JSON");
+
+        Vare vare = new Vare("testVare", "testBeskrivelse", "test", 1001, "");
+        DataHandlerVare.leggInnVare(vare, "/test/resources/testVarer.JSON");
+
+        butikk.setVarerIButikk("/test/resources/testVarer.JSON");
+
+        Salg salg = new Salg(bruker, butikk, vare);
+        DataHandlerSalg.registrerSalg(salg, "/test/resources/testSalg.JSON", "/test/resources/testVarer.JSON");
+
+        ArrayList<Salg> salgListe = DataHandlerSalg.hentSalg("/test/resources/testSalg.JSON");
+        Salg testSalg = salgListe.get(0);
+
+        assertEquals(salg.getKjoper().getFornavn(),testSalg.getKjoper().getFornavn());
+        assertEquals(salg.getSelger().getNavn(),testSalg.getSelger().getNavn());
+        assertEquals(salg.getSolgtVare().getNavn(),testSalg.getSolgtVare().getNavn());
+
+        assertEquals(new ArrayList<>(), DataHandlerVare.hentVarer("/test/resources/testVarer.JSON"));
 
     }
 
