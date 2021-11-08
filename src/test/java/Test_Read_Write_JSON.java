@@ -28,7 +28,7 @@ public class Test_Read_Write_JSON {
         assertEquals(vare.getNavn(), vare2.getNavn());
         assertEquals(vare.getBeskrivelse(), vare2.getBeskrivelse());
         assertEquals(vare.getButikk(), vare2.getButikk());
-        assertEquals(vare.getPris(), vare2.getPris());
+        assertEquals(vare.getPris(), vare2.getPris() + 1);
         assertEquals(vare.getTidspunkt(), vare2.getTidspunkt());
         assertEquals(vare.getBildeURL(), vare2.getBildeURL());
     }
