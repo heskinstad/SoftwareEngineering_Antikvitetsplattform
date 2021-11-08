@@ -8,7 +8,6 @@
 <?import javafx.scene.effect.DropShadow?>
 <?import javafx.scene.effect.GaussianBlur?>
 <?import javafx.scene.effect.Glow?>
-<?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.effect.MotionBlur?>
 <?import javafx.scene.effect.Reflection?>
@@ -42,31 +41,31 @@
          <children>
             <TableView fx:id="table_SaleHistory" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
               <columns>
-                <TableColumn prefWidth="75.0" text="Vare" />
-                <TableColumn prefWidth="75.0" text="Selger" />
-                  <TableColumn prefWidth="75.0" text="Kjøper" />
-                  <TableColumn prefWidth="75.0" text="Pris" />
-                  <TableColumn prefWidth="75.0" text="Tidspunkt" />
+                <TableColumn id="col_Salg_Kjoper" prefWidth="75.0" text="Kjøper" />
+                <TableColumn id="col_Salg_Selger" prefWidth="75.0" text="Selger" />
+                  <TableColumn id="col_Salg_SolgtVare" prefWidth="75.0" text="Vare" />
+                  <TableColumn id="col_Salg_Tidspunkt" prefWidth="75.0" text="Tidspunkt" />
+                  <TableColumn prefWidth="75.0" />
               </columns>
             </TableView>
             <TableView fx:id="table_shops" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
               <columns>
-                <TableColumn id="col_Butikk_Navn" prefWidth="75.0" text="Navn" >
+                <TableColumn id="col_Butikk_Navn" prefWidth="75.0" text="Navn">
                    <cellValueFactory>
                       <PropertyValueFactory property="navn" />
                    </cellValueFactory>
                 </TableColumn>
-                <TableColumn id="col_Butikk_Spesialitet" prefWidth="75.0" text="Spesialitet" >
+                <TableColumn id="col_Butikk_Spesialitet" prefWidth="75.0" text="Spesialitet">
                    <cellValueFactory>
                       <PropertyValueFactory property="spesialitet" />
                    </cellValueFactory>
                 </TableColumn>
-                <TableColumn id="col_Butikk_DagligLeder" prefWidth="75.0" text="Daglig leder" >
+                <TableColumn id="col_Butikk_DagligLeder" prefWidth="75.0" text="Daglig leder">
                    <cellValueFactory>
                       <PropertyValueFactory property="dagligLeder" />
                    </cellValueFactory>
                 </TableColumn>
-                <TableColumn id="col_Butikk_Tidspunkt" prefWidth="75.0" text="Tid registrert" >
+                <TableColumn id="col_Butikk_Tidspunkt" prefWidth="75.0" text="Tid registrert">
                    <cellValueFactory>
                       <PropertyValueFactory property="tidspunkt" />
                    </cellValueFactory>
@@ -112,7 +111,7 @@
                         <Font size="20.0" />
                      </font>
                   </Text>
-                  <Button fx:id="sletteKlage" onAction="#deleteSelectedRow" mnemonicParsing="false" text="Slette klage" GridPane.rowIndex="1" />
+                  <Button fx:id="sletteKlage" mnemonicParsing="false" onAction="#deleteSelectedRow" text="Slette klage" GridPane.rowIndex="1" />
                   <Button mnemonicParsing="false" text="Button" GridPane.rowIndex="2" />
                   <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                   <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="2" />

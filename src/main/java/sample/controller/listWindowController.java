@@ -7,16 +7,20 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import sample.data.*;
-import sample.model.Butikk;
-import sample.model.Klage;
+import sample.model.*;
 import sample.data.DataHandlerKlage;
+
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.UUID;
 
 public class listWindowController extends homeController {
 
-    @FXML TableView table_SaleHistory;
+    @FXML TableView<Salg> table_SaleHistory;
+    @FXML TableColumn<Salg,Bruker> col_Salg_Kjoper;
+    @FXML TableColumn<Salg,Butikk> col_Salg_Selger;
+    @FXML TableColumn<Salg,Vare> col_Salg_SolgtVare;
+    @FXML TableColumn<Salg,LocalDateTime> col_Salg_Tidspunkt;
     @FXML TableView<Klage> table_Complaints;
     @FXML TableColumn<Klage,Integer> col_Klage_ID;
     @FXML TableColumn<Klage,String> col_Klage_Innsender;
@@ -31,17 +35,26 @@ public class listWindowController extends homeController {
 
     @FXML
     public void initialize() {
+        refreshSalgsListe();
         refreshKlageListe();
         refreshButikkListe();
     }
 
     public void refresh(ActionEvent actionEvent) {
+        refreshSalgsListe();
         refreshKlageListe();
         refreshButikkListe();
     }
 
     public void changeUser(ActionEvent actionEvent) {
         openNewInterface(actionEvent, "../view/sample.fxml", "Antikvitetsplatform", 600, 400);
+    }
+
+    private void refreshSalgsListe() {
+        ArrayList<Salg> salgsListe = new ArrayList<Salg>();
+        salgsListe.addAll(DataHandlerSalg.hentSalg());
+        ObservableList<Salg> salgObservableList = FXCollections.observableArrayList(salgsListe);
+        table_SaleHistory.setItems(salgObservableList);
     }
 
     private void refreshKlageListe() {

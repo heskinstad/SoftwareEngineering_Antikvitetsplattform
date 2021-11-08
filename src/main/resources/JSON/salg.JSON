@@ -1,1 +1,42 @@
-[ ]
+[ {
+  "kjoper" : {
+    "fornavn" : "123",
+    "etternavn" : "123",
+    "brukerOpprettet" : [ 2021, 11, 8, 11, 25, 56, 895394700 ],
+    "sisteInnlogging" : [ 2021, 11, 8, 11, 25, 56, 895394700 ]
+  },
+  "selger" : {
+    "navn" : "123",
+    "spesialitet" : "123",
+    "dagligLeder" : "132",
+    "beskrivelse" : "En To Tre",
+    "tidspunkt" : [ 2021, 10, 27, 15, 43, 6, 738833200 ],
+    "vareListe" : [ {
+      "id" : "453626d8-f044-4266-a84a-22d9015bfdca",
+      "navn" : "Saft",
+      "beskrivelse" : "Ille god",
+      "butikk" : "123",
+      "pris" : 300,
+      "tidspunkt" : [ 2021, 11, 1, 9, 35, 29, 942131700 ],
+      "bildeURL" : "aaa"
+    }, {
+      "id" : "2df28fef-f548-4ac1-8c02-c3846bf11928",
+      "navn" : "Brus",
+      "beskrivelse" : "Godt",
+      "butikk" : "123",
+      "pris" : 10,
+      "tidspunkt" : [ 2021, 11, 1, 18, 35, 18, 459857900 ],
+      "bildeURL" : "null"
+    } ]
+  },
+  "solgtVare" : {
+    "id" : "453626d8-f044-4266-a84a-22d9015bfdca",
+    "navn" : "Saft",
+    "beskrivelse" : "Ille god",
+    "butikk" : "123",
+    "pris" : 300,
+    "tidspunkt" : [ 2021, 11, 1, 9, 35, 29, 942131700 ],
+    "bildeURL" : "aaa"
+  },
+  "tidspunkt" : [ 2021, 11, 8, 11, 26, 0, 29470000 ]
+} ]
