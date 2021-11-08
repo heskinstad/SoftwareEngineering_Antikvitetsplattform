@@ -93,7 +93,6 @@ public class Read_Write_JSON {
         PrintWriter writer3 = new PrintWriter(new File("").getAbsolutePath() + "/test/resources/testSalg.JSON");
         PrintWriter writer4 = new PrintWriter(new File("").getAbsolutePath() + "/test/resources/testBruker.JSON");
         writer.close();
-        writer.close();
         writer2.close();
         writer3.close();
         writer4.close();
@@ -107,6 +106,9 @@ public class Read_Write_JSON {
         Vare vare = new Vare("testVare", "testBeskrivelse", "test", 1001, "");
         DataHandlerVare.leggInnVare(vare, "/test/resources/testVarer.JSON");
 
+        Vare vare2 = new Vare("testVare2", "testBeskrivelse", "test", 1001, "");
+        DataHandlerVare.leggInnVare(vare2, "/test/resources/testVarer.JSON");
+
         butikk.setVarerIButikk("/test/resources/testVarer.JSON");
 
         Salg salg = new Salg(bruker, butikk, vare);
@@ -119,7 +121,10 @@ public class Read_Write_JSON {
         assertEquals(salg.getSelger().getNavn(),testSalg.getSelger().getNavn());
         assertEquals(salg.getSolgtVare().getNavn(),testSalg.getSolgtVare().getNavn());
 
-        assertEquals(new ArrayList<>(), DataHandlerVare.hentVarer("/test/resources/testVarer.JSON"));
+        ArrayList<Vare> vareListe = DataHandlerVare.hentVarer("/test/resources/testVarer.JSON");
+        Vare testVare = vareListe.get(0);
+
+        assertEquals(vare2.getNavn(), testVare.getNavn());
 
     }
 

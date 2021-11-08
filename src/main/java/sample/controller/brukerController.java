@@ -11,10 +11,9 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
 import sample.data.DataHandlerButikk;
 import sample.data.DataHandlerKlage;
+import sample.data.DataHandlerSalg;
 import sample.data.DataHandlerVare;
-import sample.model.Butikk;
-import sample.model.Klage;
-import sample.model.Vare;
+import sample.model.*;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
@@ -22,8 +21,8 @@ import java.util.ArrayList;
 public class brukerController extends homeController {
 
     @FXML public Button btnLoginAdmin;
+    @FXML public TextField varenavn0;
     @FXML public TextField varenavn1;
-    @FXML public TextField varenavn2;
     @FXML public TextField varenavn3;
     @FXML public TextArea vareBeskrivelse1;
     @FXML public TextArea vareBeskrivelse2;
@@ -117,6 +116,7 @@ public class brukerController extends homeController {
 
     public void butikkValgt(){
         valgtButikk = ButikkValgBox.getValue();
+        valgtButikk.setVarerIButikk();
         Platform.runLater(new Runnable() {
             public void run() {
                 Scene scene = borderPane.getScene();
@@ -126,15 +126,99 @@ public class brukerController extends homeController {
     }
 
     public void kjopVare1(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "../view/sample.fxml", "Complaints", 600, 400);
+        //openNewInterface(actionEvent, "../view/sample.fxml", "Complaints", 600, 400);
+        Platform.runLater(new Runnable() {
+            public void run() {
+                Scene thisScene = borderPane.getScene();
+
+                Text vareTittel = (Text) thisScene.lookup("#vare_navn_0");
+
+                String navnTilVare = vareTittel.getText();
+                Vare kjoptVare = new Vare();
+                ArrayList<Vare> butikkVareListe = valgtButikk.getVareListe();
+
+                for(Vare vareIListe: butikkVareListe){
+                    if(navnTilVare.equals(vareIListe.getNavn()))
+                        kjoptVare = vareIListe;
+
+                }
+
+                Salg nyttSalg = new Salg(bruker, valgtButikk, kjoptVare);
+
+                DataHandlerSalg.registrerSalg(nyttSalg);
+            }
+        });
+
+        Platform.runLater(new Runnable() {
+            public void run() {
+                Scene scene = borderPane.getScene();
+                refreshVarer(scene, 1);
+            }
+        });
     }
 
     public void kjopVare2(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "../view/sample.fxml", "Complaints", 600, 400);
+        //openNewInterface(actionEvent, "../view/sample.fxml", "Complaints", 600, 400);
+        Platform.runLater(new Runnable() {
+            public void run() {
+                Scene thisScene = borderPane.getScene();
+
+                Text vareTittel = (Text) thisScene.lookup("#vare_navn_1");
+
+                String navnTilVare = vareTittel.getText();
+                Vare kjoptVare = new Vare();
+                ArrayList<Vare> butikkVareListe = valgtButikk.getVareListe();
+
+                for(Vare vareIListe: butikkVareListe){
+                    if(navnTilVare.equals(vareIListe.getNavn()))
+                        kjoptVare = vareIListe;
+
+                }
+
+                Salg nyttSalg = new Salg(bruker, valgtButikk, kjoptVare);
+
+                DataHandlerSalg.registrerSalg(nyttSalg);
+            }
+        });
+
+        Platform.runLater(new Runnable() {
+            public void run() {
+                Scene scene = borderPane.getScene();
+                refreshVarer(scene, 1);
+            }
+        });
     }
 
     public void kjopVare3(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "../view/sample.fxml", "Complaints", 600, 400);
+        //openNewInterface(actionEvent, "../view/sample.fxml", "Complaints", 600, 400);
+        Platform.runLater(new Runnable() {
+            public void run() {
+                Scene thisScene = borderPane.getScene();
+
+                Text vareTittel = (Text) thisScene.lookup("#vare_navn_2");
+
+                String navnTilVare = vareTittel.getText();
+                Vare kjoptVare = new Vare();
+                ArrayList<Vare> butikkVareListe = valgtButikk.getVareListe();
+
+                for(Vare vareIListe: butikkVareListe){
+                    if(navnTilVare.equals(vareIListe.getNavn()))
+                        kjoptVare = vareIListe;
+
+                }
+
+                Salg nyttSalg = new Salg(bruker, valgtButikk, kjoptVare);
+
+                DataHandlerSalg.registrerSalg(nyttSalg);
+            }
+        });
+
+        Platform.runLater(new Runnable() {
+            public void run() {
+                Scene scene = borderPane.getScene();
+                refreshVarer(scene, 1);
+            }
+        });
     }
 
     public void backToLogin(ActionEvent actionEvent) {

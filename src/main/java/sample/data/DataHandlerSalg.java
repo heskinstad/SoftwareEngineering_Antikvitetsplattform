@@ -63,6 +63,7 @@ public class DataHandlerSalg {
 
     private static void fjernVare(Vare solgtVare, Butikk butikk, String localPath){
         ArrayList<Vare> varerFraButikk = butikk.getVareListe();
+        ArrayList<Vare> alleVarerListe = DataHandlerVare.hentVarer(localPath);
 
         int i;
         for(i = 0; i < varerFraButikk.size(); i++){
@@ -74,6 +75,12 @@ public class DataHandlerSalg {
         if(i < varerFraButikk.size()){
             varerFraButikk.remove(i);
         }
+
+        for(Vare vareIListe : alleVarerListe){
+            if(!vareIListe.getButikk().equals(solgtVare.getButikk()))
+                varerFraButikk.add(vareIListe);
+        }
+
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.findAndRegisterModules();
