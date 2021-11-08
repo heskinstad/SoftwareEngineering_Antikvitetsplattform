@@ -10,4 +10,10 @@
   "melding" : "Yes we can (complain)!",
   "butikk" : "123",
   "tidspunkt" : [ 2021, 11, 1, 10, 37, 8, 381116800 ]
+}, {
+  "id" : "d6478bd2-cde6-40db-a3f2-1a116e22151a",
+  "navn" : "123 123",
+  "melding" : "Safta var dårlig blanda",
+  "butikk" : "123",
+  "tidspunkt" : [ 2021, 11, 4, 12, 42, 59, 520304200 ]
 } ]
