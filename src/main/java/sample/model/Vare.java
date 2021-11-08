@@ -76,4 +76,9 @@ public class Vare {
 
     public String getBildeURL() {return bildeURL;}
     public void setBildeURL(String bildeURL) {this.bildeURL = bildeURL;}
+
+    @Override
+    public String toString() {
+        return navn;
+    }
 }

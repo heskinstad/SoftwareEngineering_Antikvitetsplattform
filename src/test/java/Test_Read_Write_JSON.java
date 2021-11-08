@@ -88,40 +88,40 @@ public class Test_Read_Write_JSON {
 
     @Test
     public void test_Registrer_Salg_Fjern_Vare() throws FileNotFoundException{
-        PrintWriter writer = new PrintWriter(new File("").getAbsolutePath() + "/test/resources/testButikker.JSON");
-        PrintWriter writer2 = new PrintWriter(new File("").getAbsolutePath() + "/test/resources/testVarer.JSON");
-        PrintWriter writer3 = new PrintWriter(new File("").getAbsolutePath() + "/test/resources/testSalg.JSON");
-        PrintWriter writer4 = new PrintWriter(new File("").getAbsolutePath() + "/test/resources/testBruker.JSON");
+        PrintWriter writer = new PrintWriter(new File("").getAbsolutePath() + "/src/test/resources/testButikker.JSON");
+        PrintWriter writer2 = new PrintWriter(new File("").getAbsolutePath() + "/src/test/resources/testVarer.JSON");
+        PrintWriter writer3 = new PrintWriter(new File("").getAbsolutePath() + "/src/test/resources/testSalg.JSON");
+        PrintWriter writer4 = new PrintWriter(new File("").getAbsolutePath() + "/src/test/resources/testBruker.JSON");
         writer.close();
         writer2.close();
         writer3.close();
         writer4.close();
 
         Butikk butikk = new Butikk("test", "testing","test kompani", "Denne butikken er kun en test");
-        DataHandlerButikk.registrerButikk(butikk, "/test/resources/testButikker.JSON");
+        DataHandlerButikk.registrerButikk(butikk, "/src/test/resources/testButikker.JSON");
 
         Bruker bruker = new Bruker("Test", "Testeren");
-        DataHandlerBruker.leggInnBruker(bruker, "/test/resources/testBruker.JSON");
+        DataHandlerBruker.leggInnBruker(bruker, "/src/test/resources/testBruker.JSON");
 
         Vare vare = new Vare("testVare", "testBeskrivelse", "test", 1001, "");
-        DataHandlerVare.leggInnVare(vare, "/test/resources/testVarer.JSON");
+        DataHandlerVare.leggInnVare(vare, "/src/test/resources/testVarer.JSON");
 
         Vare vare2 = new Vare("testVare2", "testBeskrivelse", "test", 1001, "");
-        DataHandlerVare.leggInnVare(vare2, "/test/resources/testVarer.JSON");
+        DataHandlerVare.leggInnVare(vare2, "/src/test/resources/testVarer.JSON");
 
-        butikk.setVarerIButikk("/test/resources/testVarer.JSON");
+        butikk.setVarerIButikk("/src/test/resources/testVarer.JSON");
 
         Salg salg = new Salg(bruker, butikk, vare);
-        DataHandlerSalg.registrerSalg(salg, "/test/resources/testSalg.JSON", "/test/resources/testVarer.JSON");
+        DataHandlerSalg.registrerSalg(salg, "/src/test/resources/testSalg.JSON", "/src/test/resources/testVarer.JSON");
 
-        ArrayList<Salg> salgListe = DataHandlerSalg.hentSalg("/test/resources/testSalg.JSON");
+        ArrayList<Salg> salgListe = DataHandlerSalg.hentSalg("/src/test/resources/testSalg.JSON");
         Salg testSalg = salgListe.get(0);
 
         assertEquals(salg.getKjoper().getFornavn(),testSalg.getKjoper().getFornavn());
         assertEquals(salg.getSelger().getNavn(),testSalg.getSelger().getNavn());
         assertEquals(salg.getSolgtVare().getNavn(),testSalg.getSolgtVare().getNavn());
 
-        ArrayList<Vare> vareListe = DataHandlerVare.hentVarer("/test/resources/testVarer.JSON");
+        ArrayList<Vare> vareListe = DataHandlerVare.hentVarer("/src/test/resources/testVarer.JSON");
         Vare testVare = vareListe.get(0);
 
         assertEquals(vare2.getNavn(), testVare.getNavn());

@@ -35,4 +35,9 @@ public class Bruker {
 
     public LocalDateTime getSisteInnlogging() {return sisteInnlogging;}
     public void setSisteInnlogging(LocalDateTime sisteInnlogging) {this.sisteInnlogging = sisteInnlogging;}
+
+    @Override
+    public String toString() {
+        return fornavn + " " + etternavn;
+    }
 }

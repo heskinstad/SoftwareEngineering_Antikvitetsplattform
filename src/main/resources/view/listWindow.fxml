@@ -41,11 +41,26 @@
          <children>
             <TableView fx:id="table_SaleHistory" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
               <columns>
-                <TableColumn id="col_Salg_Kjoper" prefWidth="75.0" text="Kjøper" />
-                <TableColumn id="col_Salg_Selger" prefWidth="75.0" text="Selger" />
-                  <TableColumn id="col_Salg_SolgtVare" prefWidth="75.0" text="Vare" />
-                  <TableColumn id="col_Salg_Tidspunkt" prefWidth="75.0" text="Tidspunkt" />
-                  <TableColumn prefWidth="75.0" />
+                <TableColumn id="col_Salg_Kjoper" prefWidth="75.0" text="Kjøper" >
+                   <cellValueFactory>
+                      <PropertyValueFactory property="kjoper" />
+                   </cellValueFactory>
+                </TableColumn>
+                <TableColumn id="col_Salg_Selger" prefWidth="75.0" text="Selger" >
+                   <cellValueFactory>
+                      <PropertyValueFactory property="selger" />
+                   </cellValueFactory>
+                </TableColumn>
+                  <TableColumn id="col_Salg_SolgtVare" prefWidth="75.0" text="Vare" >
+                     <cellValueFactory>
+                        <PropertyValueFactory property="solgtVare" />
+                     </cellValueFactory>
+                  </TableColumn>
+                  <TableColumn id="col_Salg_Tidspunkt" prefWidth="75.0" text="Tidspunkt" >
+                     <cellValueFactory>
+                        <PropertyValueFactory property="tidspunkt" />
+                     </cellValueFactory>
+                  </TableColumn>
               </columns>
             </TableView>
             <TableView fx:id="table_shops" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
