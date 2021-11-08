@@ -7,6 +7,7 @@
     <groupId>groupId</groupId>
     <artifactId>SoftwareEngineering_Antikvitetsplattform</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
@@ -25,12 +26,6 @@
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
             <version>${jackson.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>RELEASE</version>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
