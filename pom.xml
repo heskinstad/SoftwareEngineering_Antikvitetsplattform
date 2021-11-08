@@ -61,9 +61,6 @@
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
                 <version>0.0.8</version>
-                <configuration>
-                    <mainClass>com.manhpd.App</mainClass>
-                </configuration>
             </plugin>
         </plugins>
     </build>
