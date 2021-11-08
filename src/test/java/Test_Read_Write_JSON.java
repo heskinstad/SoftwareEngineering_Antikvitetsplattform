@@ -29,7 +29,7 @@ public class Test_Read_Write_JSON {
         assertEquals(vare.getBeskrivelse(), vare2.getBeskrivelse());
         assertEquals(vare.getButikk(), vare2.getButikk());
         assertEquals(vare.getPris(), vare2.getPris());
-        //assertEquals(vare.getTidspunkt(), vare2.getTidspunkt());
+        assertEquals(vare.getTidspunkt(), vare2.getTidspunkt());
         assertEquals(vare.getBildeURL(), vare2.getBildeURL());
     }
 
@@ -45,7 +45,7 @@ public class Test_Read_Write_JSON {
         assertEquals(klage.getNavn(), klage2.getNavn());
         assertEquals(klage.getMelding(), klage2.getMelding());
         assertEquals(klage.getButikk(), klage2.getButikk());
-        //assertEquals(klage.getTidspunkt(), klage2.getTidspunkt());
+        assertEquals(klage.getTidspunkt(), klage2.getTidspunkt());
 
         DataHandlerKlage.slettKlage(klage, "/src/test/resources/testKlager.JSON");
         assertTrue(DataHandlerKlage.hentKlager("/src/test/resources/testKlager.JSON").isEmpty());
@@ -62,7 +62,7 @@ public class Test_Read_Write_JSON {
         assertEquals(butikk.getNavn(), butikk2.getNavn());
         assertEquals(butikk.getSpesialitet(), butikk2.getSpesialitet());
         assertEquals(butikk.getDagligLeder(), butikk2.getDagligLeder());
-        //assertEquals(butikk.getTidspunkt(), butikk2.getTidspunkt());
+        assertEquals(butikk.getTidspunkt(), butikk2.getTidspunkt());
 
 
 
