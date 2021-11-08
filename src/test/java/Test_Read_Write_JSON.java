@@ -1,3 +1,5 @@
+package java;
+
 import org.junit.Test;
 import sample.data.DataHandlerButikk;
 import sample.data.DataHandlerKlage;
