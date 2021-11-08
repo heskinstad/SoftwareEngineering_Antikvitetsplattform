@@ -48,7 +48,7 @@ public class DataHandlerKlage {
             objectMapper.findAndRegisterModules();
             String path = new File("").getAbsolutePath() + localPath;
             try {
-                ArrayList<Klage> klager = objectMapper.readValue(new File(path), new TypeReference<List<Klage>>(){});
+                ArrayList<Klage> klager = (ArrayList<Klage>) objectMapper.readValue(new File(path), new TypeReference<List<Klage>>(){});
                 return klager;
             }
             catch (JsonMappingException e) {

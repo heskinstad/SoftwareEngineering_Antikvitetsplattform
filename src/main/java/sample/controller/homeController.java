@@ -29,15 +29,15 @@ public class homeController {
     }
 
     public void loginAdmin(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "../view/listWindow.fxml", "Admincontroller", 600, 400);
+        openNewInterface(actionEvent, "/view/listWindow.fxml", "Admincontroller", 600, 400);
     }
 
     public void loginButikk(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "../view/butikkRegistrering.fxml", "Butikkregistrering", 600, 400);
+        openNewInterface(actionEvent, "/view/butikkRegistrering.fxml", "Butikkregistrering", 600, 400);
     }
 
     public void loginBruker(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "../view/brukerRegistrering.fxml", "Brukerregistrering", 624, 648);
+        openNewInterface(actionEvent, "/view/brukerRegistrering.fxml", "Brukerregistrering", 624, 648);
     }
 
     /*

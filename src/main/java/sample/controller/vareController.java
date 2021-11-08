@@ -46,6 +46,6 @@ public class vareController extends homeController {
     }
 
     public void avbryt(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "../view/butikkView.fxml", "Butikk Control", 624, 648);
+        openNewInterface(actionEvent, "/view/butikkView.fxml", "Butikk Control", 624, 648);
     }
 }

@@ -16,7 +16,6 @@ public class Butikk {
      * @param spesialitet
      * @param dagligLeder
      * @param beskrivelse
-     * @param vareListe
      */
     public Butikk(String navn, String spesialitet, String dagligLeder, String beskrivelse) {
 

@@ -47,7 +47,7 @@ public class listWindowController extends homeController {
     }
 
     public void changeUser(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "../view/sample.fxml", "Antikvitetsplatform", 600, 400);
+        openNewInterface(actionEvent, "/view/sample.fxml", "Antikvitetsplatform", 600, 400);
     }
 
     private void refreshSalgsListe() {
