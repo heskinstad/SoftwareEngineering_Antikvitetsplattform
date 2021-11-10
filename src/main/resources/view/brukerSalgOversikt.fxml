@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.salgsOversiktController">
+   <children>
+      <TableView fx:id="table_SaleHistory" prefHeight="372.0" prefWidth="600.0">
+        <columns>
+            <TableColumn fx:id="col_Salg_Kjoper" prefWidth="75.0" text="Kjøper">
+                <cellValueFactory>
+                    <PropertyValueFactory property="kjoper"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="col_Salg_Selger" prefWidth="130.0" text="Selger">
+                <cellValueFactory>
+                    <PropertyValueFactory property="selger"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="col_Salg_Vare" prefWidth="115.0" text="Vare">
+                <cellValueFactory>
+                    <PropertyValueFactory property="solgtVare"/>
+                </cellValueFactory>
+            </TableColumn>
+            <TableColumn fx:id="col_Salg_Tidspunkt" prefWidth="287.0" text="Tidspunkt">
+                <cellValueFactory>
+                    <PropertyValueFactory property="tidspunkt"/>
+                </cellValueFactory>
+            </TableColumn>
+        </columns>
+      </TableView>
+      <Button layoutX="230.0" layoutY="374.0" mnemonicParsing="false" onAction="#forlatOversikt" text="Forlat salgsoversikt?" />
+   </children>
+</AnchorPane>

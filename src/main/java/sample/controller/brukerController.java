@@ -10,12 +10,10 @@ import javafx.scene.control.*;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
 import sample.data.DataHandlerButikk;
-import sample.data.DataHandlerKlage;
 import sample.data.DataHandlerSalg;
 import sample.data.DataHandlerVare;
 import sample.model.*;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class brukerController extends homeController {
@@ -227,6 +225,10 @@ public class brukerController extends homeController {
 
     public void aapneKlageSkjema(ActionEvent actionEvent) {
         openNewInterface(actionEvent, "/view/klage.fxml", "Klageskjema", 600, 310);
+    }
+
+    public void aapneSalgsOversikt(ActionEvent actionEvent){
+        openNewInterface(actionEvent, "/view/brukerSalgOversikt.fxml", "Salgsoversikt", 600, 400);
     }
 
 
