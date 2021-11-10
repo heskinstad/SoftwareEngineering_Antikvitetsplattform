@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import sample.model.Butikk;
+import sample.model.Klage;
 import sample.model.Salg;
 import sample.model.Vare;
 
@@ -44,7 +45,7 @@ public class DataHandlerSalg {
             objectMapper.findAndRegisterModules();
             String path = new File("").getAbsolutePath() + localPath;
             try {
-                ArrayList<Salg> salgListe = objectMapper.readValue(new File(path), new TypeReference<List<Salg>>(){});
+                ArrayList<Salg> salgListe = (ArrayList<Salg>) objectMapper.readValue(new File(path), new TypeReference<List<Salg>>(){});
                 return salgListe;
             }
             catch (JsonMappingException e){
