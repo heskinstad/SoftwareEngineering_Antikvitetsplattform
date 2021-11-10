@@ -73,7 +73,7 @@ public class brukerRegistreringController extends homeController {
     }
 
     public void trykkForLoggUt(ActionEvent actionEvent){
-        openNewInterface(actionEvent, "../view/sample.fxml", "Complaints", 600, 400);
+        openNewInterface(actionEvent, "/view/sample.fxml", "Complaints", 600, 400);
     }
 
 }
