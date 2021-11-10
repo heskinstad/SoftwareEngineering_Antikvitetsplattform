@@ -15,13 +15,17 @@ import sample.data.*;
 import sample.model.Butikk;
 import sample.model.Vare;
 
+import java.awt.*;
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 
 
 public class butikkController extends homeController {
 
     private boolean isEditDesc = false; // verdi for å sjekke om editMode på beskrivelse er aktivt
-    @FXML AnchorPane anchorPane;
+    @FXML
+    AnchorPane anchorPane;
     @FXML
     public Text butikkNavn;
     @FXML
@@ -84,19 +88,20 @@ public class butikkController extends homeController {
         return (side - 1) * 4;
     }
 
-    public void forrigeSide(ActionEvent actionEvent){
+    public void forrigeSide(ActionEvent actionEvent) {
         //knap for å vise dei 4 neste varene
         Scene scene = anchorPane.getScene();
         Text txtSide = (Text) scene.lookup("#sideTal");
         int side = Integer.parseInt(txtSide.getText());
 
-        if(side > 1){
+        if (side > 1) {
             txtSide.setText(Integer.toString(side - 1));
             refreshVarer(scene, side - 1);
 
         }
     }
-    public void nesteSide(ActionEvent actionEvent){
+
+    public void nesteSide(ActionEvent actionEvent) {
         //knapp for å vise dei 4 forrige varene
         Scene scene = anchorPane.getScene();
         Text txtSide = (Text) scene.lookup("#sideTal");
@@ -107,14 +112,14 @@ public class butikkController extends homeController {
 
     }
 
-    public void editDesc(ActionEvent actionEvent){
+    public void editDesc(ActionEvent actionEvent) {
 
         //TODO save changes
         Scene scene = anchorPane.getScene();
         Button btnEditDesc = (Button) scene.lookup("#btnEditDesc");
         TextArea txtDesc = (TextArea) scene.lookup("#txtDesc");
 
-        if (!isEditDesc){
+        if (!isEditDesc) {
             btnEditDesc.setText("save");
             txtDesc.setEditable(true);
         } else {
@@ -129,12 +134,15 @@ public class butikkController extends homeController {
         isEditDesc ^= true;
     }
 
-    public void editSale(ActionEvent actionEvent) {
-        //todo har bare legg til vare inntil videre
-        openNewInterface(actionEvent, "/view/addVareView.fxml", "legg til vare", 700, 500);
+
+
+        public void editSale(ActionEvent actionEvent) {
+            //todo har bare legg til vare inntil videre
+            openNewInterface(actionEvent, "/view/addVareView.fxml", "legg til vare", 700, 500);
+        }
+
+        public void changeUser(ActionEvent actionEvent) {
+            openNewInterface(actionEvent, "/view/sample.fxml", "Antikvitetsplatform", 700, 500);
+        }
     }
 
-    public void changeUser(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "/view/sample.fxml", "Antikvitetsplatform", 700, 500);
-    }
-}

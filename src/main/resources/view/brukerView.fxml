@@ -56,9 +56,9 @@
                   <Button mnemonicParsing="false" onAction="#kjopVare2" prefHeight="25.0" prefWidth="271.0" text="Buy" GridPane.columnIndex="1" GridPane.rowIndex="3" />
                   <Button mnemonicParsing="false" onAction="#kjopVare3" prefHeight="25.0" prefWidth="245.0" text="Buy" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                   <Text fx:id="vare_Beskrivelse_2" strokeType="OUTSIDE" strokeWidth="0.0" text="Beskrivelse 3" wrappingWidth="217.13671875" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <ImageView fitHeight="86.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="86.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <ImageView fitHeight="86.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <ImageView fx:id="vare_bilde_0" fitHeight="86.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
+                  <ImageView fx:id="vare_bilde_1" fitHeight="86.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ImageView fx:id="vare_bilde_2" fitHeight="86.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
                </children>
             </GridPane>
                   <Button layoutX="147.0" layoutY="444.0" mnemonicParsing="false" onAction="#forrigeSide" text="forrige side" />
