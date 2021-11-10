@@ -5,7 +5,6 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import sample.model.Butikk;
-import sample.model.Klage;
 import sample.model.Salg;
 import sample.model.Vare;
 
