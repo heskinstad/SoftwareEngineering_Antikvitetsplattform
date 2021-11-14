@@ -144,5 +144,6 @@
       <Button layoutX="521.0" layoutY="367.0" mnemonicParsing="false" onAction="#nesteSide" text="neste side" />
       <Text fx:id="sideTal" layoutX="336.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
       <Text layoutX="306.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="side" />
+      <Button layoutX="405.0" layoutY="367.0" mnemonicParsing="false" onAction="#toButikkSalgsOversikt" text="Salgs oversikt" />
    </children>
 </AnchorPane>

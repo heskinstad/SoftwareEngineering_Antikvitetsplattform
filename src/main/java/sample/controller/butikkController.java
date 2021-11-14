@@ -144,5 +144,9 @@ public class butikkController extends homeController {
         public void changeUser(ActionEvent actionEvent) {
             openNewInterface(actionEvent, "/view/sample.fxml", "Antikvitetsplatform", 700, 500);
         }
+
+    public void toButikkSalgsOversikt(ActionEvent actionEvent) {
+        openNewInterface(actionEvent, "/view/butikkSalgsOversikt.fxml", "Salgs Oversikt", 700, 500);
     }
+}
 
