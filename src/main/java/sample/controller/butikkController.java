@@ -35,19 +35,19 @@ public class butikkController extends homeController {
 
     @FXML
     public void initialize() {
-        Platform.runLater(new Runnable() {
-            public void run() {
-                Scene scene = anchorPane.getScene();
-                refreshVarer(scene, 1);
-            }
-        });
-
         valgtButikk = butikk;
 
         butikkNavn.setText(valgtButikk.getNavn());
         beskrivelseText.setText(valgtButikk.getBeskrivelse());
 
         valgtButikk.setVarerIButikk();
+
+        Platform.runLater(new Runnable() {
+            public void run() {
+                Scene scene = anchorPane.getScene();
+                refreshVarer(scene, 1);
+            }
+        });
     }
 
     private void refreshVarer(Scene scene, int side) {
@@ -62,8 +62,7 @@ public class butikkController extends homeController {
 
             //sjekker om det ikkje er flere varer i varelista
             if (vareArrayStartIndex + i >= varer.size()) {
-                // viss (i == 0) og vi IKKJE er på side 1 så går den tilbake til forrige side
-                // dette blir kunn gjort
+                // sjekker om siden vi er på blir tom
                 if (i == 0 && side != 1) {
                     Text sideTal = (Text) scene.lookup("#sideTal");
                     sideTal.setText(Integer.toString(side - 1));
@@ -109,7 +108,6 @@ public class butikkController extends homeController {
 
         txtSide.setText(Integer.toString(side + 1));
         refreshVarer(scene, side + 1);
-
     }
 
     public void editDesc(ActionEvent actionEvent) {
