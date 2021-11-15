@@ -14,4 +14,12 @@
   "pris" : 69,
   "tidspunkt" : [ 2021, 10, 27, 16, 47, 57, 794882300 ],
   "bildeURL" : "aaa"
+}, {
+  "id" : "a576e954-78df-40d8-a1cf-680e82f231f6",
+  "navn" : "muffins",
+  "beskrivelse" : "o",
+  "butikk" : "123",
+  "pris" : 100,
+  "tidspunkt" : [ 2021, 11, 15, 10, 37, 59, 864449100 ],
+  "bildeURL" : "c:\\"
 } ]

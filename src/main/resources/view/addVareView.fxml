@@ -41,7 +41,7 @@
                   <Label text="pris" GridPane.rowIndex="1" />
                   <Label text="Bilde" GridPane.rowIndex="2" />
                   <TextField fx:id="input_pris" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Button fx:id="bildeButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="178.0" text="Legg til bilde(trykke her)" onAction="#openExplorerImg" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <TextField fx:id="input_url" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                     </children>
                 </GridPane>
                 <Label prefHeight="17.0" prefWidth="199.0" text="beskrivelse" textAlignment="CENTER" GridPane.columnIndex="1" />
@@ -53,5 +53,6 @@
             <Font size="22.0" />
          </font>
       </Label>
+        <Button fx:id="bildeButton" mnemonicParsing="false" prefHeight="25.0" prefWidth="178.0" text="Legg til bilde(trykke her)" onAction="#openExplorerImg" GridPane.columnIndex="1" GridPane.rowIndex="2" />
     </children>
 </AnchorPane>
