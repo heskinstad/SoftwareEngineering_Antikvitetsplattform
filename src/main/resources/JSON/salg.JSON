@@ -39,4 +39,37 @@
     "bildeURL" : "aaa"
   },
   "tidspunkt" : [ 2021, 11, 8, 11, 26, 0, 29470000 ]
+}, {
+  "kjoper" : {
+    "fornavn" : "123",
+    "etternavn" : "123",
+    "brukerOpprettet" : [ 2021, 11, 15, 9, 50, 21, 859066500 ],
+    "sisteInnlogging" : [ 2021, 11, 15, 9, 50, 21, 859066500 ]
+  },
+  "selger" : {
+    "navn" : "123",
+    "spesialitet" : "123",
+    "dagligLeder" : "132",
+    "beskrivelse" : "En To Tre",
+    "tidspunkt" : [ 2021, 10, 27, 15, 43, 6, 738833200 ],
+    "vareListe" : [ {
+      "id" : "2df28fef-f548-4ac1-8c02-c3846bf11928",
+      "navn" : "Brus",
+      "beskrivelse" : "Godt",
+      "butikk" : "123",
+      "pris" : 10,
+      "tidspunkt" : [ 2021, 11, 1, 18, 35, 18, 459857900 ],
+      "bildeURL" : "null"
+    } ]
+  },
+  "solgtVare" : {
+    "id" : "2df28fef-f548-4ac1-8c02-c3846bf11928",
+    "navn" : "Brus",
+    "beskrivelse" : "Godt",
+    "butikk" : "123",
+    "pris" : 10,
+    "tidspunkt" : [ 2021, 11, 1, 18, 35, 18, 459857900 ],
+    "bildeURL" : "null"
+  },
+  "tidspunkt" : [ 2021, 11, 15, 9, 50, 24, 936983300 ]
 } ]

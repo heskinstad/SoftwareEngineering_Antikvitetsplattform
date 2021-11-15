@@ -34,6 +34,7 @@ public class butikkSalgsOversiktController extends homeController {
         refreshButikkSalgsListe();
         int tjentePenger = kalkulerTotalPengeTjent();
         pengerTjentText.setText(String.valueOf(tjentePenger));
+        col_Salg_Pris.setCellValueFactory(tf -> tf.getValue().getSolgtVare().prisProperty());
 
     }
 
