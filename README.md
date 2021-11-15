@@ -1,0 +1,1 @@
+![](https://github.com/heskinstad/SoftwareEngineering_Antikvitetsplattform/actions/workflows/main.yml/badge.svg)
