@@ -59,7 +59,7 @@ public class vareController extends homeController {
             JFileChooser fileChooser = new JFileChooser();
             fileChooser.setCurrentDirectory(new File("C:\\Users\\vetle_93dri9c\\Pictures"));
 
-            int response = fileChooser.showSaveDialog(null);
+            int response = fileChooser.showDialog(null, "choose");
             if(response == JFileChooser.APPROVE_OPTION) {
                 File file = new File(fileChooser.getSelectedFile().getAbsolutePath());
                 System.out.println(file);
