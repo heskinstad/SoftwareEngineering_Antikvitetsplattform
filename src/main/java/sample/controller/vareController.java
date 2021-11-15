@@ -9,10 +9,8 @@ import sample.data.DataHandlerVare;
 import sample.model.Vare;
 
 import javax.swing.*;
-import java.awt.*;
+import javax.swing.filechooser.FileFilter;
 import java.io.File;
-import java.io.IOException;
-import java.time.LocalDateTime;
 
 public class vareController extends homeController {
 
@@ -54,10 +52,37 @@ public class vareController extends homeController {
 
     public void openExplorerImg(ActionEvent actionEvent) {
         try {
-
-
             JFileChooser fileChooser = new JFileChooser();
-            fileChooser.setCurrentDirectory(new File("C:\\Users\\vetle_93dri9c\\Pictures"));
+            fileChooser.setFileFilter(new FileFilter(){
+
+                @Override
+                public boolean accept(File f) {
+                    if (f.isDirectory()) {
+                        return true;
+                    }
+
+                    String extension = null;
+                    String name = f.getName();
+                    int indexOfDot = name.lastIndexOf('.');
+                    if (indexOfDot >= 0) {
+                        extension = name.substring(indexOfDot);
+                    }
+                    System.out.println(extension);
+
+                    if (extension != null) {
+                        return extension.equals(".jpeg") ||
+                                extension.equals(".jpg") ||
+                                extension.equals(".png");
+                    }
+
+                    return false;
+                }
+
+                @Override
+                public String getDescription() {
+                    return "images";
+                }
+            });
 
             int response = fileChooser.showDialog(null, "choose");
             if(response == JFileChooser.APPROVE_OPTION) {
