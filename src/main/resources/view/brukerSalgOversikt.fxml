@@ -3,9 +3,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
-
+<?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.brukerSalgsOversiktController">
    <children>
@@ -13,19 +12,20 @@
         <columns>
             <TableColumn fx:id="col_Salg_Selger" prefWidth="130.0" text="Selger">
                 <cellValueFactory>
-                    <PropertyValueFactory property="selger"/>
+                    <PropertyValueFactory property="selger" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn fx:id="col_Salg_Vare" prefWidth="115.0" text="Vare">
+            <TableColumn fx:id="col_Salg_Vare" prefWidth="33.0" text="Vare">
                 <cellValueFactory>
-                    <PropertyValueFactory property="solgtVare"/>
+                    <PropertyValueFactory property="solgtVare" />
                 </cellValueFactory>
             </TableColumn>
-            <TableColumn fx:id="col_Salg_Tidspunkt" prefWidth="287.0" text="Tidspunkt">
+            <TableColumn fx:id="col_Salg_Tidspunkt" prefWidth="277.0" text="Tidspunkt">
                 <cellValueFactory>
-                    <PropertyValueFactory property="tidspunkt"/>
+                    <PropertyValueFactory property="tidspunkt" />
                 </cellValueFactory>
             </TableColumn>
+            <TableColumn fx:id="col_Salg_Pris" prefWidth="167.0" text="Pris" />
         </columns>
       </TableView>
       <Button layoutX="230.0" layoutY="374.0" mnemonicParsing="false" onAction="#forlatOversikt" text="Forlat salgsoversikt?" />

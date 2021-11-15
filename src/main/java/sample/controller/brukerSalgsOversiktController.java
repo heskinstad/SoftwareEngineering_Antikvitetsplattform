@@ -29,6 +29,7 @@ public class brukerSalgsOversiktController extends homeController {
     public void initialize() {
 
         refreshBrukerSalgsListe();
+        col_Salg_Pris.setCellValueFactory(tf -> tf.getValue().getSolgtVare().prisProperty());
 
     }
 
