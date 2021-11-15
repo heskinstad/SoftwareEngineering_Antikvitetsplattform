@@ -81,6 +81,7 @@ public class Butikk {
     }
 
     public void setVarerIButikk(String path){
+        vareListe = new ArrayList<>();
         for(Vare vare : DataHandlerVare.hentVarer(path)){
             if(vare.getButikk().equals(this.getNavn())){
                 vareListe.add(vare);

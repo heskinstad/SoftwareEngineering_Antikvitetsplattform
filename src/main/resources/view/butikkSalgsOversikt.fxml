@@ -23,7 +23,7 @@
             </TableColumn>
             <TableColumn fx:id="col_Salg_Pris" prefWidth="139.0" text="Pris">
                 <cellValueFactory>
-                    <PropertyValueFactory property="solgVare.pris"/>
+                    <PropertyValueFactory property="solgtVare.pris"/>
                 </cellValueFactory>
             </TableColumn>
             <TableColumn fx:id="col_Salg_Tidspunkt" prefWidth="258.0" text="Tidspunkt">

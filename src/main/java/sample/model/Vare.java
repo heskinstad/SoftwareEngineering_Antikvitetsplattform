@@ -1,5 +1,9 @@
 package sample.model;
 
+import javafx.beans.property.IntegerProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.value.ObservableValue;
+
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -76,6 +80,11 @@ public class Vare {
 
     public String getBildeURL() {return bildeURL;}
     public void setBildeURL(String bildeURL) {this.bildeURL = bildeURL;}
+
+    public ObservableValue<Integer> prisProperty(){
+        ObservableValue<Integer> varePris = new SimpleIntegerProperty(pris).asObject();
+        return varePris;
+    }
 
     @Override
     public String toString() {

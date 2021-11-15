@@ -30,9 +30,11 @@ public class brukerController extends homeController {
     public ChoiceBox<Butikk> ButikkValgBox;
 
     public Butikk valgtButikk;
+    String path = "/src/main/resources/JSON/varer.JSON";
 
     @FXML
     public void initialize() {
+
         Platform.runLater(new Runnable() {
             public void run() {
                 Scene scene = borderPane.getScene();
@@ -50,8 +52,13 @@ public class brukerController extends homeController {
 
 
     private void refreshVarer(Scene scene, int side) {
+        ArrayList<Vare> varer;
+        try{
+             varer = new ArrayList<>(valgtButikk.getVareListe());
+        } catch (Exception e) {
+             varer = new ArrayList<>(DataHandlerVare.hentVarer(path));
+        }
 
-        ArrayList<Vare> varer = new ArrayList<>(DataHandlerVare.hentVarer());
         for (int i = 0; i < 3; i++) {
             int vareArrayStartIndex = getTrueVareArrayStartIndex(side);
 
@@ -73,15 +80,9 @@ public class brukerController extends homeController {
             }
 
             //inserts the data to the window
-            if(varer.get(i).getButikk().equals(valgtButikk.getNavn())) {
-                vareTittel.setText(varer.get(vareArrayStartIndex + i).getNavn());
-                vareBeskrivelse.setText(varer.get(vareArrayStartIndex + i).getBeskrivelse());
-                //TODO resolve image insert, first get real urls in the JSON
-            }else{
-                vareTittel.setText(null);
-                vareBeskrivelse.setText(null);
-            }
-
+            vareTittel.setText(varer.get(vareArrayStartIndex + i).getNavn());
+            vareBeskrivelse.setText(varer.get(vareArrayStartIndex + i).getBeskrivelse());
+            //TODO resolve image insert, first get real urls in the JSON
         }
     }
 
@@ -115,12 +116,9 @@ public class brukerController extends homeController {
     public void butikkValgt(){
         valgtButikk = ButikkValgBox.getValue();
         valgtButikk.setVarerIButikk();
-        Platform.runLater(new Runnable() {
-            public void run() {
-                Scene scene = borderPane.getScene();
-                refreshVarer(scene, 1);
-            }
-        });
+
+        Scene scene = borderPane.getScene();
+        refreshVarer(scene, 1);
     }
 
     public void kjopVare1(ActionEvent actionEvent) {
