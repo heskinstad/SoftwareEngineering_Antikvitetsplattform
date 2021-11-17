@@ -14,4 +14,12 @@
   "pris" : 100,
   "tidspunkt" : [ 2021, 11, 15, 10, 37, 59, 864449100 ],
   "bildeURL" : "c:\\"
+}, {
+  "id" : "f8ac5c21-0820-42fa-bd7d-31dec1f05b52",
+  "navn" : "dsada",
+  "beskrivelse" : "dsadada",
+  "butikk" : "123",
+  "pris" : 1000,
+  "tidspunkt" : [ 2021, 11, 17, 14, 38, 56, 334147300 ],
+  "bildeURL" : "blomstebilde.png"
 } ]
