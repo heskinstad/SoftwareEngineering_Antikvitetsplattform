@@ -9,7 +9,7 @@ import sample.data.DataHandlerVare;
 import sample.model.Vare;
 
 import javax.swing.*;
-import java.awt.*;
+import javax.swing.filechooser.FileFilter;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -54,16 +54,18 @@ public class vareController extends homeController {
 
     public void openExplorerImg(ActionEvent actionEvent) {
         try {
+
+
             JFileChooser fileChooser = new JFileChooser();
-            fileChooser.setCurrentDirectory(new File("src/main/resources/images"));
+            fileChooser.setCurrentDirectory(new File("C:\\Users\\vetle_93dri9c\\Pictures"));
 
             int response = fileChooser.showSaveDialog(null);
             if(response == JFileChooser.APPROVE_OPTION) {
-                File file = new File(fileChooser.getSelectedFile().getName());
+                File file = new File(fileChooser.getSelectedFile().getAbsolutePath());
                 System.out.println(file);
             }
 
-            input_url.setText(fileChooser.getSelectedFile().getName());
+            input_url.setText(fileChooser.getSelectedFile().getAbsolutePath());
         } catch (Exception e) {
             System.out.println("Fil ikke funnet");
         }
