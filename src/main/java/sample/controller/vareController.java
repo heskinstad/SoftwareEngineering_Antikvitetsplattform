@@ -54,12 +54,40 @@ public class vareController extends homeController {
 
     public void openExplorerImg(ActionEvent actionEvent) {
         try {
-
-
             JFileChooser fileChooser = new JFileChooser();
+            fileChooser.setFileFilter(new FileFilter(){
+
+                @Override
+                public boolean accept(File f) {
+                    if (f.isDirectory()) {
+                        return true;
+                    }
+
+                    String extension = null;
+                    String name = f.getName();
+                    int indexOfDot = name.lastIndexOf('.');
+                    if (indexOfDot >= 0) {
+                        extension = name.substring(indexOfDot);
+                    }
+                    System.out.println(extension);
+
+                    if (extension != null) {
+                        return extension.equals(".jpeg") ||
+                                extension.equals(".jpg") ||
+                                extension.equals(".png");
+                    }
+
+                    return false;
+                }
+
+                @Override
+                public String getDescription() {
+                    return "images";
+                }
+            });
             fileChooser.setCurrentDirectory(new File("src/main/resources/images"));
 
-            int response = fileChooser.showSaveDialog(null);
+            int response = fileChooser.showDialog(null, "choose");
             if(response == JFileChooser.APPROVE_OPTION) {
                 File file = new File(fileChooser.getSelectedFile().getName());
                 System.out.println(file);
