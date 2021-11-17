@@ -82,6 +82,37 @@ public class DataHandlerVare {
         return hentVarer("/src/main/resources/JSON/varer.JSON");
     }
 
+    public static void slettVare(Vare varer, String localPath) {
+        String varerId = varer.getId().toString();
+
+        ArrayList<Vare> aVarer = hentVarer(localPath);
+        int i;
+        for (i = 0; i < aVarer.size() ; i++) {
+            if (aVarer.get(i).getId().toString().equals(varerId)) {
+                break;
+            }
+        }
+        if (i < aVarer.size()) {
+            aVarer.remove(i);
+        }
+
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.findAndRegisterModules();
+            objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
+            String path = new File("").getAbsolutePath() + localPath;
+
+            objectMapper.writeValue(new File(path), aVarer);
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+    public static void slettVare(Vare vare) {
+        slettVare(vare, "/src/main/resources/JSON/varer.JSON");
+    }
+
+
 
 
 }

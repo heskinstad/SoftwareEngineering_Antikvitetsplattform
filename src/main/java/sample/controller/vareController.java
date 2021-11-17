@@ -1,11 +1,20 @@
 package sample.controller;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.SerializationFeature;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import sample.data.DataHandlerButikk;
+import sample.data.DataHandlerKlage;
 import sample.data.DataHandlerVare;
+import sample.model.Butikk;
+import sample.model.Klage;
 import sample.model.Vare;
 
 import javax.swing.*;
@@ -13,6 +22,7 @@ import javax.swing.filechooser.FileFilter;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 
 public class vareController extends homeController {
 
@@ -24,9 +34,21 @@ public class vareController extends homeController {
     public TextField input_pris;
     @FXML
     public TextField input_url;
+    @FXML
+    public ChoiceBox<Vare> velgVare;
 
     @FXML
     public void initialize() {
+        ArrayList<Vare> registrerteVarer = DataHandlerVare.hentVarer();
+        ObservableList<Vare> listeMedVarer = FXCollections.observableArrayList(registrerteVarer);
+        velgVare.setItems(listeMedVarer);
+
+    }
+
+    public void slettVare(ActionEvent actionEvent) {
+        DataHandlerVare.slettVare(velgVare.getValue());
+        velgVare.getItems().removeAll(velgVare.getValue());
+        System.out.println("Slettet varen fra listen.");
 
     }
 
