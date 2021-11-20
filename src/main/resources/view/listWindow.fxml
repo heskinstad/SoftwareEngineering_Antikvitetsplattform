@@ -61,6 +61,11 @@
                         <PropertyValueFactory property="tidspunkt" />
                      </cellValueFactory>
                   </TableColumn>
+                 <TableColumn fx:id="col_Salg_Pris" prefWidth="139.0" text="Pris">
+                    <cellValueFactory>
+                       <PropertyValueFactory property="solgtVare.pris"/>
+                    </cellValueFactory>
+                 </TableColumn>
               </columns>
             </TableView>
             <TableView fx:id="table_shops" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">

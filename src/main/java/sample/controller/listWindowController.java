@@ -21,6 +21,7 @@ public class listWindowController extends homeController {
     @FXML TableColumn<Salg,Butikk> col_Salg_Selger;
     @FXML TableColumn<Salg,Vare> col_Salg_SolgtVare;
     @FXML TableColumn<Salg,LocalDateTime> col_Salg_Tidspunkt;
+    @FXML TableColumn<Salg, Integer> col_Salg_Pris;
     @FXML TableView<Klage> table_Complaints;
     @FXML TableColumn<Klage,Integer> col_Klage_ID;
     @FXML TableColumn<Klage,String> col_Klage_Innsender;
@@ -55,6 +56,7 @@ public class listWindowController extends homeController {
         salgsListe.addAll(DataHandlerSalg.hentSalg());
         ObservableList<Salg> salgObservableList = FXCollections.observableArrayList(salgsListe);
         table_SaleHistory.setItems(salgObservableList);
+        col_Salg_Pris.setCellValueFactory(tf -> tf.getValue().getSolgtVare().prisProperty());
     }
 
     private void refreshKlageListe() {
