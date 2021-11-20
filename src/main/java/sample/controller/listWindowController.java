@@ -72,7 +72,7 @@ public class listWindowController extends homeController {
             tjentePenger += etSalg.getSolgtVare().getPris() * 0.05;
         }
 
-        pengerTjent.setText(String.valueOf(tjentePenger) + "kr tjent fra butikkers salg.");
+        pengerTjent.setText(String.valueOf(tjentePenger) + " kr tjent fra butikkers salg.");
     }
 
     private void refreshKlageListe() {

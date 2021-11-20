@@ -33,7 +33,7 @@ public class butikkSalgsOversiktController extends homeController {
 
         refreshButikkSalgsListe();
         int tjentePenger = kalkulerTotalPengeTjent();
-        pengerTjentText.setText(String.valueOf(tjentePenger) + "kr tjent fra salg");
+        pengerTjentText.setText(String.valueOf(tjentePenger) + " kr tjent fra salg");
         col_Salg_Pris.setCellValueFactory(tf -> tf.getValue().getSolgtVare().prisProperty());
 
     }

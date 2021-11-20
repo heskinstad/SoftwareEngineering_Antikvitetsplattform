@@ -289,7 +289,7 @@
             </TableView>
             <Text fx:id="pengerTjent" strokeType="OUTSIDE" strokeWidth="0.0" text="-" GridPane.columnIndex="1" GridPane.rowIndex="3">
                <GridPane.margin>
-                  <Insets left="330.0" />
+                  <Insets left="300.0" />
                </GridPane.margin>
             </Text>
          </children>
