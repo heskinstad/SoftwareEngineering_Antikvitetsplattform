@@ -6,6 +6,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.text.Text;
 import sample.data.*;
 import sample.model.*;
 import sample.data.DataHandlerKlage;
@@ -33,6 +34,8 @@ public class listWindowController extends homeController {
     @FXML TableColumn<Butikk,String> col_Butikk_Spesialitet;
     @FXML TableColumn<Butikk,String> col_Butikk_DagligLeder;
     @FXML TableColumn<Butikk,String> col_Butikk_Tidspunkt;
+    @FXML
+    Text pengerTjent;
 
     @FXML
     public void initialize() {
@@ -57,6 +60,19 @@ public class listWindowController extends homeController {
         ObservableList<Salg> salgObservableList = FXCollections.observableArrayList(salgsListe);
         table_SaleHistory.setItems(salgObservableList);
         col_Salg_Pris.setCellValueFactory(tf -> tf.getValue().getSolgtVare().prisProperty());
+
+        refreshPengerTjent();
+    }
+
+    private void refreshPengerTjent() {
+        ArrayList<Salg> alleSalg = DataHandlerSalg.hentSalg();
+        int tjentePenger = 0;
+
+        for(Salg etSalg : alleSalg){
+            tjentePenger += etSalg.getSolgtVare().getPris() * 0.05;
+        }
+
+        pengerTjent.setText(String.valueOf(tjentePenger) + "kr tjent fra butikkers salg.");
     }
 
     private void refreshKlageListe() {
