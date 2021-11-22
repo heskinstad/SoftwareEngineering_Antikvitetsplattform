@@ -109,7 +109,7 @@ public class vareController extends homeController {
                     return "images";
                 }
             });
-            fileChooser.setCurrentDirectory(new File("src/main/resources/images"));
+            fileChooser.setCurrentDirectory(new File("C:\\"));
 
             int response = fileChooser.showDialog(null, "choose");
             if (response == JFileChooser.APPROVE_OPTION) {
