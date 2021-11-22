@@ -43,7 +43,7 @@ public class brukerRegistreringController extends homeController {
             }
         }
         DataHandlerBruker.leggInnBruker(bruker);
-        openNewInterface(actionEvent, "/view/brukerView.fxml", "Bruker Control - " + bruker.getFornavn() + " " + bruker.getEtternavn(), 670, 648);
+        openNewInterface(actionEvent, "/view/brukerView.fxml", "Bruker Control - " + bruker.getFornavn() + " " + bruker.getEtternavn(), 676, 624);
     }
 
     //TODO VURDER Å ENDRE DENNE TIL EN DROP-DOWN ISTEDENFOR
@@ -61,7 +61,7 @@ public class brukerRegistreringController extends homeController {
         for (int i = 0; i < brukere.size(); i++) {
             if (Objects.equals(brukere.get(i).getFornavn(), fornavn) && Objects.equals(brukere.get(i).getEtternavn(), etternavn)) {
                 oppdaterSisteInnlogging(bruker);
-                openNewInterface(actionEvent, "/view/brukerView.fxml", "Bruker Control - " + bruker.getFornavn() + " " + bruker.getEtternavn(), 670, 648);
+                openNewInterface(actionEvent, "/view/brukerView.fxml", "Bruker Control - " + bruker.getFornavn() + " " + bruker.getEtternavn(), 676, 624);
                 return;
             }
         }

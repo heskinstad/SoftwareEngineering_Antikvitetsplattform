@@ -12,7 +12,6 @@ import sample.model.Bruker;
 import sample.model.Butikk;
 
 import java.io.IOException;
-import java.util.ArrayList;
 
 public class homeController {
 
@@ -29,7 +28,7 @@ public class homeController {
     }
 
     public void loginAdmin(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "/view/listWindow.fxml", "Admincontroller", 600, 400);
+        openNewInterface(actionEvent, "/view/adminView.fxml", "Admincontroller", 850, 550);
     }
 
     public void loginButikk(ActionEvent actionEvent) {

@@ -43,7 +43,7 @@ public class klageController extends homeController {
     }
 
     public void avbryt(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "/view/brukerView.fxml", "Bruker Control", 624, 648);
+        openNewInterface(actionEvent, "/view/brukerView.fxml", "Bruker Control", 676, 624);
     }
 
 }

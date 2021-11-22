@@ -68,6 +68,7 @@ public class brukerController extends homeController {
             int vareArrayStartIndex = getTrueVareArrayStartIndex(side);
 
             Text vareTittel = (Text) scene.lookup("#vare_navn_" + i);
+            Text vareButikk = (Text) scene.lookup("#vare_butikk_" + i);
             Text varePris = (Text) scene.lookup("#vare_pris_" + i);
             Text vareBeskrivelse = (Text) scene.lookup("#vare_Beskrivelse_" + i);
             ImageView vareBilde = (ImageView) scene.lookup("#vare_bilde_" + i);
@@ -81,6 +82,7 @@ public class brukerController extends homeController {
                     break;
                 }
                 vareTittel.setText(null);
+                vareButikk.setText(null);
                 varePris.setText(null);
                 vareBeskrivelse.setText(null);
                 vareBilde.setImage(null);
@@ -90,6 +92,7 @@ public class brukerController extends homeController {
 
             //inserts the data to the window
             vareTittel.setText(varer.get(vareArrayStartIndex + i).getNavn());
+            vareButikk.setText(varer.get(vareArrayStartIndex + i).getButikk());
             varePris.setText("Pris: " + varer.get(vareArrayStartIndex + i).getPris() + " kr");
             vareBeskrivelse.setText(varer.get(vareArrayStartIndex + i).getBeskrivelse());
 

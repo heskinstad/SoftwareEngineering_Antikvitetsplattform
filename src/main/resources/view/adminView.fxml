@@ -12,12 +12,12 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.listWindowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.listWindowController">
    <children>
-      <GridPane layoutX="14.0" layoutY="14.0" prefHeight="373.0" prefWidth="573.0">
+      <GridPane layoutX="14.0" layoutY="15.0" prefHeight="521.0" prefWidth="823.0">
         <columnConstraints>
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="282.0" minWidth="10.0" prefWidth="196.0" />
-          <ColumnConstraints hgrow="SOMETIMES" maxWidth="396.0" minWidth="10.0" prefWidth="377.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="282.0" minWidth="10.0" prefWidth="199.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="625.0" minWidth="10.0" prefWidth="624.0" />
         </columnConstraints>
         <rowConstraints>
           <RowConstraints />
@@ -29,29 +29,29 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TableView fx:id="table_SaleHistory" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+            <TableView fx:id="table_SaleHistory" prefHeight="120.0" prefWidth="554.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
               <columns>
-                <TableColumn id="col_Salg_Kjoper" prefWidth="75.0" text="Kjøper">
+                <TableColumn id="col_Salg_Kjoper" prefWidth="134.0" text="Kjøper">
                    <cellValueFactory>
                       <PropertyValueFactory property="kjoper" />
                    </cellValueFactory>
                 </TableColumn>
-                <TableColumn id="col_Salg_Selger" prefWidth="75.0" text="Selger">
+                <TableColumn id="col_Salg_Selger" prefWidth="149.0" text="Selger">
                    <cellValueFactory>
                       <PropertyValueFactory property="selger" />
                    </cellValueFactory>
                 </TableColumn>
-                  <TableColumn id="col_Salg_SolgtVare" prefWidth="75.0" text="Vare">
+                  <TableColumn id="col_Salg_SolgtVare" prefWidth="159.0" text="Vare">
                      <cellValueFactory>
                         <PropertyValueFactory property="solgtVare" />
                      </cellValueFactory>
                   </TableColumn>
-                  <TableColumn id="col_Salg_Tidspunkt" prefWidth="81.0" text="Tidspunkt">
+                  <TableColumn id="col_Salg_Tidspunkt" prefWidth="84.0" text="Tidspunkt">
                      <cellValueFactory>
                         <PropertyValueFactory property="tidspunkt" />
                      </cellValueFactory>
                   </TableColumn>
-                 <TableColumn fx:id="col_Salg_Pris" prefWidth="70.0" text="Pris">
+                 <TableColumn fx:id="col_Salg_Pris" prefWidth="97.0" text="Pris">
                     <cellValueFactory>
                        <PropertyValueFactory property="solgtVare.pris" />
                     </cellValueFactory>
@@ -60,22 +60,22 @@
             </TableView>
             <TableView fx:id="table_shops" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
               <columns>
-                <TableColumn id="col_Butikk_Navn" prefWidth="75.0" text="Navn">
+                <TableColumn id="col_Butikk_Navn" prefWidth="159.0" text="Navn">
                    <cellValueFactory>
                       <PropertyValueFactory property="navn" />
                    </cellValueFactory>
                 </TableColumn>
-                <TableColumn id="col_Butikk_Spesialitet" prefWidth="75.0" text="Spesialitet">
+                <TableColumn id="col_Butikk_Spesialitet" prefWidth="183.0" text="Spesialitet">
                    <cellValueFactory>
                       <PropertyValueFactory property="spesialitet" />
                    </cellValueFactory>
                 </TableColumn>
-                <TableColumn id="col_Butikk_DagligLeder" prefWidth="75.0" text="Daglig leder">
+                <TableColumn id="col_Butikk_DagligLeder" prefWidth="182.0" text="Daglig leder">
                    <cellValueFactory>
                       <PropertyValueFactory property="dagligLeder" />
                    </cellValueFactory>
                 </TableColumn>
-                <TableColumn id="col_Butikk_Tidspunkt" prefWidth="75.0" text="Tid registrert">
+                <TableColumn id="col_Butikk_Tidspunkt" prefWidth="99.0" text="Tid registrert">
                    <cellValueFactory>
                       <PropertyValueFactory property="tidspunkt" />
                    </cellValueFactory>
@@ -86,86 +86,81 @@
             <GridPane GridPane.rowIndex="4">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Salgshistorikk:" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Salgshistorikk" GridPane.columnSpan="2">
                      <font>
                         <Font size="20.0" />
                      </font></Text>
+                  <Text fx:id="pengerTjent" strokeType="OUTSIDE" strokeWidth="0.0" text="-" GridPane.rowIndex="1">
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Text>
                </children>
             </GridPane>
             <Button mnemonicParsing="false" onAction="#refresh" text="Last inn på nytt" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <GridPane GridPane.rowIndex="5">
                <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="93.0" minWidth="10.0" prefWidth="58.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="10.0" prefWidth="138.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" />
+                  <ColumnConstraints />
                </columnConstraints>
                <rowConstraints>
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Klager" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Klager" GridPane.columnSpan="2">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Text>
-                  <Button fx:id="sletteKlage" mnemonicParsing="false" onAction="#deleteSelectedRow" prefHeight="25.0" prefWidth="138.0" text="Slette markert klage" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <Button fx:id="sletteKlage" mnemonicParsing="false" onAction="#deleteSelectedRow" prefHeight="25.0" prefWidth="138.0" text="Slett markert klage" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <TableView fx:id="table_Complaints" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                <columns>
-                  <TableColumn id="col_Klage_ID" prefWidth="75.0" text="ID">
+                  <TableColumn id="col_Klage_ID" prefWidth="66.0" text="ID">
                   <cellValueFactory>
                      <PropertyValueFactory property="id" />
                   </cellValueFactory>
                   </TableColumn>
-                  <TableColumn id="col_Klage_Innsender" prefWidth="75.0" text="Innsender">
+                  <TableColumn id="col_Klage_Innsender" prefWidth="110.0" text="Innsender">
                      <cellValueFactory>
                         <PropertyValueFactory property="navn" />
                      </cellValueFactory>
                   </TableColumn>
-                  <TableColumn id="col_Klage_Melding" prefWidth="75.0" text="Melding">
+                  <TableColumn id="col_Klage_Melding" prefWidth="216.0" text="Melding">
                      <cellValueFactory>
                         <PropertyValueFactory property="melding" />
                      </cellValueFactory>
                   </TableColumn>
-                  <TableColumn id="col_Klage_Butikk" prefWidth="75.0" text="Butikk">
+                  <TableColumn id="col_Klage_Butikk" prefWidth="133.0" text="Butikk">
                      <cellValueFactory>
                         <PropertyValueFactory property="butikk" />
                      </cellValueFactory>
                   </TableColumn>
-                  <TableColumn id="col_Klage_Tidspunkt" prefWidth="75.0" text="Tidspunkt">
+                  <TableColumn id="col_Klage_Tidspunkt" prefWidth="98.0" text="Tidspunkt">
                      <cellValueFactory>
                         <PropertyValueFactory property="tidspunkt" />
                      </cellValueFactory>
                   </TableColumn>
                </columns>
             </TableView>
-            <Text fx:id="pengerTjent" strokeType="OUTSIDE" strokeWidth="0.0" text="-" GridPane.columnIndex="1" GridPane.rowIndex="3">
-               <GridPane.margin>
-                  <Insets left="300.0" />
-               </GridPane.margin>
-            </Text>
             <GridPane GridPane.rowIndex="6">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Butikker:" wrappingWidth="146.62109375" GridPane.rowIndex="1">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Butikker" wrappingWidth="146.62109375">
                      <font>
                         <Font size="20.0" />
                      </font>
