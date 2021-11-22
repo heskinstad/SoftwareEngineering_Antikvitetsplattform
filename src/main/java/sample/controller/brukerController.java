@@ -26,6 +26,9 @@ public class brukerController extends homeController {
     @FXML public TextField varenavn0;
     @FXML public TextField varenavn1;
     @FXML public TextField varenavn3;
+    @FXML public Text vare_pris_0;
+    @FXML public Text vare_pris_1;
+    @FXML public Text vare_pris_2;
     @FXML public TextArea vareBeskrivelse1;
     @FXML public TextArea vareBeskrivelse2;
     @FXML public TextArea vareBeskrivelse3;
@@ -53,7 +56,6 @@ public class brukerController extends homeController {
         ButikkValgBox.setItems(observableButikkListe);
     }
 
-
     private void refreshVarer(Scene scene, int side) {
         ArrayList<Vare> varer;
         try{
@@ -66,6 +68,7 @@ public class brukerController extends homeController {
             int vareArrayStartIndex = getTrueVareArrayStartIndex(side);
 
             Text vareTittel = (Text) scene.lookup("#vare_navn_" + i);
+            Text varePris = (Text) scene.lookup("#vare_pris_" + i);
             Text vareBeskrivelse = (Text) scene.lookup("#vare_Beskrivelse_" + i);
             ImageView vareBilde = (ImageView) scene.lookup("#vare_bilde_" + i);
 
@@ -78,6 +81,7 @@ public class brukerController extends homeController {
                     break;
                 }
                 vareTittel.setText(null);
+                varePris.setText(null);
                 vareBeskrivelse.setText(null);
                 vareBilde.setImage(null);
 
@@ -86,11 +90,11 @@ public class brukerController extends homeController {
 
             //inserts the data to the window
             vareTittel.setText(varer.get(vareArrayStartIndex + i).getNavn());
+            varePris.setText(varer.get(vareArrayStartIndex + i).getPris() + "");
             vareBeskrivelse.setText(varer.get(vareArrayStartIndex + i).getBeskrivelse());
-            //TODO resolve image insert, first get real urls in the JSON
 
+            //inserts image from path in JSON file
             try {
-
                 vareBilde.setImage(DataHandlerVare.hentVareBilde(varer.get(vareArrayStartIndex + i).getBildeURL()));
                 vareBilde.fitWidthProperty();
             }
@@ -135,13 +139,12 @@ public class brukerController extends homeController {
         refreshVarer(scene, 1);
     }
 
-    public void kjopVare1(ActionEvent actionEvent) {
-        //openNewInterface(actionEvent, "../view/sample.fxml", "Complaints", 600, 400);
+    public void kjopVare(int i) {
         Platform.runLater(new Runnable() {
             public void run() {
                 Scene thisScene = borderPane.getScene();
 
-                Text vareTittel = (Text) thisScene.lookup("#vare_navn_0");
+                Text vareTittel = (Text) thisScene.lookup("#vare_navn_" + i);
 
                 String navnTilVare = vareTittel.getText();
                 Vare kjoptVare = new Vare();
@@ -150,7 +153,6 @@ public class brukerController extends homeController {
                 for(Vare vareIListe: butikkVareListe){
                     if(navnTilVare.equals(vareIListe.getNavn()))
                         kjoptVare = vareIListe;
-
                 }
 
                 Salg nyttSalg = new Salg(bruker, valgtButikk, kjoptVare);
@@ -165,70 +167,18 @@ public class brukerController extends homeController {
                 refreshVarer(scene, 1);
             }
         });
+    }
+
+    public void kjopVare1(ActionEvent actionEvent) {
+        kjopVare(0);
     }
 
     public void kjopVare2(ActionEvent actionEvent) {
-        //openNewInterface(actionEvent, "../view/sample.fxml", "Complaints", 600, 400);
-        Platform.runLater(new Runnable() {
-            public void run() {
-                Scene thisScene = borderPane.getScene();
-
-                Text vareTittel = (Text) thisScene.lookup("#vare_navn_1");
-
-                String navnTilVare = vareTittel.getText();
-                Vare kjoptVare = new Vare();
-                ArrayList<Vare> butikkVareListe = valgtButikk.getVareListe();
-
-                for(Vare vareIListe: butikkVareListe){
-                    if(navnTilVare.equals(vareIListe.getNavn()))
-                        kjoptVare = vareIListe;
-
-                }
-
-                Salg nyttSalg = new Salg(bruker, valgtButikk, kjoptVare);
-
-                DataHandlerSalg.registrerSalg(nyttSalg);
-            }
-        });
-
-        Platform.runLater(new Runnable() {
-            public void run() {
-                Scene scene = borderPane.getScene();
-                refreshVarer(scene, 1);
-            }
-        });
+        kjopVare(1);
     }
 
     public void kjopVare3(ActionEvent actionEvent) {
-        //openNewInterface(actionEvent, "../view/sample.fxml", "Complaints", 600, 400);
-        Platform.runLater(new Runnable() {
-            public void run() {
-                Scene thisScene = borderPane.getScene();
-
-                Text vareTittel = (Text) thisScene.lookup("#vare_navn_2");
-
-                String navnTilVare = vareTittel.getText();
-                Vare kjoptVare = new Vare();
-                ArrayList<Vare> butikkVareListe = valgtButikk.getVareListe();
-
-                for(Vare vareIListe: butikkVareListe){
-                    if(navnTilVare.equals(vareIListe.getNavn()))
-                        kjoptVare = vareIListe;
-
-                }
-
-                Salg nyttSalg = new Salg(bruker, valgtButikk, kjoptVare);
-
-                DataHandlerSalg.registrerSalg(nyttSalg);
-            }
-        });
-
-        Platform.runLater(new Runnable() {
-            public void run() {
-                Scene scene = borderPane.getScene();
-                refreshVarer(scene, 1);
-            }
-        });
+        kjopVare(2);
     }
 
     public void backToLogin(ActionEvent actionEvent) {

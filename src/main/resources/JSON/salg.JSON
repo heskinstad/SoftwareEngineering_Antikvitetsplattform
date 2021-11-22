@@ -121,4 +121,53 @@
     "bildeURL" : "c:\\"
   },
   "tidspunkt" : [ 2021, 11, 22, 10, 12, 0, 262451700 ]
+}, {
+  "kjoper" : {
+    "fornavn" : "123",
+    "etternavn" : "123",
+    "brukerOpprettet" : [ 2021, 11, 22, 11, 35, 26, 232223800 ],
+    "sisteInnlogging" : [ 2021, 11, 22, 11, 35, 26, 232223800 ]
+  },
+  "selger" : {
+    "navn" : "123",
+    "spesialitet" : "123",
+    "dagligLeder" : "132",
+    "beskrivelse" : "En To Tre",
+    "tidspunkt" : [ 2021, 10, 27, 15, 43, 6, 738833200 ],
+    "vareListe" : [ {
+      "id" : "f8ac5c21-0820-42fa-bd7d-31dec1f05b52",
+      "navn" : "dsada",
+      "beskrivelse" : "dsadada",
+      "butikk" : "123",
+      "pris" : 1000,
+      "tidspunkt" : [ 2021, 11, 17, 14, 38, 56, 334147300 ],
+      "bildeURL" : "blomstebilde.png"
+    }, {
+      "id" : "0f1487a6-2a4b-4c22-a1da-d2a8e051bedf",
+      "navn" : "stol",
+      "beskrivelse" : "brukt",
+      "butikk" : "123",
+      "pris" : 150,
+      "tidspunkt" : [ 2021, 11, 17, 14, 43, 17, 242768200 ],
+      "bildeURL" : "blomstebilde.png"
+    }, {
+      "id" : "6d6f2524-6296-4555-8b29-1fe332260af4",
+      "navn" : "Aston Martin DB5",
+      "beskrivelse" : "Sean Connery used to drive this back in the day you know",
+      "butikk" : "123",
+      "pris" : 500000000,
+      "tidspunkt" : [ 2021, 11, 22, 11, 18, 1, 754218300 ],
+      "bildeURL" : "AstonMartinDB5.jpg"
+    } ]
+  },
+  "solgtVare" : {
+    "id" : "f8ac5c21-0820-42fa-bd7d-31dec1f05b52",
+    "navn" : "dsada",
+    "beskrivelse" : "dsadada",
+    "butikk" : "123",
+    "pris" : 1000,
+    "tidspunkt" : [ 2021, 11, 17, 14, 38, 56, 334147300 ],
+    "bildeURL" : "blomstebilde.png"
+  },
+  "tidspunkt" : [ 2021, 11, 22, 11, 35, 35, 306236000 ]
 } ]
