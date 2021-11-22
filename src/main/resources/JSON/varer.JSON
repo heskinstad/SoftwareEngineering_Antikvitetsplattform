@@ -22,4 +22,12 @@
   "pris" : 500000000,
   "tidspunkt" : [ 2021, 11, 22, 11, 18, 1, 754218300 ],
   "bildeURL" : "AstonMartinDB5.jpg"
+}, {
+  "id" : "c4f1456c-1a17-4ed6-ab78-b0543753134d",
+  "navn" : "Penger",
+  "beskrivelse" : "Dette er en penge",
+  "butikk" : "123",
+  "pris" : 100,
+  "tidspunkt" : [ 2021, 11, 22, 11, 32, 27, 913122900 ],
+  "bildeURL" : "Penge.jpg"
 } ]
