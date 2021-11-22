@@ -1,19 +1,7 @@
 [ {
-  "id" : "28ec6edd-1190-486f-9f97-4fb6ab09ca59",
-  "navn" : "123 123",
-  "melding" : "another AAAAAAAAAAA",
-  "butikk" : "1234",
-  "tidspunkt" : [ 2021, 11, 1, 10, 33, 58, 414192200 ]
-}, {
   "id" : "21964b3a-7d30-4d62-8cc8-17ccb8e54c7e",
   "navn" : "Barack Obama",
   "melding" : "Yes we can (complain)!",
-  "butikk" : "123",
+  "butikk" : "Norsk bilforening",
   "tidspunkt" : [ 2021, 11, 1, 10, 37, 8, 381116800 ]
-}, {
-  "id" : "d6478bd2-cde6-40db-a3f2-1a116e22151a",
-  "navn" : "123 123",
-  "melding" : "Safta var dårlig blanda",
-  "butikk" : "123",
-  "tidspunkt" : [ 2021, 11, 4, 12, 42, 59, 520304200 ]
 } ]

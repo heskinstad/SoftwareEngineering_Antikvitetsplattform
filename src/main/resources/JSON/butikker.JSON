@@ -1,18 +1,4 @@
 [ {
-  "navn" : "123",
-  "spesialitet" : "123",
-  "dagligLeder" : "132",
-  "beskrivelse" : "En To Tre",
-  "tidspunkt" : [ 2021, 10, 27, 15, 43, 6, 738833200 ],
-  "vareListe" : [ ]
-}, {
-  "navn" : "1234",
-  "spesialitet" : "1234",
-  "dagligLeder" : "1324",
-  "beskrivelse" : null,
-  "tidspunkt" : [ 2021, 10, 27, 15, 43, 6, 738833200 ],
-  "vareListe" : [ ]
-}, {
   "navn" : "Nicolas' Treasures",
   "spesialitet" : "Artifacts",
   "dagligLeder" : "Nicolas Cage",
@@ -25,5 +11,19 @@
   "dagligLeder" : "Steinar Gråstein",
   "beskrivelse" : "Norske arkeologiske gjenstander.",
   "tidspunkt" : [ 2021, 11, 22, 12, 29, 54, 963462600 ],
+  "vareListe" : [ ]
+}, {
+  "navn" : "Norsk bilforening",
+  "spesialitet" : "Biler",
+  "dagligLeder" : "Rudolf Blodstrupmoen",
+  "beskrivelse" : "Vi selger gamle biler",
+  "tidspunkt" : [ 2021, 11, 22, 12, 39, 4, 842418400 ],
+  "vareListe" : [ ]
+}, {
+  "navn" : "Kjedelige antikviteter",
+  "spesialitet" : "Møbler",
+  "dagligLeder" : "Jørgen Døgnflue",
+  "beskrivelse" : "Vi selger gamle møbler som er vonde å sitte i",
+  "tidspunkt" : [ 2021, 11, 22, 12, 46, 39, 833539200 ],
   "vareListe" : [ ]
 } ]

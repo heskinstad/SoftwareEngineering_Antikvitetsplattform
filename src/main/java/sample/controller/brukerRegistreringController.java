@@ -23,10 +23,6 @@ public class brukerRegistreringController extends homeController {
     @FXML
     TextField loggInnEtternavn;
 
-    //TODO: fikse at brukeren man logger inn/registrerer blir satt som nåværende bruker i neste interface
-
-
-
     public void registrerNyBruker(ActionEvent actionEvent) {
         String fornavn = registrerFornavn.getText();
         String etternavn = registrerEtternavn.getText();
@@ -50,6 +46,7 @@ public class brukerRegistreringController extends homeController {
         openNewInterface(actionEvent, "/view/brukerView.fxml", "Bruker Control - " + bruker.getFornavn() + " " + bruker.getEtternavn(), 670, 648);
     }
 
+    //TODO VURDER Å ENDRE DENNE TIL EN DROP-DOWN ISTEDENFOR
     public void loggInnBruker(ActionEvent actionEvent) {
         String fornavn = loggInnFornavn.getText();
         String etternavn = loggInnEtternavn.getText();
