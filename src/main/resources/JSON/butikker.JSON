@@ -2,11 +2,28 @@
   "navn" : "123",
   "spesialitet" : "123",
   "dagligLeder" : "132",
+  "beskrivelse" : "En To Tre",
   "tidspunkt" : [ 2021, 10, 27, 15, 43, 6, 738833200 ],
-  "beskrivelse" : "En To Tre"
+  "vareListe" : [ ]
 }, {
   "navn" : "1234",
   "spesialitet" : "1234",
   "dagligLeder" : "1324",
-  "tidspunkt" : [ 2021, 10, 27, 15, 43, 6, 738833200 ]
+  "beskrivelse" : null,
+  "tidspunkt" : [ 2021, 10, 27, 15, 43, 6, 738833200 ],
+  "vareListe" : [ ]
+}, {
+  "navn" : "Nicolas' Treasures",
+  "spesialitet" : "Artifacts",
+  "dagligLeder" : "Nicolas Cage",
+  "beskrivelse" : "I sell valuable artifacts and national treasures from around the world! Low prices! Buy now!",
+  "tidspunkt" : [ 2021, 11, 22, 12, 15, 31, 844738200 ],
+  "vareListe" : [ ]
+}, {
+  "navn" : "Norsk Arkeologiforening",
+  "spesialitet" : "Arkeologi",
+  "dagligLeder" : "Steinar Gråstein",
+  "beskrivelse" : "Norske arkeologiske gjenstander.",
+  "tidspunkt" : [ 2021, 11, 22, 12, 29, 54, 963462600 ],
+  "vareListe" : [ ]
 } ]

@@ -90,7 +90,7 @@ public class brukerController extends homeController {
 
             //inserts the data to the window
             vareTittel.setText(varer.get(vareArrayStartIndex + i).getNavn());
-            varePris.setText(varer.get(vareArrayStartIndex + i).getPris() + "");
+            varePris.setText("Pris: " + varer.get(vareArrayStartIndex + i).getPris() + " kr");
             vareBeskrivelse.setText(varer.get(vareArrayStartIndex + i).getBeskrivelse());
 
             //inserts image from path in JSON file
