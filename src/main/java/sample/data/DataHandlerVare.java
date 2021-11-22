@@ -16,6 +16,7 @@ import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Objects;
 
 
 public class DataHandlerVare {
@@ -56,8 +57,10 @@ public class DataHandlerVare {
             objectMapper.writeValue(new File(path), varer);
 
             //Kopierer over bilde til resources/images/
-            File file = new File(new File("").getAbsolutePath() + "/src/main/resources/images/" + vare.getBildeURL());
-            Files.copy(imagePath.toPath(), file.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            if (!Objects.equals(imagePath.toString(), "")) {
+                File file = new File(new File("").getAbsolutePath() + "/src/main/resources/images/" + vare.getBildeURL());
+                Files.copy(imagePath.toPath(), file.toPath(), StandardCopyOption.REPLACE_EXISTING);
+            }
         }
         catch (Exception e) {
             e.printStackTrace();
