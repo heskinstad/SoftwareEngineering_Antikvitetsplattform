@@ -5,8 +5,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
 import sample.data.DataHandlerButikk;
@@ -14,6 +17,7 @@ import sample.data.DataHandlerSalg;
 import sample.data.DataHandlerVare;
 import sample.model.*;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class brukerController extends homeController {
@@ -26,8 +30,10 @@ public class brukerController extends homeController {
     @FXML public TextArea vareBeskrivelse2;
     @FXML public TextArea vareBeskrivelse3;
     @FXML BorderPane borderPane;
-    @FXML
-    public ChoiceBox<Butikk> ButikkValgBox;
+    @FXML public ChoiceBox<Butikk> ButikkValgBox;
+    @FXML public ImageView vare_bilde_0;
+    @FXML public ImageView vare_bilde_1;
+    @FXML public ImageView vare_bilde_2;
 
     public Butikk valgtButikk;
     String path = "/src/main/resources/JSON/varer.JSON";
@@ -45,9 +51,6 @@ public class brukerController extends homeController {
         ArrayList<Butikk> butikkListe = DataHandlerButikk.hentButikker();
         ObservableList<Butikk> observableButikkListe = FXCollections.observableArrayList(butikkListe);
         ButikkValgBox.setItems(observableButikkListe);
-
-        //DataHandlerVare.leggInnVare(new Vare("Saft", "Ille god", "Hei btuikken", 300, "aaa"), "/src/main/resources/JSON/varer.JSON");
-        //DataHandlerKlage.leggInnKlage(new Klage(3, "Per", "Dette fungerte ikke", "Heiabutikken", LocalDateTime.now()), "/src/main/resources/JSON/klager.JSON");
     }
 
 
@@ -64,7 +67,7 @@ public class brukerController extends homeController {
 
             Text vareTittel = (Text) scene.lookup("#vare_navn_" + i);
             Text vareBeskrivelse = (Text) scene.lookup("#vare_Beskrivelse_" + i);
-
+            ImageView vareBilde = (ImageView) scene.lookup("#vare_bilde_" + i);
 
             //sjekker om det er flere varer i varelista
             if (vareArrayStartIndex + i >= varer.size()) {
@@ -76,6 +79,8 @@ public class brukerController extends homeController {
                 }
                 vareTittel.setText(null);
                 vareBeskrivelse.setText(null);
+                vareBilde.setImage(null);
+
                 continue;
             }
 
@@ -83,6 +88,15 @@ public class brukerController extends homeController {
             vareTittel.setText(varer.get(vareArrayStartIndex + i).getNavn());
             vareBeskrivelse.setText(varer.get(vareArrayStartIndex + i).getBeskrivelse());
             //TODO resolve image insert, first get real urls in the JSON
+
+            try {
+
+                vareBilde.setImage(DataHandlerVare.hentVareBilde(varer.get(vareArrayStartIndex + i).getBildeURL()));
+                vareBilde.fitWidthProperty();
+            }
+            catch (Exception e) {
+                System.out.println("Kunne ikke laste inn bilde");
+            }
         }
     }
 

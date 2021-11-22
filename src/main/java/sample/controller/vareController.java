@@ -37,6 +37,8 @@ public class vareController extends homeController {
     @FXML
     public ChoiceBox<Vare> velgVare;
 
+    File imagePath;
+
     @FXML
     public void initialize() {
         ArrayList<Vare> registrerteVarer = DataHandlerVare.hentVarer();
@@ -62,7 +64,7 @@ public class vareController extends homeController {
             //todo input_butik skal ikkje bli skreve inn av buttikk
             Vare vare = new Vare(input_navn.getText(), input_beskrivelse.getText(), butikk.getNavn(),
                     Integer.parseInt(input_pris.getText()), input_url.getText());
-            DataHandlerVare.leggInnVare(vare);
+            DataHandlerVare.leggInnVare(vare, imagePath);
             butikk.getVareListe().add(vare);
             Alert alert = new Alert(Alert.AlertType.WARNING, "vare lagt til");
             alert.showAndWait();
@@ -110,8 +112,10 @@ public class vareController extends homeController {
             fileChooser.setCurrentDirectory(new File("src/main/resources/images"));
 
             int response = fileChooser.showDialog(null, "choose");
-            if(response == JFileChooser.APPROVE_OPTION) {
+            if (response == JFileChooser.APPROVE_OPTION) {
                 File file = new File(fileChooser.getSelectedFile().getName());
+                imagePath = new File(fileChooser.getSelectedFile().getAbsolutePath());
+
                 System.out.println(file);
             }
 

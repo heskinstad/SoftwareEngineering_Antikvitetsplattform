@@ -5,10 +5,14 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import javafx.collections.ObservableList;
+import javafx.scene.image.Image;
 import sample.model.Klage;
 import sample.model.Vare;
 
 import java.io.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -36,7 +40,7 @@ public class DataHandlerVare {
         return null;
     }
 
-    public static void leggInnVare(Vare vare, String localPath) {
+    public static void leggInnVare(Vare vare, String localPath, File imagePath) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.findAndRegisterModules();
@@ -50,13 +54,17 @@ public class DataHandlerVare {
             varer.add(vare);
 
             objectMapper.writeValue(new File(path), varer);
+
+            //Kopierer over bilde til resources/images/
+            File file = new File(new File("").getAbsolutePath() + "/src/main/resources/images/" + vare.getBildeURL());
+            Files.copy(imagePath.toPath(), file.toPath(), StandardCopyOption.REPLACE_EXISTING);
         }
         catch (Exception e) {
             e.printStackTrace();
         }
     }
-    public static void leggInnVare(Vare vare) {
-        leggInnVare(vare, "/src/main/resources/JSON/varer.JSON");
+    public static void leggInnVare(Vare vare, File imagePath) {
+        leggInnVare(vare, "/src/main/resources/JSON/varer.JSON", imagePath);
     }
 
     public static ArrayList<Vare> hentVarer(String localPath) {
@@ -108,11 +116,18 @@ public class DataHandlerVare {
             e.printStackTrace();
         }
     }
+
     public static void slettVare(Vare vare) {
         slettVare(vare, "/src/main/resources/JSON/varer.JSON");
     }
 
-
+    public static Image hentVareBilde(String navn) {
+        String path = new File("").getAbsolutePath() + "\\src\\main\\resources\\images\\" + navn;
+        File file = new File(path);
+        System.out.println("Henter bilde fra " + path);
+        Image image = new Image(file.toURI().toString());
+        return image;
+    }
 
 
 }

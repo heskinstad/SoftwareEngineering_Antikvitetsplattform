@@ -19,7 +19,7 @@ public class Test_Read_Write_JSON {
         writer.close();
 
         Vare vare = new Vare("testVare", "testBeskrivelse", "testButikk", 1001, "");
-        DataHandlerVare.leggInnVare(vare, "/src/test/resources/testVarer.JSON");
+        DataHandlerVare.leggInnVare(vare, "/src/test/resources/testVarer.JSON", new File(""));
         Vare vare2 = DataHandlerVare.hentVarer("/src/test/resources/testVarer.JSON").get(0);
         assertEquals(vare.getId(), vare2.getId());
         assertEquals(vare.getNavn(), vare2.getNavn());
@@ -76,7 +76,7 @@ public class Test_Read_Write_JSON {
         DataHandlerButikk.registrerButikk(butikk, "/src/test/resources/testButikker.JSON");
 
         Vare vare = new Vare("testVare", "testBeskrivelse", "test", 1001, "");
-        DataHandlerVare.leggInnVare(vare, "/src/test/resources/testVarer.JSON");
+        DataHandlerVare.leggInnVare(vare, "/src/test/resources/testVarer.JSON", new File(""));
 
         butikk.setVarerIButikk("/src/test/resources/testVarer.JSON");
         ArrayList<Vare> vareListe = butikk.getVareListe();
@@ -104,10 +104,10 @@ public class Test_Read_Write_JSON {
         DataHandlerBruker.leggInnBruker(bruker, "/src/test/resources/testBruker.JSON");
 
         Vare vare = new Vare("testVare", "testBeskrivelse", "test", 1001, "");
-        DataHandlerVare.leggInnVare(vare, "/src/test/resources/testVarer.JSON");
+        DataHandlerVare.leggInnVare(vare, "/src/test/resources/testVarer.JSON", new File(""));
 
         Vare vare2 = new Vare("testVare2", "testBeskrivelse", "test", 1001, "");
-        DataHandlerVare.leggInnVare(vare2, "/src/test/resources/testVarer.JSON");
+        DataHandlerVare.leggInnVare(vare2, "/src/test/resources/testVarer.JSON", new File(""));
 
         butikk.setVarerIButikk("/src/test/resources/testVarer.JSON");
 

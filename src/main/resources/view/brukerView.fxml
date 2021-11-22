@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.image.ImageView?>
@@ -34,31 +35,33 @@
    <center>
       <AnchorPane prefHeight="461.0" prefWidth="648.0" BorderPane.alignment="CENTER">
          <children>
-            <GridPane layoutY="99.0" prefHeight="282.0" prefWidth="648.0">
+            <GridPane layoutY="99.0" prefHeight="382.0" prefWidth="648.0" AnchorPane.topAnchor="0.0">
               <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="30.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="5.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="30.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="5.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" percentWidth="30.0" prefWidth="100.0" />
               </columnConstraints>
               <rowConstraints>
                 <RowConstraints maxHeight="140.0" minHeight="0.0" prefHeight="37.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="201.0" minHeight="0.0" prefHeight="87.0" vgrow="SOMETIMES" />
-                <RowConstraints maxHeight="198.0" minHeight="10.0" prefHeight="139.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="201.0" minHeight="0.0" prefHeight="125.0" vgrow="SOMETIMES" />
+                <RowConstraints maxHeight="198.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
                   <RowConstraints maxHeight="184.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
                   <Text fx:id="vare_navn_0" strokeType="OUTSIDE" strokeWidth="0.0" text="Vare1" wrappingWidth="74.474609375" />
-                  <Text fx:id="vare_navn_1" strokeType="OUTSIDE" strokeWidth="0.0" text="Vare 2" wrappingWidth="104.76171875" GridPane.columnIndex="1" />
-                  <Text fx:id="vare_navn_2" strokeType="OUTSIDE" strokeWidth="0.0" text="Vare 3" wrappingWidth="80.76171875" GridPane.columnIndex="2" />
+                  <Text fx:id="vare_navn_1" strokeType="OUTSIDE" strokeWidth="0.0" text="Vare 2" wrappingWidth="104.76171875" GridPane.columnIndex="2" />
+                  <Text fx:id="vare_navn_2" strokeType="OUTSIDE" strokeWidth="0.0" text="Vare 3" wrappingWidth="80.76171875" GridPane.columnIndex="4" />
                   <Text fx:id="vare_Beskrivelse_0" strokeType="OUTSIDE" strokeWidth="0.0" text="Beskrivelse 1" wrappingWidth="161.341796875" GridPane.rowIndex="2" />
-                  <Text fx:id="vare_Beskrivelse_1" strokeType="OUTSIDE" strokeWidth="0.0" text="Beskrivelse 2" wrappingWidth="145.341796875" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <Text fx:id="vare_Beskrivelse_1" strokeType="OUTSIDE" strokeWidth="0.0" text="Beskrivelse 2" wrappingWidth="145.341796875" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                   <Button mnemonicParsing="false" onAction="#kjopVare1" prefHeight="25.0" prefWidth="271.0" text="Buy" GridPane.rowIndex="3" />
-                  <Button mnemonicParsing="false" onAction="#kjopVare2" prefHeight="25.0" prefWidth="271.0" text="Buy" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <Button mnemonicParsing="false" onAction="#kjopVare3" prefHeight="25.0" prefWidth="245.0" text="Buy" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                  <Text fx:id="vare_Beskrivelse_2" strokeType="OUTSIDE" strokeWidth="0.0" text="Beskrivelse 3" wrappingWidth="217.13671875" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <ImageView fx:id="vare_bilde_0" fitHeight="86.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
-                  <ImageView fx:id="vare_bilde_1" fitHeight="86.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <ImageView fx:id="vare_bilde_2" fitHeight="86.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Button mnemonicParsing="false" onAction="#kjopVare2" prefHeight="25.0" prefWidth="271.0" text="Buy" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Button mnemonicParsing="false" onAction="#kjopVare3" prefHeight="25.0" prefWidth="245.0" text="Buy" GridPane.columnIndex="4" GridPane.rowIndex="3" />
+                  <Text fx:id="vare_Beskrivelse_2" strokeType="OUTSIDE" strokeWidth="0.0" text="Beskrivelse 3" wrappingWidth="217.13671875" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <ImageView fx:id="vare_bilde_0" fitHeight="152.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="1" />
+                  <ImageView fx:id="vare_bilde_1" fitHeight="152.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <ImageView fx:id="vare_bilde_2" fitHeight="152.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="1" />
                </children>
             </GridPane>
                   <Button layoutX="147.0" layoutY="444.0" mnemonicParsing="false" onAction="#forrigeSide" text="Forrige side" />
@@ -68,6 +71,12 @@
                   <Text fx:id="sideTal" layoutX="238.0" layoutY="461.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
             <Button layoutX="531.0" layoutY="444.0" mnemonicParsing="false" onAction="#aapneSalgsOversikt" text="Salgsoversikt" />
          </children>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+         <padding>
+            <Insets top="10.0" />
+         </padding>
       </AnchorPane>
    </center>
 </BorderPane>
