@@ -112,7 +112,7 @@
             <RowConstraints maxHeight="335.0" minHeight="10.0" prefHeight="53.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button id="btnEditDesc" mnemonicParsing="false" onAction="#editDesc" prefHeight="30.0" prefWidth="133.0" text="edit" GridPane.rowIndex="3" />
+            <Button id="btnEditDesc" mnemonicParsing="false" onAction="#editDesc" prefHeight="30.0" prefWidth="133.0" text="Rediger beskrivelse" GridPane.rowIndex="3" />
             <Text fx:id="butikkNavn" strokeType="OUTSIDE" strokeWidth="0.0" text="namn på butikk" textAlignment="CENTER" wrappingWidth="133.07421875" />
             <ImageView fitHeight="97.0" fitWidth="132.0" pickOnBounds="true" GridPane.rowIndex="1">
                <image>
@@ -131,19 +131,19 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button id="btnEditSale" mnemonicParsing="false" onAction="#editSale" prefHeight="30.0" prefWidth="129.0" text="legg til/fjern vare" GridPane.columnIndex="1" />
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="varer" textAlignment="CENTER" wrappingWidth="352.654296875">
+            <Button id="btnEditSale" mnemonicParsing="false" onAction="#editSale" prefHeight="30.0" prefWidth="129.0" text="Legg til/fjern vare" GridPane.columnIndex="1" />
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Varer" textAlignment="CENTER" wrappingWidth="352.654296875">
                <font>
                   <Font size="42.0" />
                </font>
             </Text>
          </children>
       </GridPane>
-      <Button id="btnChangeUser" layoutX="2.0" layoutY="2.0" mnemonicParsing="false" onAction="#changeUser" text="change user" />
-      <Button layoutX="150.0" layoutY="367.0" mnemonicParsing="false" onAction="#forrigeSide" text="forrige side" />
-      <Button layoutX="521.0" layoutY="367.0" mnemonicParsing="false" onAction="#nesteSide" text="neste side" />
+      <Button id="btnChangeUser" layoutX="2.0" layoutY="2.0" mnemonicParsing="false" onAction="#changeUser" text="Forside" />
+      <Button layoutX="150.0" layoutY="367.0" mnemonicParsing="false" onAction="#forrigeSide" text="Forrige side" />
+      <Button layoutX="405" layoutY="367.0" mnemonicParsing="false" onAction="#nesteSide" text="Neste side" />
       <Text fx:id="sideTal" layoutX="336.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
       <Text layoutX="306.0" layoutY="384.0" strokeType="OUTSIDE" strokeWidth="0.0" text="side" />
-      <Button layoutX="405.0" layoutY="367.0" mnemonicParsing="false" onAction="#toButikkSalgsOversikt" text="Salgs oversikt" />
+      <Button layoutX="521" layoutY="367.0" mnemonicParsing="false" onAction="#toButikkSalgsOversikt" text="Salgs oversikt" />
    </children>
 </AnchorPane>

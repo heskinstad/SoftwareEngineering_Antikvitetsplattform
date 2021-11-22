@@ -1,12 +1,4 @@
 [ {
-  "id" : "a576e954-78df-40d8-a1cf-680e82f231f6",
-  "navn" : "muffins",
-  "beskrivelse" : "o",
-  "butikk" : "123",
-  "pris" : 100,
-  "tidspunkt" : [ 2021, 11, 15, 10, 37, 59, 864449100 ],
-  "bildeURL" : "c:\\"
-}, {
   "id" : "f8ac5c21-0820-42fa-bd7d-31dec1f05b52",
   "navn" : "dsada",
   "beskrivelse" : "dsadada",

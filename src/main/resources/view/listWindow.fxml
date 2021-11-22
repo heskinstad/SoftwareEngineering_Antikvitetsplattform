@@ -1,29 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.cell.PropertyValueFactory?>
-<?import javafx.scene.effect.DropShadow?>
-<?import javafx.scene.effect.GaussianBlur?>
-<?import javafx.scene.effect.Glow?>
-<?import javafx.scene.effect.Lighting?>
-<?import javafx.scene.effect.MotionBlur?>
-<?import javafx.scene.effect.Reflection?>
-<?import javafx.scene.effect.Shadow?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.paint.Color?>
-<?import javafx.scene.paint.LinearGradient?>
-<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.listWindowController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="410.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.listWindowController">
    <children>
       <GridPane layoutX="14.0" layoutY="14.0" prefHeight="373.0" prefWidth="573.0">
         <columnConstraints>
@@ -93,7 +82,7 @@
                 </TableColumn>
               </columns>
             </TableView>
-            <Button id="btnChangeUser" mnemonicParsing="false" onAction="#changeUser" text="change user" GridPane.rowIndex="3" />
+            <Button id="btnChangeUser" mnemonicParsing="false" onAction="#changeUser" text="Forside" GridPane.rowIndex="3" />
             <GridPane GridPane.rowIndex="4">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -105,21 +94,17 @@
                 <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Salgshistorikk" GridPane.columnSpan="2">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Salgshistorikk:" GridPane.columnSpan="2" GridPane.rowIndex="1">
                      <font>
                         <Font size="20.0" />
                      </font></Text>
-                  <Button mnemonicParsing="false" text="Button" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" text="Button" GridPane.rowIndex="2" />
-                  <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="2" />
                </children>
             </GridPane>
-            <Button mnemonicParsing="false" onAction="#refresh" text="refresh all" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button mnemonicParsing="false" onAction="#refresh" text="Last inn på nytt" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <GridPane GridPane.rowIndex="5">
                <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="93.0" minWidth="10.0" prefWidth="58.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="138.0" minWidth="10.0" prefWidth="138.0" />
                </columnConstraints>
                <rowConstraints>
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
@@ -127,135 +112,12 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Klager" GridPane.columnSpan="2">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Klager" GridPane.columnSpan="2" GridPane.rowIndex="1">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </Text>
-                  <Button fx:id="sletteKlage" mnemonicParsing="false" onAction="#deleteSelectedRow" text="Slette klage" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" text="Button" GridPane.rowIndex="2" />
-                  <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-               </children>
-            </GridPane>
-            <GridPane GridPane.rowIndex="6">
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Noe annet tøft!" GridPane.columnSpan="2">
-                     <font>
-                        <Font size="20.0" />
-                     </font>
-                     <fill>
-                        <LinearGradient endX="1.0" endY="1.0" startY="1.0">
-                           <stops>
-                              <Stop>
-                                 <color>
-                                    <Color red="0.570397138595581" green="1.0" opacity="0.9700000286102295" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="0.12398783426156337">
-                                 <color>
-                                    <Color />
-                                 </color>
-                              </Stop>
-                              <Stop offset="0.21305841924398625">
-                                 <color>
-                                    <Color red="0.6299999952316284" green="0.24570000171661377" blue="0.24570000171661377" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="0.3264604810996563">
-                                 <color>
-                                    <Color red="0.6299999952316284" green="0.24570000171661377" blue="0.6202884316444397" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="0.42955326460481097">
-                                 <color>
-                                    <Color red="0.6299999952316284" green="0.2789967656135559" blue="0.24570000171661377" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="0.6013745704467351">
-                                 <color>
-                                    <Color red="0.24570000171661377" green="0.4783147871494293" blue="0.6299999952316284" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="0.7079037800687283">
-                                 <color>
-                                    <Color red="0.6299999952316284" green="0.6286126375198364" blue="0.24570000171661377" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="0.7800687285223369">
-                                 <color>
-                                    <Color red="0.32894736528396606" green="0.3280336260795593" blue="0.27412280440330505" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="0.9381443298969071">
-                                 <color>
-                                    <Color red="0.24320000410079956" green="0.6399999856948853" blue="0.3754666745662689" />
-                                 </color>
-                              </Stop>
-                              <Stop offset="1.0">
-                                 <color>
-                                    <Color red="0.23879142105579376" green="0.6447368264198303" blue="0.3741065561771393" />
-                                 </color>
-                              </Stop>
-                           </stops>
-                        </LinearGradient>
-                     </fill>
-                     <effect>
-                        <DropShadow height="38.79" radius="32.1775" spread="0.75" width="91.92">
-                           <color>
-                              <Color green="0.05000000074505806" blue="1.0" />
-                           </color>
-                        </DropShadow>
-                     </effect>
-                     <cursor>
-                        <Cursor fx:constant="CLOSED_HAND" />
-                     </cursor>
-                  </Text>
-                  <Button mnemonicParsing="false" text="Button" GridPane.rowIndex="1">
-                     <effect>
-                        <Glow>
-                           <input>
-                              <Lighting>
-                                 <bumpInput>
-                                    <Shadow />
-                                 </bumpInput>
-                              </Lighting>
-                           </input>
-                        </Glow>
-                     </effect>
-                     <cursor>
-                        <Cursor fx:constant="MOVE" />
-                     </cursor></Button>
-                  <Button mnemonicParsing="false" text="Button" GridPane.rowIndex="2">
-                     <effect>
-                        <GaussianBlur radius="4.0" />
-                     </effect>
-                     <cursor>
-                        <Cursor fx:constant="HAND" />
-                     </cursor></Button>
-                  <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                     <cursor>
-                        <Cursor fx:constant="WAIT" />
-                     </cursor>
-                     <effect>
-                        <MotionBlur angle="124.28" radius="31.5" />
-                     </effect></Button>
-                  <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.rowIndex="2">
-                     <effect>
-                        <Reflection bottomOpacity="1.0" fraction="1.0" topOpacity="1.0" />
-                     </effect>
-                     <cursor>
-                        <Cursor fx:constant="DISAPPEAR" />
-                     </cursor></Button>
+                  <Button fx:id="sletteKlage" mnemonicParsing="false" onAction="#deleteSelectedRow" prefHeight="25.0" prefWidth="138.0" text="Slette markert klage" GridPane.columnIndex="1" GridPane.rowIndex="1" />
                </children>
             </GridPane>
             <TableView fx:id="table_Complaints" prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
@@ -292,6 +154,24 @@
                   <Insets left="300.0" />
                </GridPane.margin>
             </Text>
+            <GridPane GridPane.rowIndex="6">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Butikker:" wrappingWidth="146.62109375" GridPane.rowIndex="1">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </Text>
+               </children>
+            </GridPane>
          </children>
       </GridPane>
    </children>
