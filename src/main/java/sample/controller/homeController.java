@@ -28,21 +28,21 @@ public class homeController {
     }
 
     public void loginAdmin(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "/view/adminView.fxml", "Admincontroller", 850, 550);
+        openListWindowView(actionEvent);
     }
 
     public void loginButikk(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "/view/butikkRegistrering.fxml", "Butikkregistrering", 600, 400);
+        openButikkRegistreringView(actionEvent);
     }
 
     public void loginBruker(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "/view/brukerRegistrering.fxml", "Brukerregistrering", 624, 648);
+        openBrukerRegistreringView(actionEvent);
     }
 
     /*
         Opens a new window defined by the parameters given
      */
-    public void openNewInterface(ActionEvent actionEvent, String path, String windowTitle, int width, int height) {
+    private void openNewInterface(ActionEvent actionEvent, String path, String windowTitle, int width, int height) {
         Parent root;
         try {
             root = FXMLLoader.load(getClass().getResource(path));
@@ -54,5 +54,45 @@ public class homeController {
         catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void openHomeView(ActionEvent actionEvent) {
+        openNewInterface(actionEvent, "/view/homeView.fxml", "Antikvitetsplatform", 600, 400);
+    }
+
+    public void openBrukerView(ActionEvent actionEvent, String windowTitle) {
+        openNewInterface(actionEvent, "/view/brukerView.fxml", windowTitle, 676, 624);
+    }
+
+    public void openBrukerRegistreringView(ActionEvent actionEvent) {
+        openNewInterface(actionEvent, "/view/brukerRegistreringView.fxml", "Brukerregistrering", 624, 648);
+    }
+
+    public void openBrukerKjoepsOversiktView(ActionEvent actionEvent) {
+        openNewInterface(actionEvent, "/view/brukerKjoepsOversiktView.fxml", "Salgsoversikt", 600, 400);
+    }
+
+    public void openButikkView(ActionEvent actionEvent) {
+        openNewInterface(actionEvent, "/view/butikkView.fxml", "Butikkside", 624, 648);
+    }
+
+    public void openButikkRegistreringView(ActionEvent actionEvent) {
+        openNewInterface(actionEvent, "/view/butikkRegistreringView.fxml", "Butikkregistrering", 600, 400);
+    }
+
+    public void openButikkSalgsOversiktView(ActionEvent actionEvent) {
+        openNewInterface(actionEvent, "/view/butikkSalgsOversiktView.fxml", "Salgsoversikt", 700, 500);
+    }
+
+    public void openKlageView(ActionEvent actionEvent) {
+        openNewInterface(actionEvent, "/view/klageView.fxml", "Klageskjema", 600, 310);
+    }
+
+    public void openListWindowView(ActionEvent actionEvent) {
+        openNewInterface(actionEvent, "/view/adminView.fxml", "Administratorside", 850, 550);
+    }
+
+    public void openVareView(ActionEvent actionEvent) {
+        openNewInterface(actionEvent, "/view/addVareView.fxml", "Legg ny vare ut for salg", 700, 500);
     }
 }

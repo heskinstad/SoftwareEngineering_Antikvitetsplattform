@@ -1,7 +1,5 @@
 package sample.controller;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -10,21 +8,15 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
-import sample.data.DataHandlerButikk;
-import sample.data.DataHandlerKlage;
 import sample.data.DataHandlerVare;
-import sample.model.Butikk;
-import sample.model.Klage;
 import sample.model.Vare;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import java.io.File;
-import java.io.IOException;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-public class vareController extends homeController {
+public class addVareController extends homeController {
 
     @FXML
     public TextArea input_beskrivelse;
@@ -73,7 +65,7 @@ public class vareController extends homeController {
     }
 
     public void avbryt(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "/view/butikkView.fxml", "Butikk Control", 624, 648);
+        openButikkView(actionEvent);
     }
 
     public void openExplorerImg(ActionEvent actionEvent) {

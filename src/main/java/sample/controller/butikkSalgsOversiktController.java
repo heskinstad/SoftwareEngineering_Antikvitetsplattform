@@ -4,13 +4,11 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.text.Text;
 import sample.data.DataHandlerSalg;
 import sample.model.Bruker;
-import sample.model.Butikk;
 import sample.model.Salg;
 import sample.model.Vare;
 
@@ -66,6 +64,6 @@ public class butikkSalgsOversiktController extends homeController {
     }
 
     public void forlatOversikt(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "/view/butikkView.fxml", "Bruker Control", 624, 648);
+        openButikkView(actionEvent);
     }
 }

@@ -7,16 +7,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import sample.data.DataHandlerSalg;
-import sample.model.Bruker;
 import sample.model.Butikk;
 import sample.model.Salg;
 import sample.model.Vare;
 
-import java.awt.event.ActionListener;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-public class brukerSalgsOversiktController extends homeController {
+public class brukerKjoepsOversiktController extends homeController {
 
     @FXML
     TableView<Salg> table_SaleHistory;
@@ -48,6 +46,6 @@ public class brukerSalgsOversiktController extends homeController {
     }
 
     public void forlatOversikt(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "/view/brukerView.fxml", "Bruker Control", 624, 648);
+        openBrukerView(actionEvent, "Bruker Control - " + bruker.getFornavn() + " " + bruker.getEtternavn());
     }
 }

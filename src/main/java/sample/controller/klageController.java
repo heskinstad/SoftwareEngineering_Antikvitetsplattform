@@ -43,7 +43,7 @@ public class klageController extends homeController {
     }
 
     public void avbryt(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "/view/brukerView.fxml", "Bruker Control", 676, 624);
+        openBrukerView(actionEvent, "Bruker Control - " + bruker.getFornavn() + " " + bruker.getEtternavn());
     }
 
 }

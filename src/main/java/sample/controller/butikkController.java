@@ -7,17 +7,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
-import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
-import sample.data.*;
 import sample.model.Butikk;
 import sample.model.Vare;
 
-import java.awt.*;
-import java.io.File;
-import java.io.IOException;
 import java.util.ArrayList;
 
 
@@ -136,15 +131,15 @@ public class butikkController extends homeController {
 
         public void editSale(ActionEvent actionEvent) {
             //todo har bare legg til vare inntil videre
-            openNewInterface(actionEvent, "/view/addVareView.fxml", "legg til vare", 700, 500);
+            openVareView(actionEvent);
         }
 
         public void changeUser(ActionEvent actionEvent) {
-            openNewInterface(actionEvent, "/view/sample.fxml", "Antikvitetsplatform", 700, 500);
+            openHomeView(actionEvent);
         }
 
     public void toButikkSalgsOversikt(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "/view/butikkSalgsOversikt.fxml", "Salgs Oversikt", 700, 500);
+        openButikkSalgsOversiktView(actionEvent);
     }
 }
 

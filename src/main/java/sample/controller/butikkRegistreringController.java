@@ -50,7 +50,7 @@ public class butikkRegistreringController extends homeController {
     }
 
     public void avbryt(javafx.event.ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "/view/butikkView.fxml", "Butikk controll", 624, 648);
+        openButikkView(actionEvent);
     }
 
     public void trykkForLoggInn(ActionEvent actionEvent){
@@ -60,7 +60,7 @@ public class butikkRegistreringController extends homeController {
     }
 
     public void trykkForLoggUt(ActionEvent actionEvent){
-        openNewInterface(actionEvent, "/view/sample.fxml", "Complaints", 600, 400);
+        openHomeView(actionEvent);
     }
 
 }

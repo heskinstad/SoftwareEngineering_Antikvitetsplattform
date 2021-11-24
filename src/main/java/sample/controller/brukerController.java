@@ -5,10 +5,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
@@ -17,7 +15,6 @@ import sample.data.DataHandlerSalg;
 import sample.data.DataHandlerVare;
 import sample.model.*;
 
-import java.io.File;
 import java.util.ArrayList;
 
 public class brukerController extends homeController {
@@ -184,17 +181,11 @@ public class brukerController extends homeController {
         kjopVare(2);
     }
 
-    public void backToLogin(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "/view/sample.fxml", "Complaints", 600, 400);
-    }
+    public void backToLogin(ActionEvent actionEvent) { openHomeView(actionEvent); }
 
-    public void aapneKlageSkjema(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "/view/klage.fxml", "Klageskjema", 600, 310);
-    }
+    public void aapneKlageSkjema(ActionEvent actionEvent) { openKlageView(actionEvent); }
 
-    public void aapneSalgsOversikt(ActionEvent actionEvent){
-        openNewInterface(actionEvent, "/view/brukerSalgOversikt.fxml", "Salgsoversikt", 600, 400);
-    }
+    public void aapneSalgsOversikt(ActionEvent actionEvent) { openBrukerKjoepsOversiktView(actionEvent); }
 
 
 }
