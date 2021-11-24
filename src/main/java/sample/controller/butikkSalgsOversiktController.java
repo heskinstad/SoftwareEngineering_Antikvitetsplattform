@@ -63,7 +63,5 @@ public class butikkSalgsOversiktController extends homeController {
         return tjentePenger;
     }
 
-    public void forlatOversikt(ActionEvent actionEvent) {
-        openButikkView(actionEvent);
-    }
+    public void forlatOversikt(ActionEvent actionEvent) { openButikkView(actionEvent); }
 }

@@ -61,9 +61,9 @@
                   <Button mnemonicParsing="false" onAction="#kjopVare2" prefHeight="25.0" prefWidth="271.0" text="Buy" GridPane.columnIndex="2" GridPane.rowIndex="5" />
                   <Button mnemonicParsing="false" onAction="#kjopVare3" prefHeight="25.0" prefWidth="245.0" text="Buy" GridPane.columnIndex="4" GridPane.rowIndex="5" />
                   <Text fx:id="vare_Beskrivelse_2" strokeType="OUTSIDE" strokeWidth="0.0" text="Beskrivelse 3" wrappingWidth="217.13671875" GridPane.columnIndex="4" GridPane.rowIndex="4" />
-                  <ImageView fx:id="vare_bilde_0" fitHeight="152.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2" />
-                  <ImageView fx:id="vare_bilde_1" fitHeight="152.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <ImageView fx:id="vare_bilde_2" fitHeight="152.0" fitWidth="217.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2" />
+                  <ImageView fx:id="vare_bilde_0" fitHeight="195.0" fitWidth="194.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2" />
+                  <ImageView fx:id="vare_bilde_1" fitHeight="196.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <ImageView fx:id="vare_bilde_2" fitHeight="196.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2" />
                   <Text fx:id="vare_pris_0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pris1" wrappingWidth="193.474609375" GridPane.rowIndex="3" />
                   <Text fx:id="vare_pris_1" strokeType="OUTSIDE" strokeWidth="0.0" text="Pris2" wrappingWidth="195.474609375" GridPane.columnIndex="2" GridPane.rowIndex="3" />
                   <Text fx:id="vare_pris_2" strokeType="OUTSIDE" strokeWidth="0.0" text="Pris3" wrappingWidth="194.474609375" GridPane.columnIndex="4" GridPane.rowIndex="3" />
@@ -72,12 +72,12 @@
                   <Text fx:id="vare_butikk_2" strokeType="OUTSIDE" strokeWidth="0.0" text="Butikk3" wrappingWidth="194.474609375" GridPane.columnIndex="4" GridPane.rowIndex="1" />
                </children>
             </GridPane>
-                  <Button layoutX="147.0" layoutY="444.0" mnemonicParsing="false" onAction="#forrigeSide" text="Forrige side" />
-                  <Button layoutX="274.0" layoutY="444.0" mnemonicParsing="false" onAction="#nesteSide" text="Neste side" />
-            <Button layoutX="7.0" layoutY="444.0" mnemonicParsing="false" onAction="#aapneKlageSkjema" text="Ny klage" />
-            <Button fx:id="btnBackToLogin" layoutX="413.0" layoutY="444.0" mnemonicParsing="false" onAction="#backToLogin" text="Forside" />
-                  <Text fx:id="sideTal" layoutX="238.0" layoutY="461.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" />
-            <Button layoutX="531.0" layoutY="444.0" mnemonicParsing="false" onAction="#aapneSalgsOversikt" text="Salgsoversikt" />
+                  <Button layoutX="186.0" layoutY="444.0" mnemonicParsing="false" onAction="#forrigeSide" text="Forrige side" />
+                  <Button layoutX="383.0" layoutY="444.0" mnemonicParsing="false" onAction="#nesteSide" text="Neste side" />
+            <Button layoutX="585.0" layoutY="407.0" mnemonicParsing="false" onAction="#aapneKlageSkjema" text="Ny klage" />
+            <Button fx:id="btnBackToLogin" layoutY="452.0" mnemonicParsing="false" onAction="#backToLogin" text="Forside" />
+                  <Text fx:id="sideTal" layoutX="291.0" layoutY="461.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" wrappingWidth="65.46875" />
+            <Button layoutX="561.0" layoutY="444.0" mnemonicParsing="false" onAction="#aapneSalgsOversikt" text="Kjøpsoversikt" />
          </children>
          <BorderPane.margin>
             <Insets />

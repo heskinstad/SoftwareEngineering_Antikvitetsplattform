@@ -10,6 +10,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import sample.data.DataHandlerVare;
 import sample.model.Butikk;
 import sample.model.Vare;
 
@@ -54,6 +55,7 @@ public class butikkController extends homeController {
             Text vareTittel = (Text) scene.lookup("#vare_tittel_" + i);
             Text vareBeskrivelse = (Text) scene.lookup("#vare_beskrivelse_" + i);
             ImageView vareURL = (ImageView) scene.lookup("#vare_url_" + i);
+            Text varePris = (Text) scene.lookup("#vare_pris_" + i);
 
             //sjekker om det ikkje er flere varer i varelista
             if (vareArrayStartIndex + i >= varer.size()) {
@@ -67,14 +69,22 @@ public class butikkController extends homeController {
                 vareTittel.setText(null);
                 vareBeskrivelse.setText(null);
                 vareURL.setImage(null);
+                varePris.setText(null);
                 continue;
             }
 
             //inserts the data to the window
             vareTittel.setText(varer.get(vareArrayStartIndex + i).getNavn());
             vareBeskrivelse.setText(varer.get(vareArrayStartIndex + i).getBeskrivelse());
-            //TODO resolve image insert, first get real urls in the JSON
-            vareURL.setImage(null);
+            varePris.setText("Pris: " + varer.get(vareArrayStartIndex + i).getPris() + " kr");
+
+            //inserts image from path in JSON file
+            try {
+                vareURL.setImage(DataHandlerVare.hentVareBilde(varer.get(vareArrayStartIndex + i).getBildeURL()));
+            }
+            catch (Exception e) {
+                System.out.println("Kunne ikke laste inn bilde");
+            }
         }
     }
 
@@ -131,7 +141,7 @@ public class butikkController extends homeController {
 
         public void editSale(ActionEvent actionEvent) {
             //todo har bare legg til vare inntil videre
-            openVareView(actionEvent);
+            openAddVareView(actionEvent);
         }
 
         public void changeUser(ActionEvent actionEvent) {

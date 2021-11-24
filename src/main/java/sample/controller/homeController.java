@@ -27,17 +27,11 @@ public class homeController {
         butikk = null;
     }
 
-    public void loginAdmin(ActionEvent actionEvent) {
-        openListWindowView(actionEvent);
-    }
+    public void loginAdmin(ActionEvent actionEvent) { openListWindowView(actionEvent); }
 
-    public void loginButikk(ActionEvent actionEvent) {
-        openButikkRegistreringView(actionEvent);
-    }
+    public void loginButikk(ActionEvent actionEvent) { openButikkRegistreringView(actionEvent); }
 
-    public void loginBruker(ActionEvent actionEvent) {
-        openBrukerRegistreringView(actionEvent);
-    }
+    public void loginBruker(ActionEvent actionEvent) { openBrukerRegistreringView(actionEvent); }
 
     /*
         Opens a new window defined by the parameters given
@@ -60,6 +54,10 @@ public class homeController {
         openNewInterface(actionEvent, "/view/homeView.fxml", "Antikvitetsplatform", 600, 400);
     }
 
+    public void openAddVareView(ActionEvent actionEvent) {
+        openNewInterface(actionEvent, "/view/addVareView.fxml", "Legg ny vare ut for salg", 610, 492);
+    }
+
     public void openBrukerView(ActionEvent actionEvent, String windowTitle) {
         openNewInterface(actionEvent, "/view/brukerView.fxml", windowTitle, 676, 624);
     }
@@ -73,7 +71,7 @@ public class homeController {
     }
 
     public void openButikkView(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "/view/butikkView.fxml", "Butikkside", 624, 648);
+        openNewInterface(actionEvent, "/view/butikkView.fxml", "Butikkside", 616, 680);
     }
 
     public void openButikkRegistreringView(ActionEvent actionEvent) {
@@ -90,9 +88,5 @@ public class homeController {
 
     public void openListWindowView(ActionEvent actionEvent) {
         openNewInterface(actionEvent, "/view/adminView.fxml", "Administratorside", 850, 550);
-    }
-
-    public void openVareView(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "/view/addVareView.fxml", "Legg ny vare ut for salg", 700, 500);
     }
 }

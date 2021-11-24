@@ -62,4 +62,12 @@
   "pris" : 2000,
   "tidspunkt" : [ 2021, 11, 24, 10, 16, 56, 83748000 ],
   "bildeURL" : "GammeltPiano.jpg"
+}, {
+  "id" : "76c40117-5d65-42fa-bdf5-9618069aa907",
+  "navn" : "Store Norske Leksikon",
+  "beskrivelse" : "Store Norske Leksikon på papir",
+  "butikk" : "Kjedelige antikviteter",
+  "pris" : 2500,
+  "tidspunkt" : [ 2021, 11, 24, 12, 6, 33, 632829400 ],
+  "bildeURL" : "StoreNorskeLeksikon.jpg"
 } ]

@@ -96,7 +96,6 @@ public class brukerController extends homeController {
             //inserts image from path in JSON file
             try {
                 vareBilde.setImage(DataHandlerVare.hentVareBilde(varer.get(vareArrayStartIndex + i).getBildeURL()));
-                vareBilde.fitWidthProperty();
             }
             catch (Exception e) {
                 System.out.println("Kunne ikke laste inn bilde");

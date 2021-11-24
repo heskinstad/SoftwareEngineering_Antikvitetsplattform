@@ -2,41 +2,41 @@
   "kjoper" : {
     "fornavn" : "Test",
     "etternavn" : "Testeren",
-    "brukerOpprettet" : [ 2021, 11, 22, 15, 24, 55, 412218000 ],
-    "sisteInnlogging" : [ 2021, 11, 22, 15, 24, 55, 412218000 ]
+    "brukerOpprettet" : [ 2021, 11, 24, 11, 4, 50, 855819800 ],
+    "sisteInnlogging" : [ 2021, 11, 24, 11, 4, 50, 855819800 ]
   },
   "selger" : {
     "navn" : "test",
     "spesialitet" : "testing",
     "dagligLeder" : "test kompani",
     "beskrivelse" : "Denne butikken er kun en test",
-    "tidspunkt" : [ 2021, 11, 22, 15, 24, 55, 410215300 ],
+    "tidspunkt" : [ 2021, 11, 24, 11, 4, 50, 853818000 ],
     "vareListe" : [ {
-      "id" : "b2d2a61f-877a-4a62-9ef7-d6df32d87c31",
+      "id" : "2e2a1c5f-fefe-4928-a10a-e3ced65c9649",
       "navn" : "testVare",
       "beskrivelse" : "testBeskrivelse",
       "butikk" : "test",
       "pris" : 1001,
-      "tidspunkt" : [ 2021, 11, 22, 15, 24, 55, 416220800 ],
+      "tidspunkt" : [ 2021, 11, 24, 11, 4, 50, 858822500 ],
       "bildeURL" : ""
     }, {
-      "id" : "6cee311f-4599-4af4-9bb1-97b30ae7e868",
+      "id" : "9be5b809-3849-47f6-b635-1848422d31a0",
       "navn" : "testVare2",
       "beskrivelse" : "testBeskrivelse",
       "butikk" : "test",
       "pris" : 1001,
-      "tidspunkt" : [ 2021, 11, 22, 15, 24, 55, 418222800 ],
+      "tidspunkt" : [ 2021, 11, 24, 11, 4, 50, 861825100 ],
       "bildeURL" : ""
     } ]
   },
   "solgtVare" : {
-    "id" : "b2d2a61f-877a-4a62-9ef7-d6df32d87c31",
+    "id" : "2e2a1c5f-fefe-4928-a10a-e3ced65c9649",
     "navn" : "testVare",
     "beskrivelse" : "testBeskrivelse",
     "butikk" : "test",
     "pris" : 1001,
-    "tidspunkt" : [ 2021, 11, 22, 15, 24, 55, 416220800 ],
+    "tidspunkt" : [ 2021, 11, 24, 11, 4, 50, 858822500 ],
     "bildeURL" : ""
   },
-  "tidspunkt" : [ 2021, 11, 22, 15, 24, 55, 423227000 ]
+  "tidspunkt" : [ 2021, 11, 24, 11, 4, 50, 866829600 ]
 } ]
