@@ -128,5 +128,18 @@ public class Test_Read_Write_JSON {
 
     }
 
+    @Test
+    public void test_Bruker_Existing() throws FileNotFoundException {
+        PrintWriter writer = new PrintWriter(new File("").getAbsolutePath() + "/src/test/resources/JSON/testBruker.JSON");
+        writer.close();
+
+        Bruker bruker = new Bruker("Test", "Testeren");
+        DataHandlerBruker.leggInnBruker(bruker, "/src/test/resources/JSON/testBruker.JSON");
+        Bruker bruker2 = DataHandlerBruker.hentBrukere("/src/test/resources/JSON/testBruker.JSON").get(0);
+        assertEquals(bruker.getFornavn(), bruker2.getFornavn());
+        assertEquals(bruker.getEtternavn(), bruker2.getEtternavn());
+
+    }
+
 
 }
