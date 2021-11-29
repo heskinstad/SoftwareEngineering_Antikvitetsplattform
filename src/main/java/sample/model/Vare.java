@@ -37,26 +37,6 @@ public class Vare {
         this.bildeURL = bildeURL;
     }
 
-    /**
-     * Konstruktør med all data for varen
-     * @param uuid IDen til varen
-     * @param navn navnet på varen
-     * @param beskrivelse beskrivelse av varen
-     * @param butikk navnet på butikken som har lagt varen ut for salg
-     * @param pris prisen på varen i NOK
-     * @param bildeURL pathen der bildet hentes fra
-     */
-    public Vare(String uuid, String navn, String beskrivelse, String butikk, int pris, String bildeURL) {
-
-        this.id = UUID.fromString(uuid);
-        this.navn = navn;
-        this.beskrivelse = beskrivelse;
-        this.butikk = butikk;
-        this.pris = pris;
-        this.tidspunkt = LocalDateTime.now();
-        this.bildeURL = bildeURL;
-    }
-
 
     //get-set-metoder
 

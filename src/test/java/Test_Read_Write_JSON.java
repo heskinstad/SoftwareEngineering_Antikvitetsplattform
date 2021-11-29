@@ -1,3 +1,4 @@
+import javafx.scene.image.Image;
 import org.junit.Test;
 import sample.data.*;
 import sample.model.*;
@@ -8,8 +9,8 @@ import java.io.PrintWriter;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
+import static java.lang.Thread.sleep;
+import static org.junit.Assert.*;
 
 public class Test_Read_Write_JSON {
 
@@ -53,7 +54,7 @@ public class Test_Read_Write_JSON {
         PrintWriter writer = new PrintWriter(new File("").getAbsolutePath() + "/src/test/resources/JSON/testButikker.JSON");
         writer.close();
 
-        Butikk butikk = new Butikk("test", "testing","test kompani", "Denne butikken er kun en test");
+        Butikk butikk = new Butikk("test", "testing", "test kompani", "Denne butikken er kun en test");
         DataHandlerButikk.registrerButikk(butikk, "/src/test/resources/JSON/testButikker.JSON");
         Butikk butikk2 = DataHandlerButikk.hentButikker("/src/test/resources/JSON/testButikker.JSON").get(0);
         assertEquals(butikk.getNavn(), butikk2.getNavn());
@@ -62,17 +63,16 @@ public class Test_Read_Write_JSON {
         assertEquals(butikk.getTidspunkt(), butikk2.getTidspunkt());
 
 
-
     }
 
     @Test
-    public void test_Butikk_Holder_Vare() throws FileNotFoundException{
+    public void test_Butikk_Holder_Vare() throws FileNotFoundException {
         PrintWriter writer = new PrintWriter(new File("").getAbsolutePath() + "/src/test/resources/JSON/testButikker.JSON");
         PrintWriter writer2 = new PrintWriter(new File("").getAbsolutePath() + "/src/test/resources/JSON/testVarer.JSON");
         writer.close();
         writer2.close();
 
-        Butikk butikk = new Butikk("test", "testing","test kompani", "Denne butikken er kun en test");
+        Butikk butikk = new Butikk("test", "testing", "test kompani", "Denne butikken er kun en test");
         DataHandlerButikk.registrerButikk(butikk, "/src/test/resources/JSON/testButikker.JSON");
 
         Vare vare = new Vare("testVare", "testBeskrivelse", "test", 1001, "");
@@ -87,7 +87,7 @@ public class Test_Read_Write_JSON {
     }
 
     @Test
-    public void test_Registrer_Salg_Fjern_Vare() throws FileNotFoundException{
+    public void test_Registrer_Salg_Fjern_Vare() throws FileNotFoundException {
         PrintWriter writer = new PrintWriter(new File("").getAbsolutePath() + "/src/test/resources/JSON/testButikker.JSON");
         PrintWriter writer2 = new PrintWriter(new File("").getAbsolutePath() + "/src/test/resources/JSON/testVarer.JSON");
         PrintWriter writer3 = new PrintWriter(new File("").getAbsolutePath() + "/src/test/resources/JSON/testSalg.JSON");
@@ -97,7 +97,7 @@ public class Test_Read_Write_JSON {
         writer3.close();
         writer4.close();
 
-        Butikk butikk = new Butikk("test", "testing","test kompani", "Denne butikken er kun en test");
+        Butikk butikk = new Butikk("test", "testing", "test kompani", "Denne butikken er kun en test");
         DataHandlerButikk.registrerButikk(butikk, "/src/test/resources/JSON/testButikker.JSON");
 
         Bruker bruker = new Bruker("Test", "Testeren");
@@ -117,9 +117,9 @@ public class Test_Read_Write_JSON {
         ArrayList<Salg> salgListe = DataHandlerSalg.hentSalg("/src/test/resources/JSON/testSalg.JSON");
         Salg testSalg = salgListe.get(0);
 
-        assertEquals(salg.getKjoper().getFornavn(),testSalg.getKjoper().getFornavn());
-        assertEquals(salg.getSelger().getNavn(),testSalg.getSelger().getNavn());
-        assertEquals(salg.getSolgtVare().getNavn(),testSalg.getSolgtVare().getNavn());
+        assertEquals(salg.getKjoper().getFornavn(), testSalg.getKjoper().getFornavn());
+        assertEquals(salg.getSelger().getNavn(), testSalg.getSelger().getNavn());
+        assertEquals(salg.getSolgtVare().getNavn(), testSalg.getSolgtVare().getNavn());
 
         ArrayList<Vare> vareListe = DataHandlerVare.hentVarer("/src/test/resources/JSON/testVarer.JSON");
         Vare testVare = vareListe.get(0);
@@ -129,7 +129,7 @@ public class Test_Read_Write_JSON {
     }
 
     @Test
-    public void test_Bruker_Opprettet() throws FileNotFoundException {
+    public void test_Bruker_Read_Write() throws FileNotFoundException, InterruptedException {
         PrintWriter writer = new PrintWriter(new File("").getAbsolutePath() + "/src/test/resources/JSON/testBruker.JSON");
         writer.close();
 
@@ -140,26 +140,23 @@ public class Test_Read_Write_JSON {
         assertEquals(bruker.getEtternavn(), bruker2.getEtternavn());
         assertEquals(bruker.getBrukerOpprettet(), bruker2.getBrukerOpprettet());
         assertEquals(bruker.getSisteInnlogging(), bruker2.getSisteInnlogging());
+        sleep(100);
+        DataHandlerBruker.oppdaterSisteInnlogging(bruker, "/src/test/resources/JSON/testBruker.JSON");
+        bruker2 = DataHandlerBruker.hentBrukere("/src/test/resources/JSON/testBruker.JSON").get(0);
+        assertNotEquals(bruker.getSisteInnlogging(), bruker2.getSisteInnlogging());
 
     }
 
     @Test
-    public void test_Butikk_Opprettet() throws FileNotFoundException {
-        PrintWriter writer = new PrintWriter(new File("").getAbsolutePath() + "/src/test/resources/JSON/testButikker.JSON");
+    public void test_Vare_Slett_Vare() throws FileNotFoundException {
+        PrintWriter writer = new PrintWriter(new File("").getAbsolutePath() + "/src/test/resources/JSON/testVarer.JSON");
         writer.close();
 
-        Butikk butikk = new Butikk("test", "testing", "test kompani", "Denne butikken er kun en test");
-        DataHandlerButikk.registrerButikk(butikk, "/src/test/resources/JSON/testButikker.JSON");
-        Butikk butikk2 = DataHandlerButikk.hentButikker("/src/test/resources/JSON/testButikker.JSON").get(0);
-        assertEquals(butikk.getNavn(), butikk2.getNavn());
-        assertEquals(butikk.getBeskrivelse(), butikk2.getBeskrivelse());
-        assertEquals(butikk.getVareListe(), butikk2.getVareListe());
-        assertEquals(butikk.getDagligLeder(), butikk2.getDagligLeder());
-        assertEquals(butikk.getTidspunkt(), butikk2.getTidspunkt());
-        assertEquals(butikk.getSpesialitet(), butikk2.getSpesialitet());
+        Vare vare = new Vare("testVare", "testBeskrivelse", "test", 1001, "");
+        DataHandlerVare.leggInnVare(vare, "/src/test/resources/JSON/testVarer.JSON", new File(""));
+        DataHandlerVare.slettVare(vare, "/src/test/resources/JSON/testBruker.JSON");
+        assertTrue(DataHandlerKlage.hentKlager("/src/test/resources/JSON/testVarer.JSON").isEmpty());
 
     }
-
-
 
 }
