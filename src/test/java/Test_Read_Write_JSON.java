@@ -129,7 +129,7 @@ public class Test_Read_Write_JSON {
     }
 
     @Test
-    public void test_Bruker_Existing() throws FileNotFoundException {
+    public void test_Bruker_Opprettet() throws FileNotFoundException {
         PrintWriter writer = new PrintWriter(new File("").getAbsolutePath() + "/src/test/resources/JSON/testBruker.JSON");
         writer.close();
 
@@ -138,8 +138,28 @@ public class Test_Read_Write_JSON {
         Bruker bruker2 = DataHandlerBruker.hentBrukere("/src/test/resources/JSON/testBruker.JSON").get(0);
         assertEquals(bruker.getFornavn(), bruker2.getFornavn());
         assertEquals(bruker.getEtternavn(), bruker2.getEtternavn());
+        assertEquals(bruker.getBrukerOpprettet(), bruker2.getBrukerOpprettet());
+        assertEquals(bruker.getSisteInnlogging(), bruker2.getSisteInnlogging());
 
     }
+
+    @Test
+    public void test_Butikk_Opprettet() throws FileNotFoundException {
+        PrintWriter writer = new PrintWriter(new File("").getAbsolutePath() + "/src/test/resources/JSON/testButikker.JSON");
+        writer.close();
+
+        Butikk butikk = new Butikk("test", "testing", "test kompani", "Denne butikken er kun en test");
+        DataHandlerButikk.registrerButikk(butikk, "/src/test/resources/JSON/testButikker.JSON");
+        Butikk butikk2 = DataHandlerButikk.hentButikker("/src/test/resources/JSON/testButikker.JSON").get(0);
+        assertEquals(butikk.getNavn(), butikk2.getNavn());
+        assertEquals(butikk.getBeskrivelse(), butikk2.getBeskrivelse());
+        assertEquals(butikk.getVareListe(), butikk2.getVareListe());
+        assertEquals(butikk.getDagligLeder(), butikk2.getDagligLeder());
+        assertEquals(butikk.getTidspunkt(), butikk2.getTidspunkt());
+        assertEquals(butikk.getSpesialitet(), butikk2.getSpesialitet());
+
+    }
+
 
 
 }
