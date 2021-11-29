@@ -17,8 +17,8 @@
 }, {
   "id" : "c4f1456c-1a17-4ed6-ab78-b0543753134d",
   "navn" : "Penger",
-  "beskrivelse" : "Dette er en penge",
-  "butikk" : "123",
+  "beskrivelse" : "Kjøp 50 kr for bare 100 kr!",
+  "butikk" : "Kjedelige antikviteter",
   "pris" : 100,
   "tidspunkt" : [ 2021, 11, 22, 11, 32, 27, 913122900 ],
   "bildeURL" : "Penge.jpg"
@@ -70,4 +70,12 @@
   "pris" : 2500,
   "tidspunkt" : [ 2021, 11, 24, 12, 6, 33, 632829400 ],
   "bildeURL" : "StoreNorskeLeksikon.jpg"
+}, {
+  "id" : "6953b524-33fa-4136-a45c-f4f8ad63a786",
+  "navn" : "Lysekrone",
+  "beskrivelse" : "Gammel lysekrone",
+  "butikk" : "Kjedelige antikviteter",
+  "pris" : 1200,
+  "tidspunkt" : [ 2021, 11, 28, 12, 41, 7, 809994900 ],
+  "bildeURL" : "Chandelier.JPG"
 } ]

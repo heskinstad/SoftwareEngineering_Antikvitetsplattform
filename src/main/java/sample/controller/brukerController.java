@@ -168,15 +168,15 @@ public class brukerController extends homeController {
         });
     }
 
-    public void kjopVare1(ActionEvent actionEvent) {
+    public void kjopVare0(ActionEvent actionEvent) {
         kjopVare(0);
     }
 
-    public void kjopVare2(ActionEvent actionEvent) {
+    public void kjopVare1(ActionEvent actionEvent) {
         kjopVare(1);
     }
 
-    public void kjopVare3(ActionEvent actionEvent) {
+    public void kjopVare2(ActionEvent actionEvent) {
         kjopVare(2);
     }
 

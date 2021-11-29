@@ -15,6 +15,7 @@ import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class addVareController extends homeController {
 
@@ -88,9 +89,9 @@ public class addVareController extends homeController {
                     System.out.println(extension);
 
                     if (extension != null) {
-                        return extension.equals(".jpeg") ||
-                                extension.equals(".jpg") ||
-                                extension.equals(".png");
+                        return extension.toLowerCase().equals(".jpeg") ||
+                                extension.toLowerCase().equals(".jpg") ||
+                                extension.toLowerCase().equals(".png");
                     }
 
                     return false;
