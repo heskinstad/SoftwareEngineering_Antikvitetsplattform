@@ -1,4 +1,6 @@
+import com.fasterxml.jackson.databind.ObjectMapper;
 import javafx.scene.image.Image;
+import org.junit.Assert;
 import org.junit.Test;
 import sample.data.*;
 import sample.model.*;
@@ -158,5 +160,23 @@ public class Test_Read_Write_JSON {
         assertTrue(DataHandlerKlage.hentKlager("/src/test/resources/JSON/testVarer.JSON").isEmpty());
 
     }
+
+    @Test
+    public void test_regisreting_salg() {
+        boolean thrown = true;
+        //Denne testen failer, som vi må fikse noe her.
+        try {
+            DataHandlerSalg.hentSalg("/src/main/resources/JSON/salg.JSxON");
+
+        } catch (IllegalStateException e) {
+            thrown = false;
+
+        }
+        System.out.println(thrown);
+        assertFalse(thrown);
+    }
+
+
+
 
 }
