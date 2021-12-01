@@ -49,8 +49,6 @@ public class brukerController extends homeController {
 
         Platform.runLater(new Runnable() {
             public void run() {
-                Scene scene = borderPane.getScene();
-                refreshVarer(scene, 1);
                 butikkValgt();
             }
         });
@@ -142,33 +140,25 @@ public class brukerController extends homeController {
     }
 
     public void kjopVare(int i) {
-        Platform.runLater(new Runnable() {
-            public void run() {
-                Scene thisScene = borderPane.getScene();
 
-                Text vareTittel = (Text) thisScene.lookup("#vare_navn_" + i);
+        Scene thisScene = borderPane.getScene();
+        Text vareTittel = (Text) thisScene.lookup("#vare_navn_" + i);
 
-                String navnTilVare = vareTittel.getText();
-                Vare kjoptVare = new Vare();
-                ArrayList<Vare> butikkVareListe = valgtButikk.getVareListe();
+        String navnTilVare = vareTittel.getText();
+        Vare kjoptVare = new Vare();
+        ArrayList<Vare> butikkVareListe = valgtButikk.getVareListe();
 
-                for(Vare vareIListe: butikkVareListe){
-                    if(navnTilVare.equals(vareIListe.getNavn()))
-                        kjoptVare = vareIListe;
-                }
+        for(Vare vareIListe: butikkVareListe){
+            if(navnTilVare.equals(vareIListe.getNavn()))
+                kjoptVare = vareIListe;
+        }
 
-                Salg nyttSalg = new Salg(bruker, valgtButikk, kjoptVare);
+        Salg nyttSalg = new Salg(bruker, valgtButikk, kjoptVare);
+        DataHandlerSalg.registrerSalg(nyttSalg);
 
-                DataHandlerSalg.registrerSalg(nyttSalg);
-            }
-        });
+        Scene scene = borderPane.getScene();
+        refreshVarer(scene, 1);
 
-        Platform.runLater(new Runnable() {
-            public void run() {
-                Scene scene = borderPane.getScene();
-                refreshVarer(scene, 1);
-            }
-        });
     }
 
     public void kjopVare0(ActionEvent actionEvent) {
