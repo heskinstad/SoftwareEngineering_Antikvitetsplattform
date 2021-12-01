@@ -41,16 +41,19 @@ public class brukerController extends homeController {
     @FXML
     public void initialize() {
 
-        Platform.runLater(new Runnable() {
-            public void run() {
-                Scene scene = borderPane.getScene();
-                refreshVarer(scene, 1);
-            }
-        });
 
         ArrayList<Butikk> butikkListe = DataHandlerButikk.hentButikker();
         ObservableList<Butikk> observableButikkListe = FXCollections.observableArrayList(butikkListe);
         ButikkValgBox.setItems(observableButikkListe);
+        ButikkValgBox.getSelectionModel().selectFirst();
+
+        Platform.runLater(new Runnable() {
+            public void run() {
+                Scene scene = borderPane.getScene();
+                refreshVarer(scene, 1);
+                butikkValgt();
+            }
+        });
     }
 
     private void refreshVarer(Scene scene, int side) {
