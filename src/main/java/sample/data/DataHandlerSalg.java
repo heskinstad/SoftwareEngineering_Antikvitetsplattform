@@ -8,13 +8,15 @@ import sample.model.Butikk;
 import sample.model.Salg;
 import sample.model.Vare;
 
+import javax.swing.plaf.synth.SynthTextAreaUI;
 import java.io.File;
+import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
 public class DataHandlerSalg {
 
-    public static void registrerSalg(Salg salg, String localPath, String localVarePath){
+    public static void registrerSalg(Salg salg, String localPath, String localVarePath, String localButikkPath){
         try {
 
             ObjectMapper objectMapper = new ObjectMapper();
@@ -28,14 +30,31 @@ public class DataHandlerSalg {
 
             objectMapper.writeValue(new File(path), salgListe);
 
-            fjernVare(salg.getSolgtVare(), salg.getSelger(), localVarePath);
+            ArrayList<Butikk> butikkListe = DataHandlerButikk.hentButikker(localButikkPath);
+
+            Butikk butikkSomSelger = getButikkSomSelger(salg, butikkListe);
+
+            fjernVare(salg.getSolgtVare(), butikkSomSelger, localVarePath);
         }
         catch (Exception e){
             e.printStackTrace();
         }
     }
+
+    private static Butikk getButikkSomSelger(Salg salg, ArrayList<Butikk> butikkListe) {
+        Butikk butikkSomSelger = null;
+
+        for (Butikk enButikk : butikkListe){
+            if(enButikk.getNavn().equals(salg.getSelger())) {
+                butikkSomSelger = enButikk;
+                break;
+            }
+        }
+        return butikkSomSelger;
+    }
+
     public static void registrerSalg(Salg salg) {
-        registrerSalg(salg, "/src/main/resources/JSON/salg.JSON", "/src/main/resources/JSON/varer.JSON");
+        registrerSalg(salg, "/src/main/resources/JSON/salg.JSON", "/src/main/resources/JSON/varer.JSON", "/src/main/resources/JSON/butikker.JSON");
     }
 
     public static ArrayList<Salg> hentSalg(String localPath){

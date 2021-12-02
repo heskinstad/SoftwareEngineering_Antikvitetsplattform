@@ -1,0 +1,14 @@
+[ {
+  "kjoper" : "Barack Obama",
+  "selger" : "Nicolas' Treasures",
+  "solgtVare" : {
+    "id" : "ed06457d-d68b-46c1-818f-9215d1904702",
+    "navn" : "Declaration of Independence",
+    "beskrivelse" : "Do I really need a description of this?",
+    "butikk" : "Nicolas' Treasures",
+    "pris" : 1000000,
+    "tidspunkt" : [ 2021, 11, 22, 12, 19, 34, 908945100 ],
+    "bildeURL" : "DeclarationOfIndependence.jpg"
+  },
+  "tidspunkt" : [ 2021, 12, 2, 17, 31, 56, 630756900 ]
+} ]

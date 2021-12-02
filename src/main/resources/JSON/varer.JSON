@@ -23,22 +23,6 @@
   "tidspunkt" : [ 2021, 11, 22, 11, 32, 27, 913122900 ],
   "bildeURL" : "Penge.jpg"
 }, {
-  "id" : "ed06457d-d68b-46c1-818f-9215d1904702",
-  "navn" : "Declaration of Independence",
-  "beskrivelse" : "Do I really need a description of this?",
-  "butikk" : "Nicolas' Treasures",
-  "pris" : 1000000,
-  "tidspunkt" : [ 2021, 11, 22, 12, 19, 34, 908945100 ],
-  "bildeURL" : "DeclarationOfIndependence.jpg"
-}, {
-  "id" : "9f56c3df-7bf0-4cc8-8c9d-5a8ffe8881e2",
-  "navn" : "Ark of the Covenant",
-  "beskrivelse" : "It's the real thing just open it and see for yourself!",
-  "butikk" : "Nicolas' Treasures",
-  "pris" : 2500000,
-  "tidspunkt" : [ 2021, 11, 22, 12, 26, 2, 91674900 ],
-  "bildeURL" : "ArkOfTheCovenant.jpg"
-}, {
   "id" : "104d1729-fecf-416a-9896-6bfc9995da2b",
   "navn" : "Egill Skallagrímssons skalle",
   "beskrivelse" : "Egill Skallagrímssons hodeskalle som liten og som stor",

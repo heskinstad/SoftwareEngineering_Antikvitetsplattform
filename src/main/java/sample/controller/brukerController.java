@@ -153,7 +153,7 @@ public class brukerController extends homeController {
                 kjoptVare = vareIListe;
         }
 
-        Salg nyttSalg = new Salg(bruker, valgtButikk, kjoptVare);
+        Salg nyttSalg = new Salg(bruker.toString(), valgtButikk.getNavn(), kjoptVare);
         DataHandlerSalg.registrerSalg(nyttSalg);
 
         Scene scene = borderPane.getScene();

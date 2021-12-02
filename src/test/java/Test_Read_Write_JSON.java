@@ -99,28 +99,30 @@ public class Test_Read_Write_JSON {
         writer3.close();
         writer4.close();
 
-        Butikk butikk = new Butikk("test", "testing", "test kompani", "Denne butikken er kun en test");
+        Butikk butikk = new Butikk("test butikk", "testing", "test kompani", "Denne butikken er kun en test");
         DataHandlerButikk.registrerButikk(butikk, "/src/test/resources/JSON/testButikker.JSON");
 
         Bruker bruker = new Bruker("Test", "Testeren");
         DataHandlerBruker.leggInnBruker(bruker, "/src/test/resources/JSON/testBruker.JSON");
 
-        Vare vare = new Vare("testVare", "testBeskrivelse", "test", 1001, "");
+        Vare vare = new Vare("testVare", "testBeskrivelse", "test butikk", 1001, "");
         DataHandlerVare.leggInnVare(vare, "/src/test/resources/JSON/testVarer.JSON", new File(""));
 
-        Vare vare2 = new Vare("testVare2", "testBeskrivelse", "test", 1001, "");
+        Vare vare2 = new Vare("testVare2", "testBeskrivelse", "test butikk", 1001, "");
         DataHandlerVare.leggInnVare(vare2, "/src/test/resources/JSON/testVarer.JSON", new File(""));
 
         butikk.setVarerIButikk("/src/test/resources/JSON/testVarer.JSON");
 
-        Salg salg = new Salg(bruker, butikk, vare);
-        DataHandlerSalg.registrerSalg(salg, "/src/test/resources/JSON/testSalg.JSON", "/src/test/resources/JSON/testVarer.JSON");
+        ArrayList<Vare> testListe = DataHandlerVare.hentVarer("/src/test/resources/JSON/testVarer.JSON");
+
+        Salg salg = new Salg(bruker.toString(), butikk.getNavn(), vare);
+        DataHandlerSalg.registrerSalg(salg, "/src/test/resources/JSON/testSalg.JSON", "/src/test/resources/JSON/testVarer.JSON", "/src/test/resources/JSON/testButikker.JSON");
 
         ArrayList<Salg> salgListe = DataHandlerSalg.hentSalg("/src/test/resources/JSON/testSalg.JSON");
         Salg testSalg = salgListe.get(0);
 
-        assertEquals(salg.getKjoper().getFornavn(), testSalg.getKjoper().getFornavn());
-        assertEquals(salg.getSelger().getNavn(), testSalg.getSelger().getNavn());
+        assertEquals(salg.getKjoper(), testSalg.getKjoper());
+        assertEquals(salg.getSelger(), testSalg.getSelger());
         assertEquals(salg.getSolgtVare().getNavn(), testSalg.getSolgtVare().getNavn());
 
         ArrayList<Vare> vareListe = DataHandlerVare.hentVarer("/src/test/resources/JSON/testVarer.JSON");

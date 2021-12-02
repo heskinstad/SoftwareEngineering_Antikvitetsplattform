@@ -18,7 +18,7 @@ public class brukerKjoepsOversiktController extends homeController {
 
     @FXML
     TableView<Salg> table_SaleHistory;
-    @FXML TableColumn<Salg, Butikk> col_Salg_Selger;
+    @FXML TableColumn<Salg, String> col_Salg_Selger;
     @FXML TableColumn<Salg, Vare> col_Salg_Vare;
     @FXML TableColumn<Salg, Integer> col_Salg_Pris;
     @FXML TableColumn<Salg, LocalDateTime> col_Salg_Tidspunkt;
@@ -36,7 +36,7 @@ public class brukerKjoepsOversiktController extends homeController {
         ArrayList<Salg> alleSalg = DataHandlerSalg.hentSalg();
 
         for(Salg etSalg: alleSalg){
-            if(etSalg.getKjoper().getFornavn().equals(bruker.getFornavn()) && etSalg.getKjoper().getEtternavn().equals(bruker.getEtternavn())) {
+            if(etSalg.getKjoper().equals(bruker.getFornavn() + " " + bruker.getEtternavn())) {
                 salgsListe.add(etSalg);
             }
         }

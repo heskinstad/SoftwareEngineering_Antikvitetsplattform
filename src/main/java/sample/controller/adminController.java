@@ -17,8 +17,8 @@ import java.util.ArrayList;
 public class adminController extends homeController {
 
     @FXML TableView<Salg> table_SaleHistory;
-    @FXML TableColumn<Salg,Bruker> col_Salg_Kjoper;
-    @FXML TableColumn<Salg,Butikk> col_Salg_Selger;
+    @FXML TableColumn<Salg,String> col_Salg_Kjoper;
+    @FXML TableColumn<Salg,String> col_Salg_Selger;
     @FXML TableColumn<Salg,Vare> col_Salg_SolgtVare;
     @FXML TableColumn<Salg,LocalDateTime> col_Salg_Tidspunkt;
     @FXML TableColumn<Salg, Integer> col_Salg_Pris;

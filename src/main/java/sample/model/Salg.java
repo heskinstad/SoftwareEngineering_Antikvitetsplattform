@@ -3,12 +3,12 @@ package sample.model;
 import java.time.LocalDateTime;
 
 public class Salg {
-    private Bruker kjoper;
-    private Butikk selger;
+    private String kjoper;
+    private String selger;
     private Vare solgtVare;
     private LocalDateTime tidspunkt;
 
-    public Salg(Bruker kjoper, Butikk selger, Vare solgtVare) {
+    public Salg(String kjoper, String selger, Vare solgtVare) {
         this.kjoper = kjoper;
         this.selger = selger;
         this.solgtVare = solgtVare;
@@ -19,19 +19,19 @@ public class Salg {
 
     }
 
-    public Bruker getKjoper() {
+    public String getKjoper() {
         return kjoper;
     }
 
-    public void setKjoper(Bruker kjoper) {
+    public void setKjoper(String kjoper) {
         this.kjoper = kjoper;
     }
 
-    public Butikk getSelger() {
+    public String getSelger() {
         return selger;
     }
 
-    public void setSelger(Butikk selger) {
+    public void setSelger(String selger) {
         this.selger = selger;
     }
 

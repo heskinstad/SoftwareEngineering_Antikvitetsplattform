@@ -19,7 +19,7 @@ public class butikkSalgsOversiktController extends homeController {
     @FXML
     TableView<Salg> table_SaleHistory;
     @FXML
-    TableColumn<Salg, Bruker> col_Salg_Kjoper;
+    TableColumn<Salg, String> col_Salg_Kjoper;
     @FXML TableColumn<Salg, Vare> col_Salg_Vare;
     @FXML TableColumn<Salg, Integer> col_Salg_Pris;
     @FXML TableColumn<Salg, LocalDateTime> col_Salg_Tidspunkt;
@@ -41,7 +41,7 @@ public class butikkSalgsOversiktController extends homeController {
         ArrayList<Salg> alleSalg = DataHandlerSalg.hentSalg();
 
         for(Salg etSalg: alleSalg){
-            if(etSalg.getSelger().getNavn().equals(butikk.getNavn())) {
+            if(etSalg.getSelger().equals(butikk.getNavn())) {
                 salgsListe.add(etSalg);
             }
         }
@@ -55,7 +55,7 @@ public class butikkSalgsOversiktController extends homeController {
         int tjentePenger = 0;
 
         for(Salg etSalg : alleSalg){
-            if(etSalg.getSelger().getNavn().equals(butikk.getNavn())){
+            if(etSalg.getSelger().equals(butikk.getNavn())){
                 tjentePenger += etSalg.getSolgtVare().getPris() * 0.95;
             }
         }
