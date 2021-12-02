@@ -2,13 +2,13 @@
   "kjoper" : "Test Testeren",
   "selger" : "test butikk",
   "solgtVare" : {
-    "id" : "5948dd64-eddb-4e1f-accc-c2786f12da0b",
+    "id" : "4028368c-5c5c-4e86-a523-fcd00e2a0bb8",
     "navn" : "testVare",
     "beskrivelse" : "testBeskrivelse",
     "butikk" : "test butikk",
     "pris" : 1001,
-    "tidspunkt" : [ 2021, 12, 2, 17, 30, 14, 981517400 ],
+    "tidspunkt" : [ 2021, 12, 2, 17, 47, 14, 554563800 ],
     "bildeURL" : ""
   },
-  "tidspunkt" : [ 2021, 12, 2, 17, 30, 15, 14429700 ]
+  "tidspunkt" : [ 2021, 12, 2, 17, 47, 14, 588475900 ]
 } ]

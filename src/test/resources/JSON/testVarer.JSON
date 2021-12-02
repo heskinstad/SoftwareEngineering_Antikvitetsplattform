@@ -1,1 +1,9 @@
-[ ]
+[ {
+  "id" : "70508527-cf3e-4481-b8b9-1990e934971a",
+  "navn" : "testVare2",
+  "beskrivelse" : "testBeskrivelse",
+  "butikk" : "test butikk",
+  "pris" : 1001,
+  "tidspunkt" : [ 2021, 12, 2, 17, 47, 14, 559550300 ],
+  "bildeURL" : ""
+} ]

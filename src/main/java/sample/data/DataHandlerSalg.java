@@ -34,6 +34,8 @@ public class DataHandlerSalg {
 
             Butikk butikkSomSelger = getButikkSomSelger(salg, butikkListe);
 
+            butikkSomSelger.setVarerIButikk(localVarePath);
+
             fjernVare(salg.getSolgtVare(), butikkSomSelger, localVarePath);
         }
         catch (Exception e){
