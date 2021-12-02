@@ -57,7 +57,7 @@
                 <version>2.22.2</version>
                 <configuration>
                     <includes>
-                        <include>Read_Write_JSON.java</include>
+                        <include>Test_Read_Write_JSON.java</include>
                     </includes>
                 </configuration>
             </plugin>
