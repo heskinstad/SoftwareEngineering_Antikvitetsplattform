@@ -65,7 +65,7 @@ public class DataHandlerSalg {
             objectMapper.findAndRegisterModules();
             String path = new File("").getAbsolutePath() + localPath;
             try {
-                ArrayList<Salg> salgListe = objectMapper.readValue(new File(path), new TypeReference<List<Salg>>(){});
+                ArrayList<Salg> salgListe = (ArrayList<Salg>) objectMapper.readValue(new File(path), new TypeReference<List<Salg>>(){});
                 return salgListe;
             }
             catch (JsonMappingException e){
