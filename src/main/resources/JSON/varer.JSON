@@ -1,12 +1,4 @@
 [ {
-  "id" : "9f56c3df-7bf0-4cc8-8c9d-5a8ffe8881e2",
-  "navn" : "Ark of the Covenant",
-  "beskrivelse" : "It's the real thing just open it and see for yourself!",
-  "butikk" : "Nicolas' Treasures",
-  "pris" : 2500000,
-  "tidspunkt" : [ 2021, 11, 22, 12, 26, 2, 91674900 ],
-  "bildeURL" : "ArkOfTheCovenant.jpg"
-}, {
   "id" : "0f1487a6-2a4b-4c22-a1da-d2a8e051bedf",
   "navn" : "Utstoppet sommerfugl",
   "beskrivelse" : "Støvete sommerfugl utstoppet av han bestefar på 50-tallet",
@@ -15,14 +7,6 @@
   "tidspunkt" : [ 2021, 11, 17, 14, 43, 17, 242768200 ],
   "bildeURL" : "blomstebilde.png"
 }, {
-  "id" : "6d6f2524-6296-4555-8b29-1fe332260af4",
-  "navn" : "Aston Martin DB5",
-  "beskrivelse" : "Sean Connery used to drive this back in the day you know",
-  "butikk" : "Norsk bilforening",
-  "pris" : 5000000,
-  "tidspunkt" : [ 2021, 11, 22, 11, 18, 1, 754218300 ],
-  "bildeURL" : "AstonMartinDB5.jpg"
-}, {
   "id" : "c4f1456c-1a17-4ed6-ab78-b0543753134d",
   "navn" : "Penger",
   "beskrivelse" : "Kjøp 50 kr for bare 100 kr!",
@@ -30,14 +14,6 @@
   "pris" : 100,
   "tidspunkt" : [ 2021, 11, 22, 11, 32, 27, 913122900 ],
   "bildeURL" : "Penge.jpg"
-}, {
-  "id" : "104d1729-fecf-416a-9896-6bfc9995da2b",
-  "navn" : "Egill Skallagrímssons skalle",
-  "beskrivelse" : "Egill Skallagrímssons hodeskalle som liten og som stor",
-  "butikk" : "Norsk Arkeologiforening",
-  "pris" : 15000,
-  "tidspunkt" : [ 2021, 11, 22, 12, 31, 9, 339388600 ],
-  "bildeURL" : "EgillSkallagrimsson.jpg"
 }, {
   "id" : "9cb7d5c6-5abf-445b-a3fb-0e779b61b9ab",
   "navn" : "Stol",
@@ -70,4 +46,44 @@
   "pris" : 1200,
   "tidspunkt" : [ 2021, 11, 28, 12, 41, 7, 809994900 ],
   "bildeURL" : "Chandelier.JPG"
+}, {
+  "id" : "a7a9aad6-8734-4ef8-8200-db0818b09756",
+  "navn" : "Dyr lysekrone",
+  "beskrivelse" : "Denne er dyr, men jeg lover deg at den er verdt pengene!",
+  "butikk" : "Kjedelige antikviteter",
+  "pris" : 5000,
+  "tidspunkt" : [ 2021, 12, 4, 14, 42, 0, 947060300 ],
+  "bildeURL" : "Chandelier.JPG"
+}, {
+  "id" : "6d6f2524-6296-4555-8b29-1fe332260af4",
+  "navn" : "Aston Martin DB5",
+  "beskrivelse" : "Sean Connery used to drive this back in the day you know",
+  "butikk" : "Norsk bilforening",
+  "pris" : 5000000,
+  "tidspunkt" : [ 2021, 11, 22, 11, 18, 1, 754218300 ],
+  "bildeURL" : "AstonMartinDB5.jpg"
+}, {
+  "id" : "ed06457d-d68b-46c1-818f-9215d1904702",
+  "navn" : "Declaration of Independence",
+  "beskrivelse" : "Do I really need a description of this?",
+  "butikk" : "Nicolas' Treasures",
+  "pris" : 1000000,
+  "tidspunkt" : [ 2021, 11, 22, 12, 19, 34, 908945100 ],
+  "bildeURL" : "DeclarationOfIndependence.jpg"
+}, {
+  "id" : "9f56c3df-7bf0-4cc8-8c9d-5a8ffe8881e2",
+  "navn" : "Ark of the Covenant",
+  "beskrivelse" : "It's the real thing just open it and see for yourself!",
+  "butikk" : "Nicolas' Treasures",
+  "pris" : 2500000,
+  "tidspunkt" : [ 2021, 11, 22, 12, 26, 2, 91674900 ],
+  "bildeURL" : "ArkOfTheCovenant.jpg"
+}, {
+  "id" : "104d1729-fecf-416a-9896-6bfc9995da2b",
+  "navn" : "Egill Skallagrímssons skalle",
+  "beskrivelse" : "Egill Skallagrímssons hodeskalle som liten og som stor",
+  "butikk" : "Norsk Arkeologiforening",
+  "pris" : 15000,
+  "tidspunkt" : [ 2021, 11, 22, 12, 31, 9, 339388600 ],
+  "bildeURL" : "EgillSkallagrimsson.jpg"
 } ]

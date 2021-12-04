@@ -31,7 +31,7 @@ public class butikkSalgsOversiktController extends homeController {
 
         refreshButikkSalgsListe();
         int tjentePenger = kalkulerTotalPengeTjent();
-        pengerTjentText.setText(String.valueOf(tjentePenger) + " kr tjent fra salg");
+        pengerTjentText.setText(String.valueOf(tjentePenger) + " kr tjent fra salg (95 %)");
         col_Salg_Pris.setCellValueFactory(tf -> tf.getValue().getSolgtVare().prisProperty());
 
     }
@@ -56,7 +56,7 @@ public class butikkSalgsOversiktController extends homeController {
 
         for(Salg etSalg : alleSalg){
             if(etSalg.getSelger().equals(butikk.getNavn())){
-                tjentePenger += etSalg.getSolgtVare().getPris() * 0.95;
+                tjentePenger += Math.floor(etSalg.getSolgtVare().getPris() * 0.95);
             }
         }
 

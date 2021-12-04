@@ -1,14 +1,14 @@
 [ {
-  "kjoper" : "Barack Obama",
-  "selger" : "Nicolas' Treasures",
+  "kjoper" : "Frimand Pløsen",
+  "selger" : "Kjedelige antikviteter",
   "solgtVare" : {
-    "id" : "ed06457d-d68b-46c1-818f-9215d1904702",
-    "navn" : "Declaration of Independence",
-    "beskrivelse" : "Do I really need a description of this?",
-    "butikk" : "Nicolas' Treasures",
-    "pris" : 1000000,
-    "tidspunkt" : [ 2021, 11, 22, 12, 19, 34, 908945100 ],
-    "bildeURL" : "DeclarationOfIndependence.jpg"
+    "id" : "dc5d6a9a-d12e-4eb4-ab7a-b42e934774ba",
+    "navn" : "Billig lysekrone",
+    "beskrivelse" : "Lysekrone - billig, men fin!",
+    "butikk" : "Kjedelige antikviteter",
+    "pris" : 150,
+    "tidspunkt" : [ 2021, 12, 4, 14, 36, 11, 88702600 ],
+    "bildeURL" : "Chandelier.JPG"
   },
-  "tidspunkt" : [ 2021, 12, 2, 17, 31, 56, 630756900 ]
+  "tidspunkt" : [ 2021, 12, 4, 14, 42, 24, 291723000 ]
 } ]

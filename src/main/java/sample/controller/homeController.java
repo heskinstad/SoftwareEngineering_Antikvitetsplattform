@@ -79,7 +79,7 @@ public class homeController {
     }
 
     public void openButikkSalgsOversiktView(ActionEvent actionEvent) {
-        openNewInterface(actionEvent, "/view/butikkSalgsOversiktView.fxml", "Salgsoversikt", 700, 500);
+        openNewInterface(actionEvent, "/view/butikkSalgsOversiktView.fxml", "Salgsoversikt", 600, 400);
     }
 
     public void openKlageView(ActionEvent actionEvent) {

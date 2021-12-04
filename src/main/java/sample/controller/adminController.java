@@ -68,10 +68,10 @@ public class adminController extends homeController {
         int tjentePenger = 0;
 
         for(Salg etSalg : alleSalg){
-            tjentePenger += etSalg.getSolgtVare().getPris() * 0.05;
+            tjentePenger += Math.ceil(etSalg.getSolgtVare().getPris() * 0.05);
         }
 
-        pengerTjent.setText(String.valueOf(tjentePenger) + " kr tjent fra butikkers salg.");
+        pengerTjent.setText(String.valueOf(tjentePenger) + " kr tjent fra butikkers salg (5 %)");
     }
 
     private void refreshKlageListe() {

@@ -35,15 +35,25 @@ public class addVareController extends homeController {
     @FXML
     public void initialize() {
         ArrayList<Vare> registrerteVarer = DataHandlerVare.hentVarer();
+
+        for (int i = 0; i < registrerteVarer.size(); i++) {
+            if (!registrerteVarer.get(i).getButikk().equals(butikk.getNavn())) {
+                registrerteVarer.remove(i);
+                i--;
+            }
+        }
+
         ObservableList<Vare> listeMedVarer = FXCollections.observableArrayList(registrerteVarer);
         velgVare.setItems(listeMedVarer);
 
     }
 
     public void slettVare(ActionEvent actionEvent) {
+        Alert alert = new Alert(Alert.AlertType.WARNING, velgVare.getValue().getNavn()+ " er blitt slettet");
+        alert.showAndWait();
+
         DataHandlerVare.slettVare(velgVare.getValue());
         velgVare.getItems().removeAll(velgVare.getValue());
-        System.out.println("Slettet varen fra listen.");
 
     }
 
@@ -59,7 +69,7 @@ public class addVareController extends homeController {
                     Integer.parseInt(input_pris.getText()), input_url.getText());
             DataHandlerVare.leggInnVare(vare, imagePath);
             butikk.getVareListe().add(vare);
-            Alert alert = new Alert(Alert.AlertType.WARNING, "vare lagt til");
+            Alert alert = new Alert(Alert.AlertType.WARNING, "Vare lagt til");
             alert.showAndWait();
             avbryt(actionEvent);
         }
