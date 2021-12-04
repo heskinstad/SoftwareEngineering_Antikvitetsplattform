@@ -1,16 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane prefHeight="310.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.klageController">
+<AnchorPane prefHeight="310.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.klageController">
    <children>
       <Button layoutX="492.0" layoutY="273.0" mnemonicParsing="false" onAction="#sendKlage" text="Send inn klage" />
       <Button layoutX="430.0" layoutY="273.0" mnemonicParsing="false" onAction="#avbryt" text="Avbryt" />
@@ -27,7 +21,7 @@
           <RowConstraints maxHeight="104.0" minHeight="10.0" prefHeight="104.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Label prefHeight="48.0" prefWidth="573.0" text="Er du lite fornøyd? Kanskje varen du handlet var litt drøy? Frykt ikke, her kan du klage alt du vil på den helvetes butikken som solgte deg noe forbanna skrap!" wrapText="true" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
+            <Label prefHeight="48.0" prefWidth="573.0" text="Er du lite fornøyd? Kanskje varen du handlet var litt drøy? Frykt ikke, her kan du klage alt du vil på butikken som solgte deg noe skrap" wrapText="true" GridPane.columnSpan="2147483647" GridPane.rowIndex="1" />
             <GridPane GridPane.rowIndex="3">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" maxWidth="162.0" minWidth="10.0" prefWidth="116.0" />

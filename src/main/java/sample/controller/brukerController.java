@@ -41,7 +41,6 @@ public class brukerController extends homeController {
     @FXML
     public void initialize() {
 
-
         ArrayList<Butikk> butikkListe = DataHandlerButikk.hentButikker();
         ObservableList<Butikk> observableButikkListe = FXCollections.observableArrayList(butikkListe);
         ButikkValgBox.setItems(observableButikkListe);
@@ -109,7 +108,7 @@ public class brukerController extends homeController {
     }
 
     public void forrigeSide(ActionEvent actionEvent){
-        //knap for å vise dei 4 neste varene
+        //knapp for å vise dei 4 neste varene
         Scene scene = borderPane.getScene();
         Text txtSide = (Text) scene.lookup("#sideTal");
         int side = Integer.parseInt(txtSide.getText());
@@ -156,8 +155,7 @@ public class brukerController extends homeController {
         Salg nyttSalg = new Salg(bruker.toString(), valgtButikk.getNavn(), kjoptVare);
         DataHandlerSalg.registrerSalg(nyttSalg);
 
-        Scene scene = borderPane.getScene();
-        refreshVarer(scene, 1);
+        butikkValgt();
 
     }
 

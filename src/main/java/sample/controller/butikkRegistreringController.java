@@ -45,18 +45,25 @@ public class butikkRegistreringController extends homeController {
             Alert alert = new Alert(Alert.AlertType.WARNING, "Butikk er registrert");
             alert.showAndWait();
             butikk = newButikk;
-            avbryt(actionEvent);
+            loggInnButikk(actionEvent);
         }
     }
 
-    public void avbryt(javafx.event.ActionEvent actionEvent) {
+    public void loggInnButikk(javafx.event.ActionEvent actionEvent) {
         openButikkView(actionEvent);
     }
 
     public void trykkForLoggInn(ActionEvent actionEvent){
-        Butikk valgtButikk = velgButikkSlide.getValue();
-        butikk = valgtButikk;
-        avbryt(actionEvent);
+        if (velgButikkSlide.getValue() != null) {
+            Butikk valgtButikk = velgButikkSlide.getValue();
+            butikk = valgtButikk;
+            loggInnButikk(actionEvent);
+        }
+        else {
+            Alert alert = new Alert(Alert.AlertType.WARNING, "Ingen butikk valgt!");
+            alert.showAndWait();
+        }
+
     }
 
     public void trykkForLoggUt(ActionEvent actionEvent){

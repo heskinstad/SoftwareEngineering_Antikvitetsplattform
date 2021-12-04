@@ -33,19 +33,11 @@
 }, {
   "id" : "76c40117-5d65-42fa-bdf5-9618069aa907",
   "navn" : "Store Norske Leksikon",
-  "beskrivelse" : "Store Norske Leksikon på papir",
+  "beskrivelse" : "Jøsses, har de lagd det på papir også nå!?",
   "butikk" : "Kjedelige antikviteter",
   "pris" : 2500,
   "tidspunkt" : [ 2021, 11, 24, 12, 6, 33, 632829400 ],
   "bildeURL" : "StoreNorskeLeksikon.jpg"
-}, {
-  "id" : "6953b524-33fa-4136-a45c-f4f8ad63a786",
-  "navn" : "Lysekrone",
-  "beskrivelse" : "Gammel lysekrone",
-  "butikk" : "Kjedelige antikviteter",
-  "pris" : 1200,
-  "tidspunkt" : [ 2021, 11, 28, 12, 41, 7, 809994900 ],
-  "bildeURL" : "Chandelier.JPG"
 }, {
   "id" : "a7a9aad6-8734-4ef8-8200-db0818b09756",
   "navn" : "Dyr lysekrone",
@@ -86,4 +78,52 @@
   "pris" : 15000,
   "tidspunkt" : [ 2021, 11, 22, 12, 31, 9, 339388600 ],
   "bildeURL" : "EgillSkallagrimsson.jpg"
+}, {
+  "id" : "9db5f2b8-13b1-40dd-8b79-85e16a96950e",
+  "navn" : "The Emperor's new clothes",
+  "beskrivelse" : "These stylish clothes can be yours today! Instant shipping!",
+  "butikk" : "Nicolas' Treasures",
+  "pris" : 500000,
+  "tidspunkt" : [ 2021, 12, 4, 17, 13, 35, 77125500 ],
+  "bildeURL" : "emperors_new_clothes.jpg"
+}, {
+  "id" : "a84fd9c3-2148-4b06-aa64-f67be2c0555e",
+  "navn" : "Gjellestadskipet",
+  "beskrivelse" : "Skute fra vikingtida. Må graves opp på egen regning",
+  "butikk" : "Norsk Arkeologiforening",
+  "pris" : 250000,
+  "tidspunkt" : [ 2021, 12, 4, 17, 17, 11, 54156900 ],
+  "bildeURL" : "Gjellestadskipet.jpg"
+}, {
+  "id" : "a7eceb8a-7041-4ae1-8e0e-b7b005af99d6",
+  "navn" : "Íslendingasaga",
+  "beskrivelse" : "Íslendingasaga Hrafnkels saga Freysgoða.\nIngen av oss klarer å uttale noe som helst. Kjøp den vær så snill!",
+  "butikk" : "Norsk Arkeologiforening",
+  "pris" : 10000,
+  "tidspunkt" : [ 2021, 12, 4, 17, 30, 51, 551803500 ],
+  "bildeURL" : "AM156fol_p1.jpg"
+}, {
+  "id" : "a4aca940-d12c-47a3-93fe-eca20fc3cc8c",
+  "navn" : "En stein",
+  "beskrivelse" : "Steiner er vel gamle, kan de regnes som antikviteter?\n(her gikk jeg tom for ideer...)",
+  "butikk" : "Norsk Arkeologiforening",
+  "pris" : 20,
+  "tidspunkt" : [ 2021, 12, 4, 17, 33, 23, 791431600 ],
+  "bildeURL" : "EnStein.png"
+}, {
+  "id" : "a09dde5c-e4a7-4e6d-a5cf-c308e5792cb3",
+  "navn" : "Bestefarsklokke",
+  "beskrivelse" : "Bestefarsklokke - eid av min gamle bestefar",
+  "butikk" : "Kjedelige antikviteter",
+  "pris" : 3500,
+  "tidspunkt" : [ 2021, 12, 4, 17, 38, 55, 109752700 ],
+  "bildeURL" : "bestefarsklokke.jpg"
+}, {
+  "id" : "742a3d29-3543-4ca0-85e9-cb11cadf661a",
+  "navn" : "Nest bestefarsklokke",
+  "beskrivelse" : "Klokka ikke til min gamle bestefar, men til min gamle nest beste bestefar",
+  "butikk" : "Kjedelige antikviteter",
+  "pris" : 3499,
+  "tidspunkt" : [ 2021, 12, 4, 17, 40, 3, 375579300 ],
+  "bildeURL" : "bestefarsklokke.jpg"
 } ]

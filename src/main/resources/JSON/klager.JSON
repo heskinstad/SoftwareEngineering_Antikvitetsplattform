@@ -4,4 +4,10 @@
   "melding" : "Yes we can (complain)!",
   "butikk" : "Norsk bilforening",
   "tidspunkt" : [ 2021, 11, 1, 10, 37, 8, 381116800 ]
+}, {
+  "id" : "7f639b68-3c06-4b95-8a1c-b397c14a4dae",
+  "navn" : "Frimand Pløsen",
+  "melding" : "Liker ikke lysekronene jeg har kjøpt, stearinlysene har brent opp",
+  "butikk" : "Kjedelige antikviteter",
+  "tidspunkt" : [ 2021, 12, 4, 16, 43, 25, 686711400 ]
 } ]

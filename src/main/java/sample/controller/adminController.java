@@ -68,6 +68,7 @@ public class adminController extends homeController {
         int tjentePenger = 0;
 
         for(Salg etSalg : alleSalg){
+            // For å beregne pengene rundes det butikken får alltid ned. Plattformeiers 5 % rundes alltid opp
             tjentePenger += Math.ceil(etSalg.getSolgtVare().getPris() * 0.05);
         }
 

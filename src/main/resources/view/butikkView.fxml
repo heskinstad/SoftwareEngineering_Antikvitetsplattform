@@ -36,22 +36,22 @@
                   <RowConstraints maxHeight="108.0" minHeight="10.0" prefHeight="24.0" vgrow="SOMETIMES" />
                </rowConstraints>
                <children>
-                  <Text fx:id="vare_tittel_0" strokeType="OUTSIDE" strokeWidth="0.0" textOrigin="CENTER" wrappingWidth="237.07421875" />
-                  <Text fx:id="vare_beskrivelse_0" strokeType="OUTSIDE" strokeWidth="0.0" textOrigin="CENTER" wrappingWidth="236.9830722808838" GridPane.rowIndex="1" />
-                  <Text fx:id="vare_pris_0" strokeType="OUTSIDE" strokeWidth="0.0" textOrigin="CENTER" wrappingWidth="237.07421875" GridPane.rowIndex="3" />
-                  <Text fx:id="vare_tittel_1" strokeType="OUTSIDE" strokeWidth="0.0" textOrigin="CENTER" wrappingWidth="237.07421875" GridPane.columnIndex="2" />
-                  <Text fx:id="vare_tittel_2" strokeType="OUTSIDE" strokeWidth="0.0" textOrigin="CENTER" wrappingWidth="237.07421875" GridPane.rowIndex="5" />
-                  <Text fx:id="vare_tittel_3" strokeType="OUTSIDE" strokeWidth="0.0" textOrigin="CENTER" wrappingWidth="237.07421875" GridPane.columnIndex="2" GridPane.rowIndex="5" />
-                  <Text fx:id="vare_beskrivelse_1" strokeType="OUTSIDE" strokeWidth="0.0" textOrigin="CENTER" wrappingWidth="236.9830722808838" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-                  <Text fx:id="vare_beskrivelse_2" strokeType="OUTSIDE" strokeWidth="0.0" textOrigin="CENTER" wrappingWidth="236.9830722808838" GridPane.rowIndex="6" />
-                  <Text fx:id="vare_beskrivelse_3" strokeType="OUTSIDE" strokeWidth="0.0" textOrigin="CENTER" wrappingWidth="236.9830722808838" GridPane.columnIndex="2" GridPane.rowIndex="6" />
-                  <ImageView fx:id="vare_url_1" fitHeight="116.0" fitWidth="222.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-                  <ImageView fx:id="vare_url_2" fitHeight="116.0" fitWidth="222.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="7" />
-                  <ImageView fx:id="vare_url_3" fitHeight="116.0" fitWidth="222.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="7" />
-                  <Text fx:id="vare_pris_1" strokeType="OUTSIDE" strokeWidth="0.0" textOrigin="CENTER" wrappingWidth="237.07421875" GridPane.columnIndex="2" GridPane.rowIndex="3" />
-                  <Text fx:id="vare_pris_2" strokeType="OUTSIDE" strokeWidth="0.0" textOrigin="CENTER" wrappingWidth="237.07421875" GridPane.rowIndex="8" />
-                  <Text fx:id="vare_pris_3" strokeType="OUTSIDE" strokeWidth="0.0" textOrigin="CENTER" wrappingWidth="237.07421875" GridPane.columnIndex="2" GridPane.rowIndex="8" />
-                  <ImageView fx:id="vare_url_0" fitHeight="116.0" fitWidth="222.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2" />
+                  <Text fx:id="vare_tittel_0" strokeType="OUTSIDE" strokeWidth="0.0" textOrigin="CENTER" wrappingWidth="203.07421875" />
+                  <Text fx:id="vare_beskrivelse_0" strokeType="OUTSIDE" strokeWidth="0.0" textOrigin="CENTER" wrappingWidth="203.9830722808838" GridPane.rowIndex="1" />
+                  <Text fx:id="vare_pris_0" strokeType="OUTSIDE" strokeWidth="0.0" textOrigin="CENTER" wrappingWidth="204.07421875" GridPane.rowIndex="3" />
+                  <Text fx:id="vare_tittel_1" strokeType="OUTSIDE" strokeWidth="0.0" textOrigin="CENTER" wrappingWidth="204.07421875" GridPane.columnIndex="2" />
+                  <Text fx:id="vare_tittel_2" strokeType="OUTSIDE" strokeWidth="0.0" textOrigin="CENTER" wrappingWidth="205.07421875" GridPane.rowIndex="5" />
+                  <Text fx:id="vare_tittel_3" strokeType="OUTSIDE" strokeWidth="0.0" textOrigin="CENTER" wrappingWidth="206.07421875" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+                  <Text fx:id="vare_beskrivelse_1" strokeType="OUTSIDE" strokeWidth="0.0" textOrigin="CENTER" wrappingWidth="203.9830722808838" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                  <Text fx:id="vare_beskrivelse_2" strokeType="OUTSIDE" strokeWidth="0.0" textOrigin="CENTER" wrappingWidth="199.9830722808838" GridPane.rowIndex="6" />
+                  <Text fx:id="vare_beskrivelse_3" strokeType="OUTSIDE" strokeWidth="0.0" textOrigin="CENTER" wrappingWidth="203.9830722808838" GridPane.columnIndex="2" GridPane.rowIndex="6" />
+                  <ImageView fx:id="vare_url_1" fitHeight="116.0" fitWidth="205.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                  <ImageView fx:id="vare_url_2" fitHeight="116.0" fitWidth="203.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="7" />
+                  <ImageView fx:id="vare_url_3" fitHeight="116.0" fitWidth="205.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="7" />
+                  <Text fx:id="vare_pris_1" strokeType="OUTSIDE" strokeWidth="0.0" textOrigin="CENTER" wrappingWidth="204.07421875" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                  <Text fx:id="vare_pris_2" strokeType="OUTSIDE" strokeWidth="0.0" textOrigin="CENTER" wrappingWidth="203.07421875" GridPane.rowIndex="8" />
+                  <Text fx:id="vare_pris_3" strokeType="OUTSIDE" strokeWidth="0.0" textOrigin="CENTER" wrappingWidth="206.07421875" GridPane.columnIndex="2" GridPane.rowIndex="8" />
+                  <ImageView fx:id="vare_url_0" fitHeight="116.0" fitWidth="201.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2" />
                </children>
             </GridPane>
          </children>

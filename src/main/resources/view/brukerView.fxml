@@ -26,7 +26,7 @@
                   </Text>
                   <Text fx:id="vare_navn_01" strokeType="OUTSIDE" strokeWidth="0.0" text="Velg butikk" wrappingWidth="74.474609375" />
                   <ChoiceBox fx:id="ButikkValgBox" prefWidth="150.0" />
-                  <Button mnemonicParsing="false" onAction="#butikkValgt" text="Trykk når du har valgt en butikk" />
+                  <Button mnemonicParsing="false" onAction="#butikkValgt" text="Trykk for å endre butikk" />
                     </children>
                 </VBox>
             </children>
@@ -60,7 +60,7 @@
                   <Button mnemonicParsing="false" onAction="#kjopVare0" prefHeight="25.0" prefWidth="271.0" text="Buy" GridPane.rowIndex="5" />
                   <Button mnemonicParsing="false" onAction="#kjopVare1" prefHeight="25.0" prefWidth="271.0" text="Buy" GridPane.columnIndex="2" GridPane.rowIndex="5" />
                   <Button mnemonicParsing="false" onAction="#kjopVare2" prefHeight="25.0" prefWidth="245.0" text="Buy" GridPane.columnIndex="4" GridPane.rowIndex="5" />
-                  <Text fx:id="vare_Beskrivelse_2" strokeType="OUTSIDE" strokeWidth="0.0" text="Beskrivelse 3" wrappingWidth="217.13671875" GridPane.columnIndex="4" GridPane.rowIndex="4" />
+                  <Text fx:id="vare_Beskrivelse_2" strokeType="OUTSIDE" strokeWidth="0.0" text="Beskrivelse 3" wrappingWidth="196.13671875" GridPane.columnIndex="4" GridPane.rowIndex="4" />
                   <ImageView fx:id="vare_bilde_0" fitHeight="195.0" fitWidth="194.0" pickOnBounds="true" preserveRatio="true" GridPane.rowIndex="2" />
                   <ImageView fx:id="vare_bilde_1" fitHeight="196.0" fitWidth="195.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2" />
                   <ImageView fx:id="vare_bilde_2" fitHeight="196.0" fitWidth="196.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="4" GridPane.rowIndex="2" />

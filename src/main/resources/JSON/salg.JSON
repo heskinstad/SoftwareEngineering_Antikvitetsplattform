@@ -11,4 +11,30 @@
     "bildeURL" : "Chandelier.JPG"
   },
   "tidspunkt" : [ 2021, 12, 4, 14, 42, 24, 291723000 ]
+}, {
+  "kjoper" : "Frimand Pløsen",
+  "selger" : "Kjedelige antikviteter",
+  "solgtVare" : {
+    "id" : "6953b524-33fa-4136-a45c-f4f8ad63a786",
+    "navn" : "Lysekrone",
+    "beskrivelse" : "Gammel lysekrone",
+    "butikk" : "Kjedelige antikviteter",
+    "pris" : 1200,
+    "tidspunkt" : [ 2021, 11, 28, 12, 41, 7, 809994900 ],
+    "bildeURL" : "Chandelier.JPG"
+  },
+  "tidspunkt" : [ 2021, 12, 4, 16, 2, 25, 625991400 ]
+}, {
+  "kjoper" : "Frimand Pløsen",
+  "selger" : "Kjedelige antikviteter",
+  "solgtVare" : {
+    "id" : "eb30f614-fabe-42e3-bdd2-f1b3e720a619",
+    "navn" : "Lys lysekrone",
+    "beskrivelse" : "Den er malt i lyse farger!",
+    "butikk" : "Kjedelige antikviteter",
+    "pris" : 500,
+    "tidspunkt" : [ 2021, 12, 4, 16, 30, 8, 408482800 ],
+    "bildeURL" : "Chandelier.JPG"
+  },
+  "tidspunkt" : [ 2021, 12, 4, 16, 30, 30, 818167200 ]
 } ]

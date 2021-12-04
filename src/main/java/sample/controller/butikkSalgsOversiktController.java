@@ -56,6 +56,7 @@ public class butikkSalgsOversiktController extends homeController {
 
         for(Salg etSalg : alleSalg){
             if(etSalg.getSelger().equals(butikk.getNavn())){
+                // For å beregne pengene rundes det butikken får alltid ned. Plattformeiers 5 % rundes alltid opp
                 tjentePenger += Math.floor(etSalg.getSolgtVare().getPris() * 0.95);
             }
         }
