@@ -111,10 +111,10 @@ public class brukerController extends homeController {
         Text txtSide = (Text) scene.lookup("#sideTal");
         int side = Integer.parseInt(txtSide.getText());
 
-        final Node source = (Node) actionEvent.getSource();
-        String id = source.getAccessibleText();
-
-        if (id == "Neste side") {
+        Button source = (Button) actionEvent.getSource();
+        String btnTxt = source.getText();
+        System.out.println(btnTxt);
+        if (btnTxt.equals("Neste side")) {
             nesteSide(scene, side, txtSide);
         } else {
             forrigeSide(scene, side, txtSide);
