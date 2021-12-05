@@ -5,7 +5,6 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
@@ -22,16 +21,9 @@ import java.util.Objects;
 
 public class brukerController extends homeController {
 
-    @FXML public Button btnLoginAdmin;
-    @FXML public TextField varenavn0;
-    @FXML public TextField varenavn1;
-    @FXML public TextField varenavn3;
     @FXML public Text vare_pris_0;
     @FXML public Text vare_pris_1;
     @FXML public Text vare_pris_2;
-    @FXML public TextArea vareBeskrivelse1;
-    @FXML public TextArea vareBeskrivelse2;
-    @FXML public TextArea vareBeskrivelse3;
     @FXML BorderPane borderPane;
     @FXML public ChoiceBox<Butikk> ButikkValgBox;
     @FXML public ImageView vare_bilde_0;

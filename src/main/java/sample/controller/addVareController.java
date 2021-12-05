@@ -15,7 +15,6 @@ import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Locale;
 
 public class addVareController extends homeController {
 

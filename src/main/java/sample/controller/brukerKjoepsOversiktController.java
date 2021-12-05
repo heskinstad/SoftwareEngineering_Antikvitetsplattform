@@ -7,7 +7,6 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import sample.data.DataHandlerSalg;
-import sample.model.Butikk;
 import sample.model.Salg;
 import sample.model.Vare;
 

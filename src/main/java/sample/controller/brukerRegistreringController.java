@@ -33,6 +33,7 @@ public class brukerRegistreringController extends homeController {
         }
         bruker = new Bruker(fornavn, etternavn);
         ArrayList<Bruker> brukere = DataHandlerBruker.hentBrukere();
+
         if (!brukere.isEmpty()) {
             for (int i = 0; i < brukere.size(); i++) {
                 if (brukere.get(i).getFornavn().equals(fornavn) && Objects.equals(brukere.get(i).getEtternavn(), etternavn)) {

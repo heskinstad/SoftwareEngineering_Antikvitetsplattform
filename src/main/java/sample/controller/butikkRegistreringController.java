@@ -55,8 +55,7 @@ public class butikkRegistreringController extends homeController {
 
     public void trykkForLoggInn(ActionEvent actionEvent){
         if (velgButikkSlide.getValue() != null) {
-            Butikk valgtButikk = velgButikkSlide.getValue();
-            butikk = valgtButikk;
+            butikk = velgButikkSlide.getValue();
             loggInnButikk(actionEvent);
         }
         else {

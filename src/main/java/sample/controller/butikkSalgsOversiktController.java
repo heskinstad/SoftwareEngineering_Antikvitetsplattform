@@ -8,7 +8,6 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.text.Text;
 import sample.data.DataHandlerSalg;
-import sample.model.Bruker;
 import sample.model.Salg;
 import sample.model.Vare;
 
@@ -31,7 +30,7 @@ public class butikkSalgsOversiktController extends homeController {
 
         refreshButikkSalgsListe();
         int tjentePenger = kalkulerTotalPengeTjent();
-        pengerTjentText.setText(String.valueOf(tjentePenger) + " kr tjent fra salg (95 %)");
+        pengerTjentText.setText(tjentePenger + " kr tjent fra salg (95 %)");
         col_Salg_Pris.setCellValueFactory(tf -> tf.getValue().getSolgtVare().prisProperty());
 
     }
