@@ -18,6 +18,7 @@ import sample.model.*;
 import sample.util.AntikkUtil;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class brukerController extends homeController {
 
@@ -136,6 +137,13 @@ public class brukerController extends homeController {
         Text vareTittel = (Text) thisScene.lookup("#vare_navn_" + i);
 
         String navnTilVare = vareTittel.getText();
+
+        if (Objects.equals(navnTilVare, "")) {
+            Alert alert = new Alert(Alert.AlertType.WARNING, "Ingen vare tilhører knapp!");
+            alert.showAndWait();
+            return;
+        }
+
         Vare kjoptVare = new Vare();
         ArrayList<Vare> butikkVareListe = valgtButikk.getVareListe();
 
@@ -146,6 +154,9 @@ public class brukerController extends homeController {
 
         Salg nyttSalg = new Salg(bruker.toString(), valgtButikk.getNavn(), kjoptVare);
         DataHandlerSalg.registrerSalg(nyttSalg);
+
+        Alert alert = new Alert(Alert.AlertType.WARNING, "Vare kjøpt!");
+        alert.showAndWait();
 
         butikkValgt();
 
