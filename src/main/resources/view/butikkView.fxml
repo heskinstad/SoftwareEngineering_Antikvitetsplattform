@@ -95,8 +95,8 @@
          </children>
       </GridPane>
       <Button id="btnChangeUser" layoutX="14.0" layoutY="641.0" mnemonicParsing="false" onAction="#changeUser" text="Forside" />
-      <Button layoutX="185.0" layoutY="641.0" mnemonicParsing="false" onAction="#forrigeSide" text="Forrige side" />
-      <Button layoutX="357.0" layoutY="641.0" mnemonicParsing="false" onAction="#nesteSide" text="Neste side" />
+      <Button layoutX="185.0" layoutY="641.0" mnemonicParsing="false" onAction="#sideSkift" text="Forrige side" />
+      <Button layoutX="357.0" layoutY="641.0" mnemonicParsing="false" onAction="#sideSkift" text="Neste side" />
       <Text fx:id="sideTal" layoutX="271.0" layoutY="658.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" wrappingWidth="79.0" />
       <Button layoutX="507.0" layoutY="641.0" mnemonicParsing="false" onAction="#toButikkSalgsOversikt" text="Salgsoversikt" />
    </children>

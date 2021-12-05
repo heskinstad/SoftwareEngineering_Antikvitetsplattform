@@ -17,6 +17,5 @@ public class Test_utility {
         assertEquals(32, AntikkUtil.getTrueVareArrayStartIndex(9, 4));
         assertEquals(32, AntikkUtil.getTrueVareArrayStartIndex(17, 2));
         assertEquals(32, AntikkUtil.getTrueVareArrayStartIndex(33, 1));
-
     }
 }

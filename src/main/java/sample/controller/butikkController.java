@@ -89,31 +89,21 @@ public class butikkController extends homeController {
         }
     }
 
-    private int getTrueVareArrayStartIndex(int side) {
-        return (side - 1) * 4;
-    }
-
-    public void forrigeSide(ActionEvent actionEvent) {
-        //knap for å vise dei 4 neste varene
+    public void sideSkift(ActionEvent actionEvent){
         Scene scene = anchorPane.getScene();
         Text txtSide = (Text) scene.lookup("#sideTal");
         int side = Integer.parseInt(txtSide.getText());
 
-        if (side > 1) {
+        Button source = (Button) actionEvent.getSource();
+        String btnTxt = source.getText();
+
+        if (btnTxt.equals("Neste side")) {
+            txtSide.setText(Integer.toString(side + 1));
+            refreshVarer(scene, side + 1);
+        } else if (side > 1) {
             txtSide.setText(Integer.toString(side - 1));
             refreshVarer(scene, side - 1);
-
         }
-    }
-
-    public void nesteSide(ActionEvent actionEvent) {
-        //knapp for å vise dei 4 forrige varene
-        Scene scene = anchorPane.getScene();
-        Text txtSide = (Text) scene.lookup("#sideTal");
-        int side = Integer.parseInt(txtSide.getText());
-
-        txtSide.setText(Integer.toString(side + 1));
-        refreshVarer(scene, side + 1);
     }
 
     public void editDesc(ActionEvent actionEvent) {

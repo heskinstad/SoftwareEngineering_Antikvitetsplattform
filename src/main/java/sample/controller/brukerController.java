@@ -113,27 +113,14 @@ public class brukerController extends homeController {
 
         Button source = (Button) actionEvent.getSource();
         String btnTxt = source.getText();
-        System.out.println(btnTxt);
+
         if (btnTxt.equals("Neste side")) {
-            nesteSide(scene, side, txtSide);
-        } else {
-            forrigeSide(scene, side, txtSide);
-        }
-    }
-
-    public void forrigeSide(Scene scene, int side, Text txtSide){
-
-        if(side > 1){
+            txtSide.setText(Integer.toString(side + 1));
+            refreshVarer(scene, side + 1);
+        } else if(side > 1) {
             txtSide.setText(Integer.toString(side - 1));
             refreshVarer(scene, side - 1);
-
         }
-    }
-    public void nesteSide(Scene scene, int side, Text txtSide){
-        //knapp for å vise dei 4 forrige varene
-        txtSide.setText(Integer.toString(side + 1));
-        refreshVarer(scene, side + 1);
-
     }
 
     public void butikkValgt(){
