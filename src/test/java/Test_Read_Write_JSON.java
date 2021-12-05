@@ -163,21 +163,11 @@ public class Test_Read_Write_JSON {
     }
 
     @Test
-    public void test_regisreting_salg() {
-        boolean thrown = true;
-        //Denne testen failer, som vi må fikse noe her.
-        try {
-            DataHandlerSalg.hentSalg("/src/main/resources/JSON/salg.JSxON");
-
-        } catch (IllegalStateException e) {
-            thrown = false;
-
-        }
-        System.out.println(thrown);
-        assertFalse(thrown);
+    public void test_Hent_Fra_Ikke_Eksisterende_Path() {
+        assertNull(DataHandlerBruker.hentBrukere("/src/test/resources/JSON/a.JSON"));
+        assertNull(DataHandlerButikk.hentButikker("/src/test/resources/JSON/a.JSON"));
+        assertNull(DataHandlerKlage.hentKlager("/src/test/resources/JSON/a.JSON"));
+        assertNull(DataHandlerSalg.hentSalg("/src/test/resources/JSON/a.JSON"));
+        assertNull(DataHandlerVare.hentVarer("/src/test/resources/JSON/a.JSON"));
     }
-
-
-
-
 }

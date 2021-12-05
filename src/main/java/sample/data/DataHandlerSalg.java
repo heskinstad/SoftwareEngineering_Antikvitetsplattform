@@ -60,24 +60,28 @@ public class DataHandlerSalg {
     }
 
     public static ArrayList<Salg> hentSalg(String localPath){
+        final ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.findAndRegisterModules();
+        String path = new File("").getAbsolutePath() + localPath;
+
+        if (!new File(path).isFile()) {
+            System.out.println("Fil eksisterer ikke. return null");
+            return null;
+        }
+
         try {
-            final ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.findAndRegisterModules();
-            String path = new File("").getAbsolutePath() + localPath;
-            try {
-                ArrayList<Salg> salgListe = (ArrayList<Salg>) objectMapper.readValue(new File(path), new TypeReference<List<Salg>>(){});
-                return salgListe;
-            }
-            catch (JsonMappingException e){
-                System.out.println("Klarte ikke å lese data fra salg-JSON");
-            }
+            ArrayList<Salg> salgListe = (ArrayList<Salg>) objectMapper.readValue(new File(path), new TypeReference<List<Salg>>(){});
+            return salgListe;
+        }
+        catch (JsonMappingException e){
+            System.out.println("Klarte ikke å lese data fra salg-JSON");
             return new ArrayList<Salg>();
         }
-        catch (Exception e){
-            e.printStackTrace();
+        catch (Exception e) {
+            return null;
         }
-        return null;
     }
+
     public static ArrayList<Salg> hentSalg() {
         return hentSalg("/src/main/resources/JSON/salg.JSON");
     }

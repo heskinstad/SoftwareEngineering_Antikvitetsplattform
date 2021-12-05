@@ -21,26 +21,6 @@ import java.util.Objects;
 
 public class DataHandlerVare {
 
-    public static Vare lastInnVare(String localPath) {
-        try {
-            // create object mapper instance
-            ObjectMapper mapper = new ObjectMapper();
-            mapper.findAndRegisterModules();
-
-            // convert JSON string to Vare object
-            //Vare vare = mapper.readValue(new File("/varer.JSON"), Vare.class);
-            String path = new File("").getAbsolutePath() + localPath;
-            System.out.println("Laster inn fra " + path);
-            Vare vare = mapper.readValue(new FileReader(path), Vare.class);
-
-            return vare;
-        }
-        catch (Exception e) {
-            e.printStackTrace();
-        }
-        return null;
-    }
-
     public static void leggInnVare(Vare vare, String localPath, File imagePath) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
@@ -71,23 +51,26 @@ public class DataHandlerVare {
     }
 
     public static ArrayList<Vare> hentVarer(String localPath) {
+        final ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.findAndRegisterModules();
+        String path = new File("").getAbsolutePath() + localPath;
+
+        if (!new File(path).isFile()) {
+            System.out.println("Fil eksisterer ikke. return null");
+            return null;
+        }
+
         try {
-            final ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.findAndRegisterModules();
-            String path = new File("").getAbsolutePath() + localPath;
-            try {
-                ArrayList<Vare> varer = (ArrayList<Vare>) objectMapper.readValue(new File(path), new TypeReference<List<Vare>>(){});
-                return varer;
-            }
-            catch (JsonMappingException e) {
-                System.out.println("Klarte ikke å lese data fra vare-JSON");
-            }
-            return new ArrayList<Vare>();
+            ArrayList<Vare> varer = (ArrayList<Vare>) objectMapper.readValue(new File(path), new TypeReference<List<Vare>>(){});
+            return varer;
+        }
+        catch (JsonMappingException e) {
+            System.out.println("Klarte ikke å lese data fra vare-JSON");
         }
         catch (Exception e) {
-            e.printStackTrace();
+            return null;
         }
-        return null;
+        return new ArrayList<Vare>();
     }
     public static ArrayList<Vare> hentVarer() {
         return hentVarer("/src/main/resources/JSON/varer.JSON");

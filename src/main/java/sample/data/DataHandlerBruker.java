@@ -38,23 +38,26 @@ public class DataHandlerBruker {
     }
 
     public static ArrayList<Bruker> hentBrukere(String localPath) {
+        final ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.findAndRegisterModules();
+        String path = new File("").getAbsolutePath() + localPath;
+
+        if (!new File(path).isFile()) {
+            System.out.println("Fil eksisterer ikke. return null");
+            return null;
+        }
+
         try {
-            final ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.findAndRegisterModules();
-            String path = new File("").getAbsolutePath() + localPath;
-            try {
-                ArrayList<Bruker> brukere = (ArrayList<Bruker>) objectMapper.readValue(new File(path), new TypeReference<List<Bruker>>(){});
-                return brukere;
-            }
-            catch (JsonMappingException e) {
-                System.out.println("Klarte ikke å lese data fra brukere-JSON");
-            }
-            return new ArrayList<Bruker>();
+            ArrayList<Bruker> brukere = (ArrayList<Bruker>) objectMapper.readValue(new File(path), new TypeReference<List<Bruker>>(){});
+            return brukere;
+        }
+        catch (JsonMappingException e) {
+            System.out.println("Klarte ikke å lese data fra brukere-JSON");
         }
         catch (Exception e) {
-            e.printStackTrace();
+            return null;
         }
-        return null;
+        return new ArrayList<Bruker>();
     }
     public static ArrayList<Bruker> hentBrukere() {
         return hentBrukere("/src/main/resources/JSON/brukere.JSON");

@@ -43,23 +43,26 @@ public class DataHandlerKlage {
     }
 
     public static ArrayList<Klage> hentKlager(String localPath) {
+        final ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.findAndRegisterModules();
+        String path = new File("").getAbsolutePath() + localPath;
+
+        if (!new File(path).isFile()) {
+            System.out.println("Fil eksisterer ikke. return null");
+            return null;
+        }
+
         try {
-            final ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.findAndRegisterModules();
-            String path = new File("").getAbsolutePath() + localPath;
-            try {
-                ArrayList<Klage> klager = (ArrayList<Klage>) objectMapper.readValue(new File(path), new TypeReference<List<Klage>>(){});
-                return klager;
-            }
-            catch (JsonMappingException e) {
-                System.out.println("Klarte ikke å lese data fra klage-JSON");
-            }
-            return new ArrayList<Klage>();
+            ArrayList<Klage> klager = (ArrayList<Klage>) objectMapper.readValue(new File(path), new TypeReference<List<Klage>>(){});
+            return klager;
+        }
+        catch (JsonMappingException e) {
+            System.out.println("Klarte ikke å lese data fra klage-JSON");
         }
         catch (Exception e) {
-            e.printStackTrace();
+            return null;
         }
-        return null;
+        return new ArrayList<Klage>();
     }
 
     public static ArrayList<Klage> hentKlager() {

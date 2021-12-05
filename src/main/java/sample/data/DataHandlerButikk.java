@@ -41,24 +41,28 @@ public class DataHandlerButikk {
     }
 
     public static ArrayList<Butikk> hentButikker(String localPath){
+        final ObjectMapper objectMapper = new ObjectMapper();
+        objectMapper.findAndRegisterModules();
+        String path = new File("").getAbsolutePath() + localPath;
+
+        if (!new File(path).isFile()) {
+            System.out.println("Fil eksisterer ikke. return null");
+            return null;
+        }
+
         try {
-            final ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.findAndRegisterModules();
-            String path = new File("").getAbsolutePath() + localPath;
-            try {
-                ArrayList<Butikk> butikker = (ArrayList<Butikk>) objectMapper.readValue(new File(path), new TypeReference<List<Butikk>>(){});
-                return butikker;
-            }
-            catch (JsonMappingException e){
-                System.out.println("Klarte ikke å lese data fra butikk-JSON");
-            }
-            return new ArrayList<Butikk>();
+            ArrayList<Butikk> butikker = (ArrayList<Butikk>) objectMapper.readValue(new File(path), new TypeReference<List<Butikk>>(){});
+            return butikker;
+        }
+        catch (JsonMappingException e){
+            System.out.println("Klarte ikke å lese data fra butikk-JSON");
         }
         catch (Exception e){
-            e.printStackTrace();
+            return null;
         }
-        return null;
+        return new ArrayList<Butikk>();
     }
+
     public static ArrayList<Butikk> hentButikker() {
         return hentButikker("/src/main/resources/JSON/butikker.JSON");
     }
