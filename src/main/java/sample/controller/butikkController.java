@@ -13,6 +13,7 @@ import javafx.scene.text.Text;
 import sample.data.DataHandlerVare;
 import sample.model.Butikk;
 import sample.model.Vare;
+import sample.util.AntikkUtil;
 
 import java.util.ArrayList;
 
@@ -50,7 +51,7 @@ public class butikkController extends homeController {
 
         ArrayList<Vare> varer = new ArrayList<>(valgtButikk.getVareListe());
         for (int i = 0; i < 4; i++) {
-            int vareArrayStartIndex = getTrueVareArrayStartIndex(side);
+            int vareArrayStartIndex = AntikkUtil.getTrueVareArrayStartIndex(side,4);
 
             Text vareTittel = (Text) scene.lookup("#vare_tittel_" + i);
             Text vareBeskrivelse = (Text) scene.lookup("#vare_beskrivelse_" + i);

@@ -14,6 +14,7 @@ import sample.data.DataHandlerButikk;
 import sample.data.DataHandlerSalg;
 import sample.data.DataHandlerVare;
 import sample.model.*;
+import sample.util.AntikkUtil;
 
 import java.util.ArrayList;
 
@@ -62,7 +63,7 @@ public class brukerController extends homeController {
         }
 
         for (int i = 0; i < 3; i++) {
-            int vareArrayStartIndex = getTrueVareArrayStartIndex(side);
+            int vareArrayStartIndex = AntikkUtil.getTrueVareArrayStartIndex(side, 3);
 
             Text vareTittel = (Text) scene.lookup("#vare_navn_" + i);
             Text vareButikk = (Text) scene.lookup("#vare_butikk_" + i);
@@ -101,10 +102,6 @@ public class brukerController extends homeController {
                 System.out.println("Kunne ikke laste inn bilde");
             }
         }
-    }
-
-    private int getTrueVareArrayStartIndex(int side){
-        return (side - 1) * 3;
     }
 
     public void forrigeSide(ActionEvent actionEvent){
