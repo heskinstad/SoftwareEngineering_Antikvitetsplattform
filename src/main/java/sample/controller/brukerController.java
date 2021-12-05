@@ -5,6 +5,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
@@ -104,11 +105,23 @@ public class brukerController extends homeController {
         }
     }
 
-    public void forrigeSide(ActionEvent actionEvent){
-        //knapp for å vise dei 4 neste varene
+
+    public void sideSkift(ActionEvent actionEvent){
         Scene scene = borderPane.getScene();
         Text txtSide = (Text) scene.lookup("#sideTal");
         int side = Integer.parseInt(txtSide.getText());
+
+        final Node source = (Node) actionEvent.getSource();
+        String id = source.getAccessibleText();
+
+        if (id == "Neste side") {
+            nesteSide(scene, side, txtSide);
+        } else {
+            forrigeSide(scene, side, txtSide);
+        }
+    }
+
+    public void forrigeSide(Scene scene, int side, Text txtSide){
 
         if(side > 1){
             txtSide.setText(Integer.toString(side - 1));
@@ -116,12 +129,8 @@ public class brukerController extends homeController {
 
         }
     }
-    public void nesteSide(ActionEvent actionEvent){
+    public void nesteSide(Scene scene, int side, Text txtSide){
         //knapp for å vise dei 4 forrige varene
-        Scene scene = borderPane.getScene();
-        Text txtSide = (Text) scene.lookup("#sideTal");
-        int side = Integer.parseInt(txtSide.getText());
-
         txtSide.setText(Integer.toString(side + 1));
         refreshVarer(scene, side + 1);
 
