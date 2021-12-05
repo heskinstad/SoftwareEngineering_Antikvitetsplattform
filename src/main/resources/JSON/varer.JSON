@@ -105,7 +105,7 @@
 }, {
   "id" : "a4aca940-d12c-47a3-93fe-eca20fc3cc8c",
   "navn" : "En stein",
-  "beskrivelse" : "Steiner er vel gamle, kan de regnes som antikviteter?\n(her gikk jeg tom for ideer...)",
+  "beskrivelse" : "Steiner er jo steingamle, men kan de regnes som antikviteter?\n(her gikk jeg tom for ideer...)",
   "butikk" : "Norsk Arkeologiforening",
   "pris" : 20,
   "tidspunkt" : [ 2021, 12, 4, 17, 33, 23, 791431600 ],

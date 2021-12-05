@@ -10,4 +10,10 @@
   "melding" : "Liker ikke lysekronene jeg har kjøpt, stearinlysene har brent opp",
   "butikk" : "Kjedelige antikviteter",
   "tidspunkt" : [ 2021, 12, 4, 16, 43, 25, 686711400 ]
+}, {
+  "id" : "6daee4db-fd13-4fbf-b9c8-7d166746a1b0",
+  "navn" : "Barack Obama",
+  "melding" : "I want the Declaration of Independence back!",
+  "butikk" : "Nicolas' Treasures",
+  "tidspunkt" : [ 2021, 12, 5, 10, 49, 21, 926328000 ]
 } ]
