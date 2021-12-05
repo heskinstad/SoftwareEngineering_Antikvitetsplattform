@@ -14,19 +14,19 @@ public class DataHandlerButikk extends DataHandlerPaths {
 
     static Butikk valgtButikk;
 
-    static void registrerButikk(Butikk butikk, String localPath){
+    public static void registrerButikk(Butikk butikk){
         try {
 
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.findAndRegisterModules();
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-            String path = new File("").getAbsolutePath() + localPath;
+            String path = new File("").getAbsolutePath() + butikkPath;
 
             if (!new File(path).isFile()) {
                 return;
             }
 
-            ArrayList<Butikk> butikker = hentButikker(localPath);
+            ArrayList<Butikk> butikker = hentButikker();
 
             butikker.add(butikk);
 
@@ -37,12 +37,10 @@ public class DataHandlerButikk extends DataHandlerPaths {
         }
     }
 
-    public static void registrerButikk(Butikk butikk) { registrerButikk(butikk, butikkPath); }
-
-    static ArrayList<Butikk> hentButikker(String localPath){
+    public static ArrayList<Butikk> hentButikker(){
         final ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.findAndRegisterModules();
-        String path = new File("").getAbsolutePath() + localPath;
+        String path = new File("").getAbsolutePath() + butikkPath;
 
         try {
             ArrayList<Butikk> butikker = (ArrayList<Butikk>) objectMapper.readValue(new File(path), new TypeReference<List<Butikk>>(){});
@@ -56,7 +54,5 @@ public class DataHandlerButikk extends DataHandlerPaths {
         }
         return new ArrayList<Butikk>();
     }
-
-    public static ArrayList<Butikk> hentButikker() { return hentButikker(butikkPath); }
 
 }

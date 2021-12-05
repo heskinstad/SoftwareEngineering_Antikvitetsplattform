@@ -75,7 +75,7 @@ public class Test_Read_Write_JSON {
         Vare vare = new Vare("testVare", "testBeskrivelse", "test", 1001, "");
         DataHandlerVare.leggInnVareTest(vare);
 
-        butikk.setVarerIButikk("/src/test/resources/JSON/testVarer.JSON");
+        butikk.setVarerIButikk();
         ArrayList<Vare> vareListe = butikk.getVareListe();
         Vare testVare = vareListe.get(0);
         assertEquals(testVare.getButikk(), butikk.getNavn());
@@ -102,7 +102,7 @@ public class Test_Read_Write_JSON {
         Vare vare2 = new Vare("testVare2", "testBeskrivelse", "test butikk", 1001, "");
         DataHandlerVare.leggInnVareTest(vare2);
 
-        butikk.setVarerIButikk("/src/test/resources/JSON/testVarer.JSON");
+        butikk.setVarerIButikk();
 
         Salg salg = new Salg(bruker.toString(), butikk.getNavn(), vare);
         DataHandlerSalg.registrerSalg(salg);

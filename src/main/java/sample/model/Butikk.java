@@ -77,12 +77,8 @@ public class Butikk {
     }
 
     public void setVarerIButikk(){
-        setVarerIButikk("/src/main/resources/JSON/varer.JSON");
-    }
-
-    public void setVarerIButikk(String path){
         vareListe = new ArrayList<>();
-        for(Vare vare : DataHandlerVare.hentVarer(path)){
+        for(Vare vare : DataHandlerVare.hentVarer()){
             if(vare.getButikk().equals(this.getNavn())){
                 vareListe.add(vare);
             }

@@ -14,15 +14,15 @@ import java.util.Objects;
 
 public class DataHandlerBruker extends DataHandlerPaths {
 
-    static void leggInnBruker(Bruker bruker, String localPath) {
+    public static void leggInnBruker(Bruker bruker) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.findAndRegisterModules();
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-            String path = new File("").getAbsolutePath() + localPath;
+            String path = new File("").getAbsolutePath() + brukerPath;
 
             //Henter gamle klager
-            ArrayList<Bruker> brukere = hentBrukere(localPath);
+            ArrayList<Bruker> brukere = hentBrukere();
 
             //Legger ny klage etter de gamle klagene
             brukere.add(bruker);
@@ -34,12 +34,10 @@ public class DataHandlerBruker extends DataHandlerPaths {
         }
     }
 
-    public static void leggInnBruker(Bruker bruker) { leggInnBruker(bruker, brukerPath); }
-
-    static ArrayList<Bruker> hentBrukere(String localPath) {
+    public static ArrayList<Bruker> hentBrukere() {
         final ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.findAndRegisterModules();
-        String path = new File("").getAbsolutePath() + localPath;
+        String path = new File("").getAbsolutePath() + brukerPath;
 
         try {
             ArrayList<Bruker> brukere = (ArrayList<Bruker>) objectMapper.readValue(new File(path), new TypeReference<List<Bruker>>(){});
@@ -54,12 +52,10 @@ public class DataHandlerBruker extends DataHandlerPaths {
         return new ArrayList<Bruker>();
     }
 
-    public static ArrayList<Bruker> hentBrukere() { return hentBrukere(brukerPath); }
-
-    static void oppdaterSisteInnlogging(Bruker bruker, String localPath) {
+    public static void oppdaterSisteInnlogging(Bruker bruker) {
         String fornavn = bruker.getFornavn();
         String etternavn = bruker.getEtternavn();
-        ArrayList<Bruker> brukere = DataHandlerBruker.hentBrukere(localPath);
+        ArrayList<Bruker> brukere = DataHandlerBruker.hentBrukere();
 
         int i;
         for (i = 0; i < brukere.size() ; i++) {
@@ -75,7 +71,7 @@ public class DataHandlerBruker extends DataHandlerPaths {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.findAndRegisterModules();
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-            String path = new File("").getAbsolutePath() + localPath;
+            String path = new File("").getAbsolutePath() + brukerPath;
 
             objectMapper.writeValue(new File(path), brukere);
         }
@@ -83,7 +79,5 @@ public class DataHandlerBruker extends DataHandlerPaths {
             e.printStackTrace();
         }
     }
-
-    public static void oppdaterSisteInnlogging(Bruker bruker) { oppdaterSisteInnlogging(bruker, brukerPath); }
 
 }

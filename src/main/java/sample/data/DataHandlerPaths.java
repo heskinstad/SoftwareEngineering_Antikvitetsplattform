@@ -17,4 +17,23 @@ public class DataHandlerPaths {
         varePath = "/src/test/resources/JSON/testVarer.JSON";
     }
 
+    public static String getBrukerPath() {
+        return brukerPath;
+    }
+
+    public static String getButikkPath() {
+        return butikkPath;
+    }
+
+    public static String getKlagePath() {
+        return klagePath;
+    }
+
+    public static String getSalgPath() {
+        return salgPath;
+    }
+
+    public static String getVarePath() {
+        return varePath;
+    }
 }

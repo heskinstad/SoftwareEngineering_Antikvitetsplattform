@@ -14,38 +14,36 @@ import java.util.List;
 
 public class DataHandlerSalg extends DataHandlerPaths {
 
-    static void registrerSalg(Salg salg, String localPath, String localVarePath, String localButikkPath){
+    public static void registrerSalg(Salg salg){
         try {
 
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.findAndRegisterModules();
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-            String path = new File("").getAbsolutePath() + localPath;
+            String path = new File("").getAbsolutePath() + salgPath;
 
             if (!new File(path).isFile()) {
                 return;
             }
 
-            ArrayList<Salg> salgListe = hentSalg(localPath);
+            ArrayList<Salg> salgListe = hentSalg();
 
             salgListe.add(salg);
 
             objectMapper.writeValue(new File(path), salgListe);
 
-            ArrayList<Butikk> butikkListe = DataHandlerButikk.hentButikker(localButikkPath);
+            ArrayList<Butikk> butikkListe = DataHandlerButikk.hentButikker();
 
             Butikk butikkSomSelger = getButikkSomSelger(salg, butikkListe);
 
-            butikkSomSelger.setVarerIButikk(localVarePath);
+            butikkSomSelger.setVarerIButikk();
 
-            fjernVare(salg.getSolgtVare(), butikkSomSelger, localVarePath);
+            fjernVare(salg.getSolgtVare(), butikkSomSelger);
         }
         catch (Exception e){
             e.printStackTrace();
         }
     }
-
-    public static void registrerSalg(Salg salg) { registrerSalg(salg, salgPath, varePath, butikkPath); }
 
     static Butikk getButikkSomSelger(Salg salg, ArrayList<Butikk> butikkListe) {
         Butikk butikkSomSelger = null;
@@ -59,10 +57,10 @@ public class DataHandlerSalg extends DataHandlerPaths {
         return butikkSomSelger;
     }
 
-    static ArrayList<Salg> hentSalg(String localPath){
+    public static ArrayList<Salg> hentSalg(){
         final ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.findAndRegisterModules();
-        String path = new File("").getAbsolutePath() + localPath;
+        String path = new File("").getAbsolutePath() + salgPath;
 
         try {
             ArrayList<Salg> salgListe = (ArrayList<Salg>) objectMapper.readValue(new File(path), new TypeReference<List<Salg>>(){});
@@ -77,11 +75,9 @@ public class DataHandlerSalg extends DataHandlerPaths {
         }
     }
 
-    public static ArrayList<Salg> hentSalg() { return hentSalg(salgPath); }
-
-    static void fjernVare(Vare solgtVare, Butikk butikk, String localPath){
+    public static void fjernVare(Vare solgtVare, Butikk butikk){
         ArrayList<Vare> varerFraButikk = butikk.getVareListe();
-        ArrayList<Vare> alleVarerListe = DataHandlerVare.hentVarer(localPath);
+        ArrayList<Vare> alleVarerListe = DataHandlerVare.hentVarer();
 
         int i;
         for(i = 0; i < varerFraButikk.size(); i++){
@@ -103,7 +99,7 @@ public class DataHandlerSalg extends DataHandlerPaths {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.findAndRegisterModules();
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-            String path = new File("").getAbsolutePath() + localPath;
+            String path = new File("").getAbsolutePath() + varePath;
 
             objectMapper.writeValue(new File(path), varerFraButikk);
         }

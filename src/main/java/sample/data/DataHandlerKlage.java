@@ -13,15 +13,15 @@ import java.util.List;
 
 public class DataHandlerKlage extends DataHandlerPaths {
 
-    private static void leggInnKlage(Klage klage, String localPath) {
+    public static void leggInnKlage(Klage klage) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.findAndRegisterModules();
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-            String path = new File("").getAbsolutePath() + localPath;
+            String path = new File("").getAbsolutePath() + klagePath;
 
             //Henter gamle klager
-            ArrayList<Klage> klager = hentKlager(localPath);
+            ArrayList<Klage> klager = hentKlager();
 
             //Legger ny klage etter de gamle klagene
             klager.add(klage);
@@ -32,12 +32,11 @@ public class DataHandlerKlage extends DataHandlerPaths {
             e.printStackTrace();
         }
     }
-    public static void leggInnKlage(Klage klage) { leggInnKlage(klage, klagePath); }
 
-    private static ArrayList<Klage> hentKlager(String localPath) {
+    public static ArrayList<Klage> hentKlager() {
         final ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.findAndRegisterModules();
-        String path = new File("").getAbsolutePath() + localPath;
+        String path = new File("").getAbsolutePath() + klagePath;
 
         try {
             ArrayList<Klage> klager = (ArrayList<Klage>) objectMapper.readValue(new File(path), new TypeReference<List<Klage>>(){});
@@ -52,13 +51,10 @@ public class DataHandlerKlage extends DataHandlerPaths {
         return new ArrayList<Klage>();
     }
 
-    public static ArrayList<Klage> hentKlager() { return hentKlager(klagePath); }
-
-
-    private static void slettKlage(Klage klager, String localPath) {
+    public static void slettKlage(Klage klager) {
         String klagerId = klager.getId().toString();
 
-        ArrayList<Klage> aKlager = hentKlager(localPath);
+        ArrayList<Klage> aKlager = hentKlager();
         int i;
         for (i = 0; i < aKlager.size() ; i++) {
             if (aKlager.get(i).getId().toString().equals(klagerId)) {
@@ -73,7 +69,7 @@ public class DataHandlerKlage extends DataHandlerPaths {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.findAndRegisterModules();
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-            String path = new File("").getAbsolutePath() + localPath;
+            String path = new File("").getAbsolutePath() + klagePath;
 
             objectMapper.writeValue(new File(path), aKlager);
         }
@@ -81,6 +77,4 @@ public class DataHandlerKlage extends DataHandlerPaths {
             e.printStackTrace();
         }
     }
-
-    public static void slettKlage(Klage klage) { slettKlage(klage, klagePath); }
 }

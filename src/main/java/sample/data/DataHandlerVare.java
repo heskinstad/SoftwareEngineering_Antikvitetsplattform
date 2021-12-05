@@ -17,15 +17,15 @@ import java.util.Objects;
 
 public class DataHandlerVare extends DataHandlerPaths {
 
-    static void leggInnVare(Vare vare, String localPath, File imagePath) {
+    public static void leggInnVare(Vare vare, File imagePath) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.findAndRegisterModules();
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-            String path = new File("").getAbsolutePath() + localPath;
+            String path = new File("").getAbsolutePath() + varePath;
 
             //Henter gamle klager
-            ArrayList<Vare> varer = hentVarer(localPath);
+            ArrayList<Vare> varer = hentVarer();
 
             //Legger ny klage etter de gamle klagene
             varer.add(vare);
@@ -43,13 +43,12 @@ public class DataHandlerVare extends DataHandlerPaths {
         }
     }
 
-    public static void leggInnVare(Vare vare, File imagePath) { leggInnVare(vare, varePath, imagePath); }
-    public static void leggInnVareTest(Vare vare) { leggInnVare(vare, varePath, new File("")); }
+    public static void leggInnVareTest(Vare vare) { leggInnVare(vare, new File("")); }
 
-    public static ArrayList<Vare> hentVarer(String localPath) {
+    public static ArrayList<Vare> hentVarer() {
         final ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.findAndRegisterModules();
-        String path = new File("").getAbsolutePath() + localPath;
+        String path = new File("").getAbsolutePath() + varePath;
 
         try {
             ArrayList<Vare> varer = (ArrayList<Vare>) objectMapper.readValue(new File(path), new TypeReference<List<Vare>>(){});
@@ -63,12 +62,11 @@ public class DataHandlerVare extends DataHandlerPaths {
         }
         return new ArrayList<Vare>();
     }
-    public static ArrayList<Vare> hentVarer() { return hentVarer(varePath); }
 
-    static void slettVare(Vare varer, String localPath) {
+    public static void slettVare(Vare varer) {
         String varerId = varer.getId().toString();
 
-        ArrayList<Vare> aVarer = hentVarer(localPath);
+        ArrayList<Vare> aVarer = hentVarer();
         int i;
         for (i = 0; i < aVarer.size() ; i++) {
             if (aVarer.get(i).getId().toString().equals(varerId)) {
@@ -83,7 +81,7 @@ public class DataHandlerVare extends DataHandlerPaths {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.findAndRegisterModules();
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
-            String path = new File("").getAbsolutePath() + localPath;
+            String path = new File("").getAbsolutePath() + varePath;
 
             objectMapper.writeValue(new File(path), aVarer);
         }
@@ -91,8 +89,6 @@ public class DataHandlerVare extends DataHandlerPaths {
             e.printStackTrace();
         }
     }
-
-    public static void slettVare(Vare vare) { slettVare(vare, varePath); }
 
     public static Image hentVareBilde(String bildenavn) {
         String path = new File("").getAbsolutePath() + "\\src\\main\\resources\\images\\" + bildenavn;
