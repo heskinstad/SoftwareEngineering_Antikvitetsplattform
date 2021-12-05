@@ -14,7 +14,7 @@ import java.util.Objects;
 
 public class DataHandlerBruker {
 
-    public static void leggInnBruker(Bruker bruker, String localPath) {
+    static void leggInnBruker(Bruker bruker, String localPath) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.findAndRegisterModules();
@@ -33,19 +33,14 @@ public class DataHandlerBruker {
             e.printStackTrace();
         }
     }
-    public static void leggInnBruker(Bruker bruker) {
-        leggInnBruker(bruker, "/src/main/resources/JSON/brukere.JSON");
-    }
 
-    public static ArrayList<Bruker> hentBrukere(String localPath) {
+    public static void leggInnBruker(Bruker bruker) { leggInnBruker(bruker, "/src/main/resources/JSON/brukere.JSON"); }
+    public static void leggInnBrukerTest(Bruker bruker) { leggInnBruker(bruker, "/src/test/resources/JSON/testBruker.JSON"); }
+
+    static ArrayList<Bruker> hentBrukere(String localPath) {
         final ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.findAndRegisterModules();
         String path = new File("").getAbsolutePath() + localPath;
-
-        if (!new File(path).isFile()) {
-            System.out.println("Fil eksisterer ikke. return null");
-            return null;
-        }
 
         try {
             ArrayList<Bruker> brukere = (ArrayList<Bruker>) objectMapper.readValue(new File(path), new TypeReference<List<Bruker>>(){});
@@ -59,14 +54,15 @@ public class DataHandlerBruker {
         }
         return new ArrayList<Bruker>();
     }
-    public static ArrayList<Bruker> hentBrukere() {
-        return hentBrukere("/src/main/resources/JSON/brukere.JSON");
-    }
 
-    public static void oppdaterSisteInnlogging(Bruker bruker, String localPath) {
+    public static ArrayList<Bruker> hentBrukere() { return hentBrukere("/src/main/resources/JSON/brukere.JSON"); }
+    public static ArrayList<Bruker> hentBrukereTest() { return hentBrukere("/src/test/resources/JSON/testBruker.JSON"); }
+
+    static void oppdaterSisteInnlogging(Bruker bruker, String localPath) {
         String fornavn = bruker.getFornavn();
         String etternavn = bruker.getEtternavn();
         ArrayList<Bruker> brukere = DataHandlerBruker.hentBrukere(localPath);
+
         int i;
         for (i = 0; i < brukere.size() ; i++) {
             if (Objects.equals(brukere.get(i).getFornavn(), fornavn) && Objects.equals(brukere.get(i).getEtternavn(), etternavn)) {
@@ -90,8 +86,7 @@ public class DataHandlerBruker {
         }
     }
 
-    public static void oppdaterSisteInnlogging(Bruker bruker) {
-        oppdaterSisteInnlogging(bruker, "/src/main/resources/JSON/brukere.JSON");
-    }
+    public static void oppdaterSisteInnlogging(Bruker bruker) { oppdaterSisteInnlogging(bruker, "/src/main/resources/JSON/brukere.JSON"); }
+    public static void oppdaterSisteInnloggingTest(Bruker bruker) { oppdaterSisteInnlogging(bruker, "/src/test/resources/JSON/testBruker.JSON"); }
 
 }

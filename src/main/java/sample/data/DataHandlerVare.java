@@ -4,24 +4,20 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import javafx.collections.ObservableList;
 import javafx.scene.image.Image;
-import sample.model.Klage;
 import sample.model.Vare;
 
 import java.io.*;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
 
 public class DataHandlerVare {
 
-    public static void leggInnVare(Vare vare, String localPath, File imagePath) {
+    static void leggInnVare(Vare vare, String localPath, File imagePath) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.findAndRegisterModules();
@@ -46,19 +42,14 @@ public class DataHandlerVare {
             e.printStackTrace();
         }
     }
-    public static void leggInnVare(Vare vare, File imagePath) {
-        leggInnVare(vare, "/src/main/resources/JSON/varer.JSON", imagePath);
-    }
+
+    public static void leggInnVare(Vare vare, File imagePath) { leggInnVare(vare, "/src/main/resources/JSON/varer.JSON", imagePath); }
+    public static void leggInnVareTest(Vare vare) { leggInnVare(vare, "/src/test/resources/JSON/testVarer.JSON", new File("")); }
 
     public static ArrayList<Vare> hentVarer(String localPath) {
         final ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.findAndRegisterModules();
         String path = new File("").getAbsolutePath() + localPath;
-
-        if (!new File(path).isFile()) {
-            System.out.println("Fil eksisterer ikke. return null");
-            return null;
-        }
 
         try {
             ArrayList<Vare> varer = (ArrayList<Vare>) objectMapper.readValue(new File(path), new TypeReference<List<Vare>>(){});
@@ -72,11 +63,10 @@ public class DataHandlerVare {
         }
         return new ArrayList<Vare>();
     }
-    public static ArrayList<Vare> hentVarer() {
-        return hentVarer("/src/main/resources/JSON/varer.JSON");
-    }
+    public static ArrayList<Vare> hentVarer() { return hentVarer("/src/main/resources/JSON/varer.JSON"); }
+    public static ArrayList<Vare> hentVarerTest() { return hentVarer("/src/test/resources/JSON/testVarer.JSON"); }
 
-    public static void slettVare(Vare varer, String localPath) {
+    static void slettVare(Vare varer, String localPath) {
         String varerId = varer.getId().toString();
 
         ArrayList<Vare> aVarer = hentVarer(localPath);
@@ -103,20 +93,17 @@ public class DataHandlerVare {
         }
     }
 
-    public static void slettVare(Vare vare) {
-        slettVare(vare, "/src/main/resources/JSON/varer.JSON");
-    }
+    public static void slettVare(Vare vare) { slettVare(vare, "/src/main/resources/JSON/varer.JSON"); }
+    public static void slettVareTest(Vare vare) { slettVare(vare, "/src/test/resources/JSON/testVarer.JSON"); }
 
-    public static Image hentVareBilde(String navn) {
-        String path = new File("").getAbsolutePath() + "\\src\\main\\resources\\images\\" + navn;
+    public static Image hentVareBilde(String bildenavn) {
+        String path = new File("").getAbsolutePath() + "\\src\\main\\resources\\images\\" + bildenavn;
         File file = new File(path);
-        System.out.println("Henter bilde fra " + path);
+        if (!file.isFile()) {
+            System.out.println("Fant ikke følgende bilde: " + path);
+            return null;
+        }
         Image image = new Image(file.toURI().toString());
         return image;
     }
-
-
-
-
-
 }

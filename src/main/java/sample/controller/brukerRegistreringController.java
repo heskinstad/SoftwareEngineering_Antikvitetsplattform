@@ -46,7 +46,6 @@ public class brukerRegistreringController extends homeController {
         openBrukerView(actionEvent, "Bruker Control - " + bruker.getFornavn() + " " + bruker.getEtternavn());
     }
 
-    //TODO VURDER Å ENDRE DENNE TIL EN DROP-DOWN ISTEDENFOR
     public void loggInnBruker(ActionEvent actionEvent) {
         String fornavn = loggInnFornavn.getText();
         String etternavn = loggInnEtternavn.getText();

@@ -16,13 +16,17 @@ import java.util.List;
 
 public class DataHandlerSalg {
 
-    public static void registrerSalg(Salg salg, String localPath, String localVarePath, String localButikkPath){
+    static void registrerSalg(Salg salg, String localPath, String localVarePath, String localButikkPath){
         try {
 
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.findAndRegisterModules();
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
             String path = new File("").getAbsolutePath() + localPath;
+
+            if (!new File(path).isFile()) {
+                return;
+            }
 
             ArrayList<Salg> salgListe = hentSalg(localPath);
 
@@ -43,7 +47,10 @@ public class DataHandlerSalg {
         }
     }
 
-    private static Butikk getButikkSomSelger(Salg salg, ArrayList<Butikk> butikkListe) {
+    public static void registrerSalg(Salg salg) { registrerSalg(salg, "/src/main/resources/JSON/salg.JSON", "/src/main/resources/JSON/varer.JSON", "/src/main/resources/JSON/butikker.JSON"); }
+    public static void registrerSalgTest(Salg salg) { registrerSalg(salg, "/src/test/resources/JSON/testSalg.JSON", "/src/test/resources/JSON/testVarer.JSON", "/src/test/resources/JSON/testButikker.JSON"); }
+
+    static Butikk getButikkSomSelger(Salg salg, ArrayList<Butikk> butikkListe) {
         Butikk butikkSomSelger = null;
 
         for (Butikk enButikk : butikkListe){
@@ -55,19 +62,10 @@ public class DataHandlerSalg {
         return butikkSomSelger;
     }
 
-    public static void registrerSalg(Salg salg) {
-        registrerSalg(salg, "/src/main/resources/JSON/salg.JSON", "/src/main/resources/JSON/varer.JSON", "/src/main/resources/JSON/butikker.JSON");
-    }
-
-    public static ArrayList<Salg> hentSalg(String localPath){
+    static ArrayList<Salg> hentSalg(String localPath){
         final ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.findAndRegisterModules();
         String path = new File("").getAbsolutePath() + localPath;
-
-        if (!new File(path).isFile()) {
-            System.out.println("Fil eksisterer ikke. return null");
-            return null;
-        }
 
         try {
             ArrayList<Salg> salgListe = (ArrayList<Salg>) objectMapper.readValue(new File(path), new TypeReference<List<Salg>>(){});
@@ -82,11 +80,10 @@ public class DataHandlerSalg {
         }
     }
 
-    public static ArrayList<Salg> hentSalg() {
-        return hentSalg("/src/main/resources/JSON/salg.JSON");
-    }
+    public static ArrayList<Salg> hentSalg() { return hentSalg("/src/main/resources/JSON/salg.JSON"); }
+    public static ArrayList<Salg> hentSalgTest() { return hentSalg("/src/test/resources/JSON/testSalg.JSON"); }
 
-    private static void fjernVare(Vare solgtVare, Butikk butikk, String localPath){
+    static void fjernVare(Vare solgtVare, Butikk butikk, String localPath){
         ArrayList<Vare> varerFraButikk = butikk.getVareListe();
         ArrayList<Vare> alleVarerListe = DataHandlerVare.hentVarer(localPath);
 

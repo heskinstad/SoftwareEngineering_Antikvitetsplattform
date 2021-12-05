@@ -38,7 +38,6 @@ public class brukerController extends homeController {
     @FXML public ImageView vare_bilde_2;
 
     public Butikk valgtButikk;
-    String path = "/src/main/resources/JSON/varer.JSON";
 
     @FXML
     public void initialize() {
@@ -60,7 +59,7 @@ public class brukerController extends homeController {
         try{
              varer = new ArrayList<>(valgtButikk.getVareListe());
         } catch (Exception e) {
-             varer = new ArrayList<>(DataHandlerVare.hentVarer(path));
+             varer = new ArrayList<>(DataHandlerVare.hentVarer());
         }
 
         for (int i = 0; i < 3; i++) {

@@ -19,7 +19,7 @@ import java.util.Objects;
 
 public class DataHandlerKlage {
 
-    public static void leggInnKlage(Klage klage, String localPath) {
+    private static void leggInnKlage(Klage klage, String localPath) {
         try {
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.findAndRegisterModules();
@@ -38,19 +38,13 @@ public class DataHandlerKlage {
             e.printStackTrace();
         }
     }
-    public static void leggInnKlage(Klage klage) {
-        leggInnKlage(klage, "/src/main/resources/JSON/klager.JSON");
-    }
+    public static void leggInnKlage(Klage klage) { leggInnKlage(klage, "/src/main/resources/JSON/klager.JSON"); }
+    public static void leggInnKlageTest(Klage klage) { leggInnKlage(klage, "/src/test/resources/JSON/testKlager.JSON"); }
 
-    public static ArrayList<Klage> hentKlager(String localPath) {
+    private static ArrayList<Klage> hentKlager(String localPath) {
         final ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.findAndRegisterModules();
         String path = new File("").getAbsolutePath() + localPath;
-
-        if (!new File(path).isFile()) {
-            System.out.println("Fil eksisterer ikke. return null");
-            return null;
-        }
 
         try {
             ArrayList<Klage> klager = (ArrayList<Klage>) objectMapper.readValue(new File(path), new TypeReference<List<Klage>>(){});
@@ -65,12 +59,11 @@ public class DataHandlerKlage {
         return new ArrayList<Klage>();
     }
 
-    public static ArrayList<Klage> hentKlager() {
-        return hentKlager("/src/main/resources/JSON/klager.JSON");
-    }
+    public static ArrayList<Klage> hentKlager() { return hentKlager("/src/main/resources/JSON/klager.JSON"); }
+    public static ArrayList<Klage> hentKlagerTest() { return hentKlager("/src/test/resources/JSON/testKlager.JSON"); }
 
 
-    public static void slettKlage(Klage klager, String localPath) {
+    private static void slettKlage(Klage klager, String localPath) {
         String klagerId = klager.getId().toString();
 
         ArrayList<Klage> aKlager = hentKlager(localPath);
@@ -96,7 +89,7 @@ public class DataHandlerKlage {
             e.printStackTrace();
         }
     }
-    public static void slettKlage(Klage klage) {
-        slettKlage(klage, "/src/main/resources/JSON/klager.JSON");
-    }
+
+    public static void slettKlage(Klage klage) { slettKlage(klage, "/src/main/resources/JSON/klager.JSON"); }
+    public static void slettKlageTest(Klage klage) { slettKlage(klage, "/src/test/resources/JSON/testKlager.JSON"); }
 }

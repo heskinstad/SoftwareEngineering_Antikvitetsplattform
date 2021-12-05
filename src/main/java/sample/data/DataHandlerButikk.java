@@ -18,13 +18,17 @@ public class DataHandlerButikk {
 
     static Butikk valgtButikk;
 
-    public static void registrerButikk(Butikk butikk, String localPath){
+    static void registrerButikk(Butikk butikk, String localPath){
         try {
 
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.findAndRegisterModules();
             objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
             String path = new File("").getAbsolutePath() + localPath;
+
+            if (!new File(path).isFile()) {
+                return;
+            }
 
             ArrayList<Butikk> butikker = hentButikker(localPath);
 
@@ -36,19 +40,14 @@ public class DataHandlerButikk {
             e.printStackTrace();
         }
     }
-    public static void registrerButikk(Butikk butikk) {
-        registrerButikk(butikk, "/src/main/resources/JSON/butikker.JSON");
-    }
 
-    public static ArrayList<Butikk> hentButikker(String localPath){
+    public static void registrerButikk(Butikk butikk) { registrerButikk(butikk, "/src/main/resources/JSON/butikker.JSON"); }
+    public static void registrerButikkTest(Butikk butikk) { registrerButikk(butikk, "/src/test/resources/JSON/testButikker.JSON"); }
+
+    static ArrayList<Butikk> hentButikker(String localPath){
         final ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.findAndRegisterModules();
         String path = new File("").getAbsolutePath() + localPath;
-
-        if (!new File(path).isFile()) {
-            System.out.println("Fil eksisterer ikke. return null");
-            return null;
-        }
 
         try {
             ArrayList<Butikk> butikker = (ArrayList<Butikk>) objectMapper.readValue(new File(path), new TypeReference<List<Butikk>>(){});
@@ -63,8 +62,7 @@ public class DataHandlerButikk {
         return new ArrayList<Butikk>();
     }
 
-    public static ArrayList<Butikk> hentButikker() {
-        return hentButikker("/src/main/resources/JSON/butikker.JSON");
-    }
+    public static ArrayList<Butikk> hentButikker() { return hentButikker("/src/main/resources/JSON/butikker.JSON"); }
+    public static ArrayList<Butikk> hentButikkerTest() { return hentButikker("/src/test/resources/JSON/testButikker.JSON"); }
 
 }
