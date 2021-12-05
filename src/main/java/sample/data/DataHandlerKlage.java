@@ -4,20 +4,14 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
-import javafx.collections.ObservableList;
-import sample.model.Bruker;
 import sample.model.Klage;
-import sample.model.Vare;
 
 import java.io.*;
-import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 
-public class DataHandlerKlage {
+public class DataHandlerKlage extends DataHandlerPaths {
 
     private static void leggInnKlage(Klage klage, String localPath) {
         try {
@@ -38,8 +32,7 @@ public class DataHandlerKlage {
             e.printStackTrace();
         }
     }
-    public static void leggInnKlage(Klage klage) { leggInnKlage(klage, "/src/main/resources/JSON/klager.JSON"); }
-    public static void leggInnKlageTest(Klage klage) { leggInnKlage(klage, "/src/test/resources/JSON/testKlager.JSON"); }
+    public static void leggInnKlage(Klage klage) { leggInnKlage(klage, klagePath); }
 
     private static ArrayList<Klage> hentKlager(String localPath) {
         final ObjectMapper objectMapper = new ObjectMapper();
@@ -59,8 +52,7 @@ public class DataHandlerKlage {
         return new ArrayList<Klage>();
     }
 
-    public static ArrayList<Klage> hentKlager() { return hentKlager("/src/main/resources/JSON/klager.JSON"); }
-    public static ArrayList<Klage> hentKlagerTest() { return hentKlager("/src/test/resources/JSON/testKlager.JSON"); }
+    public static ArrayList<Klage> hentKlager() { return hentKlager(klagePath); }
 
 
     private static void slettKlage(Klage klager, String localPath) {
@@ -90,6 +82,5 @@ public class DataHandlerKlage {
         }
     }
 
-    public static void slettKlage(Klage klage) { slettKlage(klage, "/src/main/resources/JSON/klager.JSON"); }
-    public static void slettKlageTest(Klage klage) { slettKlage(klage, "/src/test/resources/JSON/testKlager.JSON"); }
+    public static void slettKlage(Klage klage) { slettKlage(klage, klagePath); }
 }

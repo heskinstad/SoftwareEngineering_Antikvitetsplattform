@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Objects;
 
 
-public class DataHandlerVare {
+public class DataHandlerVare extends DataHandlerPaths {
 
     static void leggInnVare(Vare vare, String localPath, File imagePath) {
         try {
@@ -43,8 +43,8 @@ public class DataHandlerVare {
         }
     }
 
-    public static void leggInnVare(Vare vare, File imagePath) { leggInnVare(vare, "/src/main/resources/JSON/varer.JSON", imagePath); }
-    public static void leggInnVareTest(Vare vare) { leggInnVare(vare, "/src/test/resources/JSON/testVarer.JSON", new File("")); }
+    public static void leggInnVare(Vare vare, File imagePath) { leggInnVare(vare, varePath, imagePath); }
+    public static void leggInnVareTest(Vare vare) { leggInnVare(vare, varePath, new File("")); }
 
     public static ArrayList<Vare> hentVarer(String localPath) {
         final ObjectMapper objectMapper = new ObjectMapper();
@@ -63,8 +63,7 @@ public class DataHandlerVare {
         }
         return new ArrayList<Vare>();
     }
-    public static ArrayList<Vare> hentVarer() { return hentVarer("/src/main/resources/JSON/varer.JSON"); }
-    public static ArrayList<Vare> hentVarerTest() { return hentVarer("/src/test/resources/JSON/testVarer.JSON"); }
+    public static ArrayList<Vare> hentVarer() { return hentVarer(varePath); }
 
     static void slettVare(Vare varer, String localPath) {
         String varerId = varer.getId().toString();
@@ -93,8 +92,7 @@ public class DataHandlerVare {
         }
     }
 
-    public static void slettVare(Vare vare) { slettVare(vare, "/src/main/resources/JSON/varer.JSON"); }
-    public static void slettVareTest(Vare vare) { slettVare(vare, "/src/test/resources/JSON/testVarer.JSON"); }
+    public static void slettVare(Vare vare) { slettVare(vare, varePath); }
 
     public static Image hentVareBilde(String bildenavn) {
         String path = new File("").getAbsolutePath() + "\\src\\main\\resources\\images\\" + bildenavn;

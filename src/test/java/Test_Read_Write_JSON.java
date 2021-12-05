@@ -12,13 +12,17 @@ import static org.junit.Assert.*;
 
 public class Test_Read_Write_JSON {
 
+    static {
+        DataHandlerPaths.setPathsTest();
+    }
+
     @Test
     public void test_Vare_Read_Write() throws FileNotFoundException {
         deleteAllInFile("/src/test/resources/JSON/testVarer.JSON");
 
         Vare vare = new Vare("testVare", "testBeskrivelse", "testButikk", 1001, "");
         DataHandlerVare.leggInnVareTest(vare);
-        Vare vare2 = DataHandlerVare.hentVarerTest().get(0);
+        Vare vare2 = DataHandlerVare.hentVarer().get(0);
         assertEquals(vare.getId(), vare2.getId());
         assertEquals(vare.getNavn(), vare2.getNavn());
         assertEquals(vare.getBeskrivelse(), vare2.getBeskrivelse());
@@ -33,16 +37,16 @@ public class Test_Read_Write_JSON {
         deleteAllInFile("/src/test/resources/JSON/testKlager.JSON");
 
         Klage klage = new Klage("Ola Nordmann", "Butikken deres er tull og humbug", "Krakkel og spetakkel og andre antikviteter");
-        DataHandlerKlage.leggInnKlageTest(klage);
-        Klage klage2 = DataHandlerKlage.hentKlagerTest().get(0);
+        DataHandlerKlage.leggInnKlage(klage);
+        Klage klage2 = DataHandlerKlage.hentKlager().get(0);
         assertEquals(klage.getId(), klage2.getId());
         assertEquals(klage.getNavn(), klage2.getNavn());
         assertEquals(klage.getMelding(), klage2.getMelding());
         assertEquals(klage.getButikk(), klage2.getButikk());
         assertEquals(klage.getTidspunkt(), klage2.getTidspunkt());
 
-        DataHandlerKlage.slettKlageTest(klage);
-        assertTrue(DataHandlerKlage.hentKlagerTest().isEmpty());
+        DataHandlerKlage.slettKlage(klage);
+        assertTrue(DataHandlerKlage.hentKlager().isEmpty());
     }
 
     @Test
@@ -50,8 +54,8 @@ public class Test_Read_Write_JSON {
         deleteAllInFile("/src/test/resources/JSON/testButikker.JSON");
 
         Butikk butikk = new Butikk("test", "testing", "test kompani", "Denne butikken er kun en test");
-        DataHandlerButikk.registrerButikkTest(butikk);
-        Butikk butikk2 = DataHandlerButikk.hentButikkerTest().get(0);
+        DataHandlerButikk.registrerButikk(butikk);
+        Butikk butikk2 = DataHandlerButikk.hentButikker().get(0);
         assertEquals(butikk.getNavn(), butikk2.getNavn());
         assertEquals(butikk.getSpesialitet(), butikk2.getSpesialitet());
         assertEquals(butikk.getDagligLeder(), butikk2.getDagligLeder());
@@ -66,7 +70,7 @@ public class Test_Read_Write_JSON {
         deleteAllInFile("/src/test/resources/JSON/testVarer.JSON");
 
         Butikk butikk = new Butikk("test", "testing", "test kompani", "Denne butikken er kun en test");
-        DataHandlerButikk.registrerButikkTest(butikk);
+        DataHandlerButikk.registrerButikk(butikk);
 
         Vare vare = new Vare("testVare", "testBeskrivelse", "test", 1001, "");
         DataHandlerVare.leggInnVareTest(vare);
@@ -87,10 +91,10 @@ public class Test_Read_Write_JSON {
         deleteAllInFile("/src/test/resources/JSON/testBruker.JSON");
 
         Butikk butikk = new Butikk("test butikk", "testing", "test kompani", "Denne butikken er kun en test");
-        DataHandlerButikk.registrerButikkTest(butikk);
+        DataHandlerButikk.registrerButikk(butikk);
 
         Bruker bruker = new Bruker("Test", "Testeren");
-        DataHandlerBruker.leggInnBrukerTest(bruker);
+        DataHandlerBruker.leggInnBruker(bruker);
 
         Vare vare = new Vare("testVare", "testBeskrivelse", "test butikk", 1001, "");
         DataHandlerVare.leggInnVareTest(vare);
@@ -101,16 +105,16 @@ public class Test_Read_Write_JSON {
         butikk.setVarerIButikk("/src/test/resources/JSON/testVarer.JSON");
 
         Salg salg = new Salg(bruker.toString(), butikk.getNavn(), vare);
-        DataHandlerSalg.registrerSalgTest(salg);
+        DataHandlerSalg.registrerSalg(salg);
 
-        ArrayList<Salg> salgListe = DataHandlerSalg.hentSalgTest();
+        ArrayList<Salg> salgListe = DataHandlerSalg.hentSalg();
         Salg testSalg = salgListe.get(0);
 
         assertEquals(salg.getKjoper(), testSalg.getKjoper());
         assertEquals(salg.getSelger(), testSalg.getSelger());
         assertEquals(salg.getSolgtVare().getNavn(), testSalg.getSolgtVare().getNavn());
 
-        ArrayList<Vare> vareListe = DataHandlerVare.hentVarerTest();
+        ArrayList<Vare> vareListe = DataHandlerVare.hentVarer();
         Vare testVare = vareListe.get(0);
 
 
@@ -123,15 +127,15 @@ public class Test_Read_Write_JSON {
         deleteAllInFile("/src/test/resources/JSON/testBruker.JSON");
 
         Bruker bruker = new Bruker("Test", "Testeren");
-        DataHandlerBruker.leggInnBrukerTest(bruker);
-        Bruker bruker2 = DataHandlerBruker.hentBrukereTest().get(0);
+        DataHandlerBruker.leggInnBruker(bruker);
+        Bruker bruker2 = DataHandlerBruker.hentBrukere().get(0);
         assertEquals(bruker.getFornavn(), bruker2.getFornavn());
         assertEquals(bruker.getEtternavn(), bruker2.getEtternavn());
         assertEquals(bruker.getBrukerOpprettet(), bruker2.getBrukerOpprettet());
         assertEquals(bruker.getSisteInnlogging(), bruker2.getSisteInnlogging());
         sleep(100);
-        DataHandlerBruker.oppdaterSisteInnloggingTest(bruker);
-        bruker2 = DataHandlerBruker.hentBrukereTest().get(0);
+        DataHandlerBruker.oppdaterSisteInnlogging(bruker);
+        bruker2 = DataHandlerBruker.hentBrukere().get(0);
         assertNotEquals(bruker.getSisteInnlogging(), bruker2.getSisteInnlogging());
 
     }
@@ -142,8 +146,8 @@ public class Test_Read_Write_JSON {
 
         Vare vare = new Vare("testVare", "testBeskrivelse", "test", 1001, "");
         DataHandlerVare.leggInnVareTest(vare);
-        DataHandlerVare.slettVareTest(vare);
-        assertTrue(DataHandlerKlage.hentKlagerTest().isEmpty());
+        DataHandlerVare.slettVare(vare);
+        assertTrue(DataHandlerKlage.hentKlager().isEmpty());
 
     }
 

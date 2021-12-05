@@ -8,13 +8,11 @@ import sample.model.Butikk;
 import sample.model.Salg;
 import sample.model.Vare;
 
-import javax.swing.plaf.synth.SynthTextAreaUI;
 import java.io.File;
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DataHandlerSalg {
+public class DataHandlerSalg extends DataHandlerPaths {
 
     static void registrerSalg(Salg salg, String localPath, String localVarePath, String localButikkPath){
         try {
@@ -47,8 +45,7 @@ public class DataHandlerSalg {
         }
     }
 
-    public static void registrerSalg(Salg salg) { registrerSalg(salg, "/src/main/resources/JSON/salg.JSON", "/src/main/resources/JSON/varer.JSON", "/src/main/resources/JSON/butikker.JSON"); }
-    public static void registrerSalgTest(Salg salg) { registrerSalg(salg, "/src/test/resources/JSON/testSalg.JSON", "/src/test/resources/JSON/testVarer.JSON", "/src/test/resources/JSON/testButikker.JSON"); }
+    public static void registrerSalg(Salg salg) { registrerSalg(salg, salgPath, varePath, butikkPath); }
 
     static Butikk getButikkSomSelger(Salg salg, ArrayList<Butikk> butikkListe) {
         Butikk butikkSomSelger = null;
@@ -80,8 +77,7 @@ public class DataHandlerSalg {
         }
     }
 
-    public static ArrayList<Salg> hentSalg() { return hentSalg("/src/main/resources/JSON/salg.JSON"); }
-    public static ArrayList<Salg> hentSalgTest() { return hentSalg("/src/test/resources/JSON/testSalg.JSON"); }
+    public static ArrayList<Salg> hentSalg() { return hentSalg(salgPath); }
 
     static void fjernVare(Vare solgtVare, Butikk butikk, String localPath){
         ArrayList<Vare> varerFraButikk = butikk.getVareListe();

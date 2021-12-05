@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 
-public class DataHandlerBruker {
+public class DataHandlerBruker extends DataHandlerPaths {
 
     static void leggInnBruker(Bruker bruker, String localPath) {
         try {
@@ -34,8 +34,7 @@ public class DataHandlerBruker {
         }
     }
 
-    public static void leggInnBruker(Bruker bruker) { leggInnBruker(bruker, "/src/main/resources/JSON/brukere.JSON"); }
-    public static void leggInnBrukerTest(Bruker bruker) { leggInnBruker(bruker, "/src/test/resources/JSON/testBruker.JSON"); }
+    public static void leggInnBruker(Bruker bruker) { leggInnBruker(bruker, brukerPath); }
 
     static ArrayList<Bruker> hentBrukere(String localPath) {
         final ObjectMapper objectMapper = new ObjectMapper();
@@ -55,8 +54,7 @@ public class DataHandlerBruker {
         return new ArrayList<Bruker>();
     }
 
-    public static ArrayList<Bruker> hentBrukere() { return hentBrukere("/src/main/resources/JSON/brukere.JSON"); }
-    public static ArrayList<Bruker> hentBrukereTest() { return hentBrukere("/src/test/resources/JSON/testBruker.JSON"); }
+    public static ArrayList<Bruker> hentBrukere() { return hentBrukere(brukerPath); }
 
     static void oppdaterSisteInnlogging(Bruker bruker, String localPath) {
         String fornavn = bruker.getFornavn();
@@ -86,7 +84,6 @@ public class DataHandlerBruker {
         }
     }
 
-    public static void oppdaterSisteInnlogging(Bruker bruker) { oppdaterSisteInnlogging(bruker, "/src/main/resources/JSON/brukere.JSON"); }
-    public static void oppdaterSisteInnloggingTest(Bruker bruker) { oppdaterSisteInnlogging(bruker, "/src/test/resources/JSON/testBruker.JSON"); }
+    public static void oppdaterSisteInnlogging(Bruker bruker) { oppdaterSisteInnlogging(bruker, brukerPath); }
 
 }
