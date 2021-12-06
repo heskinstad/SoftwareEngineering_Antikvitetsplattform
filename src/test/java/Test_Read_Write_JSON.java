@@ -50,7 +50,7 @@ public class Test_Read_Write_JSON {
     }
 
     @Test
-    public void test_Butikk_Read_Write() throws FileNotFoundException {
+    public void test_Butikk_Read_Write_update() throws FileNotFoundException {
         deleteAllInAllFiles();
 
         Butikk butikk = new Butikk("test", "testing", "test kompani", "Denne butikken er kun en test");
