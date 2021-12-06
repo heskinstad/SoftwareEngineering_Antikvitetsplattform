@@ -1,8 +1,0 @@
-[ {
-  "navn" : "TestButikk",
-  "spesialitet" : "TestSpesialitet",
-  "dagligLeder" : "TestLeder",
-  "beskrivelse" : "TestBeskrivelse",
-  "tidspunkt" : [ 2021, 12, 6, 13, 58, 47, 208572300 ],
-  "vareListe" : [ ]
-} ]
