@@ -7,34 +7,22 @@ import javafx.fxml.FXML;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.text.Text;
-import sample.data.*;
-import sample.model.*;
+import sample.data.DataHandlerButikk;
 import sample.data.DataHandlerKlage;
+import sample.data.DataHandlerSalg;
+import sample.model.Butikk;
+import sample.model.Klage;
+import sample.model.Salg;
 
-import java.time.LocalDateTime;
 import java.util.ArrayList;
 
 public class adminController extends homeController {
 
     @FXML TableView<Salg> table_SaleHistory;
-    @FXML TableColumn<Salg,String> col_Salg_Kjoper;
-    @FXML TableColumn<Salg,String> col_Salg_Selger;
-    @FXML TableColumn<Salg,Vare> col_Salg_SolgtVare;
-    @FXML TableColumn<Salg,LocalDateTime> col_Salg_Tidspunkt;
     @FXML TableColumn<Salg, Integer> col_Salg_Pris;
     @FXML TableView<Klage> table_Complaints;
-    @FXML TableColumn<Klage,Integer> col_Klage_ID;
-    @FXML TableColumn<Klage,String> col_Klage_Innsender;
-    @FXML TableColumn<Klage,String> col_Klage_Melding;
-    @FXML TableColumn<Klage,String> col_Klage_Butikk;
-    @FXML TableColumn<Klage,LocalDateTime> col_Klage_Tidspunkt;
     @FXML TableView<Butikk> table_shops;
-    @FXML TableColumn<Butikk,String> col_Butikk_Navn;
-    @FXML TableColumn<Butikk,String> col_Butikk_Spesialitet;
-    @FXML TableColumn<Butikk,String> col_Butikk_DagligLeder;
-    @FXML TableColumn<Butikk,String> col_Butikk_Tidspunkt;
-    @FXML
-    Text pengerTjent;
+    @FXML Text pengerTjent;
 
     @FXML
     public void initialize() {
