@@ -1,5 +1,6 @@
 package sample.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import sample.data.DataHandlerVare;
 
 import java.time.LocalDateTime;
@@ -72,6 +73,7 @@ public class Butikk {
         this.beskrivelse = beskrivelse;
     }
 
+    @JsonIgnore
     public ArrayList<Vare> getVareListe() {
         return vareListe;
     }

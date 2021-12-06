@@ -5,6 +5,7 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.SerializationFeature;
 import sample.model.Butikk;
+import sample.model.Klage;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -53,6 +54,31 @@ public class DataHandlerButikk extends DataHandlerPaths {
             return null;
         }
         return new ArrayList<Butikk>();
+    }
+
+    public static void oppdaterButikk(Butikk CurrentButikk) {
+        String currentButikkNavn = CurrentButikk.getNavn();
+
+        ArrayList<Butikk> butikker = hentButikker();
+        int i;
+        for (i = 0; i < butikker.size(); i++) {
+            if (butikker.get(i).getNavn().equals(currentButikkNavn)) {
+                butikker.remove(i);
+                break;
+            }
+        }
+
+        try {
+            ObjectMapper objectMapper = new ObjectMapper();
+            objectMapper.findAndRegisterModules();
+            objectMapper.enable(SerializationFeature.INDENT_OUTPUT);
+            String path = new File("").getAbsolutePath() + butikkPath;
+
+            objectMapper.writeValue(new File(path), butikker);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        registrerButikk(CurrentButikk);
     }
 
 }

@@ -10,6 +10,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import sample.data.DataHandlerVare;
 import sample.model.Vare;
+import sample.util.AntikkUtil;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileFilter;
@@ -37,14 +38,7 @@ public class addVareController extends homeController {
 
     @FXML
     public void initialize() {
-        ArrayList<Vare> registrerteVarer = DataHandlerVare.hentVarer();
-
-        for (int i = 0; i < registrerteVarer.size(); i++) {
-            if (!registrerteVarer.get(i).getButikk().equals(butikk.getNavn())) {
-                registrerteVarer.remove(i);
-                i--;
-            }
-        }
+        ArrayList<Vare> registrerteVarer = AntikkUtil.GetVareMedButikkNavn(DataHandlerVare.hentVarer(), butikk.getNavn());
 
         ObservableList<Vare> listeMedVarer = FXCollections.observableArrayList(registrerteVarer);
         velgVare.setItems(listeMedVarer);
@@ -115,6 +109,7 @@ public class addVareController extends homeController {
                     return "images";
                 }
             });
+
             fileChooser.setCurrentDirectory(new File("C:\\"));
 
             int response = fileChooser.showDialog(null, "choose");
