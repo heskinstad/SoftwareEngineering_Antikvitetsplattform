@@ -61,6 +61,14 @@ public class Test_Read_Write_JSON {
         assertEquals(butikk.getDagligLeder(), butikk2.getDagligLeder());
         assertEquals(butikk.getTidspunkt(), butikk2.getTidspunkt());
 
+        butikk.setDagligLeder("det andre test kompani");
+        DataHandlerButikk.oppdaterButikk(butikk);
+        butikk2 = DataHandlerButikk.hentButikker().get(0);
+        assertEquals(butikk.getNavn(), butikk2.getNavn());
+        assertEquals(butikk.getSpesialitet(), butikk2.getSpesialitet());
+        assertEquals(butikk.getDagligLeder(), butikk2.getDagligLeder());
+        assertEquals(butikk.getTidspunkt(), butikk2.getTidspunkt());
+
 
     }
 
