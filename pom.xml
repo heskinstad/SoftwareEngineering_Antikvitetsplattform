@@ -76,6 +76,7 @@
                 <configuration>
                     <includes>
                         <include>Test_Read_Write_JSON.java</include>
+                        <include>Test_utility.java</include>
                     </includes>
                 </configuration>
             </plugin>
