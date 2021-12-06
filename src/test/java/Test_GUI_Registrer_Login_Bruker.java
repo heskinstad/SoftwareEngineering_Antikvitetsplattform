@@ -42,7 +42,9 @@ public class Test_GUI_Registrer_Login_Bruker extends ApplicationTest {
         primaryStage.show();
     }
 
-
+    /* Tester krav:
+       - En bruker skal kunne opprette en bruker ved å registrere seg
+     */
     @Test
     public void test_Registrer_Login_Bruker() {
 

@@ -44,9 +44,11 @@ public class Test_GUI_Legg_Til_Vare extends ApplicationTest {
         primaryStage.show();
     }
 
-
+    /* Tester krav:
+       - En butikk skal kunne legge ut varer for salg ved å registrere varen i applikasjonen
+     */
     @Test
-    public void test_Legg_Til_Vare() {
+    public void test_Legg_Til_Vare_Slett_Vare() {
         legg_Til_Vare();
 
         slett_vare();

@@ -43,13 +43,12 @@ public class Test_GUI_Diverse_Butikk extends ApplicationTest {
         primaryStage.show();
     }
 
-
+    /* Tester krav:
+       - En butikk skal kunne administrere sin egen side ved å trykke på en knapp og begynne og redigere
+         Implementertert i den grad at butikken kan endre sin egen beskrivelse
+     */
     @Test
     public void test_Endre_Beskrivelse_Og_Naviger() {
-        endre_Beskrivelse_Og_Naviger();
-    }
-
-    public void endre_Beskrivelse_Og_Naviger() {
 
         clickOn("#btnEditDesc");
         clickOn("#txtDesc");

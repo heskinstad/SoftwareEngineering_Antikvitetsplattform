@@ -40,13 +40,12 @@ public class Test_GUI_Kjoep_Vare extends ApplicationTest {
         primaryStage.show();
     }
 
-
+    /* Tester krav:
+       - En bruker skal kunne kjøpe/by på en vare ved å trykke på en knapp i applikasjonen
+       - En bruker skal kunne se på varer
+     */
     @Test
     public void test_Kjoep_Vare() {
-        kjoep_Vare();
-    }
-
-    public void kjoep_Vare() {
         clickOn("#ButikkValgBox");
         type(KeyCode.DOWN);
         type(KeyCode.ENTER);

@@ -33,7 +33,9 @@ public class Test_GUI_Registrer_Login_Butikk extends ApplicationTest {
         primaryStage.show();
     }
 
-
+    /* Tester krav:
+       - En butikk skal kunne kjøpe sin del av plattformen ved å registrere seg og betale for det
+     */
     @Test
     public void test_Registrer_Login_Butikk() {
 

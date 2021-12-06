@@ -14,7 +14,6 @@ import sample.model.Vare;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-
 public class Test_GUI_Admin extends ApplicationTest {
 
     static {
@@ -40,13 +39,14 @@ public class Test_GUI_Admin extends ApplicationTest {
         primaryStage.show();
     }
 
+    /* Tester krav:
+       - En admin skal kunne ha oversikt over alle kjøp/salg
+       - En admin skal kunne behandle klage
+       - En bruker/butikk/admin skal kunne se et kjøps-/salgshistorikk som passer til brukertypen, ved å trykke på en knapp i applikasjonen
+     */
 
     @Test
-    public void test_Registrer_Bruker_Send_Klage_Slett_Klage() {
-        login_Admin_Refresh_Slett_Klage();
-    }
-
-    public void login_Admin_Refresh_Slett_Klage() {
+    public void test_Login_Admin_Refresh_Slett_Klage() {
 
         clickOn("#btnLoginAdmin");
 

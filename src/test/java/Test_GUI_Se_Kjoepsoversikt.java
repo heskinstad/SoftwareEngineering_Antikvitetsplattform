@@ -41,14 +41,11 @@ public class Test_GUI_Se_Kjoepsoversikt extends ApplicationTest {
         primaryStage.show();
     }
 
-
+    /* Tester krav:
+           - En bruker/butikk/admin skal kunne se et kjøps-/salgshistorikk som passer til brukertypen, ved å trykke på en knapp i applikasjonen
+         */
     @Test
     public void test_Se_Kjoepsoversikt() {
-        se_Kjoepsoversikt();
-
-    }
-
-    private void se_Kjoepsoversikt() {
         clickOn("#btnAapneSalgsOversikt");
         clickOn("#btnForlatOversikt");
     }

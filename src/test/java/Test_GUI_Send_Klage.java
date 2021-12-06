@@ -38,9 +38,12 @@ public class Test_GUI_Send_Klage extends ApplicationTest {
         primaryStage.show();
     }
 
-
+    /* Tester krav:
+       - En bruker og en butikk skal kunne sende inn en klage
+         Her bare at brukeren kan sende inn klage
+     */
     @Test
-    public void test_Send_Klage_Slett_Klage() {
+    public void test_Send_Klage() {
         homeController.setBruker(new Bruker("Test", "Testeren"));
         DataHandlerButikk.registrerButikk(new Butikk("TestButikk", "TestSpesialitet", "TestLeder", "TestBeskrivelse"));
 
