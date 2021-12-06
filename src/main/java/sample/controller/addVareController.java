@@ -29,7 +29,11 @@ public class addVareController extends homeController {
     @FXML
     public ChoiceBox<Vare> velgVare;
 
-    File imagePath;
+    static File imagePath;
+
+    public static void setImagePath(File imagePath) {
+        addVareController.imagePath = imagePath;
+    }
 
     @FXML
     public void initialize() {

@@ -44,7 +44,7 @@ public class DataHandlerBruker extends DataHandlerPaths {
             return brukere;
         }
         catch (JsonMappingException e) {
-            System.out.println("Klarte ikke å lese data fra brukere-JSON");
+            //System.out.println("Klarte ikke å lese data fra brukere-JSON");
         }
         catch (Exception e) {
             return null;

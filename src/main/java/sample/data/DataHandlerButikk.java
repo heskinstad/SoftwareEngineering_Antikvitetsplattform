@@ -47,7 +47,7 @@ public class DataHandlerButikk extends DataHandlerPaths {
             return butikker;
         }
         catch (JsonMappingException e){
-            System.out.println("Klarte ikke å lese data fra butikk-JSON");
+            //System.out.println("Klarte ikke å lese data fra butikk-JSON");
         }
         catch (Exception e){
             return null;

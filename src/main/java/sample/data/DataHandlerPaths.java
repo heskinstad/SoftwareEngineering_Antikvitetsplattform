@@ -7,6 +7,7 @@ public class DataHandlerPaths {
     static String klagePath = "/src/main/resources/JSON/klager.JSON";
     static String salgPath = "/src/main/resources/JSON/salg.JSON";
     static String varePath = "/src/main/resources/JSON/varer.JSON";
+    static String imagePath = "/src/main/resources/images/";
 
 
     public static void setPathsTest() {
@@ -15,6 +16,7 @@ public class DataHandlerPaths {
         klagePath = "/src/test/resources/JSON/testKlager.JSON";
         salgPath = "/src/test/resources/JSON/testSalg.JSON";
         varePath = "/src/test/resources/JSON/testVarer.JSON";
+        imagePath = "/src/test/resources/images/";
     }
 
     public static String getBrukerPath() {
@@ -35,5 +37,9 @@ public class DataHandlerPaths {
 
     public static String getVarePath() {
         return varePath;
+    }
+
+    public static String getImagePath() {
+        return imagePath;
     }
 }

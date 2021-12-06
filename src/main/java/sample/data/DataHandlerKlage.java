@@ -43,7 +43,7 @@ public class DataHandlerKlage extends DataHandlerPaths {
             return klager;
         }
         catch (JsonMappingException e) {
-            System.out.println("Klarte ikke å lese data fra klage-JSON");
+            //System.out.println("Klarte ikke å lese data fra klage-JSON");
         }
         catch (Exception e) {
             return null;

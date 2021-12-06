@@ -24,6 +24,22 @@ public class homeController {
         butikk = null;
     }
 
+    public static void setBruker(Bruker bruker) {
+        homeController.bruker = bruker;
+    }
+
+    public static void setButikk(Butikk butikk) {
+        homeController.butikk = butikk;
+    }
+
+    public static Bruker getBruker() {
+        return bruker;
+    }
+
+    public static Butikk getButikk() {
+        return butikk;
+    }
+
     public void loginAdmin(ActionEvent actionEvent) { openListWindowView(actionEvent); }
 
     public void loginButikk(ActionEvent actionEvent) { openButikkRegistreringView(actionEvent); }

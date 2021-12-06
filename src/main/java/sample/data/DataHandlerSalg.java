@@ -67,7 +67,7 @@ public class DataHandlerSalg extends DataHandlerPaths {
             return salgListe;
         }
         catch (JsonMappingException e){
-            System.out.println("Klarte ikke å lese data fra salg-JSON");
+            //System.out.println("Klarte ikke å lese data fra salg-JSON");
             return new ArrayList<Salg>();
         }
         catch (Exception e) {

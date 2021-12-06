@@ -26,6 +26,6 @@
             <TableColumn fx:id="col_Salg_Pris" prefWidth="103.0" text="Pris" />
         </columns>
       </TableView>
-      <Button layoutX="230.0" layoutY="374.0" mnemonicParsing="false" onAction="#forlatOversikt" text="Forlat salgsoversikt" />
+      <Button fx:id="btnForlatOversikt" layoutX="230.0" layoutY="374.0" mnemonicParsing="false" onAction="#forlatOversikt" text="Forlat salgsoversikt" />
    </children>
 </AnchorPane>

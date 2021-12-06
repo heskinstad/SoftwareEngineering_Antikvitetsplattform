@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="616.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.butikkController">
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="616.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.butikkController">
    <children>
       <GridPane layoutX="148.0" layoutY="83.0" prefHeight="550.0" prefWidth="452.0">
         <columnConstraints>
@@ -69,7 +64,7 @@
           <RowConstraints maxHeight="342.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button id="btnEditDesc" mnemonicParsing="false" onAction="#editDesc" prefHeight="52.0" prefWidth="126.0" text="Rediger beskrivelse" GridPane.rowIndex="2" />
+            <Button id="btnEditDesc" fx:id="btnEditDesc" mnemonicParsing="false" onAction="#editDesc" prefHeight="52.0" prefWidth="126.0" text="Rediger beskrivelse" GridPane.rowIndex="2" />
             <Text fx:id="butikkNavn" strokeType="OUTSIDE" strokeWidth="0.0" text="namn på butikk" textAlignment="CENTER" wrappingWidth="133.07421875" />
             <TextArea id="txtDesc" fx:id="beskrivelseText" editable="false" prefHeight="200.0" prefWidth="200.0" text="butikkbeskrivelse" wrapText="true" GridPane.rowIndex="1">
                <GridPane.margin>
@@ -86,7 +81,7 @@
           <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <Button id="btnEditSale" mnemonicParsing="false" onAction="#editSale" prefHeight="30.0" prefWidth="129.0" text="Legg til/fjern vare" GridPane.columnIndex="1" />
+            <Button id="btnEditSale" fx:id="btnEditSale" mnemonicParsing="false" onAction="#editSale" prefHeight="30.0" prefWidth="129.0" text="Legg til/fjern vare" GridPane.columnIndex="1" />
             <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Varer" textAlignment="CENTER" wrappingWidth="352.654296875">
                <font>
                   <Font size="42.0" />
@@ -94,10 +89,10 @@
             </Text>
          </children>
       </GridPane>
-      <Button id="btnChangeUser" layoutX="14.0" layoutY="641.0" mnemonicParsing="false" onAction="#changeUser" text="Forside" />
-      <Button layoutX="185.0" layoutY="641.0" mnemonicParsing="false" onAction="#sideSkift" text="Forrige side" />
-      <Button layoutX="357.0" layoutY="641.0" mnemonicParsing="false" onAction="#sideSkift" text="Neste side" />
+      <Button id="btnChangeUser" fx:id="btnChangeUser" layoutX="14.0" layoutY="641.0" mnemonicParsing="false" onAction="#changeUser" text="Forside" />
+      <Button fx:id="btnSideSkiftForrige" layoutX="185.0" layoutY="641.0" mnemonicParsing="false" onAction="#sideSkift" text="Forrige side" />
+      <Button fx:id="btnSideSkiftNeste" layoutX="357.0" layoutY="641.0" mnemonicParsing="false" onAction="#sideSkift" text="Neste side" />
       <Text fx:id="sideTal" layoutX="271.0" layoutY="658.0" strokeType="OUTSIDE" strokeWidth="0.0" text="1" textAlignment="CENTER" wrappingWidth="79.0" />
-      <Button layoutX="507.0" layoutY="641.0" mnemonicParsing="false" onAction="#toButikkSalgsOversikt" text="Salgsoversikt" />
+      <Button fx:id="btnToButikkSalgsOversikt" layoutX="507.0" layoutY="641.0" mnemonicParsing="false" onAction="#toButikkSalgsOversikt" text="Salgsoversikt" />
    </children>
 </AnchorPane>
