@@ -10,6 +10,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
+import sample.data.DataHandlerButikk;
 import sample.data.DataHandlerVare;
 import sample.model.Butikk;
 import sample.model.Vare;
@@ -117,6 +118,8 @@ public class butikkController extends homeController {
             btnEditDesc.setText("save");
             txtDesc.setEditable(true);
         } else {
+            butikk.setBeskrivelse(txtDesc.getText());
+            DataHandlerButikk.oppdaterButikk(butikk);
             String textTemp = txtDesc.getText();
             btnEditDesc.setText("edit");
             txtDesc.setText(textTemp);
@@ -130,12 +133,11 @@ public class butikkController extends homeController {
 
 
 
-        public void editSale(ActionEvent actionEvent) {
-            //todo har bare legg til vare inntil videre
-            openAddVareView(actionEvent);
-        }
+    public void editSale(ActionEvent actionEvent) {
+        openAddVareView(actionEvent);
+    }
 
-        public void changeUser(ActionEvent actionEvent) {
+    public void changeUser(ActionEvent actionEvent) {
             openHomeView(actionEvent);
         }
 

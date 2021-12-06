@@ -3,27 +3,23 @@
   "spesialitet" : "Artifacts",
   "dagligLeder" : "Nicolas Cage",
   "beskrivelse" : "I sell valuable artifacts and national treasures from around the world! Low prices! Buy now!",
-  "tidspunkt" : [ 2021, 11, 22, 12, 15, 31, 844738200 ],
-  "vareListe" : [ ]
+  "tidspunkt" : [ 2021, 11, 22, 12, 15, 31, 844738200 ]
 }, {
   "navn" : "Norsk Arkeologiforening",
   "spesialitet" : "Arkeologi",
   "dagligLeder" : "Steinar Gråstein",
   "beskrivelse" : "Norske arkeologiske gjenstander.",
-  "tidspunkt" : [ 2021, 11, 22, 12, 29, 54, 963462600 ],
-  "vareListe" : [ ]
+  "tidspunkt" : [ 2021, 11, 22, 12, 29, 54, 963462600 ]
 }, {
   "navn" : "Norsk bilforening",
   "spesialitet" : "Biler",
   "dagligLeder" : "Rudolf Blodstrupmoen",
   "beskrivelse" : "Vi selger gamle biler",
-  "tidspunkt" : [ 2021, 11, 22, 12, 39, 4, 842418400 ],
-  "vareListe" : [ ]
+  "tidspunkt" : [ 2021, 11, 22, 12, 39, 4, 842418400 ]
 }, {
   "navn" : "Kjedelige antikviteter",
   "spesialitet" : "Møbler",
   "dagligLeder" : "Jørgen Døgnflue",
-  "beskrivelse" : "Vi selger gamle møbler som er vonde å sitte i",
-  "tidspunkt" : [ 2021, 11, 22, 12, 46, 39, 833539200 ],
-  "vareListe" : [ ]
+  "beskrivelse" : "Vi selger gamle møbler for deg som liker å se på gresset gro.",
+  "tidspunkt" : [ 2021, 11, 22, 12, 46, 39, 833539200 ]
 } ]
