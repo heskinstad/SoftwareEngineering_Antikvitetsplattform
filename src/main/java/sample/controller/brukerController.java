@@ -42,7 +42,9 @@ public class brukerController extends homeController {
 
         Platform.runLater(new Runnable() {
             public void run() {
-                butikkValgt();
+                if (!ButikkValgBox.getItems().isEmpty()) {
+                    butikkValgt();
+                }
             }
         });
     }

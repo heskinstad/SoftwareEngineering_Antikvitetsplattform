@@ -1,18 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.cell.PropertyValueFactory?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
-<?import javafx.scene.layout.GridPane?>
-<?import javafx.scene.layout.RowConstraints?>
-<?import javafx.scene.text.Font?>
-<?import javafx.scene.text.Text?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.control.cell.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.adminController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="550.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/11.0.2" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controller.adminController">
    <children>
       <GridPane layoutX="14.0" layoutY="15.0" prefHeight="521.0" prefWidth="823.0">
         <columnConstraints>
@@ -82,7 +76,7 @@
                 </TableColumn>
               </columns>
             </TableView>
-            <Button id="btnChangeUser" mnemonicParsing="false" onAction="#changeUser" text="Forside" GridPane.rowIndex="3" />
+            <Button id="btnChangeUser" fx:id="btnChangeUser" mnemonicParsing="false" onAction="#changeUser" text="Forside" GridPane.rowIndex="3" />
             <GridPane GridPane.rowIndex="4">
               <columnConstraints>
                 <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -104,7 +98,7 @@
                   </Text>
                </children>
             </GridPane>
-            <Button mnemonicParsing="false" onAction="#refresh" text="Last inn på nytt" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Button fx:id="btnRefresh" mnemonicParsing="false" onAction="#refresh" text="Last inn på nytt" GridPane.columnIndex="1" GridPane.rowIndex="3" />
             <GridPane GridPane.rowIndex="5">
                <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" maxWidth="1.7976931348623157E308" minWidth="10.0" />

@@ -19,9 +19,6 @@ public class homeController {
     static Butikk butikk;
 
     @FXML
-    public Button btnLoginAdmin;
-
-    @FXML
     public void initialize() {
         bruker = null;
         butikk = null;

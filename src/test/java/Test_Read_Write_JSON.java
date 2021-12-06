@@ -18,7 +18,7 @@ public class Test_Read_Write_JSON {
 
     @Test
     public void test_Vare_Read_Write() throws FileNotFoundException {
-        deleteAllInFile("/src/test/resources/JSON/testVarer.JSON");
+        deleteAllInAllFiles();
 
         Vare vare = new Vare("testVare", "testBeskrivelse", "testButikk", 1001, "");
         DataHandlerVare.leggInnVareTest(vare);
@@ -34,7 +34,7 @@ public class Test_Read_Write_JSON {
 
     @Test
     public void test_Klage_Read_Write() throws FileNotFoundException {
-        deleteAllInFile("/src/test/resources/JSON/testKlager.JSON");
+        deleteAllInAllFiles();
 
         Klage klage = new Klage("Ola Nordmann", "Butikken deres er tull og humbug", "Krakkel og spetakkel og andre antikviteter");
         DataHandlerKlage.leggInnKlage(klage);
@@ -51,7 +51,7 @@ public class Test_Read_Write_JSON {
 
     @Test
     public void test_Butikk_Read_Write() throws FileNotFoundException {
-        deleteAllInFile("/src/test/resources/JSON/testButikker.JSON");
+        deleteAllInAllFiles();
 
         Butikk butikk = new Butikk("test", "testing", "test kompani", "Denne butikken er kun en test");
         DataHandlerButikk.registrerButikk(butikk);
@@ -66,8 +66,7 @@ public class Test_Read_Write_JSON {
 
     @Test
     public void test_Butikk_Holder_Vare() throws FileNotFoundException {
-        deleteAllInFile("/src/test/resources/JSON/testButikker.JSON");
-        deleteAllInFile("/src/test/resources/JSON/testVarer.JSON");
+        deleteAllInAllFiles();
 
         Butikk butikk = new Butikk("test", "testing", "test kompani", "Denne butikken er kun en test");
         DataHandlerButikk.registrerButikk(butikk);
@@ -85,10 +84,7 @@ public class Test_Read_Write_JSON {
 
     @Test
     public void test_Registrer_Salg_Fjern_Vare() throws FileNotFoundException {
-        deleteAllInFile("/src/test/resources/JSON/testButikker.JSON");
-        deleteAllInFile("/src/test/resources/JSON/testVarer.JSON");
-        deleteAllInFile("/src/test/resources/JSON/testSalg.JSON");
-        deleteAllInFile("/src/test/resources/JSON/testBruker.JSON");
+        deleteAllInAllFiles();
 
         Butikk butikk = new Butikk("test butikk", "testing", "test kompani", "Denne butikken er kun en test");
         DataHandlerButikk.registrerButikk(butikk);
@@ -124,7 +120,7 @@ public class Test_Read_Write_JSON {
 
     @Test
     public void test_Bruker_Read_Write() throws FileNotFoundException, InterruptedException {
-        deleteAllInFile("/src/test/resources/JSON/testBruker.JSON");
+        deleteAllInAllFiles();
 
         Bruker bruker = new Bruker("Test", "Testeren");
         DataHandlerBruker.leggInnBruker(bruker);
@@ -142,7 +138,7 @@ public class Test_Read_Write_JSON {
 
     @Test
     public void test_Vare_Slett_Vare() throws FileNotFoundException {
-        deleteAllInFile("/src/test/resources/JSON/testVarer.JSON");
+        deleteAllInAllFiles();
 
         Vare vare = new Vare("testVare", "testBeskrivelse", "test", 1001, "");
         DataHandlerVare.leggInnVareTest(vare);
@@ -151,7 +147,15 @@ public class Test_Read_Write_JSON {
 
     }
 
-    private void deleteAllInFile(String path) throws FileNotFoundException {
+    public static void deleteAllInAllFiles() throws FileNotFoundException {
+        deleteAllInFile(DataHandlerPaths.getBrukerPath());
+        deleteAllInFile(DataHandlerPaths.getButikkPath());
+        deleteAllInFile(DataHandlerPaths.getKlagePath());
+        deleteAllInFile(DataHandlerPaths.getSalgPath());
+        deleteAllInFile(DataHandlerPaths.getVarePath());
+    }
+
+    private static void deleteAllInFile(String path) throws FileNotFoundException {
         PrintWriter writer = new PrintWriter(new File("").getAbsolutePath() + path);
         writer.close();
     }
