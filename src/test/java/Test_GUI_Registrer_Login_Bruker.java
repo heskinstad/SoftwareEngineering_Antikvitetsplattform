@@ -44,10 +44,6 @@ public class Test_GUI_Registrer_Login_Bruker extends ApplicationTest {
 
 
     @Test
-    public void test_Registrer_Login_Bruker_local() {
-        test_Registrer_Login_Bruker();
-    }
-
     public void test_Registrer_Login_Bruker() {
 
         clickOn("#btnLoginCustomer");

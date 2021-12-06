@@ -1,7 +1,6 @@
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.input.KeyCode;
 import javafx.stage.Stage;
 import org.junit.Assert;
 import org.junit.Test;
@@ -44,10 +43,6 @@ public class Test_GUI_Admin extends ApplicationTest {
 
     @Test
     public void test_Registrer_Bruker_Send_Klage_Slett_Klage() {
-
-
-
-
         login_Admin_Refresh_Slett_Klage();
     }
 

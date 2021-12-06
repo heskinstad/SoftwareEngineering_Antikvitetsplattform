@@ -42,7 +42,7 @@ public class Test_GUI_Kjoep_Vare extends ApplicationTest {
 
 
     @Test
-    public void test_Send_Klage_Slett_Klage() {
+    public void test_Kjoep_Vare() {
         kjoep_Vare();
     }
 
